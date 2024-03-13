@@ -4,5 +4,4 @@
 <br>
 **Ảnh minh hoạ**
 <br>
-![alt text](<Screenshot 2024-03-13 at 22.31.34.png>)
-![alt text](<Screenshot 2024-03-13 at 22.33.36.png>)
+![alt text](64EE2AD3-159F-4FB3-ADED-2EDCBC7043F8.png)
