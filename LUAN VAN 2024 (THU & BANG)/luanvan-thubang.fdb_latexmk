@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1710564450 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/LUAN VAN 2024 (THU & BANG)/luanvan-thubang.tex" "luanvan-thubang.pdf" "luanvan-thubang" 1710564453 0
-  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/LUAN VAN 2024 (THU & BANG)/luanvan-thubang.tex" 1710564447 93789 53a724a7b64cdcd215b04151037450b8 ""
+["pdflatex"] 1710573493 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/LUAN VAN 2024 (THU & BANG)/luanvan-thubang.tex" "luanvan-thubang.pdf" "luanvan-thubang" 1710573496 0
+  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/LUAN VAN 2024 (THU & BANG)/luanvan-thubang.tex" 1710573489 93789 21c61657e42ec0c29d19d1d19a1686c4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -308,10 +308,10 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "duc lo.pdf" 1710562563 13283 ad525835478f57be31ced3c1ef3d79f6 ""
   "lom.pdf" 1710562563 13221 17cf17de846936b03572ce9109f7f892 ""
-  "luanvan-thubang.aux" 1710564453 14555 21bcd047dbae74f9be2eb90a7ae35fd1 "pdflatex"
-  "luanvan-thubang.out" 1710564453 8997 8419b4b01e809aa97182580d4f0e97ec "pdflatex"
-  "luanvan-thubang.tex" 1710564447 93789 53a724a7b64cdcd215b04151037450b8 ""
-  "luanvan-thubang.toc" 1710564453 3868 ed936be50d7d1f16f81586c8de6535db "pdflatex"
+  "luanvan-thubang.aux" 1710573496 14547 34abfa29ca6730320c02b90103adedf3 "pdflatex"
+  "luanvan-thubang.out" 1710573496 8997 8419b4b01e809aa97182580d4f0e97ec "pdflatex"
+  "luanvan-thubang.tex" 1710573489 93789 21c61657e42ec0c29d19d1d19a1686c4 ""
+  "luanvan-thubang.toc" 1710573496 3868 9112424bb0cd43c2677ab83bc52c6427 "pdflatex"
   "tron.pdf" 1710562563 3548 67d79f400f382d6fc40bed677ec958df ""
   "vuong2.pdf" 1710562563 21301 7e45490e039098f5761b14a35b9142f0 ""
   (generated)
