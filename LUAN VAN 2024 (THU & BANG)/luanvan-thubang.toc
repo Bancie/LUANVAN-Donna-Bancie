@@ -31,7 +31,6 @@
 \contentsline {subsection}{\numberline {2.2.3}Phương pháp Land-Doig}{35}{subsection.2.2.3}%
 \contentsline {subsubsection}{\numberline {2.2.3.1}Giới thiệu phương pháp và ý nghĩa}{35}{subsubsection.2.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.2.3.2}Các bước thực hiện của phương pháp}{37}{subsubsection.2.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.2.3.3}Ví dụ minh họa}{45}{subsubsection.2.2.3.3}%
 \contentsline {chapter}{\numberline {3}Mở rộng kết quả cho bài toán dạng phân thức tuyến tính}{49}{chapter.3}%
 \contentsline {chapter}{{\bf Kết luận}\rm }{50}{chapter*.15}%
 \contentsline {chapter}{{\bf Tài liệu tham khảo}}{51}{chapter*.16}%
