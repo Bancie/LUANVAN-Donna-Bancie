@@ -5,10 +5,27 @@
 \usepackage[unicode]{hyperref}
 \usepackage[vietnamese]{babel}
 \usepackage{titling}
+\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
 \usepackage{subfigure}
 \usepackage{secdot}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx} 
+\usepackage{titling}
+\usepackage{secdot}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{array}
+\usetikzlibrary{calc}
+\usepackage{longtable}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{exscale,relsize,makeidx}
+\usepackage{color, fancyhdr, graphicx, wrapfig}
 \usepackage{amsmath}
 \usepackage{textpos}
 \usepackage{pgfplots}
@@ -16,7 +33,7 @@
 \usepackage{hyperref}
 \usepackage{caption}
 \usetikzlibrary{shapes.geometric, arrows}
-\usetikzlibrary {datavisualization} 
+\usetikzlibrary{datavisualization} 
 \pgfplotsset{compat=1.18, width = 7cm}
 \usetikzlibrary{patterns}
 \usepackage{enumitem}
@@ -52,6 +69,7 @@
 \newtheorem{hq}{Hệ quả}
 \newtheorem{nx}{Nhận xét}
 \newtheorem{vd}{Ví dụ}
+\newtheorem{cm}{Chứng minh}
 \newtheorem{cy}{Chú ý}
 \newtheorem{ttoan}{Thuật toán}
 \pagenumbering{roman}\pagestyle{plain}
@@ -1065,6 +1083,430 @@ Nghiệm tối ưu của bài toán là
 \begin{equation*}
 z=\frac{11}{2}, x_3=\frac{5}{4}, x_5=\frac{3}{4}, x_1=x_2=x_4=0.
 \end{equation*}
+
+\subsection{Phương pháp đơn hình đối ngẫu từ vựng}
+\subsubsection{ Bài toán đối ngẫu }
+\begin{itemize}
+    \item \textbf{Bài toán gốc và bài toán đối ngẫu dạng chuẩn tắc:}\\
+    Xét hai bài toán sau:\\
+    \begin{minipage}[t]{0.48\linewidth}
+   \begin{equation}\label{baitoangoc}
+     \begin{split}
+          & {\rm{Min}} \langle c,x \rangle\\
+          \rm{s.t} &\left\{\begin{split}
+            & Ax\ge b,\\
+            & x \ge 0.\\
+           \end{split}\right.
+       \end{split}
+   \end{equation}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\begin{equation}\label{baitoandoingau}
+    \begin{split}
+        & {\rm{Max}} \langle b,y \rangle\\
+       \rm{s.t} & \left\{\begin{split}
+            &A^Ty \le c,\\
+            & y\ge 0.\\
+        \end{split}\right.
+    \end{split}
+\end{equation}
+\end{minipage}
+\begin{dn}
+    Cho bài toán QHTT dạng chuẩn \eqref{baitoangoc} và bài toán \eqref{baitoandoingau} được gọi là các \textbf{bài toán đối ngẫu } (hay còn gọi là \textbf{cặp đối ngẫu}).\\
+\end{dn}
+Bài toán \eqref{baitoangoc} gọi là \textit{bài toán gốc}, bài toán \eqref{baitoandoingau} gọi là bài toán đối ngẫu.\\
+  \item \textbf{Bài toán gốc và bài toán đối ngẫu dạng chỉnh tắc:}\\
+      \begin{minipage}[t]{0.48\linewidth}
+    Bài toán gốc
+   \begin{equation}
+       \begin{split}
+           &{\rm{Min (Max)}} \langle c,x \rangle\\
+          \rm{s.t} &\left\{\begin{split}
+            & Ax= b\\
+            & x \ge 0\\
+           \end{split}\right.
+       \end{split}
+   \end{equation}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+	Bài toán đối ngẫu
+	\begin{equation}
+		\begin{split}
+			&{\rm{Max (Min)}} \langle b,y \rangle\\
+		   \rm{s.t} & \left\{\begin{split}
+				& A^Ty \le (\ge) c\\
+				& y \hspace{0.1cm} \text{tự do}\\
+			\end{split}\right.
+		\end{split}
+	\end{equation}
+\end{minipage}
+\item\textbf{Các tính chất của cặp bài toán đối ngẫu}
+\begin{dl}\label{doingauyeu}
+(Đối ngẫu yếu) Nếu $x$ là một phương án bất kì của bài toán gốc \eqref{baitoangoc} và $y$ là phương án là một phương án bất kì của bài toán đối ngẫu \eqref{baitoandoingau} thì $f(x)\ge g(y) $.
+    \end{dl}
+    \begin{cm}
+        Cho $x$ là phương án của bài toán gốc \eqref{baitoangoc} và $y$ là phương án của bài toán đối ngẫu \eqref{baitoandoingau}, nên $Ax \ge b, A^Ty \le c, x\ge 0, y\ge 0$\\
+        Từ đó ta có: $f(x)=(c,x)\ge (A^Ty,x)=(y,Ax) \ge(y,b)= g(y)$.\\
+    \end{cm}
+    \begin{dl}
+        Nếu $x^*$ là phương án bất kì của bài toán gốc \eqref{baitoangoc} và $y^*$ là phương án bất kì của bài toán đối ngẫu (\eqref{baitoandoingau} và có $f(x^*)=g(y^*)$ thì $x^*$ là phương án tối ưu của bài toán gốc \eqref{baitoangoc} và $y^*$ là phương án tối ưu của bài toán đối ngẫu \eqref{baitoandoingau}.\\
+    \end{dl}
+    \begin{cm}
+        Giả sử $x$  là một phương án bất kì của bài toán gốc \eqref{baitoangoc}, theo định lý \eqref{doingauyeu} ta có $f(x)\ge g(y^*)$. Theo giả thiết, $f(x^*)=g(y^*)$, vậy $f(x)\ge f(x^*)$. Vậy $x$ là phương án tối ưu của bài toán \eqref{baitoangoc}.\\
+        Tương tự, $y^*$ là phương án tối ưu của bài toán \eqref{baitoandoingau}.
+    \end{cm}
+\begin{dl}
+        (Đối ngẫu mạnh) \\
+      a) Nếu bài toán gốc có phương án tối ưu $x^*$ thì bài toán đối ngẫu cũng có phương án tối ưu $y^*$ và ngược lại, đồng thời $f(x^*)=g(y^*)$.\\
+      b) Nếu hàm mục tiêu của bài toán gốc không bị chặn dưới thì bài toán đối ngẫu không có phương án.\\
+        Nếu hàm mục tiêu của bài toán đối ngẫu không bị chặn trên thì bài toán gốc không có phương án .
+    \end{dl}
+\begin{cm}
+    
+\end{cm}
+\begin{hq}
+        Đối với mỗi cặp bài toán quy hoạch đối ngẫu chỉ có thể xảy ra một trong ba khả năng loại trừ nhau sau đây:\\
+        a) Bài toán gốc và bài toán đối ngẫu đều không có phương án.\\
+        b) Bài toán gốc và bài toán đối ngẫu đều có phương. Khi đó cả hai bài toán đều có phương án tối ưu và giá trị tối ưu hàm mục tiêu của hai bài toán là bằng nhau.\\
+        c) Một bài toán có phương án và bài toán còn lại không có phương án. Khi đó, bài toán có phương án sẽ không có phương án tối ưu và hàm mục tiêu của bài toán đó không bị chặn trong miền ràng buộc.
+    \end{hq}
+    \begin{hq}
+        Điều kiện cần và đủ để cặp phương án tối ưu $x^*,y^*$ là phương án tối ưu của cặp bài toán đối ngẫu \eqref{baitoangoc},\eqref{baitoandoingau} là $c^Tx^*=b^Ty^*$.
+    \end{hq}
+    \begin{dl}\label{dl1.4}
+        (Độ lệch bù yếu) Giả sử $x \in R^n$ là phương án của bài toán gốc \eqref{baitoangoc}, $y\in R^m$ là phương án tối ưu của bài toán đối ngẫu \eqref{baitoandoingau}. Khi đó, điều kiện cần và đủ để $x$ và $y$ là phương án tối ưu của các bài toán tương ứng là :\\
+        $(a_{i1}x_ +a_{in}x_n -b_i)y_i=0 (\forall {i=1,..m})\label{1.4.1}$\\
+        $(c_j-(a_{1j} y_1+...a_{mj}y_m))x_j=0 (\forall{j=1,..n})  $\label{1.4.2}\\   
+    \end{dl}
+    \begin{cm}
+        
+    \end{cm}
+    \item \textbf{Tìm phương án tối ưu của cặp đối ngẫu}\\
+    Nếu biết phương án tối ưu của bài toán gốc, vận dụng lý thuyết đối ngẫu ta có thể suy ra phương án tối ưu của bài toán đối ngẫu tương ứng mà không cần giải nó.\\
+    \textbf{\textit{Chú ý:}} Điều kiện \eqref{1.4.1} của định lý \eqref{dl1.4} cho ta kết quả:\\
+    \begin{itemize}
+        \item Nếu $y_i \ge 0 $ thì $\sum_{j=1}^n a_{in}x_n=b_i.$\\
+        \item Nếu $\sum_{j=1}^n a_{in}x_n >b_i$ thì $y_i=0$.\\ 
+    \end{itemize}
+    Điều kiện \eqref{1.4.2} cho ta kết quả:\\
+    \begin{itemize}
+        \item Nếu $x_j \ge 0$ thì $\sum_{i=1}^m a_{mj}y_m=c_j.$\\
+        \item Nếu $\sum_{i=1}^m a_{mj}y_m<c_j$ thì $x_j=0$.\\
+    \end{itemize}
+    \textit{Nhắc lại} Ràng buộc chặt là ràng buộc xảy ra dấu =. Ràng buộc lỏng là ràng buộc xảy ra dấu bất đẳng thức thực.\\
+    Định lý độ lệch bù yếu còn có thể phát biểu lại như sau:\\
+    $x^*,y^*$ là phương án tối ưu của bài toán gốc và bài toán đối ngẫu khi và chỉ khi $x^*,y^*$ là phương án của bài toán tương ứng và thỏa mãn điều kiện nếu một ràng buộc là lỏng (tức là bị lệch) thì ràng buộc đối ngẫu tương ứng với nó phải chặt (tức là bù lại ).\\
+    \begin{bd}
+        Đối với một cặp bài toán đối ngẫu, nếu một ràng buộc là lỏng đối với đối với một phương án tối ưu của bài toán này thì ràng buộc đối ngẫu của nó phải chặt đối với phương án tối ưu của bài toán kia.\\
+    \end{bd}
+    \begin{dl}
+        (Độ lệch bù mạnh) Nếu cặp bài toán đối ngẫu có phương án tối ưu thì tồn tại một cặp phương án tối ưu thỏa mãn điều kiện nếu một ràng buộc là chặt thì ràng buộc đối ngẫu của nó phải là lỏng.\\
+    \end{dl}
+    \textbf{Khi biết phương án tối ưu của bài toán gốc.}\\
+    \begin{hq}
+        Cho bài toán quy hoạch tuyến tính dạng chính tắc có phương án tối ưu $x^*$ ứng với cơ sở $J=\{1,2...,m\}$. $A_j$ là ma trận gồm các cột cơ sở $\{A_i|i\in J\}$. Phương án tối ưu $y^*$ của bài toán đối ngẫu là nghiệm của hệ phương trình $A^T_J y^*=c_J$ với $c_J$ là vecto các thành phần của $\{c_i| i\in J\}$.
+    \end{hq}
+\textbf{Khi có bảng đơn hình của bài toán gốc}
+ \begin{hq}
+        Cho bài toán gốc dạng chính tắc, phương án xuất phát có hệ vecto cơ sở liên kết đơn vị:\\
+        $$B=\{A_{k_1},...A_{k_m}\}=\{e_1,...e_m\} $$\\
+        Ở đây $e_i=[0,0,..,i,]$ là đơn vị thứ $i$. Phương án tối ưu có ước lượng $\Delta_1,...\Delta_n$. Phương án tối ưu của bài toán đối ngẫu là:\\
+        $$y^*=(\Delta_{k_1}+c_{k_1},\Delta_{k_2}+c_{k_2},...,\Delta_{k_m}+c_{k_m})^T$$
+    \end{hq}
+    \end{itemize}
+\subsubsection{Phương pháp đơn hình đối ngẫu:}
+\begin{itemize}
+    \item \textbf{Cơ sở chấp nhận được đối ngẫu:}\\
+    \begin{equation}\label{P}
+     \begin{split}
+          & {\rm{Min}} \langle c,x \rangle\\
+          \rm{s.t} &\left\{\begin{split}
+            & Ax= b,\\
+            & x \ge 0.\\
+           \end{split}\right.
+       \end{split}
+   \end{equation}
+    Giả thiết rank $A=m$. Giả sử, $\{A_j|j\in J\} $ là hệ $m$ vecto độcw lập tuyến tính của A, gọi là hệ vecto cơ sở. J là tập chỉ số cơ sở. Ký hiệu $A_j$ lập nên từ các veto cơ sở, gọi là ma trận cơ sở.\\
+    Ký hiệu $H=\{1,2,...,n\} \setminus J $. Phương án cơ sở $(x_J,x_H)$ của bài toán \eqref{P} tương ứng với cơ sở $J$ thu được bằng cách giải hệ phương trình tuyến tính $x_H=0, A_Jx_J=b$. Nghĩa là $x_H=0; x_J A_J^{-1} b$.\\
+    \begin{dn}
+        a) Ta gọi cơ sở $J$ là\textit{ chấp nhận được gốc} nếu phương án cơ sở tương ứng với nó là phương án chấp nhận được, tức là nếu $x_J=A_J^{-1}b \ge 0$.\\
+        b) Nếu phương án cơ sở tương ứng với $J$ là phương án tối ưu thì $J$ sẽ gọi là \textit{cơ sở tối ưu}.\\
+    \end{dn}
+    Xét bài toán đối ngẫu với bài toán \eqref{P}
+    \begin{equation}\label{Q}
+    \begin{split}
+        & {\rm{Max}} \langle b,y \rangle\\
+       \rm{s.t} & \left\{\begin{split}
+            &A^Ty \le c,\\
+            & y \hspace{0.1cm}\text{tự do}\\
+        \end{split}\right.
+    \end{split}
+\end{equation}
+\begin{dn}
+        a) Ta gọi phương án \textit{ cơ sở đối ngẫu} tương ứng với cơ sở J là vecto $y$ thu được bằng cách giải hệ phương trình tuyến tính $A^T_J y=c_J$ (nghĩa là $y=(A^T_J)^{-1}c_J$).\\
+        b) Cơ sở J được gọi là \textit{cơ sở chấp nhận được đối ngẫu} nếu phương án cơ sở đối ngẫu ứng với nó là phương án chấp nhận được của bài toán đối ngẫu.
+    \end{dn}
+    Nếu $J$ là cơ sở chấp nhận được đối ngẫu thì phương án cơ sở đối ngẫu tương ứng $y=(A^T_J)^{-1}c_J$ phải thỏa mãn ràng buộc $A^Ty\le c$, nghĩa là $$A^T(A^T_J)^{-1}c_J-c \le 0$$.\\
+    Ta xét $z^k$ từ biểu diễn $A^T=z^kA^T_J$, hay $z^k=A^T(A^T_J)^{-1}$.\\
+    Vậy $J$ là cơ sở chấp nhận được đối ngẫu nếu $z_Hc_J-c\le 0$, hay  $\sum_{j\in J}z_{jk}c_j-c_k\le 0 (\forall k \notin J)$ và $=0$ nếu $k\in J$. Đây là tiêu chuẩn tối ưu của cơ sở $J$. Ta suy ra khẳng định sau đây.\\
+    \begin{md}
+        Nếu cơ sở $J$ vừa chấp nhận được gốc vừa chấp nhận được đối ngẫu, thì nó là cơ sở tối ưu của bài toán gốc.
+    \end{md}
+    \item \textbf{Thuật toán đơn hình đối ngẫu}
+    Giả sử J là cơ sở chấp nhận được đối ngẫu. Giả thiết rằng $J=\{1,2,...,m\}$. Ta lập bảng giống như bảng đơn hình cho bài toán gốc với cơ sở J.\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+       \hline
+       Cơ sở  & Hệ số& Giả PA& $x_1$ &$x_2$ & \ldots &$x_k$ &\ldots &$x_n$  \\
+       \hline
+        $x_J$ & $c_J$ &$x_J^0$ & $c_1$ & $c_2$ & \ldots &$c_k$ &\ldots &$c_n$\\
+        $x_1$ & $c_1$ & $x_1$ &$z_{11}$ & $z_{12}$ &\ldots &$z_{1k}$ &\ldots &$c_{1n}$\\
+        $x_2$ &$c_2$ &$x_2$ &$z_{21}$ &$z_{22}$ & \ldots &$z_{2k}$ & \ldots &$z_{2n}$\\
+        \vdots&\vdots & \vdots & \vdots &\vdots & \vdots &\vdots &\vdots & \vdots \\
+        $x_m$ &$c_m$ &$x_m$ &$z_{m1}$ &$z_{m2}$ &\ldots &$z_{mk}$ &\ldots &$z_{mn}$\\
+        \hline
+        && $f(x)$ & $\Delta_1$ &$\Delta_2$ &\ldots &$\Delta_k$ & \ldots & $\Delta_n$\\
+        \hline
+        
+    \end{tabular}\\
+    Ý nghĩa của các ký hiệu giống như là bảng đơn hình. Chỉ có cột giả phương án là khác, cột này được lấy từ hệ thống \\
+    $$x_0^J=A_J^{-1}b$$\\
+    Lưu ý hàng ước lượng $\Delta_k$ đề không dương vì giả thiết $J$ là cơ sở chấp nhận được đối ngẫu.\\
+    \textbf{\textit{THUẬT TOÁN:}}\\
+    \textbf{Bước 1} Tìm giải phương án $J,A_J, A_J^{-1}$, giả phương án án $x_J^0,Z_J.$\\
+    \textbf{Bước 2} (Kiếm tra tiêu chuẩn tối ưu)\\
+    Cơ sở đang xét sẽ là tối ưu nếu mọi thành phần $x_j$ của cột giả phương án đều $x_J \ge 0$.Vì khi đó nó là cơ sở chấp nhận được gốc vì thế tối ưu.\\
+    a) Nếu $x_j\ge 0, \forall j \in J$ thì giả phương án ($x_J,x_H$) là phương án tối ưu, thuật toán dừng.\\
+    b) Nếu tồn tại $j \in J$ mà $x_j <0 $ thì ta chọn chỉ số r ứng với \textbf{$x_r=min \{x_j, j \in J\}$}.\\ 
+    \textbf{Bước 3} Kiểm tra điều kiện để tập phương án khác rỗng.\\
+    a) Nếu có dòng ứng với $x_j <0 (j \in J)$ mà $z_{jk}\ge 0 $ với mọi $k=1,2..,n$.\\
+    b)Nếu trên mỗi dòng ứng với $x_j <0$ đều tìm được ít nhất một phần tử $z_{jk} <0$.Khi đó ta tiến hành một bước lặp đơn hình.\\
+    Tìm cột xoay thỏa mãn $\dfrac{\Delta_s}{z_{rs}}=min \{\dfrac{\Delta_j}{z_{rj}}; z_{rj} <0\}$.\\
+    \textbf{Bước 4} Thực hiện xoay hàng và cột để thiết lập bảng đơn hình mới. Cách làm giống như cách làm phương pháp đơn hình.\\
+    Lặp lại bước 2.
+    \begin{vd}
+         Giải bài toán quy hoạch tuyến tính chuẩn tắc\\
+    \begin{equation*}
+        \begin{split}
+            &f(x)=15x_1+12x_2+10x_3 \longrightarrow min\\
+            & \left\{\begin{split}
+                &3x_1+4x_2+2x_3 \ge 160\\
+                &x_1 +2x_2 +3 x_3 \ge 140\\
+                & x_1,x_2,x_3 \ge 0 \\
+            \end{split}\right.
+        \end{split}
+    \end{equation*}
+    Ta đưa bài toán về dạng chính tắc và đổi dấu hai vế ràng buộc đẳng thức.
+    Ta nhận được bài toán như sau:\\
+    \begin{equation*}
+        \begin{split}
+            &f(x)=15x_1+12x_2+10x_3 \longrightarrow min\\
+            & \left\{\begin{split}
+                &-3x_1-4x_2-2x_3 +x_4 = 160\\
+                &-x_1 -2x_2 -3x_3 
+ +x_5 = 140\\
+                & x_1,x_2,x_3,x_4,x_5 \ge 0 \\
+            \end{split}\right.
+        \end{split}
+    \end{equation*}
+    Từ đay ta có được giả phương án ban đầu là $x^0=(0,0,0,-160,-140)^T, f_0=f(x^0)=0$.
+
+    Ta lập được bảng đơn hình sau:\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+       \hline
+       Cơ sở  & Hệ số & Giả PA& $x_1$ & $x_2$ & $x_3$ &$x_4$ & $x_5$ \\
+       \hline
+        $x_J$ & $c_J$ & $x_J^0$ & $15$ &$12$ &$10$ &$0$ &$0$ \\
+        \hline
+        $x_4$ & $0$ & $-160^*$ & $-3$ &$-4^*$ &$-2$ &$1$ &$0$\\
+        $x_5$ & $0$ & $-140$ &$-1$ &$-2$ &$-3$ &$0$ &$1$\\
+        \hline
+        &Bảng 1 & $0$ & $-15$ &$-12$ &$-10$ &$0$ &$0$\\
+        \hline
+        $x_2$& $12$ &$40$ & $3/4$ &$1$ &$1/2$ &$-1/4$ &$0$\\
+        $x_5$ &$0$ & $-60$ &$1/2$ &$0$ &$-2^*$ &$-1/2$ &$1$\\
+        \hline
+        &Bảng 2& $480$ &$-6$ &$0$ &$-4$ &$-3$ &$0$\\
+        \hline
+        $x_2$ &$12$ &$25$ &$7/8$ & $1$ &$0$ &$0 $ &$0$\\
+        $x_3$ &$10$ &$30$ &$-1/4$ &$0$ &$1$ &$1/4$ &$-1/2$\\
+        \hline
+        &Bảng 3& $600$ &$-7$ &$0 $ &$0$ &$-2$ &$-2$\\
+        \hline
+    \end{tabular}\\
+      Trong bảng 1, cột giả phương án có phần tử âm, nên ta chưa nhận được phương án tối ưu. Ta chọn dòng $x_4$  ( tương ứng với số âm nhỏ nhất $-160$) làm dòng quay. Cột quay là cột $x_2$ (tương ứng với số âm nhỏ nhất trong ba tỉ số $\frac{-15}{3},\frac{-12}{-4},\frac{-10}{-2}$). Phần tử quay bằng $-4$. Biến đổi bảng này theo quy tắc đơn hình ta nhận được Bảng 2.\\
+    Trong Bảng 2,cột giả phương án vẫn còn phần tử âm. Ta chọn dòng $x_5$ làm dòng quay và chọn cột $x_3$ làm cột quay. Lúc này phần tử quay là $-2$. Ta tiếp tục biến đổi bảng đơn hình và nhận được Bảng 3. \\
+    Ở Bảng 3, mọi phần tử trong cột giả phương án đều dương nên ta nhận được phương án tối ưu: $x^*=(0,25,30)^T$ với $f_{\rm{min}}=600$.
+    \end{vd}
+    \item \textbf{Thuật toán đơn hình đối ngẫu khi chưa có cơ sở chấp nhận được đối ngẫu:}\\
+    Phương pháp đơn hình đối ngẫu luôn đòi hỏi biết một cơ sở đối ngẫu chấp nhận xuất phát. Nhưng đối với các bài toán không biết trước cơ sở chấp nhận được đối ngẫu bằng cách tìm cơ sở $J$ của ma trận $A$. Không mất tính tổng quát ta giả sử cơ sở này gồm m cột đầu tiên của ma trận $A,J=\{1,2...,m\}$.\\
+    Giả sử cơ sở $J$ không phải là chấp nhận được đối ngẫu (có thể cũng không chấp nhận được gốc).Để tìm cơ sở chấp nhận được đối ngẫu ta đưa thêm biến giả $x_0$ và thêm vào một ràng buộc dòng $i=0$:\\
+    $$x_0+x_{m+1}+x_{m+2}+...+x_n=M$$
+    trong đó $x_{m+1},x_{m+2},..x_n$ là thành phần ngoài cơ sở $J$ và $M$ là đủ lớn.\\
+    Ta có bài toán gốc khi thêm vào giả thiết trên được gọi là \textit{bài toán mở rộng}.\\
+    \begin{equation*}
+        \begin{split}
+            &F(x_0,x)=c^Tx \longrightarrow min\\
+            &\left\{\begin{split}
+                & x_0 + \sum_{j \notin J} x_j=M\\
+                &Ax=b\\
+                & x \ge 0\\
+            \end{split}\right.
+        \end{split}
+    \end{equation*}
+     Gọi $\overset{\sim}{A}$ là ma trân thêm dòng $i=0$ vào A. Lập bảng đơn hình đối ngẫu cho bài toán mở rộng với cơ sở $\overset{\sim}{J}=J \cup \{0\}$. Ma trận cơ sở $\overset{\sim}{A}_{\overset{\sim}{J}}$.\\
+Chú ý cột giả phương án $\overset{\sim}{x}_{\overset{\sim}{J}}=x_J+\alpha_JM.$Để tiện tính toán tách cột giả phương án thành hai cột ghi $x_J$ và $\alpha_J$ tương ứng.\\
+Giả sử $J$ không phải cơ sở chấp nhận được đối ngẫu. Ta thực hiện biến đổi bảng đơn hình với phần tử trụ $z_{0s}$ nghĩa là đưa $s$ vào và loại $0$ ra khỏi cơ sở. Bảng đơn hình đối ngẫu mới sẽ có dòng ước lượng $\overset{\sim}{\Delta_k}=\Delta_k- \Delta_s\le 0  (k=1,2...,n)$.\\
+Như vậy ta thu được bảng đơn hình đối ngẫu với cơ  chấp nhận được đối ngẫu nên ta có thể tiến hành giải theo các bước đơn hình đối ngẫu.\\
+Ta lưu ý trong khi giải không cần xác định cụ thể M mà chỉ xem $M$ đủ lớn.\\
+Thuật toán đơn hình đối ngẫu giải bài toán mở rộng sẽ kết thúc một trong cá trường hợp sau:\\
+    1) Bài toán mở rộng không có phương án. Khi đó bài toán xuất phát cũng không có phương án. Vì nếu bài toán ban đầu có phương án $x=(x_1,x_2,..x_n)^T$ thì $\overset{\sim}{x}=(x_0,x_1,..,x_n)^T$ với $x_0=M-x_1-x_2-...-x_n$ cũng là phương án của bài toán mở rộng.\\
+    2)Bài toán mở rộng có phương án tối ưu $\overset{\sim}{x}=(\overset{\sim}{x_0},\overset{\sim}{x_1},...,\overset{\sim}{x_n})^T$ và $x_0$là biến cơ sở. Trong trường hợp này hàm mục tiêu của bài toán mở rộng không phụ thuộc vào $M$. Do đó $(\overset{\sim}{x_0},\overset{\sim}{x_1},...,\overset{\sim}{x_n})^T$ là phương án tối ưu của bài toán ban đầu.\\
+
+        3) Bài toán mở rộng có phương án tối ưu $\overset{\sim}{x}=(\overset{\sim}{x_0},\overset{\sim}{x_1},...,\overset{\sim}{x_n})^T$ và $x_0$ không là biến cơ sở.Trong trường hợp này biến cơ sở phụ thuộc vào $M$. Nên có hai khả năng xảy ra:\\
+    a) Nếu giá trị hàm mục tiêu của bài toán mở rộng phụ thuộc vào $M$ thì khi $M 
+    \to +\propto $ giá trị hàm mục tiêu dần đến $-\propto$. Như vậy bài toán ban đầu có phương án chấp nhận được, nhưng hàm mục tiêu không bị chặn dưới nên bài toán ban đầu cũng không có nghiệm tối ưu.\\
+    b) Nếu giá trị hàm mục tiêu của bài toán mở rộng không phụ thuộc vào $M$ thì bài toán ban đầu có phương án tối ưu và tìm bằng cách bỏ $\overset{\sim}{x_0}$ và giảm dần $M$ cho đến khi một trong các $\overset{\sim}{x_0},\overset{\sim}{x_1},...,\overset{\sim}{x_n}$ trở thành $0$.\\
+    \item \textbf{Ví dụ}
+    Giải bài toán sau bằng phương pháp đơn hình đối ngẫu:\\
+    \begin{equation*}
+        \begin{split}
+            &f(x)=x_1+3x_2+x_4 -2x_6 \to min\\
+            &\left\{\begin{split}
+                &x_1+   x_4-3x_5+7x_6=-5\\
+                &   x_2-x_4+x_5-x_6=1\\
+                &x_3+3x_4+x_5-10x_6=8\\
+                &x_j \ge 0, j=1,...6\\
+            \end{split}\right.
+        \end{split}
+    \end{equation*}
+    Xét cơ sở $J=\{1,2,3\}$\\
+    Bảng đơn hình của cơ sở là\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \hline
+       Cơ sở  & Hệ số & Giả PA& $x_1$ &$x_2$ &$x_3$ &$x_4$ &$x_5$ &$x_6$ \\
+       \hline
+         $x_J$ & $c_J$ & $x_J^0$ &$1$ &$3$ &$0$ &$1$ &$0$ &$-2$\\
+         \hline
+         $x_1$ &$1$ &$-5$ &$ 1$ &$0$ &$0$ &$1$ &$-3$ &$7$\\
+         $x_2$ &$3$ &$1$ &$0$ &$1$ &$0$ &$-1$ &$1$ &$-1$\\
+         $x_3$ &$0$ &$8$ &$0$ &$0$ &$1$ &$3$ &$1$ &$-10$\\
+         \hline
+         &Bảng 1& $-2$ &$0$ &$0$ &$0$ &$-3$ &$0$ &$6$\\
+         \hline
+    \end{tabular}\\
+    Cơ sở $J$ không phải là cơ sở chấp nhận gốc vì $x_1=-5 <0$. Cũng không phải là cơ sở chấp nhận được đối ngẫu vì có $\Delta_6=6>0.$
+    Thiết lập bài toán mở rộng\\
+    \begin{equation*}
+        \begin{split}
+            &g(x)=0.x_0+x_1+3x_2+x_4 -2x_6 \to min\\
+            &\left\{\begin{split}
+                &x_0 +x_4+x_5+x_6=M \\           
+                &x_1+   x_4-3x_5+7x_6=-5\\
+                &   x_2-x_4+x_5-x_6=1\\
+                &x_3+3x_4+x_5-10x_6=8\\
+                &x_j \ge 0, j=0,1,...6\\
+            \end{split}\right.
+        \end{split}
+    \end{equation*}
+    Ta có $\overset{\sim}{J}=\{0,1,2,3\}$ là cơ sở bài toán mở rộng.\\
+
+    Bảng đơn hình tương ứng:\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+         Cơ sở &Hệ số &Giả &PA &$x_0$&$x_1$ & $x_2$ &$x_3$ &$x_4$ & $x_5$ &$x_6$ \\
+         \hline
+         $x_J$ &$c_J$& $x_J^0$ &$M$ &$0$ &$1$ &$3$ &$0$ &$1$ &$1$ &$-2$\\
+         \hline
+         $x_0$ &$1$ &$0$ &$1$ &$1$ &$0$ &$0$ &$0$ &$1$ &$1$ &$1$\\
+         $x_1$ &$1$ &$-5$ &$0$ & $0$ &$1$ &$3$ &$0$ &$1$ &$1$ &$-2$\\
+         $x_2$ & $3$ &$1$ &$0$ &$0$ &$0$ &$1$ &$0$ &$-1$ &$1$ &$-1$\\
+         $x_3$ &$0$ &$8$ &$0$ &$0$ &$0$ &$0$ &$1$ &$3$ &$1$ &$-10$\\
+         \hline
+         &Bảng 2& &&$0$ &$0$ &$0$ &$0$ &$-3$ &$0$ &$6$\\
+         \hline
+    \end{tabular}\\
+    
+    Thực hiện phép biến đổi bảng đơn hình, đưa $x_0$ ra khỏi cơ sở, đưa $x_6$ vào thay cho $x_0$, ta được bảng đơn hình\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+         Cơ sở &Hệ số &Giả &PA &$x_0$&$x_1$ & $x_2$ &$x_3$ &$x_4$ & $x_5$ &$x_6$ \\
+         \hline
+         $x_J$ &$c_J$& $x_J^0$ &$M$ &$0$ &$1$ &$3$ &$0$ &$1$ &$1$ &$-2$\\
+         \hline
+         $x_6$&$-2$ &$0$ &$1$ &$1$ &$0$ &$0$ &$0$ &$1$ &$1$ &$1$ \\
+         $x_1$& $1$ &$-5$ &$-7$ &$-7$ &$1$ &$0$ &$0$ &$-6$ &$-10$ &$0$\\
+         $x_2$ &$3$ &$1$ &$1$ &$1$ &$0 $ &$1$ &$0$ &$0$ &$2$ &$0$\\
+         $x_3$ &$0$ &$8$ &$10$ &$10$ &$0$ &$0$ &$1$ &$13$ &$11$ &$0$\\
+         \hline
+         &Bảng 3& &&$-6$ &$0$ &$0$ &$0$ &$-9$ &$-6$ &$0$\\
+         \hline
+    \end{tabular}\\
+    Tất cả ước lượng thỏa mãn $\Delta_k \le 0$. Vậy $\overset{\sim}{J}=\{6,1,2,3$ là cơ sở chấp nhận được đối ngẫu.Bắt đầu đi giải bài toán theo thuật toán đơn hình đối ngẫu.\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+       Cơ sở   & Hệ số& Giả & PA&$x_0$&$x_1$ & $x_2$ & $x_3$ &$x_4$ &$x_5$ &$x_6$ \\
+       \hline
+        $x_J$  &$c_J$ &$x_J^0$ &$M$ &$0$ &$1$ &$3$ &$0$ &$1$ &$1$ &$-2$\\
+        \hline
+        $x_6$ &$-2$ &$0$ &$1$ &$1$ &$0$ &$0$ &$0$ &$1$ &$1$ &$1$\\
+        $x_1$ &$1$ & $-5^*$ &$ -7^*$ &$-7$ & $1$ &$0$ &$0$ &$-6$ &$-10^*$ &$0$\\
+        $x_2$ &$3$ &$1$ &$1$ &$1$  &$0$ &$1$ &$0$ &$0$ &$2$ &$0$\\
+        $x_3$ &$0$ &$8$ &$10$ & $10$ &$0$ &$0$ &$1$ &$13$ &$11$  &$0$\\
+        \hline
+        & Bảng 4& & &$-6$ &$0$ &$0$ &$0$ &$-9$ &$-6$ &$0$\\
+        \hline
+        $x_6$ &$-2$ &$-1/2$ &$3/10$ &$3/10$ &$1/10$ &$0$ &$0$ &$4/10$ &$0$ &$1$\\
+        $x_5$ &$0$ &$-1/2$ &$7/10$ &$7/10$ &$-1/10$ &$0$ &$0$ &$6/10$ &$1$ &$0$\\
+        $x_2$ &$3$ &$0$ &$-4/10^*$ &$-4/10$ &$2/10$ &$1$ &$0$ &$-12/10^*$ &$0$ &$0$\\
+        $x_3$ &$0$ &$5/2$ &$23/10$ &$23/10$ &$11/10$ &$0$ &$1$ &$64/10$ &$0$ &$0$\\
+        \hline
+        &Bảng 5&&&$-18/10$ &$-6/10$ &$0$ &$0$ &$-54/10$ &$0$ &$0$\\
+        \hline
+        \end{tabular}
+    Sau khi thực hiện tính toán theo quy tắc thuật toán đơn hình đối ngẫu, ta thu được bảng đơn hình cuối.\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+         Cơ sở &Hệ số &Giả &PA &$x_0$&$x_1$ & $x_2$ &$x_3$ &$x_4$ & $x_5$ &$x_6$ \\
+         \hline
+         $x_J$ &$c_J$& $x_J^0$ &$M$ &$0$ &$1$ &$3$ &$0$ &$1$ &$1$ &$-2$\\
+         \hline
+        $x_6$ & $-2$ &$-1/2$ &$3/10$ &$3/10$ &$1/10$ &$0$ &$0$ &$4/10$ &$0$ &$1$  \\
+         $x_5$& $0$ &$1/2$ &$1/2$ &$7/10$ &$-1/10$ &$0$ &$0$ &$0$ &$1$ &$0$\\
+         $x_4$ &$1$ &$0$ &$1/3$ &$-4/10$ &$2/10$ &$1$ &$0$ &$1$ &$0$ &$0$\\
+         $x_3$ &$0$ &$5/2$ &$1/6$ &$0$ &$0$ &$-15/10$ &$-54/2$ &$0$ &$0$ &$0$ \\
+         \hline
+         &Bảng 4&$1$&$0$ &$0$ &$-15/10$ &$-54/2$ &$0$ &$0$ &$0$ &$0$\\
+         \hline
+    \end{tabular}\\
+
+    Ta thấy các phần tử trong cột giả phương án đều không âm khi $M \ge 3$.\\
+    $$\overset{\sim}{x_6}=\frac{-1}{2}+\frac{1}{6}M= \frac{1}{6}(M-3)\ge 0$$\\
+    $$\overset{\sim}{x_5}=\frac{1}{2}+\frac{1}{2}M\ge 0$$\\    
+    $$\overset{\sim}{x_4}=\frac{1}{3}M\ge 0, \overset{\sim}{x_3}=\frac{5}{2}+\frac{1}{6}M\ge 0$$\\
+    Khi $M\ge 0$ bài toán mở rộng có phương án tối ưu $\overset{\sim}{x}=(0,0,\overset{\sim}{x_3},\overset{\sim}{x_4},\overset{\sim}{x_5}, \overset{\sim}{x_6})^T$. Lấy $M=3$ ta được phương án tối ưu của bai toán gốc $x^*=(0,0,3,1,2,0,0^T$ và $f(x^*)=1$.\\
+    
+\end{itemize}
+\subsubsection{ Phương pháp đơn hình đối ngẫu từ vựng }
+\begin{itemize}
+    \item \textbf{So sánh theo nghĩa từ vựng}\\
+    \begin{dn}
+         Vecto $X=(x_1,x_2,...x_n)$ được gọi là dương từ vựng ($X >0$) nếu $X \ne (0,0,..0)$ và thành phần đầu tiên khác 0 là dương.\\ 
+    \end{dn}
+     \begin{itemize}
+    \item Vecto $X$ gọi là lớn hơn từ vựng vecto $Y$ ( ký hiệu $X>Y$) nếu $X-Y>0$.\\ 
+    \item Vecto $X$ gọi là không nhỏ hơn từ vựng vecto $Y$ ( $X\ge Y$) nếu $X-Y \ge 0$.\\
+    \item $X$ gọi là âm từ vừng nếu $-X >0$.\\
+    \item Tương tự ta có định nghĩa cho $X\le 0, X<Y, X\le Y$.\\
+    
+\end{itemize}
+\begin{dn}
+    Phương án $x^*=(x_1^*,...x_n^*)^T$ là phương án tối ưu từ vựng (phương án $l$-tối ưu) nếu với mọi phương án ta có:\\
+    $$x^*=(x_1^*,...x_n^*)^T\ge x=(x_1,...,x_n)^T$$
+\end{dn}
+Vậy để tìm phương án tối ưu từ vựng của bài toán Tối ưu tuyến tính ta áp dụng thuật toán đơn hình đối ngẫu từ vựng tức là phương pháp đơn hình đối ngẫu với bảng đơn hình xuất phát có các cột là dương từ vựng.\\
+Phương pháp đơn hình đối ngẫu từ vựng này sẽ được áp dụng để giải các bài toán tối ưu tuyến tính nguyên với Thuật toán Gomory.\\
+\end{itemize}
+
 
 \chapter{Bài toán quy hoạch tuyến tính có nghiệm nguyên}
 
