@@ -1502,31 +1502,542 @@ Vậy để tìm phương án tối ưu từ vựng của bài toán Tối ưu t
 Phương pháp đơn hình đối ngẫu từ vựng này sẽ được áp dụng để giải các bài toán tối ưu tuyến tính nguyên với Thuật toán Gomory.\\
 \end{itemize}
 
+\chapter{Bài toán tối ưu tuyến tính có nghiệm nguyên}
+Thực tế hiện nay cho thấy rằng việc tìm kết quả của các bài toán tối ưu tuyến tính với các biến ràng buộc là số thực là chưa đủ. Nhiều bài toán Quy hoạch tuyến tính đòi hỏi phải tìm được nghiệm là các biến nguyên, được gọi là mô hình tối ưu tuyến tính nguyên hay Bài toán tối ưu tuyến tính nguyên. Ở chương này chúng tôi sẽ giới thiệu về bài toán và phương pháp giải bài toán tối ưu tuyến tính nguyên với  thuật toán lát cắt Gomory và thuật toán nhánh cận Land-Doig.
 
-\chapter{Bài toán quy hoạch tuyến tính có nghiệm nguyên}
+\section{Giới thiệu bài toán tối ưu nguyên}
+Bài toán Tối ưu nguyên có dạng chuẩn tắc:\\
+    \begin{equation}\label{BTN}
+     \begin{split}
+          & {\rm{Min (Max)}} \langle c,x \rangle\\
+          \rm{s.t} &\left\{\begin{split}
+            & Ax\ge b,\\
+            & x_j \ge 0, j=1,2,...,n.\\
+            & x_j \text{nguyên}, j=1,2..,n_1 (n_1\le n).\\
+           \end{split}\right.
+       \end{split}
+   \end{equation}
+   \\
+   
+ Bài toán trên gọi là bài toán tối ưu nguyên. Nếu $n_1=n$ thì bài toán \eqref{BTN} gọi là bài toán nguyên hoàn toàn. Nếu $n_1 <n$ thì bài toán được gọi là bài toán tối ưu nguyên bộ phận.\\
+Rõ ràng bài toán có dạng giống như một bài toán tối ưu tuyến tính thông thường chỉ khác biệt ở điều kiện nguyên của biến. Thế thì, có cần thiết phải có một lý thuyết riêng để tìm nghiệm của bài toán tối ưu nguyên không hay vẫn có thể sử dụng các phương pháp giải như các bài toán tối ưu tuyến tính thông thường? Ta xét một ví dụ sau đây:\\
+
+\begin{equation*}
+    \begin{split}
+      \rm{Max}  & 2x_1+2x_2 \\
+      &\left\{\begin{split}
+          &2x_1+x_2 \le 8\\
+          & x_1+3x_2 \le 10\\
+          & x_1,x_2 \ge 0.\\
+      \end{split}\right.
+    \end{split}
+\end{equation*}
+Nếu giải bài toán thông thường, ta nhận được nghiệm $x_1=2.8,x_2=2$. Giả sử bài toán thêm điều kiện nghiệm nguyên, ta thử điều chỉnh nghiệm bằng cách làm tròn số từ nghiệm nhận được.\\
+Trường hợp nếu, làm tròn $x_1 \to 3, x_2 \to 3$, thì lúc này điểm $(x_1,x_2)$ không còn nằm trong miền chấp nhận được. Còn nếu làm tròn $x_1 \to 2, x_2 \to 2$, thì chưa biết còn thực sự đạt tối ưu hay chưa.\\
+Vì thế, cần phải có lý thuyết riêng để giải các bài toán tối ưu nguyên.
+\textcolor{red}{VẼ giùm cái hình ở đây}
 
 
-\section{Sự cần thiết phải nghiên cứu về bài toán quy hoach có nghiệm nguyên}
-
--Mô tả bằng các vi dụ
-
-\section{Lý thuyết về cách tìm nghiệm nguyên của bài toán Quy hoạch tuyến tính}
 
 
-\subsection{Sự cần thiết phải có một lý thuyết riêng}
+\section{Phương pháp Gomory}
+\subsection{ Giới thiệu về phương pháp Gomory}
+Ta xét bài toán tối ưu nguyên dạng chính tắc:\\
+\begin{equation}\label{BTNchinhtac}
+     \begin{split}
+          & {\rm{Min}} \langle c,x \rangle\\
+          \rm{s.t} &\left\{\begin{split}
+            & Ax= b,\\
+           & x_j \ge 0, j=1,2,...,n.\\
+            & x_j \text{nguyên}, j=1,2..,n_1 (n_1\le n).\\
+           \end{split}\right.
+       \end{split}
+   \end{equation}
+   Ta gọi:\\
+   $(L^N,C)$ là bài toán tối ưu nguyên.\\
+$L^N$ là miền xác định của bài toán.\\
+$X(L^N,C) $ là phương án tối ưu.\\
+   Ta có thể xem các bài toán tối ưu nguyên thành các trường hợp sau:\\
+   1) Bài toán tối ưu nguyên hoàn toàn và giá trị hàm mục tiêu nguyên.\\
+   2) Bài toán tối ưu nguyên hoàn toàn và giá trị mục tiêu không nguyên.\\
+   3) Bài toán tối ưu nguyên bộ phận và giá trị hàm mục tiêu nguyên.\\
+   4) Bài toán tối ưu nguyên bộ phận và giá trị hàm mục tiêu không nguyên\\
+   Do trường hợp thứ nhất có thể được phát triển từ trường hợp thứ hai, trường hợp thứ ba có thể phát triển được từ trường hợp thứ tư. Do đó, ở đây chúng tôi chỉ khảo sát trên bài toán ở dạng thứ hai và thứ tư.\\
+\subsection{ Tư tưởng về phương pháp cắt}
+Do không thể tìm nghiệm nguyên bằng cách làm tròn nghiệm từ một bài toán tối ưu thông thường. Vậy còn cách nào tìm nghiệm nguyên mà có thể liên hệ với bài toán tối ưu thông thường hay không? Có vài ý tưởng như sau:\\
 
-\subsection{Phương pháp Gomory}
+\begin{dl}
+   Giả sử $L$ là một đa diện lồi,$L^N$ là tập các điểm nguyên của nó, 
+$R\equiv V(L^N)$ là bao lồi tuyến tính của tập các điểm nguyên, khi đó:\\
 
-\subsubsection{Giới thiệu phương pháp và ý nghĩa}
+     1) $R\equiv V(L^N)$ là một đa diện nguyên (các đỉnh là điểm nguyên).\\
+     2) $R^N=L^N$.\\
+    3) Tập $R^\ast$ các phương án chấp nhận được của đa diện $R$ chứa trong $R^N$:\\
+    $$R^{\ast} \subseteq R^N$$.\\
+\end{dl}
+\begin{hq}
+     Giả sử $X(R,C)$  là phương án tựa tối ưu của bài toán  $(R,C)$, khi đó
+$X(R,C)$ cũng là phương án tối ưu của bài toán  $(L^N,C)$. Vì vậy để giải bài toán quy hoạch tuyến tính nguyên $(L^N,C)$ ta đi giải bài toán $(R,C)$.\\
+\end{hq}
+\begin{dl}
+ Giả sử $L$ là một đa diện lồi, $U$ là một đa diện lồi nguyên và $U^N= L^N$, khi đó :
+ $$U = R = V(L^N)$$
+    \end{dl}
+\begin{vd}Minh họa\\
+\begin{tabular}{|c|c|c|}
+    \hline
+     BÀI TOÁN $(L^N,C)$  & BÀI TOÁN $(L,C)$& BÀI TOÁN $(R\equiv V(L^N,C)$  \\
+     \hline
+       $Max (x_1
++x_2)$  & $Max (x_1+x_2) $ &$Max (x_1+x_2)$ \\
+$2x_1+11x_2\le 38$ & $2x_1+11x_2 \le 38$  \quad (a) & $x_2\le 3$\\
+$x_1+x_2\le 7$ &$x_1+x_2\le 7$\quad (b) & $x_1+x_2\le 5$\\
+$4x_1-5x_2\le 5$ & $4x_1-5x_2\le 5$\quad (c) & $x_1-x_2\le 1$\\
+$x_j\ge 0$ & $x_j\ge 0$ & $x_j\ge 0$\\
+$x_j$ nguyên & &\\
+\hline 
+$Max= 5$& $Max=7$ &$Max=5$\\
+Tối ưu là 2 điểm & Tối ưu là một đoạn & Tối ưu là đoạn\\
+$(2;3);(3;2)$&$[(\frac{13}{3},\frac{8}{3}); (\frac{40}{9};\frac{23}{9})]$&$[(2;3);(3;2)]$\\
+\hline
+    \end{tabular}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\linewidth]{ảnh 1.pdf}
+\end{figure}    
+\end{vd}
+Qua các định lý và hệ quả trên, đã từng có ý tưởng tìm nghiệm của bài toán tối ưu có miền xác định là một bao lồi $R$ để giải bài toán tối ưu nguyên với miền xác định $L^N$. Tuy nhiên, việc tìm được một bao lồi $R$ để thiết lập bài toán lại là một vấn đề khó giải quyết. Do đó, cần có một thuật toán khác hữu hiệu hơn.\\ 
+\begin{itemize}
+    \item \textbf{Khái niệm lát cắt đúng}
+    Giả sử bài toán $(L^N,C)$ là bài toán quy hoạch nguyên nào đó và phương án tựa tối 
+ưu của bài toán quy hoạch tuyến tính tương ứng $X(L,C)$ không thoả mãn điều kiện 
+nguyên, tức là $X(L,C) \notin  L^N$. Khi đó bất đẳng thức:
+    $$\sum _j a_jx_j \le \beta$$\label{latcat}\\
+    được gọi là lát cắt đúng nếu thỏa mãn hai điều kiện:\\
+    1) Điều kiện cắt: $x$ không thỏa mãn điều kiện \eqref{latcat}, tức là $Ax > \beta$.\\
+    2) Điều kiện đúng: nếu $X(L,C)$ là phương án của bài toán tối ưu nguyên thì $X(L,C)$ thỏa mãn điều kiện \eqref{latcat}, tức là 
+ $L^N \subset \{X\mid aX\le \beta\}$.\\
+    Nói cách khác, lát cắt thêm vào sẽ không cắt đi một phương án nguyên nào của bài toán.\\
+    
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\linewidth]{anh2.pdf}
+       
+    \end{figure}
+    \newpage
+\item \textbf{Tư tưởng phương pháp cắt của Danzig}
+    
+    Việc giải một bài toán $(L^N,C)$ là một quá trình gồm nhiều bước:\\
+a) Ở bước thứ $r$,  giải bài toán bài toán quy hoạch tuyến tính phụ 
+ $(L_r,C), r = 0,1,... 
+… \text{với}   L_0=L $\\
+b) Tập các điểm  nguyên của tất cả các đa diện lồi là như nhau:
+$$L_0^N=L_1^N=L_2^N=...=L_r^N=.......$$\\
+Do đó, nếu phương án tối ưu $X(L_r,C)$ của bài toán thoả mãn $(L_r,C)$ điều kiện 
+nguyên thì nó cũng là phương án tối ưu $X(L_0^N,C)$ của bài toán xuất phát $(L_0^N,C)$ và quá trình kết thúc.\\
+c)  Nếu $X(L_r,C)$ không thoả mãn điều kiện nguyên thì $X(L_r,C)$ không phải là 
+phương án của bài toán $X(L_{r+1},C)$, tức là $X(L_r,C)\notin L_{r+1}$.\\Chuyển từ bước $r$ sang bước $r+1$, tức là chuyển từ bài toán $(L_r,C)$ sang 
+ $(L_{r+1},C)$ khi $X(L_r,C)$ không nguyên được thực hiện nhờ một lát cắt đúng $a_rx \le \beta_r$\\
+Việc bổ sung lát cắt này vào ràng buộc của bài toán $(L_r,C)$ sẽ chuyển đa diện lồi $L_R$ thành $L_{r+1}$.\\
+    
+\end{itemize}
+\begin{nx}\label{nx2.1}
+    Phương pháp cắt có hai việc: xấp xỉ tuyến tính đúng nhiều bước đối với bài toán tối ưu nguyên và chuyển từ bước này sang bước khác bằng một lát cắt đúng. Ở đây tồn tại ba vấn đề cần giải quyết: xây dựng một lát cắt đúng, đảm bảo được tính hữu hạn của các bước lặp trong quá trình giải và số lượng lát cắt đúng không được tăng mãi.
+\end{nx}
+\subsection{ Thuật toán Gomory cho bài toán tối ưu nguyên hoàn toàn}
+Ở phần này, chúng tôi sẽ trình bày về thuật toán và tính hữu hạn của thuật toán Gomory đối với bài toán tối ưu nguyên hoàn toàn và giá trị hàm mục tiêu không nguyên.Thuật toán này sẽ giải quyết được cả ba vấn đề nêu ở Nhận xét \eqref{nx2.1} một cách hiệu quả.\\
+\subsubsection{Cơ sở lý thuyết}
+Ta xét bài toán tối ưu nguyên hoàn toàn:\\
+\begin{equation}\label{Gomory1}
+     \begin{split}
+          & {\rm{Max}} \langle c,x \rangle\\
+          \rm{s.t} &\left\{\begin{split}
+            & Ax= b,\\
+           & x_j \ge 0, j=1,2,...,n.\\
+            & x_j \text{nguyên}, j=1,2..,n.\\
+           \end{split}\right.
+       \end{split}
+   \end{equation}
+    Giả sử $X(L,C)$ là phương án  tối ưu của bài toán $(L,C)$, từ đó ta có thể biểu diễn các biến qua Các biến phi cơ sở:\\
+   \begin{equation}\label{2.4}
+       x_{i}=x_{i0} + \sum_{j \in N} x_{ij}(-x_j), i=\overline{0,m}.
+   \end{equation}
+    Giả sử $x$ là một số thực, ký hiệu $[x]$ là phần nguyên, (số nguyên lớn nhất không vượt quá $x), \{x\}=x-[x]$ là phần lẻ.\\
+    VD: $[-1.3]=-2, {-1.3}=0.7$.\\
+    \begin{dl}
+        Giả sử $X(L,C)$ có $x_{i0}$ không nguyên với $1\le i\le n$ và:\\
+        1)\begin{equation}\label{2.5}
+            z_i\equiv z_i(X)= -\{x_{i0}\} + \sum_{j \in \mathbb {N} }(-\{x_{ij}\})(-x_{j}), i=\overline{1,n}.
+        \end{equation} \\
+        2) $x$ là phương án của bài toán $(L^N,C)$.\\
+        Khi đó:\\
+        
+        a) \begin{equation}\label{2.6}
+            z_i \hspace{0.1cm} \text{nguyên}
+        \end{equation}
+        
+        b) \begin{equation}\label{2.7}
+            z_i \ge 0
+        \end{equation}
+        \end{dl}
+        \begin{cm}
+            a) Từ \eqref{2.4} ta có $x_i= [x_{i0}] + \{x_{i0}\}+\underset{j \in \mathbb {N} }{ \sum}([x_{ij}]+\{x_{ij}\})(-x_{j}) $\\
+    Kết hợp với \eqref{2.5} ta có $z_i= -x_i +      \underset{j \in \mathbb {N} }{ \sum}[x_{i0}] + ([x_{ij}])(-x_{ij}) $\\
+    Do $x_i,x_j$ nguyên nên suy ra $z_i$ nguyên.\\
+    \vspace{1cm}
+    b) Giả sử rằng $z< 0$ từ \eqref{2.5} ta có:\\
+    $z_i \equiv z_i (x)= -\{x_{i0}\} + \underset{j \in \mathbb {N} }{ \sum}(-\{x_{ij}\})(-x_{j})$.\\
+    Vì $ {-}\{x_{i0}\}<-1 ; x_j \ge 0  $ và  $ \{x_{ij}\} \in  [0,1)$  nên $ -1<z_i<0$ , tức là $z_i$ không nguyên.\\
+Điều này mâu thuẫn với chứng minh câu a), do đó $z_i \ge 0$ .
+        \end{cm}
+    \begin{hq}
+        Giả sử $X(L,C)$ không thoả mãn điều kiện nguyên, như vậy đối 
+với $i$ nào đó $(1\le i \le 0) \hspace{0.1cm} x_{i0}$ không nguyên . Khi đó các hệ thức \eqref{2.5}  và \eqref{2.7} xác định một lát cắt đúng.
+    \end{hq} 
+    \begin{cm}
+         a) Mọi phương án của bài toán $(L^N,C)$ đều thoả mãn \eqref{2.5} và \eqref{2.7} (trong chứng 
+minh định lý), do đó điều kiện đúng của lát cắt được thoả mãn. \\
+b) Đặt vào \eqref{2.5} phương án tối ưu không nguyên $X(L,C)$. Do $x_j (L,C)=0$, $j \in \mathbb {N}$ , 
+suy ra $z_i(X(L,C)= -\{ x_{i0}\} +0 \le 0 $ , trái với \eqref{2.7}, tức là điều kiện cắt thoả mãn.\\
+    \end{cm}
+    \textbf{Dấu hiệu bài toán không có lời giải:}\\
+    -Nếu bài toán $(L,C)$ không có lời giải vì hàm mục tiêu không bị chặn trên khúc lồi $L$ thì thuật toán Gomory không áp dụng được.\\
+-Thuật toán cũng không áp dụng được cho trường hợp bài toán $(L,C)$ có lời giải nhưng $l-\text{bài toán} \overline{(L,C)}$ không có lời giải. Điều đó dường như là tập hợp các phương án tối ưu của bài toán $(L,C)$ khác trống nhưng không bị chặn.\\
+-Về sau ta sẽ giả thiết:\\
+1) Hàm mục tiêu $x_0\equiv CX$ bị chặn trên L.\\
+2) Nếu tập hợp các phương án tối ưu của $(L,C)$ khác trống thì nó phải bị chặn, tức là nếu bài toán$(L,C)$ giải được thì bài toán $(L,C)$ cũng giải 
+được.\\
 
-\subsubsection{Các bước thực hiện của phương pháp}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{anh3.pdf}
+\caption{$\overline{(L,C)}$ không có lời giải}
+\end{figure}
+\subsubsection{ Thuật toán}
 
-\subsubsection{Ví dụ minh họa}
+\textbf{Bước 1:}\\
+Giải bài toán $(L,C)\equiv(L_0,C)$ đã cho bằng phương pháp đơn hình đối ngẫu.\\
+-Nếu bài toán $(L_0,C)$ không giải được thì bài toán $(L^N_0,C)$ cũng không giải được.\\
+- Nếu bài toán $(L_0,C)$ giải được và $X(L_,C)$ thỏa mãn điều kiện nguyên thì nó cũng là phương án tối ưu của bài toán $(L^N_0,C)$, còn nếu không giải được thì chuyển sang bước 2.\\
 
+\textbf{Bước 2:}
+Chọn dòng đầu tiên ứng với thành phần không nguyên:\\
+$k=min\{i\|i\in \{1,...,n\},x_{i0}^r \text{không nguyên}\}$ và xây dựng lát cắt đúng:\\
+$$   \begin{cases}\label{latcat}
+    x_{n+r+1}= -\{x_{k0}^r\} + \sum_{j\in N_r}(-\{x_{kj}^r\} )(-x_j)\\
+    x_{n+r+1} \ge 0\\
+    x_{n+r+1} \hspace{0.1cm} \text{nguyên}
+\end{cases}$$
+Ta thêm lắt cắt này vào bảng đơn hình $T_r$, sau đó tiếp tục thực hiện các bước tính toán theo thuật toán đơn hình đối ngẫu từ vựng cho bài toán $(L^N_{r+1}$.\\
 
-\subsection{Phương pháp Land-Doig}
+\textbf{Bước 3:}
+Sau khi tính toán với lát cắt nếu được phương án tối ưu thỏa mãn điều kiện nguyên thì thuật toán dừng lại. Nếu không thỏa mãn thì quay lại bước 2 cứ lần lượt như vậy thực hiện các bước lặp $r \ge 0$ cho đến khi thỏa mãn điều kiện.
+\textbf{Lưu ý:}\\
+Để tránh cho bảng đơn hình không bị có số dòng và cột không xác định, mỗi khi biến phụ tương ứng với lát cắt bị đưa vào cơ sở thì cột tương ứng của nó cũng được xóa khỏi bảng đơn hình.
+\subsubsection{Tính hữu hạn của thuật toán:}
+\begin{dl}
+Giả sử có các điều kiện sau:\\
+1) Tính nguyên của hàm mục tiêu $x_0\equiv CX$ được đảm bảo và $x_0$ được xét khi chọn dòng xây dựng lát cắt đúng.\\
+2) Một trong các khẳng định sau là đúng:\\
+i) Hàm mục tiêu $x_0$ bị chặn dưới trên $L_0$.\\ 
+ii) Bài toán $(L_0^N,C)$ có ít nhất một phương án $X'$.\\
+ Khi đó thuật toán Gomory thứ nhất kết thúc sau một số hữu hạn bước lặp lớn.
+ \end{dl}
+ Để chứng minh định lý ta chứng minh các bổ đề trước.\\
+ Giả sử
+$ X\overline{(L_r,C)}\equiv X^r \equiv (x_0^r, x_1^r,x_2^r,..x_n^r) $ . Kí hiệu $\overline{X^r}$  
+là giả phương án ứng với bảng $\overline{T_r}$  nhận được từ bảng $T_r$ sau khi loại khỏi cơ sở $x_{n+r+1}$  và xoá dòng tương ứng .\\
+ \begin{bd}
+     Ta có $X^r > \overline{X^r} \ge \overline{X^ {r+1}}$.\\
+\textbf{Chứng minh: }Bất đẳng thức đầu tiên suy ra từ công thức biến đổi bảng đơn hình và tính $l$-chuẩn của bảng đơn hình (cột đầu tiên của $T_r$ được tính theo công thức $R^r_0-\dfrac{(- \{x_{k0}^r\})}{(-\{x_{kl}^r\})} . R^r_l$; $R^r_l$ có số đầu tiên khác $0$ là dương). Bất đẳng thức thứ hai là do cột $0$ giảm khi dùng phương pháp đơn hình đối ngẫu từ vựng.\\
+    
+ \end{bd}
+  \begin{bd} Các số $x_{i} ^r (i=0,1,...,n)$ bị chặn dưới.\\
+    \textbf{Chứng minh} Với $i=1,...,n$ điều đó suy ra từ điều kiện không âm $x_j \ge 0 (j=1,...,n)$. Với $i=0$ (điều đó suy ra từ điều kiện 2 của định lý 2.4). Thật vậy, nếu i) là đúng thì bổ đề 2.2 hiển nhiên đúng. Nếu điều kiện ii) được thỏa mãn thì $X^{r} \ge X^{'}$ suy ra $x^{r} _0 \ge x_0 ^{'}$.
+        
+    \end{bd}
+    \begin{bd}
+        Nếu $X^r$ không thỏa mãn điều kiện nguyên và $x_p^r \equiv x_{p0}^r$ không nguyên thì:\\
+        $(x_0^r,x_1^r,...,x_{p-1}^r, [x_p^r])\ge (\overline{x^r_0},...,\overline{x^r_p})$.\\
+        \textbf{Chứng minh}\\
+    Giả sử $k=min\{i|i \in \{0,1,...,n\},x_{i0}^r \text{không nguyên} \}$, suy ra $k\ge p$.Giả sử:\\
+    $\dfrac{R_l^r}{\{x_{kl}^r\}} =lex min \{\dfrac{R_j^r}{\{x_{kj}^r\}}|j \in N_r,\{x_{kj}^r\} \ne 0\} $\\
+(dòng quay là lát cắt mới thêm) và $h(R_l^r) = min \{i|i \in (0,1,...,n);x_{il}^r\ne 0 \}$ (hàng đầu tiên của cột $R_l$ có hệ số $\ne 0$, cụ thể là $x_{hl}^r \ge 0$ do $R_l^r >0$).\\
+Vì $\{x_{kl}^r\} \ne 0 \rightarrow h(R_l^r)\le k\le p$. Có hai khả năng xảy ra:\\
+1) $h(R_l^r) \equiv q <p$.\\
+2) $h(R_l^r) \equiv q =p$.\\
+Trong trường hợp 1) theo quy tắc của $l$-phương pháp $\overline{x_q^r} < x_q^r $ vì\\
+$\overline{x_q^r}= x_q^r- \frac{\{x^r_{k0}\}}{\{x_{kl}^r\}}x_{ql}^r < x ^r_q $ (do $x_{ql}^r >0 )$, bổ đề được chứng minh.
+Nếu trường hợp 2) ta có $h(R_l^r)\equiv=k=$. Vì vậy $\overline{x^r_{i0}} = x^r_{i0}$ với $i<k= h(R^r_l)$ ( $h$ là chỉ số đầu tiên, $x_{hl}^r$ khác không) và $\overline{x^r_{k0}}= x^r_{k0}- \frac{\{x_{k0}^r\}}{\{x_{kl}^r\}}x_{kl}^r$.\\
+Vì $x_{kl}^r=X_{hl}^r >0$, nên $x_{kl}^r \ge \{x_{kl}^r\}$. Từ đó ta có:\\
+$\overline{x_{k0}^r} < x_{k0}^r - \{x_{k0}^r\}= [x_{k0}^r]$.\\
+Do $k=p$ nên bổ đề được chứng minh.\\
+    \end{bd}
+    \textbf{Chứng minh định lí 2.4}\\
+    Giả sử
+    \begin{equation}\label{2.8}
+      X^0,X^1,...,X^r,...\text{vô hạn}\\   
+    \end{equation}
+    Khi đó theo bổ đề 2.1 và 2.2 tồn tại $i_0, 0 \le i_0 \le n$ tồn tại $r_0 \ge 0$ và một dãy vô hạn:\\
+    \begin{equation}\label{2.9}
+        r_1<r_2<...,r_v<...(r_1>r_0)
+    \end{equation}\\
+    sao cho ta có:\\
+   \begin{equation}\label{2.10}
+       x_i^{r+1}=x_i^r; r \ge r_0; 0\le i\le i_0-1
+   \end{equation} 
+    \begin{equation}\label{2.11}
+        x_{i_0}^{r_v+1} <x_{i_0}^{r_v}, (v=1,2,...)
+    \end{equation}  \\
+    Từ bổ đề 2.1 và \eqref{2.9} ta có\\
+    \begin{equation}\label{2.12}
+        x_{i_0}^{r+1} \le x_{i_0}^r, r\ge r_0
+    \end{equation}\\
+    Từ \eqref{2.11} và (\eqref{2.12} và bổ đề 2.1, suy ra tồn tại số $r' >r_0$ và các số nguyên $z_0$ và $z_0+1$ sao cho:\\
+    \begin{equation}\label{2.13}
+        z_0<x_{i_0}^r< z_0+1 (r \ge r')
+    \end{equation}
+    Từ \eqref{2.12} và \eqref{2.13} và bổ đề 2.3 suy ra $x_{i_0}^{r+1}\le \overline{x_{i_0}^r}\ge [x_{i_0}^r]=z_0$. Điều này mâu thuẫn với \eqref{2.13}.
+    Định lí được chứng minh.
+    \subsubsection{Ví dụ}
+    \begin{equation*}
+        \begin{split}
+         &x_1+4x_2 \longrightarrow Max \\
+        & \left\{\begin{split}
+            & 2x_1+4x_2 \le 7\\
+            & 10x_1+3x_2\le 15\\
+            & x_1,x_2 \ge 0\\
+            & x_1,x_2 \text{nguyên}\\
+        \end{split}\right.
+    \end{split}
+    \end{equation*}
+    Ta đưa bài toán về dạng chính tắc. Ta được bài toán mở rộng:\\
+    \begin{equation*}
+        \begin{split}
+         &x_1+4x_2 \longrightarrow Max \\
+        & \left\{\begin{split}
+            & 2x_1+4x_2+x_3= 7\\
+            & 10x_1+3x_2+   x_4= 15\\
+            & x_1,x_2,x_3,x_4 \ge 0\\
+            & x_1,x_2 \text{nguyên}\\
+        \end{split}\right.
+    \end{split}
+    \end{equation*}
+    Ta lập bảng đơn hình:\\
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+     Cơ sở & Hệ số & PA& $x_1$ &$x_2$ &$ x_3$ &$x_4$ \\
+     \hline
+        $x_J$ &$c_J$ &$x_J^0$ &$1$ &$4$ &$0$ &$0$\\
+        \hline
+        $x_3$ &$0$ &$7$ &$2$ &$4^*$ &$1$ &$0$\\
+        $x_4$ &$0$ &$15$ &$10$ &$3$ &$0$ &$1$\\
+        \hline
+        && $\Delta$ &$-1$ &$-4^*$ &$0$ &$0$\\
+        \hline
+        $x_2$ &$4$ &$7/4$ &$1/2$ &$1$ &$1/4$ &$0$\\
+        $x_4$ &$0$ &$39/4$ &$17/2$ &$0$ &$-3/4$ &$1$\\
+        \hline
+        && $\Delta$ &$1$ & $0$ &$3$ &$0$\\
+        \hline
+    \end{tabular}
+    \end{center}
+    Ta thấy bài toán đã đạt tối ưu nhưng chưa thỏa mãn điều kiện nguyên. Do đó, ta tạo biến $x_5$ theo quy tắc lát cắt Gomory dựa trên biến $x_2$, $$\dfrac{-3}{4}= \dfrac{-1}{2}x_1 -\dfrac{1}{4}x_3 +x_5$$. Ta thêm dòng này vào bảng đơn hình.\\
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+         Cơ sở & Hệ số & PA& $x_1$ &$x_2$ &$ x_3$ &$x_4$ &$x_5$\\
+        \hline
+        $x_J$ &$c_J$ &$x_J^0$ &$1$ &$4$ &$0$ &$0$ &$0$\\
+        \hline
+        $x_2$ &$4$ &$7/4$ &$1/2$ &$1$ &$1/4$ &$0$ &$0$\\
+        $x_4$ &$0$ &$39/4$ &$17/2$ &$0$ &$-3/4$ &$1$ &$0$\\
+        $x_5$ &$0$ &$-3/4$ &$-1/2^*$ &$0$ &$-1/4$ &$0$ &$1$\\
+        \hline
+        && $\Delta$ &$1^* $ &$0$ &$1$ &$0$ &$0$\\
+        \hline
+        $x_2$ &$ 4$ &$1$ &$0$ &$1$ &$0$ &$0$ &$1$\\
+        $x-4$ &$0$ &$-3^*$ &$0$ &$0$ &$-5^*$ &$1$ &$17$\\
+        $x_1$ & $1$ &$3/2$ &$1$ &$0$ &$1/2$&$0$ &$-2$\\
+        \hline
+        && $\Delta$ &$0$ &$0$ &$1/2$ &$0$ &$2$\\
+        \hline
+        $x_2$ &$4$ &$1$ &$0$ &$1$ &$0$ &$0$ &$1$\\
+        $x_3$ &$0$ &$3/5$ &$0$ &$0$ &$1$ &$-1/5$ &$-17/5$\\
+        $x_1$ &$1$ &$6/5$ &$1$ &$0$ &$1$ &$1/10$&$-3/10$\\
+        \hline
+        && $\Delta$ &$0$ &$0$ &$0$ &$1/10$ &$37/10$\\
+        \hline
+        
+        \end{tabular}
+    \end{center}
+    Ta thêm lát cắt mới dựa trên biến $x_1$, 
+     $$\dfrac{-1}{5}= \dfrac{-1}{10}x_4 +\dfrac{7}{10}x_5+x_6$$
+     \begin{center}
+         \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+         Cơ sở & Hệ số & PA& $x_1$ &$x_2$ &$ x_3$ &$x_4$ &$x_5$ &$x_6$\\
+        \hline
+        $x_J$ &$c_J$ &$x_J^0$ &$1$ &$4$ &$0$ &$0$ &$0$ &$0$\\
+        \hline
+        $x_2$ &$4$ &$1$ &$0$ &$1$ &$0$ &$0$ &$1$ &$0$\\
+        $x_3$ &$0$ &$3/5$ &$0$ &$0$ &$1$ &$-1/5$ &$-17/5$ & $0$\\
+        $x_1$ &$1$ &$6/5$ &$1$ &$0$ &$1$ &$1/10$&$-3/10$ &$0$\\
+        $x_6$ &$0$ &$-1/5$ &$0$ &$0$ & $0$ &$-1/10^*$ &$7/10$ &$1$\\
+        \hline
+        && $\Delta$ &$0$ &$0$ &$0$ &$1/10$ &$37/10$ &$0$\\
+        \hline
+        $x_2$ &$4$ &$1$ &$0$ &$1$ &$0$ &$0$ &$1$ &$0$\\
+        $x_3$ &$0$ &$1$ &$0$ &$0$ &$1$ &$0$ &$-24/5$ &$-2$\\
+        $x_1$ &$1$ &$1$ &$1$ &$0$ &$0$ &$0$ &$2/5$ &$1$\\
+        $x_4$ &$0$ &$2$ &$0$ &$0$ &$0$ &$1$ &$-7$ &$-10$\\
+        \hline
+        && $\Delta$ &$0$ &$0$ &$0$ &$0$&$ 22/5$ &$1$\\
+        \hline
+        
+         \end{tabular}
+     \end{center}
+     Bài toán đã đạt tối ưu đồng thời thỏa điều kiện nguyên nên ta dừng thuật toán và kết luận được $x=(x_1,x_2)=(1,1)$ và giá trị hàm mục tiêu là $5$.
+\subsection{Thuật toán Gomory cho bài toán tối ưu nguyên bộ phân}
+ Đối với bài toán tối ưu nguyên bộ phận ta có tất cả các lý thuyết cơ sở cũng như thuật toán tương tự như ở bài toán tối ưu nguyên hoàn toàn.Tuy nhiên, ở việc chọn dòng để hình thành lát cắt:
+ $k=min\{i\|i\in \{1,...,n\},x_{i0}^r \text{không nguyên}\}$, trong đó ta chỉ xét trên các biến mà đề bài bắt buộc nguyên, và trực tiếp bỏ qua các biến không có điều kiện nguyên.
+ \subsubsection{Ví dụ}
+ Ta xét bài toán sau:
+ \begin{equation*}
+        \begin{split}
+         & 4x_1+5x_2+3x_3\longrightarrow Max \\
+        & \left\{\begin{split}
+            & 3x_1+   +4x_3 \le 10\\
+            & 2x_1+x_2+x_3 \le 7\\
+            & 3x_1+4x_2+x_3 \le 12\\
+            & x_1,x_2,x_3 \ge 0\\
+            & x_1,x_3 \text{nguyên}\\
+        \end{split}\right.
+    \end{split}
+    \end{equation*}
+    Ta đưa bài toán về dạng chính tắc:\\
+    \begin{equation*}
+        \begin{split}
+         &4x_1+5x_2+3x_3 \longrightarrow Max \\
+        & \left\{\begin{split}
+            & 3x_1+  +4x_3+x_4=10\\
+            &2x_1+x_2+x_3+x_5=7\\
+            &3x_1+4x_2+x_3+  x_6=12\\
+            & x_1,x_2,x_3,x_4,x_4,x_6 \ge 0\\
+            & x_1,x_3 \text{nguyên}\\
+        \end{split}\right.
+    \end{split}
+    \end{equation*}
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+         Cơ sở & Hệ số & PA& $x_1$ &$x_2$ &$x_3$ &$x_4$ &$x_5$ &$x_6$  \\
+         \hline
+          $x_J$& $c_J$ &$x_J^0$ &$4$ &$5$ &$ 3$ &$0$ &$0$ &$0$\\
+          \hline
+          $x_4$ &$0$ &$10$ &$3$ &$0$ &$4$ &$1$ &$0$ &$0$\\
+          $x_5$ &$0$ &$7$ &$2$ &$1$ &$1$ &$0$ &$1$ &$0$\\
+          $x_6$ &$0$ &$12$ &$3$ &$4^*$ &$1$ &$0$ &$0$ &$1$\\
+          \hline
+          &&$\Delta$ &$-4$ &$-5$ &$-3$ &$0$ &$0$ &$0$\\
+          \hline
+      \end{tabular}
+    \end{center}    
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+          Cơ sở & Hệ số & PA& $x_1$ &$x_2$ &$x_3$ &$x_4$ &$x_5$ &$x_6$  \\
+         \hline
+          $x_J$& $c_J$ &$x_J^0$ &$4$ &$5$ &$ 3$ &$0$ &$0$ &$0$\\
+          \hline    
+          $x_4$ & $0$ &$10$ &$3$ &$0$ &$4^*$ &$1$ &$0$ &$0$ \\
+          $x_5$ &$0$ &$4$ &$5/4$ &$0$ &$3/4$ &$0$ &$1$ &$-1/4$\\
+          $x_2$ &$5$ &$3$ &$3/4$ &$1$ &$1/4$ &$0$ &$0$ &$1/4$\\
+          \hline
+          &&$\Delta$ &$-1/4$ &$0$ &$-3^*$ &$0$ &$0$ &$5/4$\\
+          \hline
+          $x_3$ &$3$ &$5/2$ &$3/4$ &$0$ &$1$ &$1/4$ &$0$ &$0$\\
+          $x_5$ &$0$ &$17/8$ &$11/16$ &$0$ &$0$ &$-3/16$ &$0$ &$-1/4$\\
+          $x_2$ &$5$ &$19/8$ &$9/16$ &$1$ &$0$ &$-1/16$ &$1$ &$1/4$\\
+          \hline
+          &&$\Delta$ &$17/16$ &$0$ &$0$ &$7/16$ &$0$ &$5/4$\\
+          \hline
+         \end{tabular}
+    \end{center}
+    Lúc này bài toán đạt tối ưu nhưng chưa thỏa điều kiện nguyên, ta xét biến $x_3$ để tạo lát cắt Gomory, bỏ qua $x_2$ vì đề bài chỉ yêu cầu $x_1,x_3$ phải nguyên.
+    $$\dfrac{-1}{2}=\dfrac{-3}{4}x_1 -\dfrac{1}{4}x_4 +x_7$$.
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+         Cơ sở & Hệ số & PA& $x_1$ &$x_2$ &$x_3$ &$x_4$ &$x_5$ &$x_6$ &$x_7$ \\
+         \hline
+          $x_J$& $c_J$ &$x_J^0$ &$4$ &$5$ &$ 3$ &$0$ &$0$ &$0$ &$0$\\
+          \hline
+           $x_3$ &$3$ &$5/2$ &$3/4$ &$0$ &$1$ &$1/4$ &$0$ &$0$ &$0$\\
+          $x_5$ &$0$ &$17/8$ &$11/16$ &$0$ &$0$ &$-3/16$ &$0$ &$-1/4$ &$0$\\
+          $x_2$ &$5$ &$19/8$ &$9/16$ &$1$ &$0$ &$-1/16$ &$1$ &$1/4$ &$0$\\
+          $x_7$ &$0$ &$-1/2$ &$-3/4$ &$0$ &$0$ &$-1/4^*$ &$0$ &$0$ &$1$\\
+          \hline
+          &&$\Delta$ &$17/16$ &$0$ &$0$ &$7/16$ &$0$ &$5/4$ &$0$\\
+          \hline
+          $x_3$ &$3$ &$2$ &$3/4$ &$0$ &$1$ &$0$ &$0$ &$0$ &$1$\\
+          $x_5$ &$0$ &$5/2$ &$5/4$ &$0$ &$0$ &$0$ &$1$ &$-1/4$ &$-3/4$\\
+          $x-2$ &$5$ &$5/2$ &$3/4$ &$1$ &$0$ &$0$ &$0$ &$1/4$ &$-1/4$\\
+          $x_4$ &$0$ &$2$ &$3^*$ &$0$ &$0$ &$1$ &$0$ &$0$ &$-4$\\
+          \hline
+          &&$\Delta$&$-1/4$ &$0$ &$0$ &$0$ &$0$ &$5/4$ &$7/4$\\
+          \hline
+          \end{tabular}
+    \end{center}    
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+          Cơ sở & Hệ số & PA& $x_1$ &$x_2$ &$x_3$ &$x_4$ &$x_5$ &$x_6$ &$x_7$ \\
+         \hline
+          $x_J$& $c_J$ &$x_J^0$ &$4$ &$5$ &$ 3$ &$0$ &$0$ &$0$ &$0$\\
+          \hline
+          $x_3$ &$3$ &$2$ &$0$ &$0$ &$1$ &$0$ &$0$ &$0$ &$1$\\
+          $x_5$ &$0$ &$5/3$ &$0$ &$0$ &$0$ &$5/12$ &$1$ &$-1/4$ &$11/2$\\
+          $x_2$ &$5$ &$2$ &$0$ &$1$ &$0$ &$-1/4$ &$0$ &$1/4$ &$3/4$\\
+          $x_1$ &$4$ &$2/3$ &$1$ &$0$ &$0$ &$1/3$ &$0$ &$0$ &$-4/3$\\
+          \hline
+          &&$\Delta$ &$0$ &$0$ &$0$ &$1/12$ &$0$ &$5/4$ &$17/12$\\
+          \hline
+        \end{tabular}
+    \end{center}
+    Ta xét $x_1$ và lập lát cắt mới, $\dfrac{-2}{3}= \dfrac{-1}{3}x_4 +\dfrac{1}{3}x_7+x_8$.
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+          Cơ sở & Hệ số & PA& $x_1$ &$x_2$ &$x_3$ &$x_4$ &$x_5$ &$x_6$ &$x_7$&$x_8$ \\
+         \hline
+          $x_J$& $c_J$ &$x_J^0$ &$4$ &$5$ &$ 3$ &$0$ &$0$ &$0$ &$0$ &$0$\\
+          \hline
+           $x_3$ &$3$ &$2$ &$0$ &$0$ &$1$ &$0$ &$0$ &$0$ &$1$ &$0 $\\
+          $x_5$ &$0$ &$5/3$ &$0$ &$0$ &$0$ &$5/12$ &$1$ &$-1/4$ &$11/2$ &$0$\\
+          $x_2$ &$5$ &$2$ &$0$ &$1$ &$0$ &$-1/4$ &$0$ &$1/4$ &$3/4$ &$0$\\
+          $x_1$ &$4$ &$2/3$ &$1$ &$0$ &$0$ &$1/3$ &$0$ &$0$ &$-4/3$ &$0$\\
+          $x_8$ &$0$ &$-2/3$ &$0$ &$0$ &$0$ &$-1/3^*$ &$0$ &$0$ &$1/3$ &$1$\\
+          \hline
+          &&$\Delta$ &$0$ &$0$ &$0$ &$1/12$ &$0$ &$5/4$ &$17/12$ &$0$\\
+          \hline
+          $x_3$ &$3$ &$2$ &$0$ &$0$ &$1$ &$0$ &$0$ &$1$ &$0$& $0$\\
+          $x_5$ &$0$ &$5/6$ &$0$ &$0$ &$0$ &$0$ &$1$ &$-1/4$ &$71/12$ &$5/4$\\
+          $x_2$ &$5$ &$5/2$ &$0$ &$1$ &$0$ &$0$ &$0$&$1/4$ &$1/2$ &$-3/4$\\
+          $x_1$ &$4$ &$0$ &$1$ &$0$ &$0$ &$0$ &$0$ &$0$ &$-1$ &$1$\\
+          $x_4$ &$0$ &$2$ &$0$ &$0$ &$0$ &$1$ &$0$ &$0$ &$-1$ &$-3$\\
+          \hline
+          &&$\Delta$ &$0$ &$0$ &$0$ &$0$ &$0$ &$5/4$ &$3/2$ &$1/4$\\
+          \hline
+        \end{tabular}
+    \end{center}
+    Ta dừng thuật toán và kết luận nghiệm của bài toán đã cho là $x=(x_1,x_2,x_3)=(0,\dfrac{5}{2},2)$ và giá trị tối ưu của hàm mục tiêu là $18.5$.
 
-\subsubsection{Giới thiệu phương pháp và ý nghĩa}
+\section{Phương pháp Land-Doig}
+
+\subsection{Giới thiệu phương pháp và ý nghĩa}
 
 {Tối ưu nguyên hoàn toàn (Pure integer linear program)}
     \begin{equation} \label{H}
@@ -1650,7 +2161,7 @@ Phương pháp đơn hình đối ngẫu từ vựng này sẽ được áp dụ
 \end{figure}
 
     
-\subsubsection{Các bước thực hiện của phương pháp}
+\subsection{Các bước thực hiện của phương pháp}
 
 {Bài toán quan tâm}
 \begin{equation}\label{P}
@@ -1681,7 +2192,7 @@ Giả sử ta nhận được tập phương án tối ưu của bài toán \eqr
 Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằng cách cải thiện phương án thu được từ bài toán $(P)$ sao cho thoả điều kiện của bài toán $(B)$.
 
 
-\subsubsection*{Ví dụ}
+\subsection*{Ví dụ}
         \begin{equation*}
         \begin{split}
             (P) \quad & 5.5x_1 + 2.1x_2 \quad \longrightarrow Max \\
@@ -1705,7 +2216,7 @@ Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằn
 
 
 
-\subsubsection*{Ví dụ}
+\subsection*{Ví dụ}
         \begin{equation*}
         \begin{split}
             (P) \quad & 3x_1 + 4x_2 \quad \longrightarrow Max \\
@@ -1730,7 +2241,7 @@ Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằn
 
 \subsection*{Thuật toán nhánh cận}
 
-\subsubsection*{Phương pháp xác định cận}
+\subsection*{Phương pháp xác định cận}
 Ta gọi $x_j$ với $1 \leq j \leq n$ là nghiệm thu được từ bài toán $(P)$.
 \begin{dl}\label{cmnguyen}
 	\phantom{}
@@ -1761,7 +2272,7 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 \end{vd}
 
 
-\subsubsection*{Phương pháp xử lý bài toán}
+\subsection*{Phương pháp xử lý bài toán}
 
 \begin{itemize}
 \item Từ \eqref{nx} và \eqref{cmnguyen}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, thì ta có thể tiếp tục cải thiện phương án cho đến khi $\forall x_j \in \mathbb{Z}$. 
@@ -1816,7 +2327,7 @@ Với $x^i_{j^'}$ là nghiệm không nguyên và phân thành 2 bài toán con 
 \end{itemize}
 
 
-\subsubsection*{Ví dụ minh hoạ}
+\subsection*{Ví dụ minh hoạ}
     \begin{equation*}
         \begin{split}
             (P) \quad z_p= & 5.5x_1 + 2.1x_2 \quad \longrightarrow Max \\
@@ -1970,7 +2481,7 @@ Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán 
 \item Ta đánh dấu giá trị tối ưu tốt nhất và nghiệm tối ưu tốt nhất của bài toán lần lượt là $z^*$ và $(x^*,y^*)$.
 \end{itemize}
 
-\subsubsection*{Sơ đồ thuật toán}
+\subsection*{Sơ đồ thuật toán}
 \begin{ttoan}[Land-Doig]
 \setlength{\parindent}{4em}
 \noindent \\
@@ -2033,7 +2544,7 @@ Nếu không tồn tại $x^i \notin Z^n_+$, tức $\forall x^i \in Z^n_+$, ta �
 \end{figure}
    
 
-\subsubsection*{Ví dụ minh họa bài toán}
+\subsection*{Ví dụ minh họa bài toán}
 
     \begin{equation*}
     \begin{split}
