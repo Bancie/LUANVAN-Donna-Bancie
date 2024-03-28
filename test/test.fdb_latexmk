@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1711625867 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/test/test.tex" "test.pdf" "test" 1711625869 0
-  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/test/test.tex" 1711625865 4954 9c098187b3a9ea51a5cbe197e5f894d0 ""
+["pdflatex"] 1711626520 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/test/test.tex" "test.pdf" "test" 1711626522 0
+  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/test/test.tex" 1711626520 5014 12f759a9a395d7f9bcb1b45603d187b3 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -266,9 +266,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1700549885 4694867 edce96ea9fbf5196f445dab10e2fe5bf ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1700550044 8213569 7a9a2c5e7e932edbf43ec7dad46550bc ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "test.aux" 1711625869 764 13b406ac672a8a44ee1922f8c4e58868 "pdflatex"
-  "test.out" 1711625868 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "test.tex" 1711625865 4954 9c098187b3a9ea51a5cbe197e5f894d0 ""
+  "test.aux" 1711626522 764 13b406ac672a8a44ee1922f8c4e58868 "pdflatex"
+  "test.out" 1711626521 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "test.tex" 1711626520 5014 12f759a9a395d7f9bcb1b45603d187b3 ""
   (generated)
   "test.aux"
   "test.log"

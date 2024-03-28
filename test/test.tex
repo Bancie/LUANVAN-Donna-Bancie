@@ -108,17 +108,17 @@
 \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=blue!30]
 \tikzstyle{arrow} = [thick,->,>=stealth,line width=0.2pt]
 % Place nodes
-\node (start) [startstop, xshift=-5cm] {Bắt đầu};
-\node (b0) [io, right of=start] {$\mathcal{L}:=\{N_0 \}$ \\ $z^*=z_p$ \\ $(x^*,y^*)=(x,y)$};
-\node (b1) [decision, right of=b0] {$\mathcal{L} = \emptyset$?};
-\node (b2) [process, right of=b1] {Chọn $N_i$ từ $\mathcal{L}$ \\ và xoá khỏi $\mathcal{L}$};
-\node (b3) [process, right of=b2] {Giải $(P_i)$};
-\node (b4) [decision, right of=b3] {Vô nghiệm?};
-\node (b5) [decision, right of=b4] {$\exists x^i \notin Z^n_+$?};
-\node (b6) [io, above of=b5] {$z_i = z^*$, $(x^i,y^i) = (x,y)$};
-\node (b7) [io, right of=b5] {Thêm \\ $N_{i1}, \ldots , N_{ik}$ \\ vào $\mathcal{L}$};
-\node (kl) [process, below of=b1] {bài toán \\ được giải};
-\node (stop) [startstop, right of=b7] {Kết thúc};
+\node (start) [startstop, xshift=-5cm] {(start) Bắt đầu};
+\node (b0) [io, right of=start] {(b0) $\mathcal{L}:=\{N_0 \}$ \\ $z^*=z_p$ \\ $(x^*,y^*)=(x,y)$};
+\node (b1) [decision, right of=b0] {(b1) $\mathcal{L} = \emptyset$?};
+\node (b2) [process, right of=b1] {(b2) Chọn $N_i$ từ $\mathcal{L}$ \\ và xoá khỏi $\mathcal{L}$};
+\node (b3) [process, right of=b2] {(b3) Giải $(P_i)$};
+\node (b4) [decision, right of=b3] {(b4) Vô nghiệm?};
+\node (b5) [decision, right of=b4] {(b5) $\exists x^i \notin Z^n_+$?};
+\node (b6) [io, above of=b5] {(b6) $z_i = z^*$, $(x^i,y^i) = (x,y)$};
+\node (b7) [io, right of=b5] {(b7) Thêm \\ $N_{i1}, \ldots , N_{ik}$ \\ vào $\mathcal{L}$};
+\node (kl) [process, below of=b1] {(kl) bài toán \\ được giải};
+\node (stop) [startstop, right of=b7] {(stop) Kết thúc};
 % Draw arrows
 \draw [arrow] (start) -- (b0);
 \draw [arrow] (b0) -- (b1);
