@@ -883,13 +883,13 @@ Trường hợp miền nghiệm của bài toán là một tập mở đồng th
 
 \subsection{Phương pháp đơn hình}
 \begin{dn}[Cơ sở]
-    Cơ sở của ma trận $A$ là một bộ gồm $m$ vector cột độc lập tuyến tính, ký hiệu $B=\{A_{j_1}, A_{j_2}, \ldots , A_{j_m}\}$.
+    Cơ sở của ma trận $A$ là một bộ gồm $m$ vector cột độc lập tuyến tính, ký hiệu $B=\{A^1, A^2, \ldots , A^m\}$.
 \end{dn}
 
 
 
 Ta xét bài toán chính tắc:
-    \begin{equation} \small \label{chinhtac}
+    \begin{equation} \small \label{chinhtacdonhinh}
         \begin{split}
         (P) \quad \text{Min } & f(x) = c^Tx \\
             & \left\{
@@ -900,137 +900,86 @@ Ta xét bài toán chính tắc:
             \right.    
         \end{split}
     \end{equation}
-có thể được viết lại dưới dạng:
+
+\subsubsection*{Thiết lập bảng đơn hình}
+Giả sử bài toán \eqref{chinhtacdonhinh} không suy biến, hệ vector cơ sở $B=\{A^1, A^2, \ldots , A^m\}$ và vector $\vec{b}$ biểu diễn qua cơ sở $B$ thì ta nói phương án cực biên đầu tiên chính là $b$, ký hiệu
 \begin{equation}
-\begin{pmatrix}
-    1 & 0 & c \\
-    0 & I & A
-\end{pmatrix}
-\begin{pmatrix}
-    -z \\
-    x_B \\
-    x_N
-\end{pmatrix}
-=
-\begin{pmatrix}
-    -z_0 \\
-    b
-\end{pmatrix}.
+(x_1^0,x_2^0,\ldots,x_m^0,0,\ldots,0)
 \end{equation}
-trong đó $x_B$ ký hiệu là biến cơ sở,
+Ta thiết lập được bảng sau (xem hình 1.5). Trong đó
 \begin{equation}
-x_B=(x_1,x_2,\ldots,x_m)^T
+    f_0 = \sum_{i=1}^m c_ib_i
 \end{equation}
-biến $x_N$ ký hiệu là biến phi cơ sở,
+và
 \begin{equation}
-x_N=(x_{m+1},x_{m+2},\ldots,x_n)^T
+    \Delta _j= \sum_{i=1}^m c_ia_{ij}-c_j, \quad m+1\leq j \leq n .
 \end{equation}
-và phương án
-\begin{equation}
-z=z_0, \quad x_B=b, \quad x_N=0 \quad (x_B \geq 0).
-\end{equation}
+
+\begin{figure}
+\begin{tabular} {|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Hệ số & Cơ sở & Phương án & $c_1$ & $c_2$ & $\hdots$ & $c_r$ & $\hdots$ & $c_m$ & $c_{m+1}$ & $\hdots$ & $c_s$ & $\hdots$ & $c_n$ \\
+\hline
+&&& $x_1$ & $x_2$ & $\hdots$ & $x_r$ & $\hdots$ & $x_m$ & $x_{m+1}$ & $\hdots$ & $x_s$ & $\hdots$ & $x_n$ \\
+\hline
+$c_1$ & $A^1$ & $x_1^0$ & $1$ & $0$ & $\hdots$ & $0$ & $\hdots$ & $0$ & $x_{1m+1}$ & $\hdots$ & $x_{1s}$ & $\hdots$ & $x_{1n}$ \\
+\hline
+$c_2$ & $A^2$ & $x_2^0$ & $1$ & $0$ & $\hdots$ & $0$ & $\hdots$ & $0$ & $x_{2m+1}$ & $\hdots$ & $x_{2s}$ & $\hdots$ & $x_{2n}$ \\
+$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$ \\
+$c_r$ & $A^r$ & $x_r^0$ & $1$ & $0$ & $\hdots$ & $0$ & $\hdots$ & $0$ & $x_{rm+1}$ & $\hdots$ & $x_{rs}$ & $\hdots$ & $x_{2n}$ \\
+$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$&$\vdots$ \\
+$c_m$ & $A^m$ & $x_m^0$ & $1$ & $0$ & $\hdots$ & $0$ & $\hdots$ & $0$ & $x_{mm+1}$ & $\hdots$ & $x_{ms}$ & $\hdots$ & $x_{mn}$ \\
+\hline
+&& $f_0$ & $0$ & $0$ & $\hdots$ & $0$ & $\hdots$ & $0$ & $\Delta_{m+1}$ & $\hdots$ & $\Delta_s$ & $\hdots$ & $\Delta_n$ \\
+\hline
+\end{tabular}
+\caption{Cấu trúc bảng đơn hình}
+\end{figure}
 
 \begin{ttoan}[Đơn hình]
 \setlength{\parindent}{4em}
-Ta có dạng chính tắc của bài toán được thiết lập lại dưới dạng
-\begin{equation}
-\left\{\begin{split}
-(-z) + 0x_B + c^Tx_N &= -z_0 \\
-Ix_B + Ax_N &= b.
-\end{split}\right.
-\end{equation}
-với $x_B \geq 0, \: x_N=0, \: z=z_0$. Thuật toán đơn hình tuân theo các bước sau:
+Ta xét dạng chính tắc của bài toán:
+    \begin{equation} \small \label{chinhtacdonhinh}
+        \begin{split}
+        (P) \quad \text{Min } & f(x) = c^Tx \\
+            & \left\{
+            \begin{split}
+            & Ax=b, \\
+            & x_j \geq 0.
+            \end{split}
+            \right.    
+        \end{split}
+    \end{equation}
+
 
 \noindent \textbf{Bước 1. Thiết lập.}
-Xác định biến $c_j$ nhỏ nhất, ký hiệu
+Thiết lập phương án cực biên xuất phát và vector $\vec{b} \geq 0$, ta thu được cơ sở đầu tiên, phương án cực biên đầu tiên, ký hiệu
 \begin{equation}
-c_s = \underset{j}{\min} c_j
+x^0=(x_1^0,x_2^0,\ldots,x_m^0,0,\ldots,0)
 \end{equation}
-sau đó chuyển sang bước 2.
-
-\noindent \textbf{Bước 2. Kiểm tra sự tối ưu.}
-Nếu $\forall c_s \geq 0$, bài toán được giải và thuật toán dừng lại. Nếu $\exists c_s \leq 0$, ta chuyển sang bước 3. 
-
-\noindent \textbf{Bước 3. Chọn biến vào.}
-Nếu $\exists c_s < 0$, đánh dấu $c_s$ là biến vào và chuyển sang bước 4.
-
-\noindent \textbf{Bước 4. Kiểm tra giới hạn.}
-Nếu $A_s \leq 0$, ta thực hiện loạt biến đổi sau:
+hay vector ràng buộc vế phải
 \begin{equation}
-z=z_0+c_sx_s, \: x_B = b - A_sx_s, \: x_j=0 \quad (j\neq s)
+b=(b_1,b_2,\ldots,b_m,0,\ldots,0)
 \end{equation}
-trong đó $x_j$ là biến phi cơ sở. Nếu $z \rightarrow -\infty $ tương ứng $x_s \rightarrow \infty$, bài toán được giải và thuật toán kết thúc, nếu không chuyển sang bước 5.
+sau đó đưa vào bảng đơn hình và chuyển sang bước 2.
 
-\noindent \textbf{Bước 5. Chọn biến ra.}
-Ta đánh dấu biến $x_j$ đã thực hiện trước đó thành biến ra $x_s$ với điều kiện:
-\begin{equation}
-x_s = \frac{b_r}{a_{rs}} = \underset{a_{is}>0}{\min} \quad \frac{b_i}{a_{is}} \geq 0, \quad (a_{rs}>0).
-\end{equation}
-Sau đó chuyển sang bước 6.
+\noindent \textbf{Bước 2. Kiểm tra khả thi.}
+Nếu $\Delta _j\leq 0$ với $j=\overline{m+1, \: n}$ thì $x^0$ là phương án tối ưu của bài toán và thuật toán kết thúc. 
 
-\noindent \textbf{Bước 6. Xoay trục.}
-Chọn $a_{rs}$ làm phần tử trụ, xác định $a_{ij}$ mới ký hiệu $a_{ij}^{'}$ bằng cách thực hiện thao tác:
+Nếu $\Delta _j > 0$ và $x_{ij}\leq 0$ với $i=\overline{1,\: m}, \: j=\overline{m+1, \: n}$ ta kết luận bài toán không giải được và thuật toán kết thúc. Nếu $\exists x_{ij} > 0$ thì $x^0$ chưa tối ưu và ta chuyển sang bước 3.
+
+\noindent \textbf{Bước 3. Xác định biến vào ra.}
+Chọn biến cơ sở mới $x_v$ sak cho $\Delta _v = \max \{\Delta _j >0 \}$ đưa vào và biến cơ sở cũ $x_r$ đưa ra sao cho $\min _{a_{iv}>0} \frac{x_i^0}{a_{iv}}$ và chuyển sang bước 4.
+
+\noindent \textbf{Bước 4. Xoay trục.}
+Chọn dòng thứ $r$ và cột thứ $r$ lần lượt là dòng và cột xoay, $a_{rv}$ là phần tử trục sau đó biến đổi bảng đơn hình để nhận phương án mới bằng cách thay biến cơ sở cũ $x_r$ thành $x_v$, $c_r$ thành $c_v$.
+
+Ta thay thế dòng xoay cũ thành dòng mới bằng cách chia tất cả cho phân tử trục $a_{rv}$ và biến đổi phần tử khác bằng quy tắc hình chữ nhật
 \begin{equation}
-a_{ij}^{'} = a_{ij} - \frac{a_{is}a_{rj}}{a_{rs}}
+a_{\text{mới}} = a_{\text{cũ}} - \frac{a_{iv}\times a_{rj}}{a_{rv}}.
 \end{equation}
-sau đó quay trở lại bước 1.
+
 \end{ttoan}
-\subsubsection*{Ví dụ minh hoạ}
-Ta xét bài toán:
-\begin{equation*}
-	\begin{split}
-	(P) \quad & z = 2x_1 + 2x_2 + 2x_3 + x_4 + 4x_5 \longrightarrow Min \\
-		& \left\{\begin{split}
-        4x_1 + 2x_2 + 13x_3 + 3x_4 + x_5 &= 17 \\
-        x_1 + x_2 + 5x_3 + x_4 +x_5 &= 7 \\
-		x_i &\geq 0 \quad (i=1,2,\ldots,5) \\
-		\end{split}\right.    
-	\end{split}
-\end{equation*}
-Bài toán được viết lại dưới dạng:
-\begin{equation*}
-    \left\{\begin{array}{ccccccc}
-    2x_1 &+ 2x_2 &+ 2x_3 &+ x_4 &+ 4x_5 &=& z \\
-    4x_1 &+ 2x_2 &+ 13x_3 &+ 3x_4 &+ x_5 &=& 17 \\
-    x_1 &+ x_2 &+ 5x_3 &+ x_4 &+x_5 &=& 7 \\
-    \end{array}\right.
-\end{equation*}
-
-\begin{equation*}
-    \left\{\begin{array}{cccccccc}
-    (-z) &+2x_1 &&-5x_3 &&+ x_5 &=& -11 \\
-    &2x_1 &&+ 3x_3 &+ x_4 &- x_5 &=& 3 \\
-    &-x_1 &+ x_2 &+ 2x_3 &&+2x_5 &=& 4 \\
-    \end{array}\right.
-\end{equation*}
-\begin{equation*}
-z=11, \quad x_B=(x_5,x_2)=(3,4), \quad x_N=(x_1,x_2,x_3)=(0,0,0).
-\end{equation*}
-\begin{equation*}
-z=6, x_3=1, x_2=2, x_1=x_4=x_5=0
-\end{equation*}
-
-\begin{equation*}
-    \left\{\begin{array}{cccccccc}
-    (-z) &+\frac{16}{3}x_1 &&&+\frac{5}{3}x_4&-\frac{2}{3} x_5 &=& -6 \\
-    &\frac{2}{3}x_1 &&+ x_3 &+ \frac{1}{3}x_4 &-\frac{1}{3} x_5 &=& 1 \\
-    &-\frac{7}{3}x_1 &+ x_2 & &-\frac{2}{3}x_4&+\frac{8}{3}x_5 &=& 2 \\
-    \end{array}\right.
-\end{equation*}
-\begin{equation*}
-z=6, x_B=(x_3,x_2)=(1,2), x_N=(x_1,x_4,x_5)=(0,0,0).
-\end{equation*}
-\begin{equation*}
-    \left\{\begin{array}{cccccccc}
-    (-z) &+\frac{19}{4}x_1 &+\frac{1}{4}x_2&&+\frac{3}{2}x_4&&=& -\frac{11}{2} \\
-    &\frac{3}{8}x_1 &+\frac{1}{8}x_2&+x_3 &+\frac{1}{4}x_4 &&=& \frac{5}{4} \\
-    &-\frac{7}{8}x_1 &+ \frac{3}{8}x_2 &&-\frac{1}{4}x_4&+x_5 &=& \frac{3}{4} \\
-    \end{array}\right.
-\end{equation*}
-Nghiệm tối ưu của bài toán là
-\begin{equation*}
-z=\frac{11}{2}, x_3=\frac{5}{4}, x_5=\frac{3}{4}, x_1=x_2=x_4=0.
-\end{equation*}
 
 \subsection{Phương pháp đơn hình đối ngẫu từ vựng}
 \subsubsection{ Bài toán đối ngẫu }
