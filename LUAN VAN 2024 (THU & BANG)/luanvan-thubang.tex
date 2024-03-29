@@ -1949,7 +1949,10 @@ Do $k=p$ nên bổ đề được chứng minh.\\
     Ta dừng thuật toán và kết luận nghiệm của bài toán đã cho là $x=(x_1,x_2,x_3)=(0,\dfrac{5}{2},2)$ và giá trị tối ưu của hàm mục tiêu là $18.5$.
 
 \section{Phương pháp Land-Doig (Nhánh cận)}
-Phương pháp Land-Doig, thường được gọi với một cái tên khác là phương pháp nhánh cận, là một cái tên gợi ý cho một phương pháp khéo léo để giải quyết các tình thế khó khăn trong tối ưu hóa.
+
+Vào cuối những năm 1950, một nhóm giáo viên và nhà nghiên cứu tại Trường Kinh tế Luân Đôn, gồm có Helen Makower, George Morton, Ailsa Land và Alison Doig, đã bị thu hút bởi lĩnh vực quy hoạch tuyến tính và các ứng dụng của nó. Ban đầu, Ailsa Land và Alison Doig tập trung vào các vấn đề mà ngày nay ta còn gọi là bài toán người du lịch.
+
+Sau đó, bà chuyển dần sự chú ý sang các biến rời rạc và ứng dụng chúng vào các mô hình quy hoạch tuyến tính theo yêu cầu của Tập đoàn Dầu mỏ Anh (British Petroleum). Mặc dù không có các điều kiện công nghệ như hiện này để có thể tiếp cận tính toán điện tử nhưng bà đã tiên phong trong việc phát triển các phương pháp xử lý biến rời rạc thông qua tính toán thủ công và sử dụng máy tính thời bấy giờ. Cách tiếp cận của bà xoay quanh việc khám phá các tập lồi được xác định bởi các ràng buộc tuyến tính, sau này được công nhận là một dạng của phương pháp nhánh cận. Bà đã thành công trong việc giải quyết cả mô hình lập kế hoạch và xử lý nguyên bộ phận. Phát hiện của bà được công bố trên tạp chí Econometrica, đánh dấu một bước tiến quan trọng trong lĩnh vực tối ưu tuyến tính.
 
 \subsection{Giới thiệu bài toán}
 Trong bài toán tối ưu tuyến tính giải cho ra nghiệm nguyên, đôi lúc ta gặp trường hợp yêu cầu tất cả các nghiệm cho ra nguyên và đôi lúc chỉ yêu cầu một vài nghiệm nguyên.
@@ -2370,16 +2373,16 @@ Nếu không tồn tại $x^i \notin Z^n_+$, tức $\forall x^i \in Z^n_+$, ta �
 \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=blue!30]
 \tikzstyle{arrow} = [thick,->,>=stealth,line width=0.2pt]
 % Place nodes
-\node (start) [startstop, xshift=13cm] {(start) Bắt đầu};
-\node (b0) [io, below of=start] {(b0) $\mathcal{L}:=\{N_0 \}$ \\ $z^*=z_p$ \\ $(x^*,y^*)=(x,y)$};
-\node (b1) [decision, below of=b0] {(b1) $\mathcal{L} = \emptyset$?};
-\node (b2) [process, below of=b1] {(b2) Chọn $N_i$ từ $\mathcal{L}$ \\ và xoá khỏi $\mathcal{L}$};
-\node (b3) [process, below of=b2] {(b3) Giải $(P_i)$};
-\node (b4) [decision, below of=b3] {(b4) Vô nghiệm?};
-\node (b5) [decision, below of=b4] {(b5) $\exists x^i \notin Z^n_+$?};
-\node (b6) [io, right of=b5, node distance = 5cm] {(b6) $z_i = z^*$, \\ $(x^i,y^i) = (x,y)$};
-\node (b7) [io, below of=b5] {(b7) Thêm \\ $N_{i1}, \ldots , N_{ik}$ \\ vào $\mathcal{L}$};
-\node (stop) [startstop, below of=b7] {(stop) Kết thúc};
+\node (start) [startstop, xshift=13cm] {Bắt đầu};
+\node (b0) [io, below of=start] {$\mathcal{L}:=\{N_0 \}$ \\ $z^*=z_p$ \\ $(x^*,y^*)=(x,y)$};
+\node (b1) [decision, below of=b0] {$\mathcal{L} = \emptyset$?};
+\node (b2) [process, below of=b1] {Chọn $N_i$ từ $\mathcal{L}$ \\ và xoá khỏi $\mathcal{L}$};
+\node (b3) [process, below of=b2] {Giải $(P_i)$};
+\node (b4) [decision, below of=b3] {Vô nghiệm?};
+\node (b5) [decision, below of=b4] {$\exists x^i \notin Z^n_+$?};
+\node (b6) [io, right of=b5, node distance = 5cm] {$z_i = z^*$, \\ $(x^i,y^i) = (x,y)$};
+\node (b7) [io, below of=b5] {Thêm \\ $N_{i1}, \ldots , N_{ik}$ \\ vào $\mathcal{L}$};
+\node (stop) [startstop, below of=b7] {Kết thúc};
 % Draw arrows
 \draw [arrow] (start) -- (b0);
 \draw [arrow] (b0) -- (b1);
@@ -2529,26 +2532,7 @@ Luận văn này đạt được các vấn đề sau đây:
     \item Trình bày về tư tưởng lát cắt và thuật toán của Gomory để giải bài toán tối ưu nguyên.
 	\item Tìm hiểu về phương pháp Land-Doig hay còn gọi là phương pháp nhánh cận, một phương pháp giúp giải bài toán toán ưu tuyến tính nguyên khả thi trên máy tính và mang tính ứng dụng cao.
 \end{itemize}
-
-
-
-\begin{thebibliography}{99}
-	\addcontentsline{toc}{chapter}{{\bf  Tài liệu tham khảo}} 
-	\thispagestyle{fancy}
-%	\item[\textbf{\large 1.}] \textbf{\large Tài liệu tham khảo chính thức}
-	
-	%\item[\textbf{\large 1.}] \textbf{\large Tài liệu tham khảo chính thức}
-	
-	
-	%Các tài liệu chính được tôi chọn lựa để tham khảo khi thực hiện luận văn là  tài liệu số \cite{Mat}, \cite{Gab1} và \cite{Gian}. 	Các vấn đề liên quan được chúng tôi khảo cứu trong các tài liệu còn lại.
-	
-	\bibitem{Erik} Erik B. Bajanilov, {\it Linear fractional programming: Theory, Mẹthods, Applications, and Software}, Springer, 2003.
-		
-	\bibitem{Stan} Stancu Minasian, {\it Fractional Programming: Theory, Methods, and Applications}, Kluwer Academic Publishers, 1992.
-	
-
-	
-	
-\end{thebibliography}
-
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{mybib}
 \end{document}

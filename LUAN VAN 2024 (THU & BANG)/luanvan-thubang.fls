@@ -533,6 +533,9 @@ INPUT ./anh3.pdf
 INPUT ./anh3.pdf
 INPUT ./anh3.pdf
 INPUT ./anh3.pdf
+INPUT ./luanvan-thubang.bbl
+INPUT ./luanvan-thubang.bbl
+INPUT luanvan-thubang.bbl
 INPUT luanvan-thubang.aux
 INPUT ./luanvan-thubang.out
 INPUT ./luanvan-thubang.out
