@@ -100,7 +100,7 @@
 \begin{document} 
 \begin{figure}
 \center
-\begin{tikzpicture}[scale=0.33, every node/.style={scale=0.33}, node distance=4cm]
+\begin{tikzpicture}[scale=0.33, every node/.style={scale=0.8}, node distance=3cm]
 % Define styles
 \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=red!30]
 \tikzstyle{process} = [rectangle, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=orange!30]
@@ -108,33 +108,31 @@
 \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=blue!30]
 \tikzstyle{arrow} = [thick,->,>=stealth,line width=0.2pt]
 % Place nodes
-\node (start) [startstop, xshift=-5cm] {(start) Bắt đầu};
-\node (b0) [io, right of=start] {(b0) $\mathcal{L}:=\{N_0 \}$ \\ $z^*=z_p$ \\ $(x^*,y^*)=(x,y)$};
-\node (b1) [decision, right of=b0] {(b1) $\mathcal{L} = \emptyset$?};
-\node (b2) [process, right of=b1] {(b2) Chọn $N_i$ từ $\mathcal{L}$ \\ và xoá khỏi $\mathcal{L}$};
-\node (b3) [process, right of=b2] {(b3) Giải $(P_i)$};
-\node (b4) [decision, right of=b3] {(b4) Vô nghiệm?};
-\node (b5) [decision, right of=b4] {(b5) $\exists x^i \notin Z^n_+$?};
-\node (b6) [io, above of=b5] {(b6) $z_i = z^*$, $(x^i,y^i) = (x,y)$};
-\node (b7) [io, right of=b5] {(b7) Thêm \\ $N_{i1}, \ldots , N_{ik}$ \\ vào $\mathcal{L}$};
-\node (kl) [process, below of=b1] {(kl) bài toán \\ được giải};
-\node (stop) [startstop, right of=b7] {(stop) Kết thúc};
+\node (start) [startstop, xshift=13cm] {(start) Bắt đầu};
+\node (b0) [io, below of=start] {(b0) $\mathcal{L}:=\{N_0 \}$ \\ $z^*=z_p$ \\ $(x^*,y^*)=(x,y)$};
+\node (b1) [decision, below of=b0] {(b1) $\mathcal{L} = \emptyset$?};
+\node (b2) [process, below of=b1] {(b2) Chọn $N_i$ từ $\mathcal{L}$ \\ và xoá khỏi $\mathcal{L}$};
+\node (b3) [process, below of=b2] {(b3) Giải $(P_i)$};
+\node (b4) [decision, below of=b3] {(b4) Vô nghiệm?};
+\node (b5) [decision, below of=b4] {(b5) $\exists x^i \notin Z^n_+$?};
+\node (b6) [io, right of=b5, node distance = 5cm] {(b6) $z_i = z^*$, \\ $(x^i,y^i) = (x,y)$};
+\node (b7) [io, below of=b5] {(b7) Thêm \\ $N_{i1}, \ldots , N_{ik}$ \\ vào $\mathcal{L}$};
+\node (stop) [startstop, below of=b7] {(stop) Kết thúc};
 % Draw arrows
 \draw [arrow] (start) -- (b0);
 \draw [arrow] (b0) -- (b1);
-\draw [arrow] (b1) -- node[anchor=south] {no} (b2);
+\draw [arrow] (b1) -- node[anchor=west] {no} (b2);
 \draw [arrow] (b2) -- (b3);
 \draw [arrow] (b3) -- (b4);
-\draw [arrow] (b4) -- node[anchor=south] {no} (b5);
-\draw [arrow] (b5) -- node[anchor=west] {no} (b6);
-\draw [arrow] (b5) -- node[anchor=south] {yes} (b7);
-\draw [arrow] (b4) --node[anchor=west] {yes} (15,2) -- (3,2) -- (b1);
-\draw [arrow] (b6) -| (b1);
-\draw [arrow] (b7) -- (23,6) -- (3,6) -- (b1);
+\draw [arrow] (b4) -- node[anchor=west] {no} (b5);
+\draw [arrow] (b5) -- node[anchor=south] {no} (b6);
+\draw [arrow] (b5) -- node[anchor=west] {yes} (b7);
+\draw [arrow] (b4) --node[anchor=south] {yes} (40,-36.32) |- (b1);
+\draw [arrow] (b6) |- (b1);
+\draw [arrow] (b7) -- (50,-51) |- (b1);
 \draw [arrow] (b7) -- (stop);
-\draw [arrow] (b1) -- node[anchor=west] {yes} (kl);
-\draw [arrow] (kl) -| (stop);
+\draw [arrow] (b1) -- node[anchor=south] {yes} (20,-14.51) |- (stop);
 \end{tikzpicture}
-\caption{Lưu đồ giải thuật của thuật toán nhánh cận.}
+\caption{Minh hoạ lưu đồ giải thuật của thuật toán nhánh cận.}
 \end{figure}
 \end{document}

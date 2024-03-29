@@ -32,9 +32,8 @@
 \contentsline {subsubsection}{\numberline {2.2.3.4}Ví dụ}{46}{subsubsection.2.2.3.4}%
 \contentsline {subsection}{\numberline {2.2.4}Thuật toán Gomory cho bài toán tối ưu nguyên bộ phân}{48}{subsection.2.2.4}%
 \contentsline {subsubsection}{\numberline {2.2.4.1}Ví dụ}{49}{subsubsection.2.2.4.1}%
-\contentsline {section}{\numberline {2.3}Phương pháp Land-Doig}{52}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Giới thiệu phương pháp và ý nghĩa}{52}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Các bước thực hiện của phương pháp}{54}{subsection.2.3.2}%
-\contentsline {chapter}{\numberline {3}Mở rộng kết quả cho bài toán dạng phân thức tuyến tính}{66}{chapter.3}%
-\contentsline {chapter}{{\bf Kết luận}\rm }{67}{chapter*.18}%
-\contentsline {chapter}{{\bf Tài liệu tham khảo}}{68}{chapter*.19}%
+\contentsline {section}{\numberline {2.3}Phương pháp Land-Doig (Nhánh cận)}{52}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Giới thiệu bài toán}{52}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Ý nghĩa của phương pháp và thuật toán Land-doig (Nhánh cận)}{54}{subsection.2.3.2}%
+\contentsline {chapter}{{\bf Kết luận}\rm }{65}{chapter*.18}%
+\contentsline {chapter}{{\bf Tài liệu tham khảo}}{66}{chapter*.19}%
