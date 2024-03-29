@@ -1,0 +1,37 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {chapter}{Lời cam đoan}{i}{chapter*.1}%
+\contentsline {chapter}{Lời cảm ơn}{ii}{chapter*.2}%
+\contentsline {chapter}{Mục lục}{iii}{chapter*.2}%
+\contentsline {chapter}{Danh mục các kí hiệu}{v}{chapter*.4}%
+\contentsline {chapter}{{\bf Lời nói đầu}\rm }{1}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}Một số kiến thức cơ bản về bài toán quy hoạch tuyến tính}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Một số kiến thức cơ bản về Bài toán tối ưu tuyến tính}{4}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Bài toán dạng chính tắc và chuẩn tắc}{4}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Chuyển bài toán về dạng chính tắc}{5}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Phương pháp giải bài toán tối ưu tuyến tính}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Phương pháp hình học}{6}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Phương pháp đơn hình}{6}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Phương pháp đơn hình đối ngẫu từ vựng}{6}{subsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.3.1} Bài toán đối ngẫu }{6}{subsubsection.1.2.3.1}%
+\contentsline {subsubsection}{\numberline {1.2.3.2}Phương pháp đơn hình đối ngẫu:}{9}{subsubsection.1.2.3.2}%
+\contentsline {subsubsection}{\numberline {1.2.3.3} Phương pháp đơn hình đối ngẫu từ vựng }{18}{subsubsection.1.2.3.3}%
+\contentsline {chapter}{\numberline {2}Bài toán tối ưu tuyến tính có nghiệm nguyên}{20}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Giới thiệu bài toán tối ưu nguyên}{20}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Phương pháp Gomory}{22}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1} Giới thiệu về phương pháp Gomory}{22}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2} Tư tưởng về phương pháp cắt}{22}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3} Thuật toán Gomory cho bài toán tối ưu nguyên hoàn toàn}{27}{subsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.1}Cơ sở lý thuyết}{27}{subsubsection.2.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.3.2} Thuật toán}{29}{subsubsection.2.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.2.3.3}Tính hữu hạn của thuật toán:}{30}{subsubsection.2.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.4}Ví dụ}{33}{subsubsection.2.2.3.4}%
+\contentsline {subsection}{\numberline {2.2.4}Thuật toán Gomory cho bài toán tối ưu nguyên bộ phân}{35}{subsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.4.1}Ví dụ}{36}{subsubsection.2.2.4.1}%
+\contentsline {subsection}{\numberline {2.2.5}Ý nghĩa của phương pháp Gomory}{39}{subsection.2.2.5}%
+\contentsline {section}{\numberline {2.3}Phương pháp Land-Doig}{39}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Giới thiệu phương pháp và ý nghĩa}{39}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Các bước thực hiện của phương pháp}{39}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Ví dụ minh họa}{39}{subsection.2.3.3}%
+\contentsline {chapter}{\numberline {3}Mở rộng kết quả cho bài toán dạng phân thức tuyến tính}{40}{chapter.3}%
+\contentsline {chapter}{{\bf Kết luận}\rm }{41}{chapter*.6}%
+\contentsline {chapter}{{\bf Tài liệu tham khảo}}{42}{chapter*.7}%
