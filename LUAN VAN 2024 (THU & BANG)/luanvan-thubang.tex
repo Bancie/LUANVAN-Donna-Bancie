@@ -153,14 +153,13 @@
 	\renewcommand{\baselinestretch}{1.2}
 	\fontsize{13pt}{20pt}\selectfont
 	
-	\chapter*{Lời cam đoan}
+    \chapter*{Lời cam đoan}
 	\thispagestyle{fancy}
 	\addcontentsline{toc}{chapter}{Lời cam đoan}
 	\vspace{1cm}
 	\indent
 	
 	Chúng tôi tên là Đỗ Ngọc Minh Thư và Nguyễn Chí Bằng, là các  sinh viên lớp DTU1221, khoa Toán - Ứng dụng , khóa 2022-2026,  thuộc trường Đại học Sài Gòn. 
-	
 	Xin cam đoan rằng: Toàn bộ nội dung được trình bày trong đề tài  này này đều do chúng tôi thực hiện dưới sự hướng dẫn của PGS.TS. Tạ Quang Sơn.
 	Những kết quả nghiên cứu của tác giả khác được sử dụng trong đề tài  đều có trích dẫn đầy đủ. 
 	Chúng tôi xin chịu trách nhiệm nếu có các nội dung sao chép không hợp lệ hoặc vi phạm quy chế đào tạo. 
@@ -182,11 +181,11 @@
 	\vspace{1cm}
 	\indent
 	
-	Đề tài nghiên cứu khoa học này được hoàn thành tại trường Đại Học Sài Gòn dưới sự hướng dẫn của PGS.TS. Tạ Quang Sơn.   Chúng em xin bày tỏ lòng biết ơn chân thành và sâu sắc về sự tận tâm và nhiệt tình của Thầy trong suốt quá trình thực hiện đề tài này.
+	Đề tài nghiên cứu khoa học này được hoàn thành tại trường Đại Học Sài Gòn dưới sự hướng dẫn của PGS.TS. Tạ Quang Sơn. Chúng em xin bày tỏ sự kính trọng cùng lòng biết ơn chân thành và sâu sắc với Thầy. Sự tận tâm và nhiệt tình hướng dẫn của Thầy đã giúp chúng em nâng cao hiểu biết và hoàn thành đề tài nghiên cứu khoa học này.
 	
 	
 	\bigskip
-	Xin cám ơn Phòng Đào tạo  và Khoa Toán - Ứng dụng, Trường Đại học Sài Gòn, đã tạo nhiều điều kiện thuận lợi, giúp chúng em nâng cao chất lượng và nhiệm vụ học tập qua việc thực hiện đề tài này.
+	Xin cám ơn Phòng Đào tạo  và Khoa Toán - Ứng dụng, Trường Đại học Sài Gòn, đã tạo nhiều điều kiện thuận lợi, hỗ trợ giúp chúng em nâng cao chất lượng và nhiệm vụ học tập qua việc thực hiện đề tài này.
 	\\
 	\\
 	\\
@@ -199,6 +198,7 @@
 	\rightline{\textbf{Đỗ Ngọc Minh Thư} \hspace*{0.75cm}}
 	\newpage
 	
+	
 	\addcontentsline{toc}{chapter}{Mục lục}
 	\tableofcontents
 	%\thispagestyle{plain}
@@ -208,14 +208,17 @@
 	\begin{longtable}{l l}
 		
 		$\mathbb{R}$ & Tập các số thực\\
-		%$\emptyset $ & Tập rỗng\\
+        $\mathbb{Z}$ & Tập số nguyên \\
+		$\emptyset $ & Tập rỗng\\
 		$\mathbb{R}^n$ & Không gian Euclide $n$-chiều\\
-
-		
 		$F$ & Tập chấp nhận được của bài toán tối ưu\\
 		$\langle u, v \rangle$ & Tích vô hướng của hai véc tơ $u$ và $v$ trong $\mathbb{R}^n$\\
-		
-		
+        $A^T$ & Ma trận chuyển vị \\
+        $A^{-1}$ & Ma trận nghịch đảo \\
+        $Ax \leq b$ & Hệ bất phương trình tuyến tính \\
+        $I_n$ & Ma trận đơn vị \\
+        $\lfloor a \rfloor$ & Phần nguyên nhỏ nhất của $a$ \\
+        $\lceil a \rceil$ & Phần nguyên lớn nhất của $a$ \\
 	\end{longtable}
 \newpage
 \pagenumbering{arabic} 
@@ -289,7 +292,11 @@ Do lần đầu tham gia tập dượt nghiên cứu khoa học. Các tri thức
 \newpage
 \renewcommand{\baselinestretch}{1.2}
  
-\chapter{Một số kiến thức cơ bản về bài toán quy hoạch tuyến tính} 
+\chapter{Một số kiến thức cơ bản về bài toán quy hoạch tuyến tính}
+Trước khi bắt đầu tìm hiểu các kỹ thuật và phương pháp giải quyết bài toán tối ưu tuyến tính để cho ra các nghiệm nguyên, ta cần điểm qua những kiến thức cơ bản cần thiết để làm nền móng cho sau này. Trong danh sách sơ lược quan trọng này, không thể không nhắc đến kiến thức về đại số tuyến tính, là nền tảng vững chắc cho việc giải quyết các vấn đề tối ưu.
+
+Bên cạnh đó, ta cũng nên tóm tắt lại các phương pháp căn bản thường được sử dụng để giải quyết bài toán tối ưu tuyến tính, bao gồm cả phương pháp hình học và phương pháp đơn hình. Không chỉ dừng lại ở đó, phương pháp đơn hình đối ngẫu cũng nên được nhắc đến, bởi nó cung cấp một cách tiếp cận mạnh mẽ để xử lý các vấn đề tối ưu thông qua kĩ thuật đối ngẫu đặc biệt.
+
 \section{ Véc tơ, ma trận và các tính chất}
 
 \subsection*{ Véc tơ và các phép toán }
@@ -1426,7 +1433,7 @@ Rõ ràng bài toán có dạng giống như một bài toán tối ưu tuyến 
 
 \begin{equation*}
     \begin{split}
-      \rm{Max}  & 2x_1+2x_2 \\
+      \rm{Max} \quad & 2x_1+2x_2 \\
       &\left\{\begin{split}
           &2x_1+x_2 \le 8\\
           & x_1+3x_2 \le 10\\

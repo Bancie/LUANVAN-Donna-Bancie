@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1711735284 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/LUAN VAN 2024 (THU & BANG)/luanvan-thubang.tex" "luanvan-thubang.pdf" "luanvan-thubang" 1711735288 0
-  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/LUAN VAN 2024 (THU & BANG)/luanvan-thubang.tex" 1711735280 122102 d964066904f5498edca5c9f71fde6d51 ""
+["pdflatex"] 1711741615 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/LUAN VAN 2024 (THU & BANG)/luanvan-thubang.tex" "luanvan-thubang.pdf" "luanvan-thubang" 1711741618 0
+  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/LUAN VAN 2024 (THU & BANG)/luanvan-thubang.tex" 1711741615 123572 dc406c2ac1df41746556ee4bd6e3e492 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -314,10 +314,10 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "anh2.pdf" 1711623801 36539 78911f59ec45462b25b3434c0ab5a936 ""
   "anh3.pdf" 1711623801 12691 f54f258af93055925c5122562b710974 ""
-  "luanvan-thubang.aux" 1711735287 15941 391a26500d13992f36e17b048f0055c6 "pdflatex"
-  "luanvan-thubang.out" 1711735287 7873 58ab40b9af0bf4ef5713a6768fb22318 "pdflatex"
-  "luanvan-thubang.tex" 1711735280 122102 d964066904f5498edca5c9f71fde6d51 ""
-  "luanvan-thubang.toc" 1711735287 3504 4f01d58bb58928b40765702b522ac932 "pdflatex"
+  "luanvan-thubang.aux" 1711741618 16015 40ade26c86318dc8570ac226db2377e9 "pdflatex"
+  "luanvan-thubang.out" 1711741618 7873 58ab40b9af0bf4ef5713a6768fb22318 "pdflatex"
+  "luanvan-thubang.tex" 1711741615 123572 dc406c2ac1df41746556ee4bd6e3e492 ""
+  "luanvan-thubang.toc" 1711741618 3505 e5e573436fa14d2afd5e9eccfffe962f "pdflatex"
   "ảnh 1.pdf" 1711623801 57952 c4826b5717d445627938344b97000e5b ""
   (generated)
   "luanvan-thubang.aux"
