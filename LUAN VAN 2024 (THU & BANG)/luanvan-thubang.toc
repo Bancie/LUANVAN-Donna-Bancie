@@ -35,5 +35,5 @@
 \contentsline {section}{\numberline {2.3}Phương pháp Land-Doig (Nhánh cận)}{52}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Giới thiệu bài toán}{52}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Ý nghĩa của phương pháp và thuật toán Land-doig (Nhánh cận)}{54}{subsection.2.3.2}%
-\contentsline {chapter}{{\bf Kết luận}\rm }{65}{chapter*.18}%
-\contentsline {chapter}{{\bf Tài liệu tham khảo}}{66}{chapter*.19}%
+\contentsline {chapter}{{\bf Kết luận}\rm }{66}{chapter*.18}%
+\contentsline {chapter}{{\bf Tài liệu tham khảo}}{67}{chapter*.19}%
