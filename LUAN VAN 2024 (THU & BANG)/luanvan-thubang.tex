@@ -1444,8 +1444,12 @@ Rõ ràng bài toán có dạng giống như một bài toán tối ưu tuyến 
 Nếu giải bài toán thông thường, ta nhận được nghiệm $x_1=2.8,x_2=2$. Giả sử bài toán thêm điều kiện nghiệm nguyên, ta thử điều chỉnh nghiệm bằng cách làm tròn số từ nghiệm nhận được.\\
 Trường hợp nếu, làm tròn $x_1 \to 3, x_2 \to 3$, thì lúc này điểm $(x_1,x_2)$ không còn nằm trong miền chấp nhận được. Còn nếu làm tròn $x_1 \to 2, x_2 \to 2$, thì chưa biết còn thực sự đạt tối ưu hay chưa.\\
 Vì thế, cần phải có lý thuyết riêng để giải các bài toán tối ưu nguyên.
-\textcolor{red}{VẼ giùm cái hình ở đây}
 
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{plot.pdf}
+\caption{Hình minh hoạ bài toán}
+\end{figure}
 
 
 
@@ -1512,7 +1516,7 @@ $(2;3);(3;2)$&$[(\frac{13}{3},\frac{8}{3}); (\frac{40}{9};\frac{23}{9})]$&$[(2;3
     \end{tabular}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\linewidth]{ảnh 1.pdf}
+\includegraphics[width=0.8\linewidth]{ảnh 1.pdf}
 \end{figure}    
 \end{vd}
 Qua các định lý và hệ quả trên, đã từng có ý tưởng tìm nghiệm của bài toán tối ưu có miền xác định là một bao lồi $R$ để giải bài toán tối ưu nguyên với miền xác định $L^N$. Tuy nhiên, việc tìm được một bao lồi $R$ để thiết lập bài toán lại là một vấn đề khó giải quyết. Do đó, cần có một thuật toán khác hữu hiệu hơn.\\ 
@@ -1945,7 +1949,8 @@ Do $k=p$ nên bổ đề được chứng minh.\\
     Ta dừng thuật toán và kết luận nghiệm của bài toán đã cho là $x=(x_1,x_2,x_3)=(0,\dfrac{5}{2},2)$ và giá trị tối ưu của hàm mục tiêu là $18.5$.
 
 \section{Phương pháp Land-Doig (Nhánh cận)}
-XXX
+Phương pháp Land-Doig, thường được gọi với một cái tên khác là phương pháp nhánh cận, là một cái tên gợi ý cho một phương pháp khéo léo để giải quyết các tình thế khó khăn trong tối ưu hóa.
+
 \subsection{Giới thiệu bài toán}
 Trong bài toán tối ưu tuyến tính giải cho ra nghiệm nguyên, đôi lúc ta gặp trường hợp yêu cầu tất cả các nghiệm cho ra nguyên và đôi lúc chỉ yêu cầu một vài nghiệm nguyên.
 
@@ -2505,6 +2510,12 @@ Nếu không tồn tại $x^i \notin Z^n_+$, tức $\forall x^i \in Z^n_+$, ta �
     Bài toán cho giá trị tối ưu và nghiệm lần lượt là  $z_6=12.08, x^6_1=0.8, x^6_2=0.8, x^6_3=2$, ta nói bài toán được \textbf{gọt bởi cận}.
     
 Tiếp tục chọn $x^2_2=0.36$ từ $(P_2)$ thu nhận được bài toán $(P_7)$ cho giá trị và nghiệm lần lượt là $z_7=12.1, x^7_1=2.1, x^7_2=0, x^7_3=0.17$, do $z_7<z_4 \rightarrow$ loại. Bài toán $(P_8)$ cho kết quả \textbf{vô nghiệm}. Vậy nghiệm tối ưu của bài toán là $x_1=1, x_2=2, x_3=1$ và giá trị tối ưu $z=12.7$.
+\subsection*{Tóm tắt}
+Phương pháp Land-Doig hay còn gọi là phương pháp nhánh cận, cách tiếp cận của phương pháp là chia vấn đề khó khăn thành các phần nhỏ dễ quản lý hơn.
+
+Thuật toán Land-Doig là một khung thuật toán được thiết kế với ý tưởng cốt lõi là chia bài toán thành tập những bài toán con sau đó duyệt qua các giải pháp tiềm năng một cách có hệ thống, tương tự như việc khám phá các lối đi mê cung được phân nhánh như một rễ cây. Bắt nguồn từ giải pháp ban đầu, thuật toán cố gắng mở rộng các nhánh của nó, mỗi nhánh đại diện cho một tập hợp con các bài toán.
+
+Tuy nhiên, trước khi đi sâu vào việc liệt kê đầy đủ các giải pháp trong một nhánh, thuật toán sẽ xem xét kỹ lưỡng về điều kiện nghiệm để cho ra giải pháp tối ưu cuối cùng. Nếu một nhánh bằng một cách nào đó không thoả điều kiện nghiệm thì nhánh đó sẽ bị loại bỏ ngay lập tức, giúp việc tìm ra giải pháp tối ưu ngày một hiệu quả.
         
 \chapter*{Kết luận}                         % Chương 3
 \addcontentsline{toc}{chapter}{{\bf  Kết luận}\rm}
@@ -2514,9 +2525,9 @@ Tiếp tục chọn $x^2_2=0.36$ từ $(P_2)$ thu nhận được bài toán $(P
 Luận văn này đạt được các vấn đề sau đây:
 
 \begin{itemize}
-	\item 
-	\item 
-	\item
+    \item Giới thiệu một cách rõ ràng về bài toán tối ưu tuyến tính cho ra nghiệm nguyên.
+    \item Trình bày về tư tưởng lát cắt và thuật toán của Gomory để giải bài toán tối ưu nguyên.
+	\item Tìm hiểu về phương pháp Land-Doig hay còn gọi là phương pháp nhánh cận, một phương pháp giúp giải bài toán toán ưu tuyến tính nguyên khả thi trên máy tính và mang tính ứng dụng cao.
 \end{itemize}
 
 

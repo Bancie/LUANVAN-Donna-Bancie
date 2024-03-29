@@ -513,6 +513,11 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnti7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnbxti10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnti9.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnti7.tfm
+INPUT ./plot.pdf
+INPUT ./plot.pdf
+INPUT ./plot.pdf
+INPUT ./plot.pdf
+INPUT ./plot.pdf
 INPUT ./ảnh 1.pdf
 INPUT ./ảnh 1.pdf
 INPUT ./ảnh 1.pdf
