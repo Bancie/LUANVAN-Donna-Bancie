@@ -290,17 +290,17 @@ Do lần đầu tham gia tập dượt nghiên cứu khoa học. Các tri thức
 \renewcommand{\baselinestretch}{1.2}
  
 \chapter{Một số kiến thức cơ bản về bài toán quy hoạch tuyến tính} 
-Kiến thức trình bày trong chương này, hầu hết được tham khảo từ các tài liệu  \cite{xxx} và \cite{xxx}.
 \section{ Véc tơ, ma trận và các tính chất}
 
-\subsection{ Véc tơ và các phép toán }
-\begin{itemize}
-\item Ký hiệu vector $x \in \mathbb{R}^n,$
+\subsection*{ Véc tơ và các phép toán }
+
+Ta ký hiệu vector $x \in \mathbb{R}^n,$
 \begin{equation*}
 x=(x_1,x_2,\ldots,x_n).
 \end{equation*}
 Trong đó $x_i \in \mathbb{R}$ với $i=1,2,\ldots,n$.
-\item Các phép toán:
+ 
+ Các phép toán:
 \begin{equation*}
 \begin{split}
 x + y &= (x_1 + y_1, x_2 + y_2 , \ldots , x_n +y_n) \\
@@ -308,7 +308,7 @@ x + y &= (x_1 + y_1, x_2 + y_2 , \ldots , x_n +y_n) \\
 \end{split}
 \end{equation*}
 Trong đó $x, \: y \in \mathbb{R}^n$ và $\lambda \in \mathbb{R}$.
-\item Thứ tự vector: 
+ Thứ tự vector: 
 \begin{equation*}
 \begin{split}
 x \leq y & \Leftrightarrow x_i \leq y_i, \\
@@ -317,15 +317,16 @@ x = y & \Leftrightarrow x_i = y_i. \\
 \end{split}
 \end{equation*}
 Trong đó $i=1,2,\ldots,n$.
-\item Vector đơn vị: $(1,0,\ldots,0),\:(0,1,\ldots,0) , \ldots , (0,0,\ldots,1)$.
-\item Vector $0$: $0=(0,0,\ldots,0)$. 
-\end{itemize}
 
-\subsection{ Ma trận và các phép toán}
-\begin{itemize}
-\item Ký hiệu $A$ là ma trận $m\times n$, trong đó $A=(a_{ij})$ và $i=1,2,\ldots,m$, $j=1,2,\ldots,n$. $A_i$ chỉ dòng thứ $i$ của ma trận $A$ và $A_j$ chỉ cột thứ $j$ của ma trận $A$.
-\item $A$ là ma trận vuông khi $m=n$.
-\item Ma trận cột:
+ Vector đơn vị: $(1,0,\ldots,0),\:(0,1,\ldots,0) , \ldots , (0,0,\ldots,1)$.
+
+ Vector $0$: $0=(0,0,\ldots,0)$. 
+
+\subsection*{ Ma trận và các phép toán}
+ Ký hiệu $A$ là ma trận $m\times n$, trong đó $A=(a_{ij})$ và $i=1,2,\ldots,m$, $j=1,2,\ldots,n$. $A_i$ chỉ dòng thứ $i$ của ma trận $A$ và $A_j$ chỉ cột thứ $j$ của ma trận $A$.
+ $A$ là ma trận vuông khi $m=n$.
+
+ Ma trận cột:
 \begin{equation*}
 A = \begin{bmatrix}
         a_1 \\
@@ -334,13 +335,13 @@ A = \begin{bmatrix}
         a_n
 	\end{bmatrix}.
 \end{equation*}
-\item Ma trận dòng:
+ Ma trận dòng:
 \begin{equation*}
 A^T = \begin{bmatrix}
 	a_1 & a_2 & \cdots & a_n
 	\end{bmatrix}.
 \end{equation*}
-\item Ma trận đơn vị:
+ Ma trận đơn vị:
 \begin{equation*}
 I = \begin{bmatrix}
         1 & 0 & \cdots & 0 \\
@@ -349,17 +350,19 @@ I = \begin{bmatrix}
 		0 & 0 & \cdots & 1
 	\end{bmatrix}.
 \end{equation*}
-\item Cộng ma trận: $A, \: B$ là ma trận $m\times n$,
+ Cộng ma trận: $A, \: B$ là ma trận $m\times n$,
 \begin{equation*}
 A + B = (a_{ij}+b_{ij}).
 \end{equation*}
 Trong đó $i=1,2,\ldots,m$ và $j=1,2,\ldots,n$.
-\item Nhân với 1 số: $A, \: B$ là ma trận $m\times n$,
+ 
+ Nhân với 1 số: $A, \: B$ là ma trận $m\times n$,
 \begin{equation*}
 \lambda A = (\lambda a_{ij}).
 \end{equation*}
 Trong đó $i=1,2,\ldots,m$ và $j=1,2,\ldots,n$.
-\item Với ma trận dòng
+ 
+ Với ma trận dòng
 \begin{equation*}
 A^T = \begin{bmatrix}
 	a_1 & a_2 & \cdots & a_n
@@ -378,7 +381,7 @@ Ta có tích hai ma trận
 \begin{equation*}
 A\times B = a_1b_1 + a_2b_2 + \ldots + a_nb_n.
 \end{equation*}
-\item Tích của ma trận $A$ cấp $m \times p$ với ma trận $B$ cấp $p \times n$ ta được ma trận $C$ cấp $m \times n$:
+ Tích của ma trận $A$ cấp $m \times p$ với ma trận $B$ cấp $p \times n$ ta được ma trận $C$ cấp $m \times n$:
 \begin{equation*}
 C = \begin{bmatrix}
         A_1B^1 & A_1B^2 & \cdots & A_1B^n  \\
@@ -387,7 +390,9 @@ C = \begin{bmatrix}
 		A_mB^1 & A_mB^2 & \cdots & A_mB^n
 	\end{bmatrix}.
 \end{equation*}
-\item Hệ phương trình
+ 
+\subsection*{Hệ phương trình}
+Ta có hệ phương trình:
 \begin{equation*}
 \left\{\begin{split}
 \begin{matrix}
@@ -421,19 +426,17 @@ có thể viết lại thành
 \end{bmatrix}.
 \end{equation}
 
-\end{itemize}
+\subsection*{Các phép biến đổi trên ma trận}
 
-\subsection{Các phép biến đổi trên ma trận}
-\begin{itemize}
-\item Các phép biến đổi bao gồm:
+ Các phép biến đổi bao gồm:
 \begin{itemize}
 \item \textbf{Phép đổi hàng.} Đổi chỗ hàng $i$ và hàng $j$ của ma trận, được ký hiệu $h_i \leftrightarrow h_j$.
 \item \textbf{Phép thay thế tỷ lệ.} Nhân hàng $i$ của ma trận với số $\alpha \neq 0$, được ký hiệu $h_i \leftarrow \alpha h_i$.
 \item \textbf{Phép thay thế hàng.} Cộng vào hàng $i$ một bội $k$ lần hàng $j$, được ký hiệu là $h_i \leftarrow h_i + k h_j$, với $j \neq i$.
 \end{itemize}
-\end{itemize}
 
-\subsection{ Định thức của ma trận và ma trận đảo}
+
+\subsection*{ Định thức của ma trận và ma trận đảo}
 Cho ma trận vuông cấp $n$:
 \begin{equation*}
 A =
@@ -444,12 +447,12 @@ A =
 	a_{n1} & a_{n2} & \cdots & a_{nn} 
 \end{bmatrix}
 \end{equation*}
-\begin{itemize}
-\item Định thức của ma trận $A$ được tính theo công thức:
+
+ Định thức của ma trận $A$ được tính theo công thức:
 \begin{equation}
 \text{det}(A) = \sum _{\sigma \in S_n} \text{sgn} (\sigma) \prod _{i=1}^n a_{i,\sigma (i)}.
 \end{equation}
-\item Ta có thể viết định thức của ma trận $A$ dưới dạng
+ Ta có thể viết định thức của ma trận $A$ dưới dạng
 \begin{equation*}
 \text{det} A =
 \begin{vmatrix}
@@ -459,11 +462,11 @@ A =
 	a_{n1} & a_{n2} & \cdots & a_{nn} 
 \end{vmatrix}.
 \end{equation*}
-\item Áp dụng vào ma trận vuông cấp 1, ta có:
+ Áp dụng vào ma trận vuông cấp 1, ta có:
 \begin{equation}
 \text{det}[a]=a.
 \end{equation}
-\item Áp dụng vào ma trận vuông cấp 2, ta có:
+Áp dụng vào ma trận vuông cấp 2, ta có:
 \begin{equation}
 \text{det} \begin{bmatrix}
 a_{11} & a_{12} \\
@@ -473,7 +476,7 @@ a_{11} & a_{12} \\
 a_{21} & a_{22}
 \end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}.
 \end{equation}
-\end{itemize}
+
 Ma trận vuông $B$ được gọi là ma trận đảo của $A$ nếu $AB=BA=I$.
 
 \textbf{Ví dụ.} Cho hai ma trận
@@ -492,8 +495,8 @@ B = \begin{pmatrix}
 \section{Một số kiến thức cơ bản về Bài toán tối ưu tuyến tính}
 
 \subsection{Bài toán dạng chính tắc và chuẩn tắc}
-\begin{itemize}
-    \item \textbf{Bài toán dạng chính tắc}
+
+     \textbf{Bài toán dạng chính tắc}
     
     Ta có bài toán dạng:
     \begin{equation} \small \label{F}
@@ -529,7 +532,7 @@ B = \begin{pmatrix}
         b_m
         \end{pmatrix}$ và $c^T=(c_1 \: c_2 \: \ldots \: c_n)$.
 
-    \item \textbf{Bài toán dạng chuẩn tắc}
+     \textbf{Bài toán dạng chuẩn tắc}
     
     Nếu bài toán có dạng:
 
@@ -566,17 +569,17 @@ B = \begin{pmatrix}
         b_m
         \end{pmatrix}$ và $c^T=(c_1 \: c_2 \: \ldots \: c_n)$.
 
-\end{itemize}
+
 
 \subsection{Chuyển bài toán về dạng chính tắc}
 
 Để thuận tiện, ta chỉ xét dạng bài toán quy hoạch tuyến tính tổng quát là \textbf{dạng chính tắc} và bất kỳ bài toán nào cũng có thể đưa về dạng chính tắc.
 
-\begin{itemize}
-\item \textbf{Phương pháp đưa về dạng chính tắc:}
-    \begin{itemize}
-    \item Bài toán $\max f(x) \longrightarrow -\min [-f(x)]$.
-    \item Bằng cách thêm ẩn phụ $x_{n+i}$ tương ứng có hệ số trong hàm mục tiêu là $c_{n+i}=0$, ta có thể đưa bất đẳng thức 
+
+ \textbf{Phương pháp đưa về dạng chính tắc:}
+    
+     Bài toán $\max f(x) \longrightarrow -\min [-f(x)]$.
+     Bằng cách thêm ẩn phụ $x_{n+i}$ tương ứng có hệ số trong hàm mục tiêu là $c_{n+i}=0$, ta có thể đưa bất đẳng thức 
     \begin{equation*}
     \sum _{j=1}^n a_{ij} x_j \geq b_i
     \end{equation*}
@@ -590,68 +593,22 @@ B = \begin{pmatrix}
     \end{equation*}
     hoặc
     \begin{equation*}
-    \sum _{j=1}^n a_{ij} x_j + x_{n+i} = b_i
+    \sum _{j=1}^n a_{ij} x_j + x_{n+i} = b_i.
     \end{equation*}
-    \item Nếu tồn tại bất kỳ $x_k$ không có ràng buộc thì ta viết
+     Nếu tồn tại bất kỳ $x_k$ không có ràng buộc thì ta viết
     \begin{equation*}
     x_k = x_k^{'} - x_k^{''}
     \end{equation*}
     với $x_k^{'} \geq 0$ và $x_k^{''} \geq 0$.
-    \end{itemize}
-\end{itemize}
+    
+
 Kể từ đây, ta chỉ quan tâm bài toán \eqref{chinhtac}.
 
 
 \section{Phương pháp giải bài toán tối ưu tuyến tính}
 
 \subsection{Phương pháp hình học}
-\subsubsection*{Vấn đề về tập lồi}
-\usetikzlibrary{patterns}
-
-\begin{dn}[Tập lồi]
-Tập $S$ được gọi là \textbf{tập lồi} nếu $S$ thoả điều kiện:
-\begin{itemize}
-\item Cho bất kỳ 2 điểm $A$ và $B$ nằm trong tập $S$.
-\item Đường thẳng nối 2 điểm $A$ và $B$ luôn nằm trong $S$.
-\end{itemize}
-\end{dn}
-
-
-\begin{dn}[Cực điểm]
-Với bất kỳ tập $S$, điểm $P \in S$ được gọi là \textbf{cực điểm} nếu thoả các điều kiện:
-\begin{itemize}
-\item Tồn tại đoạn thẳng $AB$ nằm hoàn toàn trong $S$.
-\item Tồn tại điểm $P$ sao cho $P := \{x \in AB: x=A \vee x=B \}$.
-\end{itemize}
-\end{dn}
-
-\begin{dn}[Siêu phẳng]
-Tập $S$ gọi là một \textbf{siêu phẳng} nếu $S$ gồm các vector
-\begin{equation*}
-X = \begin{bmatrix}
-        x_1 \\
-        x_2 \\
-        \vdots \\
-        x_n
-	\end{bmatrix}
-\end{equation*}
-trong không gian $\mathbb{R}^n$ sao cho
-\begin{equation*}
-a_1x_1 + a_2x_2 + \ldots + a_nx_n = c
-\end{equation*}
-trong đó $c$ là một hằng số và $a_1,a_2,\ldots,a_n \neq 0$.
-\end{dn}
-\begin{figure}
-	\centering
-	\subfigure[]{\includegraphics[width=0.2\textwidth]{vuong2.pdf}} 
-	\subfigure[]{\includegraphics[width=0.15\textwidth]{lom.pdf}} 
-	\subfigure[]{\includegraphics[width=0.15\textwidth]{tron.pdf}} 
-	\subfigure[]{\includegraphics[width=0.15\textwidth]{duc lo.pdf}} 
-	\caption{(a) Tập lồi (b) Tập lõm (c) Tập lồi (d) Tập lõm}
-	\label{fig:foobar}
-\end{figure}
-
-\subsubsection*{Bài toán trong không gian $\mathbb{R}^2$}
+Ta xét bài toán trong không gian $\mathbb{R}^2$ sau,
 
 \begin{equation} \small \label{chinhtac}
 	\begin{split}
@@ -672,8 +629,8 @@ Trong đó $A$ là ma trận $m\times 2$, $b=\begin{pmatrix}
 	\end{pmatrix}$ và $c^T=(c_1 \: c_2 )$.
 
 
-\begin{itemize}
-\item \textbf{Tập nghiệm của bài toán}
+
+ \textbf{Tập nghiệm của bài toán}
 
 Ta có bài toán minh hoạ sau:
 \begin{equation}
@@ -688,29 +645,23 @@ Ta có bài toán minh hoạ sau:
 	\end{split}
 \end{equation}
 Với từng ràng buộc, ta có thể biểu thị trên đồ thị bằng từng đường thẳng tương ứng, ví dụ, ràng buộc
-\begin{equation*}
-x_1 + x_2 \leq 7
-\end{equation*}
+$x_1 + x_2 \leq 7$
 tương ứng với mặt phẳng bên dưới đường thẳng $CD$ trong hình 2.
-\begin{equation*}
-	2x_1 + x_2 \leq 10
-\end{equation*}
+$2x_1 + x_2 \leq 10$
 tương ứng với mặt phẳng bên dưới đường thẳng $AB$.
-\begin{equation*}
-	x_1 \leq 4
-	\end{equation*}
+$x_1 \leq 4$
 tương ứng với mặt phẳng bên trái đường thẳng $EG$. Tập nghiệm của bài toán là đa giác $OCKGE$ được biểu thị trong đồ thị hình 2.
 
-\item \textbf{Phương án tối ưu của bài toán}
-\begin{itemize}
-\item Để tìm phương án tối ưu của bài toán ta thiết lập phương thay đổi của hàm mục tiêu
+ \textbf{Phương án tối ưu của bài toán}
+
+ Để tìm phương án tối ưu của bài toán ta thiết lập phương thay đổi của hàm mục tiêu
 \begin{equation*}
 f(x)=c_1x_1+c_2x_2,
 \end{equation*}
-trong đó phương trình mô tả họ đường thẳng phụ thuộc theo tham số $f(x)$ với pháp vector $v=(c_1,c_2)$, giá trị $f(x)$ tăng hoặc giảm theo một hướng của vector v.
-\item Từ phương trình hàm mục tiêu ta thiết lập các đường mức.
-\item Tịnh tiến song song các đường mức theo chiều tăng nếu Max hoặc giảm nếu Min để tìm phương án tối ưu của bài toán. (Hình 3)
-\end{itemize}
+trong đó phương trình mô tả họ đường thẳng phụ thuộc theo tham số $f(x)$ với pháp vector $v=(c_1,c_2)$, giá trị $f(x)$ tăng hoặc giảm theo một hướng của vector $\vec{v}$.
+ Từ phương trình hàm mục tiêu ta thiết lập các đường mức.
+ Tịnh tiến song song các đường mức theo chiều tăng nếu Max hoặc giảm nếu Min để tìm phương án tối ưu của bài toán. (Hình 3)
+
 
 \begin{figure}[!htb]\label{hinh2}
     \begin{minipage}{0.48\textwidth}
@@ -797,14 +748,14 @@ trong đó phương trình mô tả họ đường thẳng phụ thuộc theo th
     \end{minipage}
  \end{figure}
 
-\end{itemize}
+
 
 \subsection*{Các trường hợp đặc biệt}
-\textbf{Trường hợp bài toán vô nghiệm}
+\subsubsection*{Trường hợp bài toán vô nghiệm}
 
 Trường hợp bài toán có các ràng buộc không cùng tạo ra miền nghiệm của bài toán, xem Hình 4. thì bài toán được gọi là vô nghiệm.
 
-\textbf{Trường hợp bài toán vô số nghiệm}
+\subsubsection*{Trường hợp bài toán vô số nghiệm}
 
 Trường hợp bài toán có đường mức được tạo ra từ phương trình hàm mục tiêu song song với cực biên của tập nghiệm, bài toán cho ra vô số nghiệm. (Hình 5)
 \begin{figure}[!htb]
@@ -890,7 +841,7 @@ Trường hợp bài toán có đường mức được tạo ra từ phương t
     \end{minipage}
 \end{figure}
 
-\textbf{Trường hợp bài toán nhận giá trị tối ưu vô hạn}
+\subsubsection*{Trường hợp bài toán nhận giá trị tối ưu vô hạn}
 
 Trường hợp miền nghiệm của bài toán là một tập mở đồng thời pháp vector cho chiều vô hạn thì bài toán có giá trị tối ưu đạt vô cực. (Hình 6)
 \begin{figure}
@@ -934,6 +885,8 @@ Trường hợp miền nghiệm của bài toán là một tập mở đồng th
 \begin{dn}[Cơ sở]
     Cơ sở của ma trận $A$ là một bộ gồm $m$ vector cột độc lập tuyến tính, ký hiệu $B=\{A_{j_1}, A_{j_2}, \ldots , A_{j_m}\}$.
 \end{dn}
+
+
 
 Ta xét bài toán chính tắc:
     \begin{equation} \small \label{chinhtac}
