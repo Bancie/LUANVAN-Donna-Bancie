@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  30 MAR 2024 01:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  18 APR 2024 15:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1101,17 +1101,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 404--405
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--407
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 437--439
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
 
  []
 
@@ -1123,7 +1118,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 469--470
+Underfull \hbox (badness 10000) in paragraph at lines 459--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 463--471
 
  []
 
@@ -1135,12 +1135,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 478--481
+Underfull \hbox (badness 10000) in paragraph at lines 472--475
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 482--484
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
 
  []
 
@@ -1152,12 +1162,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 499--502
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 505--522
+Underfull \hbox (badness 10000) in paragraph at lines 497--499
 
  []
 
@@ -1169,7 +1174,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 537--538
+Underfull \hbox (badness 10000) in paragraph at lines 514--517
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 520--537
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 537--554
 
  []
 
@@ -1181,13 +1196,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 547--550
+Underfull \hbox (badness 10000) in paragraph at lines 563--566
 
- []
-
-
-Overfull \hbox (3.65172pt too wide) in paragraph at lines 560--562
-\T5/cmr/m/it/13 Tø ^^_ay ta câ ^^_÷ñc gi£ ph÷ìng ¡n ban ^^_¦u l  $\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 = (0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 160\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 140)[]\OML/cmm/m/it/12 ; f[] \OT1/cmr/m/n/12 =
  []
 
 
@@ -1198,12 +1208,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 590--593
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 593--596
+Underfull \hbox (badness 10000) in paragraph at lines 580--606
 
  []
 
@@ -1215,10 +1220,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 605--614
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1227,49 +1228,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 615--619
+Ch\uhorn \ohorn ng 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 615--616
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 619--621
+Underfull \hbox (badness 10000) in paragraph at lines 625--627
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 631--649
+Underfull \hbox (badness 10000) in paragraph at lines 628--630
 
  []
 
+[15
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 660--662
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 663--678
-
- []
-
-
-Overfull \hbox (55.28635pt too wide) in paragraph at lines 679--731
-[]
- []
-
-
-Overfull \hbox (54.02571pt too wide) in paragraph at lines 679--731
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 679--731
+]
+Underfull \hbox (badness 10000) in paragraph at lines 651--652
 
  []
 
@@ -1281,6 +1259,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
+Underfull \hbox (badness 10000) in paragraph at lines 661--665
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--672
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 673--674
+
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1289,37 +1281,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 732--733
+Underfull \hbox (badness 10000) in paragraph at lines 681--683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 733--734
+Underfull \hbox (badness 10000) in paragraph at lines 684--687
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 734--735
+Underfull \hbox (badness 10000) in paragraph at lines 687--688
 
  []
 
 
-Overfull \hbox (4.35196pt too wide) in paragraph at lines 735--737
-\T5/cmr/m/n/13 L§y $\OML/cmm/m/it/12 M \OT1/cmr/m/n/12 = 3$ \T5/cmr/m/n/13 ta ^^_÷ñc ph÷ìng ¡n tèi ÷u cõa bai to¡n gèc $\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 = (0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 735--737
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 741--742
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 743--744
+Underfull \hbox (badness 10000) in paragraph at lines 691--692
 
  []
 
@@ -1331,32 +1308,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 746--747
+Underfull \hbox (badness 10000) in paragraph at lines 710--712
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 747--748
+Underfull \hbox (badness 10000) in paragraph at lines 724--726
 
  []
 
+<áº£nh 1.pdf, id=355, 569.88408pt x 402.10225pt>
+File: áº£nh 1.pdf Graphic file (type pdf)
+<use áº£nh 1.pdf>
+Package pdftex.def Info: áº£nh 1.pdf  used on input line 743.
+(pdftex.def)             Requested size: 384.1096pt x 271.02075pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 748--749
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 749--750
-
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 753--754
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 756--758
+Underfull \hbox (badness 10000) in paragraph at lines 746--748
 
  []
 
@@ -1368,26 +1338,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
-Ch\uhorn \ohorn ng 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 775--776
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 785--787
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 788--790
-
- []
-
-[20
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 811--812
+Underfull \hbox (badness 10000) in paragraph at lines 751--757
 
  []
 
@@ -1398,18 +1349,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 821--832
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 833--834
-
- []
+[20 <./áº£nh 1.pdf>]
+<anh2.pdf, id=409, 393.32245pt x 292.69351pt>
+File: anh2.pdf Graphic file (type pdf)
+<use anh2.pdf>
+Package pdftex.def Info: anh2.pdf  used on input line 761.
+(pdftex.def)             Requested size: 341.43437pt x 254.08302pt.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 836--838
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21 <./anh2.pdf>]
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 770.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 772--778
 
  []
 
@@ -1421,25 +1380,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 839--842
+Underfull \hbox (badness 10000) in paragraph at lines 786--787
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 842--843
+Underfull \hbox (badness 10000) in paragraph at lines 798--799
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 845--847
+Underfull \hbox (badness 10000) in paragraph at lines 800--801
 
  []
 
-<áº£nh 1.pdf, id=378, 569.88408pt x 402.10225pt>
-File: áº£nh 1.pdf Graphic file (type pdf)
-<use áº£nh 1.pdf>
-Package pdftex.def Info: áº£nh 1.pdf  used on input line 872.
-(pdftex.def)             Requested size: 384.1096pt x 271.02075pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 803--806
+
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1448,7 +1407,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 875--877
+Underfull \hbox (badness 10000) in paragraph at lines 822--829
+
+ []
+
+<anh3.pdf, id=453, 294.19913pt x 312.36702pt>
+File: anh3.pdf Graphic file (type pdf)
+<use anh3.pdf>
+Package pdftex.def Info: anh3.pdf  used on input line 832.
+(pdftex.def)             Requested size: 128.0387pt x 135.95004pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 837--841
 
  []
 
@@ -1459,16 +1428,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24 <./áº£nh 1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 881--887
+[24 <./anh3.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 842--845
 
  []
 
-<anh2.pdf, id=434, 393.32245pt x 292.69351pt>
-File: anh2.pdf Graphic file (type pdf)
-<use anh2.pdf>
-Package pdftex.def Info: anh2.pdf  used on input line 891.
-(pdftex.def)             Requested size: 341.43437pt x 254.08302pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 849--851
+
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1476,17 +1445,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25 <./anh2.pdf>]
-
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 900.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 902--909
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 877--879
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 915--916
+Underfull \hbox (badness 10000) in paragraph at lines 889--891
 
  []
 
@@ -1498,22 +1463,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 917--918
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 927--929
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 931--934
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 938--941
+Underfull \hbox (badness 10000) in paragraph at lines 910--911
 
  []
 
@@ -1525,8 +1475,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 965--969
-
+Overfull \hbox (3.43805pt too wide) in paragraph at lines 967--969
+\T5/cmr/m/n/13 vi»c chån dáng ^^_º h¼nh th nh l¡t c­t: $\OML/cmm/m/it/12 k \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 min\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 i\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 i \OMS/cmsy/m/n/12 2 f\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; :::; n\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; x[][]\OMS/cmsy/m/n/12 g$\T5/cmr/m/n/13 ,
  []
 
 
@@ -1537,17 +1487,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 970--977
-
- []
-
-<anh3.pdf, id=496, 294.19913pt x 312.36702pt>
-File: anh3.pdf Graphic file (type pdf)
-<use anh3.pdf>
-Package pdftex.def Info: anh3.pdf  used on input line 980.
-(pdftex.def)             Requested size: 170.71393pt x 181.25879pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 985--989
+Underfull \hbox (badness 10000) in paragraph at lines 982--984
 
  []
 
@@ -1558,16 +1498,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[29 <./anh3.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 990--993
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 997--999
-
- []
-
+[29]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1576,20 +1507,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1013--1017
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1020
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1027--1042
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1598,20 +1515,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1047--1049
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1051--1053
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1058--1060
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1620,90 +1523,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1062--1064
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1080--1082
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1094
-
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 1113--1114
-
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[34]
-Overfull \hbox (6.10472pt too wide) in paragraph at lines 1170--1172
-\T5/cmr/m/n/13 vi»c chån dáng ^^_º h¼nh th nh l¡t c­t: $\OML/cmm/m/it/12 k \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 min\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 i\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 i \OMS/cmsy/m/n/12 2 f\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; :::; n\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; x[][]\OMS/cmsy/m/n/12 g$\T5/cmr/m/n/13 ,
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 1185--1187
-
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[36]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[37]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[38]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[39]
 Ch\uhorn \ohorn ng 3.
-[40
+[33
 
 ]
 
@@ -1713,7 +1534,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[41
+[34
 
 ]
 
@@ -1723,7 +1544,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[42
+[35
 
 ] (./thu.aux)
  ***********
@@ -1742,21 +1563,21 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `thu.out' has not changed.
-(rerunfilecheck)             Checksum: BF4E4C03EAA10DD9AA872865CA2DB441;8245.
+(rerunfilecheck)             Checksum: 6C3A244696106BFB473D9227F05995CD;7861.
  ) 
 Here is how much of TeX's memory you used:
- 24873 strings out of 474273
- 453003 string characters out of 5747713
- 1961555 words of memory out of 5000000
- 46469 multiletter control sequences out of 15000+600000
+ 24837 strings out of 474273
+ 452635 string characters out of 5747713
+ 1958555 words of memory out of 5000000
+ 46453 multiletter control sequences out of 15000+600000
  585433 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,29n,107p,696b,744s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
-Output written on thu.pdf (49 pages, 447273 bytes).
+ 108i,27n,107p,693b,738s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
+Output written on thu.pdf (42 pages, 408580 bytes).
 PDF statistics:
- 709 PDF objects out of 1000 (max. 8388607)
- 564 compressed objects within 6 object streams
- 139 named destinations out of 1000 (max. 500000)
- 316 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 633 PDF objects out of 1000 (max. 8388607)
+ 498 compressed objects within 5 object streams
+ 119 named destinations out of 1000 (max. 500000)
+ 308 words of extra memory for PDF output out of 10000 (max. 10000000)
 

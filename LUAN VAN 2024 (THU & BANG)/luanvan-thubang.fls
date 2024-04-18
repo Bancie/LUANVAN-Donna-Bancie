@@ -436,9 +436,9 @@ INPUT ./luanvan-thubang.out
 INPUT ./luanvan-thubang.out
 OUTPUT luanvan-thubang.out
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnbx12.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnr17.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnr12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnbx12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnr17.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnr12.tfm

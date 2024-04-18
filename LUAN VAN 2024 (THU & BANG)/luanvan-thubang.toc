@@ -6,6 +6,11 @@
 \contentsline {chapter}{{\bf Lời nói đầu}\rm }{1}{chapter*.5}%
 \contentsline {chapter}{\numberline {1}Một số kiến thức cơ bản về bài toán quy hoạch tuyến tính}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1} Véc tơ, ma trận và các tính chất}{4}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1} Véc tơ và các phép toán }{4}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2} Ma trận và các phép toán}{5}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Hệ phương trình}{7}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Các phép biến đổi trên ma trận}{7}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.5} Định thức của ma trận và ma trận đảo}{8}{subsection.1.1.5}%
 \contentsline {section}{\numberline {1.2}Một số kiến thức cơ bản về Bài toán tối ưu tuyến tính}{9}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Bài toán dạng chính tắc và chuẩn tắc}{9}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Chuyển bài toán về dạng chính tắc}{10}{subsection.1.2.2}%

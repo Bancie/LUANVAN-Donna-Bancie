@@ -373,7 +373,7 @@ Kể từ đây, ta chỉ quan tâm bài toán \eqref{chinhtac}.
 \subsection{Phương pháp hình học}
 
 \subsection{Phương pháp đơn hình}
-\subsection{Phương pháp đơn hình đối ngẫu từ vựng}
+\subsection{Phương pháp đơn hình đối ngẫu}
 \subsubsection{ Bài toán đối ngẫu }
 \begin{itemize}
     \item \textbf{Bài toán gốc và bài toán đối ngẫu dạng chuẩn tắc:}\\
@@ -404,12 +404,13 @@ Kể từ đây, ta chỉ quan tâm bài toán \eqref{chinhtac}.
     Cho bài toán QHTT dạng chuẩn \eqref{baitoangoc} và bài toán \eqref{baitoandoingau} được gọi là các \textbf{bài toán đối ngẫu } (hay còn gọi là \textbf{cặp đối ngẫu}).\\
 \end{dn}
 Bài toán \eqref{baitoangoc} gọi là \textit{bài toán gốc}, bài toán \eqref{baitoandoingau} gọi là bài toán đối ngẫu.\\
+Trong phần này ta luôn xét bài toán Min cho bài toán gốc và bài toán Max cho bài toán đối ngẫu.\\
   \item \textbf{Bài toán gốc và bài toán đối ngẫu dạng chỉnh tắc:}\\
       \begin{minipage}[t]{0.48\linewidth}
     Bài toán gốc
    \begin{equation}
        \begin{split}
-           &{\rm{Min (Max)}} \langle c,x \rangle\\
+           &{\rm{Min }} \langle c,x \rangle\\
           \rm{s.t} &\left\{\begin{split}
             & Ax= b\\
             & x \ge 0\\
@@ -421,7 +422,7 @@ Bài toán \eqref{baitoangoc} gọi là \textit{bài toán gốc}, bài toán \e
 Bài toán đối ngẫu
 \begin{equation}
     \begin{split}
-        &{\rm{Max (Min)}} \langle b,y \rangle\\
+        &{\rm{Max}} \langle b,y \rangle\\
        \rm{s.t} & \left\{\begin{split}
             & A^Ty \le (\ge) c\\
             & y \hspace{0.1cm1cm} \text{tự do}\\
@@ -433,26 +434,18 @@ Bài toán đối ngẫu
 \begin{dl}\label{doingauyeu}
 (Đối ngẫu yếu) Nếu $x$ là một phương án bất kì của bài toán gốc \eqref{baitoangoc} và $y$ là phương án là một phương án bất kì của bài toán đối ngẫu \eqref{baitoandoingau} thì $f(x)\ge g(y) $.
     \end{dl}
-    \begin{cm}
-        Cho $x$ là phương án của bài toán gốc \eqref{baitoangoc} và $y$ là phương án của bài toán đối ngẫu \eqref{baitoandoingau}, nên $Ax \ge b, A^Ty \le c, x\ge 0, y\ge 0$\\
-        Từ đó ta có: $f(x)=(c,x)\ge (A^Ty,x)=(y,Ax) \ge(y,b)= g(y)$.\\
-    \end{cm}
+   
     \begin{dl}
         Nếu $x^*$ là phương án bất kì của bài toán gốc \eqref{baitoangoc} và $y^*$ là phương án bất kì của bài toán đối ngẫu (\eqref{baitoandoingau} và có $f(x^*)=g(y^*)$ thì $x^*$ là phương án tối ưu của bài toán gốc \eqref{baitoangoc} và $y^*$ là phương án tối ưu của bài toán đối ngẫu \eqref{baitoandoingau}.\\
     \end{dl}
-    \begin{cm}
-        Giả sử $x$  là một phương án bất kì của bài toán gốc \eqref{baitoangoc}, theo định lý \eqref{doingauyeu} ta có $f(x)\ge g(y^*)$. Theo giả thiết, $f(x^*)=g(y^*)$, vậy $f(x)\ge f(x^*)$. Vậy $x$ là phương án tối ưu của bài toán \eqref{baitoangoc}.\\
-        Tương tự, $y^*$ là phương án tối ưu của bài toán \eqref{baitoandoingau}.
-    \end{cm}
+
 \begin{dl}
         (Đối ngẫu mạnh) \\
       a) Nếu bài toán gốc có phương án tối ưu $x^*$ thì bài toán đối ngẫu cũng có phương án tối ưu $y^*$ và ngược lại, đồng thời $f(x^*)=g(y^*)$.\\
       b) Nếu hàm mục tiêu của bài toán gốc không bị chặn dưới thì bài toán đối ngẫu không có phương án.\\
         Nếu hàm mục tiêu của bài toán đối ngẫu không bị chặn trên thì bài toán gốc không có phương án .
     \end{dl}
-\begin{cm}
-    
-\end{cm}
+
 \begin{hq}
         Đối với mỗi cặp bài toán quy hoạch đối ngẫu chỉ có thể xảy ra một trong ba khả năng loại trừ nhau sau đây:\\
         a) Bài toán gốc và bài toán đối ngẫu đều không có phương án.\\
@@ -462,12 +455,34 @@ Bài toán đối ngẫu
     \begin{hq}
         Điều kiện cần và đủ để cặp phương án tối ưu $x^*,y^*$ là phương án tối ưu của cặp bài toán đối ngẫu \eqref{baitoangoc},\eqref{baitoandoingau} là $c^Tx^*=b^Ty^*$.
     \end{hq}
-    
+    \begin{dl}
+        (Độ lệch bù yếu) Giả sử $x \in R^n$ là phương án của bài toán gốc \eqref{baitoangoc}, $y\in R^m$ là phương án tối ưu của bài toán đối ngẫu \eqref{baitoandoingau}. Khi đó, điều kiện cần và đủ để $x$ và $y$ là phương án tối ưu của các bài toán tương ứng là :\\
+        i) $(a_{i1}x_ +a_{in}x_n -b_i)y_i=0 (\forall {i=1,..m}) $ \\
+        ii) $(c_j-(a_{1j} y_1+...a_{mj}y_m))x_j=0 (\forall{j=1,..n}) $ \\   
+    \end{dl}
+    Nếu biết phương án tối ưu của bài toán gốc, vận dụng lý thuyết đối ngẫu ta có thể suy ra phương án tối ưu của bài toán đối ngẫu tương ứng mà không cần giải nó.\\
+    \textbf{\textit{Chú ý:}} \\
+    Điều kiện i của định lý (1.4) cho ta kết quả:\\
+        - Nếu $y_i \ge 0 $ thì $\sum_{j=1}^n a_{in}x_n=b_i.$\\
+        - Nếu $\sum_{j=1}^n a_{in}x_n >b_i$ thì $y_i=0$.\\ 
+    Điều kiện (1.4.2) cho ta kết quả:\\
+        - Nếu $x_j \ge 0$ thì $\sum_{i=1}^m a_{mj}y_m=c_j.$\\
+        - Nếu $\sum_{i=1}^m a_{mj}y_m<c_j$ thì $x_j=0$.\\
     \end{itemize}
+    \textit{Nhắc lại} Ràng buộc chặt là ràng buộc xảy ra dấu =. Ràng buộc lỏng là ràng buộc xảy ra dấu bất đẳng thức thực.\\
+    Định lý độ lệch bù yếu còn có thể phát biểu lại như sau:\\
+    $x^*,y^*$ là phương án tối ưu của bài toán gốc và bài toán đối ngẫu khi và chỉ khi $x^*,y^*$ là phương án của bài toán tương ứng và thỏa mãn điều kiện nếu một ràng buộc là lỏng (tức là bị lệch) thì ràng buộc đối ngẫu tương ứng với nó phải chặt (tức là bù lại ).\\
+    \begin{bd}
+        Đối với một cặp bài toán đối ngẫu, nếu một ràng buộc là lỏng đối với đối với một phương án tối ưu của bài toán này thì ràng buộc đối ngẫu của nó phải chặt đối với phương án tối ưu của bài toán kia.\\
+    \end{bd}
+     \begin{dl}
+        (Độ lệch bù mạnh) Nếu cặp bài toán đối ngẫu có phương án tối ưu thì tồn tại một cặp phương án tối ưu thỏa mãn điều kiện nếu một ràng buộc là chặt thì ràng buộc đối ngẫu của nó phải là lỏng.\\
+        
+    \end{dl}
 \subsubsection{Phương pháp đơn hình đối ngẫu:}
 \begin{itemize}
     \item \textbf{Cơ sở chấp nhận được đối ngẫu:}\\
-    \begin{equation}\label{P}
+    \begin{equation}\label{chapnhan}
      \begin{split}
           & {\rm{Min}} \langle c,x \rangle\\
           \rm{s.t} &\left\{\begin{split}
@@ -476,14 +491,14 @@ Bài toán đối ngẫu
            \end{split}\right.
        \end{split}
    \end{equation}
-    Giả thiết rank $A=m$. Giả sử, $\{A_j|j\in J\} $ là hệ $m$ vecto độcw lập tuyến tính của A, gọi là hệ vecto cơ sở. J là tập chỉ số cơ sở. Ký hiệu $A_j$ lập nên từ các veto cơ sở, gọi là ma trận cơ sở.\\
-    Ký hiệu $H=\{1,2,...,n\} \setminus J $. Phương án cơ sở $(x_J,x_H)$ của bài toán \eqref{P} tương ứng với cơ sở $J$ thu được bằng cách giải hệ phương trình tuyến tính $x_H=0, A_Jx_J=b$. Nghĩa là $x_H=0; x_J A_J^{-1} b$.\\
+    Giả thiết rank $A=m$. Giả sử, $\{A_j|j\in J\} $ là hệ $m$ vecto độc lập tuyến tính của A, gọi là hệ vecto cơ sở. J là tập chỉ số cơ sở. Ký hiệu $A_j$ lập nên từ các véc  cơ sở, gọi là ma trận cơ sở.\\
+    Ký hiệu $H=\{1,2,...,n\} \setminus J $. Phương án cơ sở $(x_J,x_H)$ của bài toán \eqref{chapnhan} tương ứng với cơ sở $J$.
     \begin{dn}
-        a) Ta gọi cơ sở $J$ là\textit{ chấp nhận được gốc} nếu phương án cơ sở tương ứng với nó là phương án chấp nhận được, tức là nếu $x_J=A_J^{-1}b \ge 0$.\\
+        a) Ta gọi cơ sở $J$ là\textit{ chấp nhận được gốc} nếu phương án cơ sở tương ứng với nó là phương án chấp nhận được.\\
         b) Nếu phương án cơ sở tương ứng với $J$ là phương án tối ưu thì $J$ sẽ gọi là \textit{cơ sở tối ưu}.\\
     \end{dn}
-    Xét bài toán đối ngẫu với bài toán \eqref{P}
-    \begin{equation}\label{Q}
+    Xét bài toán đối ngẫu với bài toán \eqref{chapnhan}
+    \begin{equation}\label{doingauchapnhandoingauchapnhan}
     \begin{split}
         & {\rm{Max}} \langle b,y \rangle\\
        \rm{s.t} & \left\{\begin{split}
@@ -520,7 +535,8 @@ Bài toán đối ngẫu
     \end{tabular}\\
     Ý nghĩa của các ký hiệu giống như là bảng đơn hình. Chỉ có cột giả phương án là khác, cột này được lấy từ hệ thống \\
     $$x_0^J=A_J^{-1}b$$\\
-    Lưu ý hàng ước lượng $\Delta_k$ đề không dương vì giả thiết $J$ là cơ sở chấp nhận được đối ngẫu.\\
+    Lưu ý hàng ước lượng $\Delta_k$ đề không dương vì giả thiết $J$ là cơ sở chấp nhận được đối ngẫu.\\ 
+    Giả sử bài toán luôn có cơ sở đối ngẫu chấp nhận được, ta có các bước thuật toán.\\
     \textbf{\textit{THUẬT TOÁN:}}\\
     \textbf{Bước 1} Tìm giải phương án $J,A_J, A_J^{-1}$, giả phương án án $x_J^0,Z_J.$\\
     \textbf{Bước 2} (Kiếm tra tiêu chuẩn tối ưu)\\
@@ -533,7 +549,7 @@ Bài toán đối ngẫu
     Tìm cột xoay thỏa mãn $\dfrac{\Delta_s}{z_{rs}}=min \{\dfrac{\Delta_j}{z_{rj}}; z_{rj} <0\}$.\\
     \textbf{Bước 4} Thực hiện xoay hàng và cột để thiết lập bảng đơn hình mới. Cách làm giống như cách làm phương pháp đơn hình.\\
     Lặp lại bước 2.
-    \begin{vd}
+    \textbf{Ví dụ }
          Giải bài toán quy hoạch tuyến tính chuẩn tắc\\
     \begin{equation*}
         \begin{split}
@@ -558,7 +574,8 @@ Bài toán đối ngẫu
             \end{split}\right.
         \end{split}
     \end{equation*}
-    Từ đay ta có được giả phương án ban đầu là $x^0=(0,0,0,-160,-140)^T, f_0=f(x^0)=0$.
+    Từ đây ta có được giả phương án ban đầu là $x^0=(0,0,0,-160,-140)^T,\\  
+   f_0=f(x^0)=0$.
 
     Ta lập được bảng đơn hình sau:\\
     \begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -585,191 +602,14 @@ Bài toán đối ngẫu
     \end{tabular}\\
       Trong bảng 1, cột giả phương án có phần tử âm, nên ta chưa nhận được phương án tối ưu. Ta chọn dòng $x_4$  ( tương ứng với số âm nhỏ nhất $-160$) làm dòng quay. Cột quay là cột $x_2$ (tương ứng với số âm nhỏ nhất trong ba tỉ số $\frac{-15}{3},\frac{-12}{-4},\frac{-10}{-2}$). Phần tử quay bằng $-4$. Biến đổi bảng này theo quy tắc đơn hình ta nhận được Bảng 2.\\
     Trong Bảng 2,cột giả phương án vẫn còn phần tử âm. Ta chọn dòng $x_5$ làm dòng quay và chọn cột $x_3$ làm cột quay. Lúc này phần tử quay là $-2$. Ta tiếp tục biến đổi bảng đơn hình và nhận được Bảng 3. \\
-    Ở Bảng 3, mọi phần tử trong cột giả phương án đều dương nên ta nhận được phương án tối ưu: $x^*=(0,25,30)^T$ với $f_{\rm{min}}=600$.
-    \end{vd}
-    \item \textbf{Thuật toán đơn hình đối ngẫu khi chưa có cơ sở chấp nhận được đối ngẫu:}\\
-    Phương pháp đơn hình đối ngẫu luôn đòi hỏi biết một cơ sở đối ngẫu chấp nhận xuất phát. Nhưng đối với các bài toán không biết trước cơ sở chấp nhận được đối ngẫu bằng cách tìm cơ sở $J$ của ma trận $A$. Không mất tính tổng quát ta giả sử cơ sở này gồm m cột đầu tiên của ma trận $A,J=\{1,2...,m\}$.\\
-    Giả sử cơ sở $J$ không phải là chấp nhận được đối ngẫu (có thể cũng không chấp nhận được gốc).Để tìm cơ sở chấp nhận được đối ngẫu ta đưa thêm biến giả $x_0$ và thêm vào một ràng buộc dòng $i=0$:\\
-    $$x_0+x_{m+1}+x_{m+2}+...+x_n=M$$
-    trong đó $x_{m+1},x_{m+2},..x_n$ là thành phần ngoài cơ sở $J$ và $M$ là đủ lớn.\\
-    Ta có bài toán gốc khi thêm vào giả thiết trên được gọi là \textit{bài toán mở rộng}.\\
-    \begin{equation*}
-        \begin{split}
-            &F(x_0,x)=c^Tx \longrightarrow min\\
-            &\left\{\begin{split}
-                & x_0 + \sum_{j \notin J} x_j=M\\
-                &Ax=b\\
-                & x \ge 0\\
-            \end{split}\right.
-        \end{split}
-    \end{equation*}
-     Gọi $\overset{\sim}{A}$ là ma trân thêm dòng $i=0$ vào A. Lập bảng đơn hình đối ngẫu cho bài toán mở rộng với cơ sở $\overset{\sim}{J}=J \cup \{0\}$. Ma trận cơ sở $\overset{\sim}{A}_{\overset{\sim}{J}}$.\\
-Chú ý cột giả phương án $\overset{\sim}{x}_{\overset{\sim}{J}}=x_J+\alpha_JM.$Để tiện tính toán tách cột giả phương án thành hai cột ghi $x_J$ và $\alpha_J$ tương ứng.\\
-Giả sử $J$ không phải cơ sở chấp nhận được đối ngẫu. Ta thực hiện biến đổi bảng đơn hình với phần tử trụ $z_{0s}$ nghĩa là đưa $s$ vào và loại $0$ ra khỏi cơ sở. Bảng đơn hình đối ngẫu mới sẽ có dòng ước lượng $\overset{\sim}{\Delta_k}=\Delta_k- \Delta_s\le 0  (k=1,2...,n)$.\\
-Như vậy ta thu được bảng đơn hình đối ngẫu với cơ  chấp nhận được đối ngẫu nên ta có thể tiến hành giải theo các bước đơn hình đối ngẫu.\\
-Ta lưu ý trong khi giải không cần xác định cụ thể M mà chỉ xem $M$ đủ lớn.\\
-Thuật toán đơn hình đối ngẫu giải bài toán mở rộng sẽ kết thúc một trong cá trường hợp sau:\\
-    1) Bài toán mở rộng không có phương án. Khi đó bài toán xuất phát cũng không có phương án. Vì nếu bài toán ban đầu có phương án $x=(x_1,x_2,..x_n)^T$ thì $\overset{\sim}{x}=(x_0,x_1,..,x_n)^T$ với $x_0=M-x_1-x_2-...-x_n$ cũng là phương án của bài toán mở rộng.\\
-    2)Bài toán mở rộng có phương án tối ưu $\overset{\sim}{x}=(\overset{\sim}{x_0},\overset{\sim}{x_1},...,\overset{\sim}{x_n})^T$ và $x_0$là biến cơ sở. Trong trường hợp này hàm mục tiêu của bài toán mở rộng không phụ thuộc vào $M$. Do đó $(\overset{\sim}{x_0},\overset{\sim}{x_1},...,\overset{\sim}{x_n})^T$ là phương án tối ưu của bài toán ban đầu.\\
-
-        3) Bài toán mở rộng có phương án tối ưu $\overset{\sim}{x}=(\overset{\sim}{x_0},\overset{\sim}{x_1},...,\overset{\sim}{x_n})^T$ và $x_0$ không là biến cơ sở.Trong trường hợp này biến cơ sở phụ thuộc vào $M$. Nên có hai khả năng xảy ra:\\
-    a) Nếu giá trị hàm mục tiêu của bài toán mở rộng phụ thuộc vào $M$ thì khi $M 
-    \to +\propto $ giá trị hàm mục tiêu dần đến $-\propto$. Như vậy bài toán ban đầu có phương án chấp nhận được, nhưng hàm mục tiêu không bị chặn dưới nên bài toán ban đầu cũng không có nghiệm tối ưu.\\
-    b) Nếu giá trị hàm mục tiêu của bài toán mở rộng không phụ thuộc vào $M$ thì bài toán ban đầu có phương án tối ưu và tìm bằng cách bỏ $\overset{\sim}{x_0}$ và giảm dần $M$ cho đến khi một trong các $\overset{\sim}{x_0},\overset{\sim}{x_1},...,\overset{\sim}{x_n}$ trở thành $0$.\\
-    \item \textbf{Ví dụ}
-    Giải bài toán sau bằng phương pháp đơn hình đối ngẫu:\\
-    \begin{equation*}
-        \begin{split}
-            &f(x)=x_1+3x_2+x_4 -2x_6 \to min\\
-            &\left\{\begin{split}
-                &x_1+   x_4-3x_5+7x_6=-5\\
-                &   x_2-x_4+x_5-x_6=1\\
-                &x_3+3x_4+x_5-10x_6=8\\
-                &x_j \ge 0, j=1,...6\\
-            \end{split}\right.
-        \end{split}
-    \end{equation*}
-    Xét cơ sở $J=\{1,2,3\}$\\
-    Bảng đơn hình của cơ sở là\\
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-    \hline
-       Cơ sở  & Hệ số & Giả PA& $x_1$ &$x_2$ &$x_3$ &$x_4$ &$x_5$ &$x_6$ \\
-       \hline
-         $x_J$ & $c_J$ & $x_J^0$ &$1$ &$3$ &$0$ &$1$ &$0$ &$-2$\\
-         \hline
-         $x_1$ &$1$ &$-5$ &$ 1$ &$0$ &$0$ &$1$ &$-3$ &$7$\\
-         $x_2$ &$3$ &$1$ &$0$ &$1$ &$0$ &$-1$ &$1$ &$-1$\\
-         $x_3$ &$0$ &$8$ &$0$ &$0$ &$1$ &$3$ &$1$ &$-10$\\
-         \hline
-         &Bảng 1& $-2$ &$0$ &$0$ &$0$ &$-3$ &$0$ &$6$\\
-         \hline
-    \end{tabular}\\
-    Cơ sở $J$ không phải là cơ sở chấp nhận gốc vì $x_1=-5 <0$. Cũng không phải là cơ sở chấp nhận được đối ngẫu vì có $\Delta_6=6>0.$
-    Thiết lập bài toán mở rộng\\
-    \begin{equation*}
-        \begin{split}
-            &g(x)=0.x_0+x_1+3x_2+x_4 -2x_6 \to min\\
-            &\left\{\begin{split}
-                &x_0 +x_4+x_5+x_6=M \\           
-                &x_1+   x_4-3x_5+7x_6=-5\\
-                &   x_2-x_4+x_5-x_6=1\\
-                &x_3+3x_4+x_5-10x_6=8\\
-                &x_j \ge 0, j=0,1,...6\\
-            \end{split}\right.
-        \end{split}
-    \end{equation*}
-    Ta có $\overset{\sim}{J}=\{0,1,2,3\}$ là cơ sở bài toán mở rộng.\\
-
-    Bảng đơn hình tương ứng:\\
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-    \hline
-         Cơ sở &Hệ số &Giả &PA &$x_0$&$x_1$ & $x_2$ &$x_3$ &$x_4$ & $x_5$ &$x_6$ \\
-         \hline
-         $x_J$ &$c_J$& $x_J^0$ &$M$ &$0$ &$1$ &$3$ &$0$ &$1$ &$1$ &$-2$\\
-         \hline
-         $x_0$ &$1$ &$0$ &$1$ &$1$ &$0$ &$0$ &$0$ &$1$ &$1$ &$1$\\
-         $x_1$ &$1$ &$-5$ &$0$ & $0$ &$1$ &$3$ &$0$ &$1$ &$1$ &$-2$\\
-         $x_2$ & $3$ &$1$ &$0$ &$0$ &$0$ &$1$ &$0$ &$-1$ &$1$ &$-1$\\
-         $x_3$ &$0$ &$8$ &$0$ &$0$ &$0$ &$0$ &$1$ &$3$ &$1$ &$-10$\\
-         \hline
-         &Bảng 2& &&$0$ &$0$ &$0$ &$0$ &$-3$ &$0$ &$6$\\
-         \hline
-    \end{tabular}\\
-    
-    Thực hiện phép biến đổi bảng đơn hình, đưa $x_0$ ra khỏi cơ sở, đưa $x_6$ vào thay cho $x_0$, ta được bảng đơn hình\\
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-    \hline
-         Cơ sở &Hệ số &Giả &PA &$x_0$&$x_1$ & $x_2$ &$x_3$ &$x_4$ & $x_5$ &$x_6$ \\
-         \hline
-         $x_J$ &$c_J$& $x_J^0$ &$M$ &$0$ &$1$ &$3$ &$0$ &$1$ &$1$ &$-2$\\
-         \hline
-         $x_6$&$-2$ &$0$ &$1$ &$1$ &$0$ &$0$ &$0$ &$1$ &$1$ &$1$ \\
-         $x_1$& $1$ &$-5$ &$-7$ &$-7$ &$1$ &$0$ &$0$ &$-6$ &$-10$ &$0$\\
-         $x_2$ &$3$ &$1$ &$1$ &$1$ &$0 $ &$1$ &$0$ &$0$ &$2$ &$0$\\
-         $x_3$ &$0$ &$8$ &$10$ &$10$ &$0$ &$0$ &$1$ &$13$ &$11$ &$0$\\
-         \hline
-         &Bảng 3& &&$-6$ &$0$ &$0$ &$0$ &$-9$ &$-6$ &$0$\\
-         \hline
-    \end{tabular}\\
-    Tất cả ước lượng thỏa mãn $\Delta_k \le 0$. Vậy $\overset{\sim}{J}=\{6,1,2,3$ là cơ sở chấp nhận được đối ngẫu.Bắt đầu đi giải bài toán theo thuật toán đơn hình đối ngẫu.\\
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-    \hline
-       Cơ sở   & Hệ số& Giả & PA&$x_0$&$x_1$ & $x_2$ & $x_3$ &$x_4$ &$x_5$ &$x_6$ \\
-       \hline
-        $x_J$  &$c_J$ &$x_J^0$ &$M$ &$0$ &$1$ &$3$ &$0$ &$1$ &$1$ &$-2$\\
-        \hline
-        $x_6$ &$-2$ &$0$ &$1$ &$1$ &$0$ &$0$ &$0$ &$1$ &$1$ &$1$\\
-        $x_1$ &$1$ & $-5^*$ &$ -7^*$ &$-7$ & $1$ &$0$ &$0$ &$-6$ &$-10^*$ &$0$\\
-        $x_2$ &$3$ &$1$ &$1$ &$1$  &$0$ &$1$ &$0$ &$0$ &$2$ &$0$\\
-        $x_3$ &$0$ &$8$ &$10$ & $10$ &$0$ &$0$ &$1$ &$13$ &$11$  &$0$\\
-        \hline
-        & Bảng 4& & &$-6$ &$0$ &$0$ &$0$ &$-9$ &$-6$ &$0$\\
-        \hline
-        $x_6$ &$-2$ &$-1/2$ &$3/10$ &$3/10$ &$1/10$ &$0$ &$0$ &$4/10$ &$0$ &$1$\\
-        $x_5$ &$0$ &$-1/2$ &$7/10$ &$7/10$ &$-1/10$ &$0$ &$0$ &$6/10$ &$1$ &$0$\\
-        $x_2$ &$3$ &$0$ &$-4/10^*$ &$-4/10$ &$2/10$ &$1$ &$0$ &$-12/10^*$ &$0$ &$0$\\
-        $x_3$ &$0$ &$5/2$ &$23/10$ &$23/10$ &$11/10$ &$0$ &$1$ &$64/10$ &$0$ &$0$\\
-        \hline
-        &Bảng 5&&&$-18/10$ &$-6/10$ &$0$ &$0$ &$-54/10$ &$0$ &$0$\\
-        \hline
-        \end{tabular}
-    Sau khi thực hiện tính toán theo quy tắc thuật toán đơn hình đối ngẫu, ta thu được bảng đơn hình cuối.\\
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-    \hline
-         Cơ sở &Hệ số &Giả &PA &$x_0$&$x_1$ & $x_2$ &$x_3$ &$x_4$ & $x_5$ &$x_6$ \\
-         \hline
-         $x_J$ &$c_J$& $x_J^0$ &$M$ &$0$ &$1$ &$3$ &$0$ &$1$ &$1$ &$-2$\\
-         \hline
-        $x_6$ & $-2$ &$-1/2$ &$3/10$ &$3/10$ &$1/10$ &$0$ &$0$ &$4/10$ &$0$ &$1$  \\
-         $x_5$& $0$ &$1/2$ &$1/2$ &$7/10$ &$-1/10$ &$0$ &$0$ &$0$ &$1$ &$0$\\
-         $x_4$ &$1$ &$0$ &$1/3$ &$-4/10$ &$2/10$ &$1$ &$0$ &$1$ &$0$ &$0$\\
-         $x_3$ &$0$ &$5/2$ &$1/6$ &$0$ &$0$ &$-15/10$ &$-54/2$ &$0$ &$0$ &$0$ \\
-         \hline
-         &Bảng 4&$1$&$0$ &$0$ &$-15/10$ &$-54/2$ &$0$ &$0$ &$0$ &$0$\\
-         \hline
-    \end{tabular}\\
-
-    Ta thấy các phần tử trong cột giả phương án đều không âm khi $M \ge 3$.\\
-    $$\overset{\sim}{x_6}=\frac{-1}{2}+\frac{1}{6}M= \frac{1}{6}(M-3)\ge 0$$\\
-    $$\overset{\sim}{x_5}=\frac{1}{2}+\frac{1}{2}M\ge 0$$\\    
-    $$\overset{\sim}{x_4}=\frac{1}{3}M\ge 0, \overset{\sim}{x_3}=\frac{5}{2}+\frac{1}{6}M\ge 0$$\\
-    Khi $M\ge 0$ bài toán mở rộng có phương án tối ưu $\overset{\sim}{x}=(0,0,\overset{\sim}{x_3},\overset{\sim}{x_4},\overset{\sim}{x_5}, \overset{\sim}{x_6})^T$. Lấy $M=3$ ta được phương án tối ưu của bai toán gốc $x^*=(0,0,3,1,2,0,0^T$ và $f(x^*)=1$.\\
+    Ở Bảng 3, mọi phần tử trong cột giả phương án đều dương nên ta nhận được phương án tối ưu: $x^*=(0,25,30)^T$ với $f_{\rm{min}}=600$.\\
     
 \end{itemize}
-\subsubsection{ Phương pháp đơn hình đối ngẫu từ vựng }
-\begin{itemize}
-    \item \textbf{So sánh theo nghĩa từ vựng}\\
-    \begin{dn}
-         Vecto $X=(x_1,x_2,...x_n)$ được gọi là dương từ vựng ($X >0$) nếu $X \ne (0,0,..0)$ và thành phần đầu tiên khác 0 là dương.\\ 
-    \end{dn}
-     \begin{itemize}
-    \item Vecto $X$ gọi là lớn hơn từ vựng vecto $Y$ ( ký hiệu $X>Y$) nếu $X-Y>0$.\\ 
-    \item Vecto $X$ gọi là không nhỏ hơn từ vựng vecto $Y$ ( $X\ge Y$) nếu $X-Y \ge 0$.\\
-    \item $X$ gọi là âm từ vừng nếu $-X >0$.\\
-    \item Tương tự ta có định nghĩa cho $X\le 0, X<Y, X\le Y$.\\
-    
-\end{itemize}
-\begin{dn}
-    Phương án $x^*=(x_1^*,...x_n^*)^T$ là phương án tối ưu từ vựng (phương án $l$-tối ưu) nếu với mọi phương án ta có:\\
-    $$x^*=(x_1^*,...x_n^*)^T\ge x=(x_1,...,x_n)^T$$
-\end{dn}
-Vậy để tìm phương án tối ưu từ vựng của bài toán Tối ưu tuyến tính ta áp dụng thuật toán đơn hình đối ngẫu từ vựng tức là phương pháp đơn hình đối ngẫu với bảng đơn hình xuất phát có các cột là dương từ vựng.\\
-Phương pháp đơn hình đối ngẫu từ vựng này sẽ được áp dụng để giải các bài toán tối ưu tuyến tính nguyên với Thuật toán Gomory.\\
-\end{itemize}
-
-
-
-
-
-
-
-
-
 
 
 
 \chapter{Bài toán tối ưu tuyến tính có nghiệm nguyên}
-Thực tế hiện nay cho thấy rằng việc tìm kết quả của các bài toán tối ưu tuyến tính với các biến ràng buộc là số thực là chưa đủ. Nhiều bài toán Quy hoạch tuyến tính đòi hỏi phải tìm được nghiệm là các biến nguyên, được gọi là mô hình tối ưu tuyến tính nguyên hay Bài toán tối ưu tuyến tính nguyên. Ở chương này chúng tôi sẽ giới thiệu về bài toán và phương pháp giải bài toán tối ưu tuyến tính nguyên với  thuật toán lát cắt Gomory và thuật toán nhánh cận Land-Doig.
+Thực tế hiện nay cho thấy rằng việc tìm kết quả của các bài toán tối ưu tuyến tính với các biến ràng buộc là số thực là chưa đủ. Nhiều bài toán Quy hoạch tuyến tính đòi hỏi phải tìm được nghiệm là các biến nguyên, được gọi là mô hình tối ưu tuyến tính nguyên hay Bài toán tối ưu tuyến tính nguyên. Ở chương này chúng tôi sẽ tìm hiểu về bài toán và phương pháp giải bài toán tối ưu tuyến tính nguyên với  thuật toán lát cắt Gomory và thuật toán nhánh cận Land-Doig.
 
 \section{Giới thiệu bài toán tối ưu nguyên}
 Bài toán Tối ưu nguyên có dạng chuẩn tắc:\\
@@ -811,7 +651,7 @@ Vì thế, cần phải có lý thuyết riêng để giải các bài toán t�
 Ta xét bài toán tối ưu nguyên dạng chính tắc:\\
 \begin{equation}\label{BTNchinhtac}
      \begin{split}
-          & {\rm{Min}} \langle c,x \rangle\\
+          & {\rm{Min}}  \quad\langle c,x \rangle\\
           \rm{s.t} &\left\{\begin{split}
             & Ax= b,\\
            & x_j \ge 0, j=1,2,...,n.\\
@@ -820,69 +660,99 @@ Ta xét bài toán tối ưu nguyên dạng chính tắc:\\
        \end{split}
    \end{equation}
    Ta gọi:\\
-   $(L^N,C)$ là bài toán tối ưu nguyên.\\
-$L^N$ là miền xác định của bài toán.\\
-$X(L^N,C) $ là phương án tối ưu.\\
+   $P^N$ là bài toán tối ưu nguyên.\\
+$F^N$ là miền xác định của bài toán.\\
+
    Ta có thể xem các bài toán tối ưu nguyên thành các trường hợp sau:\\
    1) Bài toán tối ưu nguyên hoàn toàn và giá trị hàm mục tiêu nguyên.\\
    2) Bài toán tối ưu nguyên hoàn toàn và giá trị mục tiêu không nguyên.\\
    3) Bài toán tối ưu nguyên bộ phận và giá trị hàm mục tiêu nguyên.\\
    4) Bài toán tối ưu nguyên bộ phận và giá trị hàm mục tiêu không nguyên\\
    Do trường hợp thứ nhất có thể được phát triển từ trường hợp thứ hai, trường hợp thứ ba có thể phát triển được từ trường hợp thứ tư. Do đó, ở đây chúng tôi chỉ khảo sát trên bài toán ở dạng thứ hai và thứ tư.\\
-\subsection{ Tư tưởng về phương pháp cắt}
+\subsection{ Ý tưởng về phương pháp cắt}
 Do không thể tìm nghiệm nguyên bằng cách làm tròn nghiệm từ một bài toán tối ưu thông thường. Vậy còn cách nào tìm nghiệm nguyên mà có thể liên hệ với bài toán tối ưu thông thường hay không? Có vài ý tưởng như sau:\\
-
+\begin{dn}
+    Đa diện được gọi là đa diện lồi nếu khi nối hai điểm bất kì của đa diện ta được đoạn thẳng nằm bên trong đa diện đó.
+\end{dn}
+\begin{dn}
+    Đa diện nguyên là đa diện lồi có các đỉnh là các điểm nguyên
+\end{dn}
 \begin{dl}
-   Giả sử $L$ là một đa diện lồi,$L^N$ là tập các điểm nguyên của nó, 
-$R\equiv V(L^N)$ là bao lồi tuyến tính của tập các điểm nguyên, khi đó:\\
+   Giả sử $F$ là một đa diện lồi,$F^N$ là tập các điểm nguyên của nó, 
+$R\equiv V(F^N)$ là bao lồi tuyến tính của tập các điểm nguyên, khi đó:\\
 
-     1) $R\equiv V(L^N)$ là một đa diện nguyên (các đỉnh là điểm nguyên).\\
-     2) $R^N=L^N$.\\
+    1) $R\equiv V(F^N)$ là một đa diện nguyên.\\
+    2) $R^N=F^N$.\\
     3) Tập $R^\ast$ các phương án chấp nhận được của đa diện $R$ chứa trong $R^N$:\\
     $$R^{\ast} \subseteq R^N$$.\\
 \end{dl}
+
 \begin{hq}
-     Giả sử $X(R,C)$  là phương án tựa tối ưu của bài toán  $(R,C)$, khi đó
-$X(R,C)$ cũng là phương án tối ưu của bài toán  $(L^N,C)$. Vì vậy để giải bài toán quy hoạch tuyến tính nguyên $(L^N,C)$ ta đi giải bài toán $(R,C)$.\\
+     Giả sử $X$  là phương án tựa tối ưu của bài toán $Q$ (bài toán tối ưu tuyến tính có miền xác định là đa diện $R$, khi đó $X$ cũng là phương án tối ưu của bài toán  $P^N$. Vì vậy để giải bài toán quy hoạch tuyến tính nguyên $P^N$ ta đi giải bài toán $Q$.\\
 \end{hq}
 \begin{dl}
- Giả sử $L$ là một đa diện lồi, $U$ là một đa diện lồi nguyên và $U^N= L^N$, khi đó :
- $$U = R = V(L^N)$$
+ Giả sử $L$ là một đa diện lồi, $U$ là một đa diện lồi nguyên và $U^N= F^N$, khi đó :
+ $$U = R = V(F^N)$$
     \end{dl}
-\begin{vd}Minh họa\\
-\begin{tabular}{|c|c|c|}
-    \hline
-     BÀI TOÁN $(L^N,C)$  & BÀI TOÁN $(L,C)$& BÀI TOÁN $(R\equiv V(L^N,C)$  \\
-     \hline
-       $Max (x_1
-+x_2)$  & $Max (x_1+x_2) $ &$Max (x_1+x_2)$ \\
-$2x_1+11x_2\le 38$ & $2x_1+11x_2 \le 38$  \quad (a) & $x_2\le 3$\\
-$x_1+x_2\le 7$ &$x_1+x_2\le 7$\quad (b) & $x_1+x_2\le 5$\\
-$4x_1-5x_2\le 5$ & $4x_1-5x_2\le 5$\quad (c) & $x_1-x_2\le 1$\\
-$x_j\ge 0$ & $x_j\ge 0$ & $x_j\ge 0$\\
-$x_j$ nguyên & &\\
-\hline 
-$Max= 5$& $Max=7$ &$Max=5$\\
-Tối ưu là 2 điểm & Tối ưu là một đoạn & Tối ưu là đoạn\\
-$(2;3);(3;2)$&$[(\frac{13}{3},\frac{8}{3}); (\frac{40}{9};\frac{23}{9})]$&$[(2;3);(3;2)]$\\
-\hline
-    \end{tabular}
+    \textbf{Minh họa}
+
+    \begin{equation}
+     \begin{split}
+      P^N    & {\rm{Max}} \quad x_1 +x_2\\
+          \rm{s.t} &\left\{\begin{split}
+            & 2x_1+11x_2 \le 38 \quad  (a)\\
+            &x_1+x_2 \le 7  \quad (b)\\
+            &4x_1-5x_2 \le 5 \quad (c)\\
+           & x_j \ge 0\\
+            & x_j \text{nguyên}\\
+           \end{split}\right.
+       \end{split}
+   \end{equation}
+   $Max=5$, tối ưu là hai điểm $(2,3); (3,2)$.\\
+
+  
+   \begin{equation}
+     \begin{split}
+       P   & {\rm{Max}}\quad x_1 +x_2\\
+          \rm{s.t} &\left\{\begin{split}
+            & 2x_1+11x_2 \le 38 \quad  (a)\\
+            &x_1+x_2 \le 7  \quad (b)\\
+            &4x_1-5x_2 \le 5 \quad (c)\\
+           & x_j \ge 0\\
+           \end{split}\right.
+       \end{split}
+   \end{equation}
+   $Max=7$, tối ưu là một đoạn $[(\dfrac{13}{3},\dfrac{8}{3}),(\dfrac{40}{9},\dfrac{23}{9})]$.\\
+
+   
+   \begin{equation}
+     \begin{split}
+        Q  & {\rm{Max}} \quad x_1 +x_2\\
+          \rm{s.t} &\left\{\begin{split}
+            & x_2 \le 3\\
+            &x_1+x_2 \le 5\\
+            &x_1 -x_2 \le 1\\
+           & x_j \ge 0\\
+           \end{split}\right.
+       \end{split}
+   \end{equation}
+   $Max=5$, tối ưu là đoạn $[(2,3);(3,2)]$.\\
+Hình minh họa
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\linewidth]{ảnh 1.pdf}
 \end{figure}    
-\end{vd}
-Qua các định lý và hệ quả trên, đã từng có ý tưởng tìm nghiệm của bài toán tối ưu có miền xác định là một bao lồi $R$ để giải bài toán tối ưu nguyên với miền xác định $L^N$. Tuy nhiên, việc tìm được một bao lồi $R$ để thiết lập bài toán lại là một vấn đề khó giải quyết. Do đó, cần có một thuật toán khác hữu hiệu hơn.\\ 
+
+Qua các định lý và hệ quả trên, đã từng có ý tưởng tìm nghiệm của bài toán tối ưu có miền xác định là một bao lồi $R$ để giải bài toán tối ưu nguyên với miền xác định $F^N$. Tuy nhiên, việc tìm được một bao lồi $R$ để thiết lập bài toán lại là một vấn đề khó giải quyết. Do đó, cần có một thuật toán khác hữu hiệu hơn.\\ 
 \begin{itemize}
     \item \textbf{Khái niệm lát cắt đúng}
-    Giả sử bài toán $(L^N,C)$ là bài toán quy hoạch nguyên nào đó và phương án tựa tối 
-ưu của bài toán quy hoạch tuyến tính tương ứng $X(L,C)$ không thoả mãn điều kiện 
-nguyên, tức là $X(L,C) \notin  L^N$. Khi đó bất đẳng thức:
+    Giả sử bài toán $P^N$là bài toán quy hoạch nguyên nào đó và phương án tựa tối ưu của bài toán quy hoạch tuyến tính tương ứng $X$ không thoả mãn điều kiện 
+nguyên, tức là $X \notin  F^N$. Khi đó bất đẳng thức:
     $$\sum _j a_jx_j \le \beta$$\label{latcat}\\
     được gọi là lát cắt đúng nếu thỏa mãn hai điều kiện:\\
     1) Điều kiện cắt: $x$ không thỏa mãn điều kiện \eqref{latcat}, tức là $Ax > \beta$.\\
-    2) Điều kiện đúng: nếu $X(L,C)$ là phương án của bài toán tối ưu nguyên thì $X(L,C)$ thỏa mãn điều kiện \eqref{latcat}, tức là 
- $L^N \subset \{X\mid aX\le \beta\}$.\\
+    2) Điều kiện đúng: nếu $X$ là phương án của bài toán tối ưu nguyên thì $X$ thỏa mãn điều kiện \eqref{latcat}, tức là 
+ $F^N \subset \{X\mid aX\le \beta\}$.\\
     Nói cách khác, lát cắt thêm vào sẽ không cắt đi một phương án nguyên nào của bài toán.\\
     
     
@@ -892,32 +762,31 @@ nguyên, tức là $X(L,C) \notin  L^N$. Khi đó bất đẳng thức:
        
     \end{figure}
     \newpage
-\item \textbf{Tư tưởng phương pháp cắt của Danzig}
+\item \textbf{Ý tưởng phương pháp cắt của Danzig}
     
-    Việc giải một bài toán $(L^N,C)$ là một quá trình gồm nhiều bước:\\
+    Việc giải một bài toán $P^N$ là một quá trình gồm nhiều bước:\\
 a) Ở bước thứ $r$,  giải bài toán bài toán quy hoạch tuyến tính phụ 
- $(L_r,C), r = 0,1,... 
-… \text{với}   L_0=L $\\
+ $P_r, r = 0,1,... 
+… \text{với}   F_0=F $\\
 b) Tập các điểm  nguyên của tất cả các đa diện lồi là như nhau:
-$$L_0^N=L_1^N=L_2^N=...=L_r^N=.......$$\\
-Do đó, nếu phương án tối ưu $X(L_r,C)$ của bài toán thoả mãn $(L_r,C)$ điều kiện 
-nguyên thì nó cũng là phương án tối ưu $X(L_0^N,C)$ của bài toán xuất phát $(L_0^N,C)$ và quá trình kết thúc.\\
-c)  Nếu $X(L_r,C)$ không thoả mãn điều kiện nguyên thì $X(L_r,C)$ không phải là 
-phương án của bài toán $X(L_{r+1},C)$, tức là $X(L_r,C)\notin L_{r+1}$.\\Chuyển từ bước $r$ sang bước $r+1$, tức là chuyển từ bài toán $(L_r,C)$ sang 
- $(L_{r+1},C)$ khi $X(L_r,C)$ không nguyên được thực hiện nhờ một lát cắt đúng $a_rx \le \beta_r$\\
-Việc bổ sung lát cắt này vào ràng buộc của bài toán $(L_r,C)$ sẽ chuyển đa diện lồi $L_R$ thành $L_{r+1}$.\\
+$$F_0^N=F_1^N=F_2^N=...=F_r^N=.......$$\\
+Do đó, nếu phương án tối ưu $X^*_r$ của bài toán $P_r$ thoả mãn điều kiện nguyên thì nó cũng là phương án tối ưu $X_0$ của bài toán xuất phát $P^N_0$ và quá trình kết thúc.\\
+c)  Nếu $X^*_r$ không thoả mãn điều kiện nguyên thì $X^*_r$ không phải là 
+phương án của bài toán $P_{r+1}$, tức là $X_r^*\notin F_{r+1}$.\\Chuyển từ bước $r$ sang bước $r+1$, tức là chuyển từ bài toán $P_r$ sang 
+ $P_{r+1}$ khi $X^*_r$ không nguyên được thực hiện nhờ một lát cắt đúng $a_rx \le \beta_r$\\
+Việc bổ sung lát cắt này vào ràng buộc của bài toán $P_r$ sẽ chuyển đa diện lồi $F_r$ thành $F_{r+1}$.\\
     
 \end{itemize}
-\begin{nx}\label{nx2.1}
+\textbf{Nhận xét}
     Phương pháp cắt có hai việc: xấp xỉ tuyến tính đúng nhiều bước đối với bài toán tối ưu nguyên và chuyển từ bước này sang bước khác bằng một lát cắt đúng. Ở đây tồn tại ba vấn đề cần giải quyết: xây dựng một lát cắt đúng, đảm bảo được tính hữu hạn của các bước lặp trong quá trình giải và số lượng lát cắt đúng không được tăng mãi.
-\end{nx}
+    
 \subsection{ Thuật toán Gomory cho bài toán tối ưu nguyên hoàn toàn}
-Ở phần này, chúng tôi sẽ trình bày về thuật toán và tính hữu hạn của thuật toán Gomory đối với bài toán tối ưu nguyên hoàn toàn và giá trị hàm mục tiêu không nguyên.Thuật toán này sẽ giải quyết được cả ba vấn đề nêu ở Nhận xét \eqref{nx2.1} một cách hiệu quả.\\
+Ở phần này, chúng tôi sẽ trình bày về thuật toán và tính hữu hạn của thuật toán Gomory đối với bài toán tối ưu nguyên hoàn toàn và giá trị hàm mục tiêu không nguyên.
 \subsubsection{Cơ sở lý thuyết}
 Ta xét bài toán tối ưu nguyên hoàn toàn:\\
 \begin{equation}\label{Gomory1}
      \begin{split}
-          & {\rm{Max}} \langle c,x \rangle\\
+      (P^N) \quad    & {\rm{Max}} \langle c,x \rangle\\
           \rm{s.t} &\left\{\begin{split}
             & Ax= b,\\
            & x_j \ge 0, j=1,2,...,n.\\
@@ -925,67 +794,50 @@ Ta xét bài toán tối ưu nguyên hoàn toàn:\\
            \end{split}\right.
        \end{split}
    \end{equation}
-    Giả sử $X(L,C)$ là phương án  tối ưu của bài toán $(L,C)$, từ đó ta có thể biểu diễn các biến qua Các biến phi cơ sở:\\
+   \begin{dn}
+     Giả  sử hệ véc-tơ $\{A^j,j\in J\}$ là cơ sở tương ứng với phương án cực biên ban đầu của bài toán $P^N$, các véc-tơ $A^j$ và các biến $x_j$ với $j\in J$ được gọi là các véc tơ cơ sở và biến cơ sở; còn các véc-tơ $A^j$ và các biến $x_j$ mà $j \notin J$ được gọi là các véc-tơ tự do và các biến tự do (biến phi cơ sở).\\  
+   \end{dn}
+    Giả sử $X$ là phương án  tối ưu của bài toán $P^N$, từ đó ta có thể biểu diễn các biến cơ sở qua Các biến phi cơ sở:\\
    \begin{equation}\label{2.4}
        x_{i}=x_{i0} + \sum_{j \in N} x_{ij}(-x_j), i=\overline{0,m}.
    \end{equation}
     Giả sử $x$ là một số thực, ký hiệu $[x]$ là phần nguyên, (số nguyên lớn nhất không vượt quá $x), \{x\}=x-[x]$ là phần lẻ.\\
-    VD: $[-1.3]=-2, {-1.3}=0.7$.\\
+    VD: $[-1.3]=-2, \{-1.3\}=0.7$.\\
     \begin{dl}
-        Giả sử $X(L,C)$ có $x_{i0}$ không nguyên với $1\le i\le n$ và:\\
+        Giả sử $X$ có $x_{i0}$ không nguyên với $1\le i\le n$ và:\\
         1)\begin{equation}\label{2.5}
             z_i\equiv z_i(X)= -\{x_{i0}\} + \sum_{j \in \mathbb {N} }(-\{x_{ij}\})(-x_{j}), i=\overline{1,n}.
         \end{equation} \\
-        2) $x$ là phương án của bài toán $(L^N,C)$.\\
+        2) $x$ là phương án của bài toán $P^N$.\\
         Khi đó:\\
-        
-        a) \begin{equation}\label{2.6}
-            z_i \hspace{0.1cm} \text{nguyên}
-        \end{equation}
-        
-        b) \begin{equation}\label{2.7}
-            z_i \ge 0
-        \end{equation}
+        a)$z_i \hspace{0.1cm} \text{nguyên}$\\
+        b) $z_i \ge 0$ 
         \end{dl}
-        \begin{cm}
-            a) Từ \eqref{2.4} ta có $x_i= [x_{i0}] + \{x_{i0}\}+\underset{j \in \mathbb {N} }{ \sum}([x_{ij}]+\{x_{ij}\})(-x_{j}) $\\
-    Kết hợp với \eqref{2.5} ta có $z_i= -x_i +      \underset{j \in \mathbb {N} }{ \sum}[x_{i0}] + ([x_{ij}])(-x_{ij}) $\\
-    Do $x_i,x_j$ nguyên nên suy ra $z_i$ nguyên.\\
-    \vspace{1cm}
-    b) Giả sử rằng $z< 0$ từ \eqref{2.5} ta có:\\
-    $z_i \equiv z_i (x)= -\{x_{i0}\} + \underset{j \in \mathbb {N} }{ \sum}(-\{x_{ij}\})(-x_{j})$.\\
-    Vì $ {-}\{x_{i0}\}<-1 ; x_j \ge 0  $ và  $ \{x_{ij}\} \in  [0,1)$  nên $ -1<z_i<0$ , tức là $z_i$ không nguyên.\\
-Điều này mâu thuẫn với chứng minh câu a), do đó $z_i \ge 0$ .
-        \end{cm}
+
     \begin{hq}
         Giả sử $X(L,C)$ không thoả mãn điều kiện nguyên, như vậy đối 
-với $i$ nào đó $(1\le i \le 0) \hspace{0.1cm} x_{i0}$ không nguyên . Khi đó các hệ thức \eqref{2.5}  và \eqref{2.7} xác định một lát cắt đúng.
+với $i$ nào đó $(1\le i \le 0) \hspace{0.1cm} x_{i0}$ không nguyên . Khi đó các hệ thức \eqref{2.5}  và $z_i \ge 0$ xác định một lát cắt đúng.
     \end{hq} 
-    \begin{cm}
-         a) Mọi phương án của bài toán $(L^N,C)$ đều thoả mãn \eqref{2.5} và \eqref{2.7} (trong chứng 
-minh định lý), do đó điều kiện đúng của lát cắt được thoả mãn. \\
-b) Đặt vào \eqref{2.5} phương án tối ưu không nguyên $X(L,C)$. Do $x_j (L,C)=0$, $j \in \mathbb {N}$ , 
-suy ra $z_i(X(L,C)= -\{ x_{i0}\} +0 \le 0 $ , trái với \eqref{2.7}, tức là điều kiện cắt thoả mãn.\\
-    \end{cm}
+    
     \textbf{Dấu hiệu bài toán không có lời giải:}\\
-    -Nếu bài toán $(L,C)$ không có lời giải vì hàm mục tiêu không bị chặn trên khúc lồi $L$ thì thuật toán Gomory không áp dụng được.\\
--Thuật toán cũng không áp dụng được cho trường hợp bài toán $(L,C)$ có lời giải nhưng $l-\text{bài toán} \overline{(L,C)}$ không có lời giải. Điều đó dường như là tập hợp các phương án tối ưu của bài toán $(L,C)$ khác trống nhưng không bị chặn.\\
+    -Nếu bài toán $P$ không có lời giải vì hàm mục tiêu không bị chặn trên khúc lồi $F$ thì thuật toán Gomory không áp dụng được.\\
+-Thuật toán cũng không áp dụng được cho trường hợp bài toán $P$ có lời giải nhưng $l-\text{bài toán} \overline{P}$ không có lời giải. Điều đó dường như là tập hợp các phương án tối ưu của bài toán $P$ khác trống nhưng không bị chặn.\\
 -Về sau ta sẽ giả thiết:\\
-1) Hàm mục tiêu $x_0\equiv CX$ bị chặn trên L.\\
-2) Nếu tập hợp các phương án tối ưu của $(L,C)$ khác trống thì nó phải bị chặn, tức là nếu bài toán$(L,C)$ giải được thì bài toán $(L,C)$ cũng giải 
+1) Hàm mục tiêu $x_0\equiv CX$ bị chặn trên $F$.\\
+2) Nếu tập hợp các phương án tối ưu của $P$ khác trống thì nó phải bị chặn, tức là nếu bài toán $P$ giải được thì bài toán $\overline{P}$ cũng giải 
 được.\\
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.4\linewidth]{anh3.pdf}
-\caption{$\overline{(L,C)}$ không có lời giải}
+\includegraphics[width=0.3\linewidth]{anh3.pdf}
+\caption{$\overline{P}$ không có lời giải}
 \end{figure}
 \subsubsection{ Thuật toán}
 
 \textbf{Bước 1:}\\
-Giải bài toán $(L,C)\equiv(L_0,C)$ đã cho bằng phương pháp đơn hình đối ngẫu.\\
--Nếu bài toán $(L_0,C)$ không giải được thì bài toán $(L^N_0,C)$ cũng không giải được.\\
-- Nếu bài toán $(L_0,C)$ giải được và $X(L_,C)$ thỏa mãn điều kiện nguyên thì nó cũng là phương án tối ưu của bài toán $(L^N_0,C)$, còn nếu không giải được thì chuyển sang bước 2.\\
+Giải bài toán $P\equiv P_0$ đã cho bằng phương pháp đơn hình đối ngẫu.\\
+-Nếu bài toán $P_0$ không giải được thì bài toán $P_0^N$ cũng không giải được.\\
+- Nếu bài toán $P$ giải được và nghiệm của nó thỏa mãn điều kiện nguyên thì nó cũng là phương án tối ưu của bài toán $P^N_0$, còn nếu không giải được thì chuyển sang bước 2.\\
 
 \textbf{Bước 2:}
 Chọn dòng đầu tiên ứng với thành phần không nguyên:\\
@@ -995,7 +847,7 @@ $$   \begin{cases}\label{latcat}
     x_{n+r+1} \ge 0\\
     x_{n+r+1} \hspace{0.1cm} \text{nguyên}
 \end{cases}$$
-Ta thêm lắt cắt này vào bảng đơn hình $T_r$, sau đó tiếp tục thực hiện các bước tính toán theo thuật toán đơn hình đối ngẫu từ vựng cho bài toán $(L^N_{r+1}$.\\
+Ta thêm lắt cắt này vào bảng đơn hình $T_r$, sau đó tiếp tục thực hiện các bước tính toán theo thuật toán đơn hình đối ngẫu từ vựng cho bài toán $P^N_{r+1}$.\\
 
 \textbf{Bước 3:}
 Sau khi tính toán với lát cắt nếu được phương án tối ưu thỏa mãn điều kiện nguyên thì thuật toán dừng lại. Nếu không thỏa mãn thì quay lại bước 2 cứ lần lượt như vậy thực hiện các bước lặp $r \ge 0$ cho đến khi thỏa mãn điều kiện.
@@ -1006,66 +858,11 @@ Sau khi tính toán với lát cắt nếu được phương án tối ưu thỏ
 Giả sử có các điều kiện sau:\\
 1) Tính nguyên của hàm mục tiêu $x_0\equiv CX$ được đảm bảo và $x_0$ được xét khi chọn dòng xây dựng lát cắt đúng.\\
 2) Một trong các khẳng định sau là đúng:\\
-i) Hàm mục tiêu $x_0$ bị chặn dưới trên $L_0$.\\ 
-ii) Bài toán $(L_0^N,C)$ có ít nhất một phương án $X'$.\\
+i) Hàm mục tiêu $x_0$ bị chặn dưới trên $F_0$.\\ 
+ii) Bài toán $P^N_0$ có ít nhất một phương án $X'$.\\
  Khi đó thuật toán Gomory thứ nhất kết thúc sau một số hữu hạn bước lặp lớn.
  \end{dl}
- Để chứng minh định lý ta chứng minh các bổ đề trước.\\
- Giả sử
-$ X\overline{(L_r,C)}\equiv X^r \equiv (x_0^r, x_1^r,x_2^r,..x_n^r) $ . Kí hiệu $\overline{X^r}$  
-là giả phương án ứng với bảng $\overline{T_r}$  nhận được từ bảng $T_r$ sau khi loại khỏi cơ sở $x_{n+r+1}$  và xoá dòng tương ứng .\\
- \begin{bd}
-     Ta có $X^r > \overline{X^r} \ge \overline{X^ {r+1}}$.\\
-\textbf{Chứng minh: }Bất đẳng thức đầu tiên suy ra từ công thức biến đổi bảng đơn hình và tính $l$-chuẩn của bảng đơn hình (cột đầu tiên của $T_r$ được tính theo công thức $R^r_0-\dfrac{(- \{x_{k0}^r\})}{(-\{x_{kl}^r\})} . R^r_l$; $R^r_l$ có số đầu tiên khác $0$ là dương). Bất đẳng thức thứ hai là do cột $0$ giảm khi dùng phương pháp đơn hình đối ngẫu từ vựng.\\
-    
- \end{bd}
-  \begin{bd} Các số $x_{i} ^r (i=0,1,...,n)$ bị chặn dưới.\\
-    \textbf{Chứng minh} Với $i=1,...,n$ điều đó suy ra từ điều kiện không âm $x_j \ge 0 (j=1,...,n)$. Với $i=0$ (điều đó suy ra từ điều kiện 2 của định lý 2.4). Thật vậy, nếu i) là đúng thì bổ đề 2.2 hiển nhiên đúng. Nếu điều kiện ii) được thỏa mãn thì $X^{r} \ge X^{'}$ suy ra $x^{r} _0 \ge x_0 ^{'}$.
-        
-    \end{bd}
-    \begin{bd}
-        Nếu $X^r$ không thỏa mãn điều kiện nguyên và $x_p^r \equiv x_{p0}^r$ không nguyên thì:\\
-        $(x_0^r,x_1^r,...,x_{p-1}^r, [x_p^r])\ge (\overline{x^r_0},...,\overline{x^r_p})$.\\
-        \textbf{Chứng minh}\\
-    Giả sử $k=min\{i|i \in \{0,1,...,n\},x_{i0}^r \text{không nguyên} \}$, suy ra $k\ge p$.Giả sử:\\
-    $\dfrac{R_l^r}{\{x_{kl}^r\}} =lex min \{\dfrac{R_j^r}{\{x_{kj}^r\}}|j \in N_r,\{x_{kj}^r\} \ne 0\} $\\
-(dòng quay là lát cắt mới thêm) và $h(R_l^r) = min \{i|i \in (0,1,...,n);x_{il}^r\ne 0 \}$ (hàng đầu tiên của cột $R_l$ có hệ số $\ne 0$, cụ thể là $x_{hl}^r \ge 0$ do $R_l^r >0$).\\
-Vì $\{x_{kl}^r\} \ne 0 \rightarrow h(R_l^r)\le k\le p$. Có hai khả năng xảy ra:\\
-1) $h(R_l^r) \equiv q <p$.\\
-2) $h(R_l^r) \equiv q =p$.\\
-Trong trường hợp 1) theo quy tắc của $l$-phương pháp $\overline{x_q^r} < x_q^r $ vì\\
-$\overline{x_q^r}= x_q^r- \frac{\{x^r_{k0}\}}{\{x_{kl}^r\}}x_{ql}^r < x ^r_q $ (do $x_{ql}^r >0 )$, bổ đề được chứng minh.
-Nếu trường hợp 2) ta có $h(R_l^r)\equiv=k=$. Vì vậy $\overline{x^r_{i0}} = x^r_{i0}$ với $i<k= h(R^r_l)$ ( $h$ là chỉ số đầu tiên, $x_{hl}^r$ khác không) và $\overline{x^r_{k0}}= x^r_{k0}- \frac{\{x_{k0}^r\}}{\{x_{kl}^r\}}x_{kl}^r$.\\
-Vì $x_{kl}^r=X_{hl}^r >0$, nên $x_{kl}^r \ge \{x_{kl}^r\}$. Từ đó ta có:\\
-$\overline{x_{k0}^r} < x_{k0}^r - \{x_{k0}^r\}= [x_{k0}^r]$.\\
-Do $k=p$ nên bổ đề được chứng minh.\\
-    \end{bd}
-    \textbf{Chứng minh định lí 2.4}\\
-    Giả sử
-    \begin{equation}\label{2.8}
-      X^0,X^1,...,X^r,...\text{vô hạn}\\   
-    \end{equation}
-    Khi đó theo bổ đề 2.1 và 2.2 tồn tại $i_0, 0 \le i_0 \le n$ tồn tại $r_0 \ge 0$ và một dãy vô hạn:\\
-    \begin{equation}\label{2.9}
-        r_1<r_2<...,r_v<...(r_1>r_0)
-    \end{equation}\\
-    sao cho ta có:\\
-   \begin{equation}\label{2.10}
-       x_i^{r+1}=x_i^r; r \ge r_0; 0\le i\le i_0-1
-   \end{equation} 
-    \begin{equation}\label{2.11}
-        x_{i_0}^{r_v+1} <x_{i_0}^{r_v}, (v=1,2,...)
-    \end{equation}  \\
-    Từ bổ đề 2.1 và \eqref{2.9} ta có\\
-    \begin{equation}\label{2.12}
-        x_{i_0}^{r+1} \le x_{i_0}^r, r\ge r_0
-    \end{equation}\\
-    Từ \eqref{2.11} và (\eqref{2.12} và bổ đề 2.1, suy ra tồn tại số $r' >r_0$ và các số nguyên $z_0$ và $z_0+1$ sao cho:\\
-    \begin{equation}\label{2.13}
-        z_0<x_{i_0}^r< z_0+1 (r \ge r')
-    \end{equation}
-    Từ \eqref{2.12} và \eqref{2.13} và bổ đề 2.3 suy ra $x_{i_0}^{r+1}\le \overline{x_{i_0}^r}\ge [x_{i_0}^r]=z_0$. Điều này mâu thuẫn với \eqref{2.13}.
-    Định lí được chứng minh.
+ 
     \subsubsection{Ví dụ}
     \begin{equation*}
         \begin{split}
@@ -1166,9 +963,9 @@ Do $k=p$ nên bổ đề được chứng minh.\\
          \end{tabular}
      \end{center}
      Bài toán đã đạt tối ưu đồng thời thỏa điều kiện nguyên nên ta dừng thuật toán và kết luận được $x=(x_1,x_2)=(1,1)$ và giá trị hàm mục tiêu là $5$.
-\subsection{Thuật toán Gomory cho bài toán tối ưu nguyên bộ phân}
+\subsection{Thuật toán Gomory cho bài toán tối ưu nguyên bộ phận}
  Đối với bài toán tối ưu nguyên bộ phận ta có tất cả các lý thuyết cơ sở cũng như thuật toán tương tự như ở bài toán tối ưu nguyên hoàn toàn.Tuy nhiên, ở việc chọn dòng để hình thành lát cắt:
- $k=min\{i\|i\in \{1,...,n\},x_{i0}^r \text{không nguyên}\}$, trong đó ta chỉ xét trên các biến mà đề bài bắt buộc nguyên, và trực tiếp bỏ qua các biến không có điều kiện nguyên.
+ $k=min\{i|i\in \{1,...,n\},x_{i0}^r \text{không nguyên}\}$, trong đó ta chỉ xét trên các biến mà đề bài bắt buộc nguyên, và trực tiếp bỏ qua các biến không có điều kiện nguyên.
  \subsubsection{Ví dụ}
  Ta xét bài toán sau:
  \begin{equation*}
@@ -1321,8 +1118,8 @@ Do $k=p$ nên bổ đề được chứng minh.\\
 Luận văn này đạt được các vấn đề sau đây:
 
 \begin{itemize}
-	\item  
-	\item 
+	\item  Giới thiệu bài toán tối ưu nguyên.
+	\item  Trình bày về tư tưởng lát cắt và thuật toán của Gomory để giải bài toán Tối ưu tuyến 
 	\item
 \end{itemize}
 
