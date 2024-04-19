@@ -1457,6 +1457,137 @@ Vì thế, cần phải có lý thuyết riêng để giải các bài toán t�
 
 
 
+Trong bài toán tối ưu tuyến tính giải cho ra nghiệm nguyên, đôi lúc ta gặp trường hợp yêu cầu tất cả các nghiệm cho ra nguyên và đôi lúc chỉ yêu cầu một vài nghiệm nguyên.
+
+Từ đó ta tập trung vào 2 loại bài toán là bài toán Tối ưu nguyên hoàn toàn và bài toán Tối ưu nguyên bộ phận.
+\subsection*{Tối ưu nguyên hoàn toàn (Pure integer linear program)}
+    Ta xét bài toán sau:
+    \begin{equation} \label{H}
+        \begin{split}
+        (H) \quad & z_h=c^Tx \quad \longrightarrow Max \\
+                  & \left\{\begin{split}
+                    &Ax \leq  b, \\
+                    &x \geq 0, \text{ nguyên} \\
+                    \end{split}\right.    
+        \end{split}
+        \end{equation}            
+
+    Trong đó $H$ tương ứng với hoàn toàn, $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
+        b_1 \\
+        b_2 \\
+        \vdots \\
+        b_m
+        \end{pmatrix}$, với $x\in Z^n$. Bài toán $(H)$ gọi là bài toán \textbf{Tối ưu nguyên hoàn toàn} và tập $S_h:=\{x\in Z^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên hoàn toàn.
+
+
+%model_1: hoan toan
+ \subsubsection*{Minh hoạ bài toán}
+    \begin{equation}
+        \begin{split}
+        \quad & 2x_1 + 2x_2 \quad \longrightarrow Max \\
+                    & \left\{\begin{split}
+                    & x_1 + 3x_2 \leq 24 \\
+                    & \frac{13}{3}x_1 + 2x_2 \leq 32.5 \\
+                    &x_1 \geq 0, \text{ nguyên}. \\
+                    &x_2 \geq 0, \text{ nguyên}. \\
+                    \end{split}\right.    
+        \end{split}
+        \end{equation}            
+Xem hình 2.3.
+\begin{figure}
+\center
+\begin{tikzpicture}
+\begin{axis}
+    [
+    xmin=0,xmax=10,
+    ymin=0,ymax=10,
+    grid=both,
+    grid style={line width=.1pt, draw=darkgray!50},
+    major grid style={line width=.2pt,draw=darkgray!50},
+    axis lines=middle,
+    minor tick num=1,
+    enlargelimits={abs=0},
+    samples=100,
+    domain = -20:20,
+    ]
+    \filldraw[green, pattern=north west lines, pattern color=green, line width=2pt] (0, 0) -- (0, 8) -- (4.5, 6.5) -- (7.5, 0) -- cycle;
+\end{axis}
+\end{tikzpicture}  
+\caption{Tập nghiệm của bài toán Tối ưu nguyên hoàn toàn}
+\end{figure}
+
+\subsection*{Tối ưu nguyên bộ phận (Mixed integer linear program)}
+Ta xét bài toán sau:
+\begin{equation}\label{B}
+\begin{split}
+(B) \quad & z_b=c^Tx+h^Ty \quad \longrightarrow Max \\
+          & \left\{\begin{split}
+            &Ax+Gy \leq  b, \\
+            &x \geq 0, \text{ nguyên} \\
+            &y \geq 0.
+            \end{split}\right.    
+\end{split}
+\end{equation}    
+Trong đó $B$ tương ứng với bộ phận, $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $h^T=(h_1 \: h_2 \: \ldots \: h_p)$, $A$ là ma trận $m\times n$, $G$ là ma trận $m\times p$, $b=\begin{pmatrix}
+    b_1 \\
+    b_2 \\
+    \vdots \\
+    b_m
+    \end{pmatrix}$, với $x\in Z^n$ và $y\in R^p$.
+Bài toán $(B)$ gọi là bài toán \\ \textbf{Tối ưu nguyên bộ phận} và tập $S_b:=\{(x,y)\in Z^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên bộ phận.
+
+\subsubsection*{Minh hoạ bài toán}
+   \begin{equation}
+        \begin{split}
+        \quad & x_1 + 2x_2 \quad \longrightarrow Max \\
+                    & \left\{\begin{split}
+                    & 5x_1 + \frac{15}{7}x_2 \leq 20 \\
+                    & -2.4x_1 + \frac{30}{7}x_2 \leq 15 \\
+                    &x_1 \geq 0, \text{ nguyên}. \\
+                    &x_2 \geq 0. \\
+                    \end{split}\right.    
+        \end{split}
+        \end{equation}            
+Xem hình 2.4.
+
+\begin{figure} \label{bophan}
+\center	
+\begin{tikzpicture}
+\begin{axis}
+    [
+    xmin=0,xmax=5,
+    ymin=0,ymax=5,
+    grid style={line width=.1pt, draw=darkgray!50},
+    major grid style={line width=.2pt,draw=darkgray!50},
+    axis lines=middle,
+    minor tick num=1,
+    enlargelimits={abs=0},
+    samples=100,
+    domain = -20:20,
+    xmajorgrids=true,
+    ]
+    \filldraw[green, pattern=north west lines, pattern color=green, line width=2pt] (0, 0) -- (0, 2.5) -- (2.5, 3.5) -- (4, 0) -- cycle;
+\end{axis}
+\end{tikzpicture}  
+\caption{Tập nghiệm của bài toán Tối ưu nguyên bộ phận}
+\end{figure}
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1503,7 +1634,8 @@ $F^N$ là miền xác định của bài toán.\\
    4) Bài toán tối ưu nguyên bộ phận và giá trị hàm mục tiêu không nguyên\\
    Do trường hợp thứ nhất có thể được phát triển từ trường hợp thứ hai, trường hợp thứ ba có thể phát triển được từ trường hợp thứ tư. Do đó, ở đây chúng tôi chỉ khảo sát trên bài toán ở dạng thứ hai và thứ tư.\\
 \subsection{ Ý tưởng về phương pháp cắt}
-Do không thể tìm nghiệm nguyên bằng cách làm tròn nghiệm từ một bài toán tối ưu thông thường. Vậy còn cách nào tìm nghiệm nguyên mà có thể liên hệ với bài toán tối ưu thông thường hay không? Có vài ý tưởng như sau:\\
+Do không thể tìm nghiệm nguyên bằng cách làm tròn nghiệm từ một bài toán tối ưu thông thường. Vậy còn cách nào tìm nghiệm nguyên mà có thể liên hệ với bài toán tối ưu thông thường hay không? Có vài ý tưởng như sau:
+
 \begin{dn}
     Đa diện được gọi là đa diện lồi nếu khi nối hai điểm bất kì của đa diện ta được đoạn thẳng nằm bên trong đa diện đó.
 \end{dn}
@@ -1512,12 +1644,17 @@ Do không thể tìm nghiệm nguyên bằng cách làm tròn nghiệm từ mộ
 \end{dn}
 \begin{dl}
    Giả sử $F$ là một đa diện lồi,$F^N$ là tập các điểm nguyên của nó, 
-$R\equiv V(F^N)$ là bao lồi tuyến tính của tập các điểm nguyên, khi đó:\\
+$R\equiv V(F^N)$ là bao lồi tuyến tính của tập các điểm nguyên, khi đó:
 
-    1) $R\equiv V(F^N)$ là một đa diện nguyên.\\
-    2) $R^N=F^N$.\\
-    3) Tập $R^\ast$ các phương án chấp nhận được của đa diện $R$ chứa trong $R^N$:\\
-    $$R^{\ast} \subseteq R^N$$.\\
+    1) $R\equiv V(F^N)$ là một đa diện nguyên.
+
+    2) $R^N=F^N$.
+
+    3) Tập $R^\ast$ các phương án chấp nhận được của đa diện $R$ chứa trong $R^N$:
+
+    \begin{equation*}
+    R^{\ast} \subseteq R^N.
+    \end{equation*}
 \end{dl}
 
 \begin{hq}
@@ -1525,13 +1662,15 @@ $R\equiv V(F^N)$ là bao lồi tuyến tính của tập các điểm nguyên, k
 \end{hq}
 \begin{dl}
  Giả sử $L$ là một đa diện lồi, $U$ là một đa diện lồi nguyên và $U^N= F^N$, khi đó :
- $$U = R = V(F^N)$$
+ \begin{equation*}
+ U = R = V(F^N).
+ \end{equation*}
     \end{dl}
     \textbf{Minh họa}
 
     \begin{equation}
      \begin{split}
-      P^N    & {\rm{Max}} \quad x_1 +x_2\\
+      (P^N) \quad    & {\rm{Max}} \quad x_1 +x_2\\
           \rm{s.t} &\left\{\begin{split}
             & 2x_1+11x_2 \le 38 \quad  (a)\\
             &x_1+x_2 \le 7  \quad (b)\\
@@ -1546,7 +1685,7 @@ $R\equiv V(F^N)$ là bao lồi tuyến tính của tập các điểm nguyên, k
   
    \begin{equation}
      \begin{split}
-       P   & {\rm{Max}}\quad x_1 +x_2\\
+       (P) \quad   & {\rm{Max}}\quad x_1 +x_2\\
           \rm{s.t} &\left\{\begin{split}
             & 2x_1+11x_2 \le 38 \quad  (a)\\
             &x_1+x_2 \le 7  \quad (b)\\
@@ -1560,7 +1699,7 @@ $R\equiv V(F^N)$ là bao lồi tuyến tính của tập các điểm nguyên, k
    
    \begin{equation}
      \begin{split}
-        Q  & {\rm{Max}} \quad x_1 +x_2\\
+        (Q) \quad  & {\rm{Max}} \quad x_1 +x_2\\
           \rm{s.t} &\left\{\begin{split}
             & x_2 \le 3\\
             &x_1+x_2 \le 5\\
@@ -1932,196 +2071,13 @@ ii) Bài toán $P^N_0$ có ít nhất một phương án $X'$.\\
     Ta dừng thuật toán và kết luận nghiệm của bài toán đã cho là $x=(x_1,x_2,x_3)=(0,\dfrac{5}{2},2)$ và giá trị tối ưu của hàm mục tiêu là $18.5$.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Phương pháp Land-Doig (Nhánh cận)}
 
 Vào cuối những năm 1950, một nhóm giáo viên và nhà nghiên cứu tại Trường Kinh tế Luân Đôn, gồm có Helen Makower, George Morton, Ailsa Land và Alison Doig, đã bị thu hút bởi lĩnh vực quy hoạch tuyến tính và các ứng dụng của nó. Ban đầu, Ailsa Land và Alison Doig tập trung vào các vấn đề mà ngày nay ta còn gọi là bài toán người du lịch.
 
 Sau đó, bà chuyển dần sự chú ý sang các biến rời rạc và ứng dụng chúng vào các mô hình quy hoạch tuyến tính theo yêu cầu của Tập đoàn Dầu mỏ Anh (British Petroleum). Mặc dù không có các điều kiện công nghệ như hiện này để có thể tiếp cận tính toán điện tử nhưng bà đã tiên phong trong việc phát triển các phương pháp xử lý biến rời rạc thông qua tính toán thủ công và sử dụng máy tính thời bấy giờ. Cách tiếp cận của bà xoay quanh việc khám phá các tập lồi được xác định bởi các ràng buộc tuyến tính, sau này được công nhận là một dạng của phương pháp nhánh cận. Bà đã thành công trong việc giải quyết cả mô hình lập kế hoạch và xử lý nguyên bộ phận. Phát hiện của bà được công bố trên tạp chí Econometrica, đánh dấu một bước tiến quan trọng trong lĩnh vực tối ưu tuyến tính.
 
-\subsection{Giới thiệu bài toán}
-Trong bài toán tối ưu tuyến tính giải cho ra nghiệm nguyên, đôi lúc ta gặp trường hợp yêu cầu tất cả các nghiệm cho ra nguyên và đôi lúc chỉ yêu cầu một vài nghiệm nguyên.
 
-Từ đó ta tập trung vào 2 loại bài toán là bài toán Tối ưu nguyên hoàn toàn và bài toán Tối ưu nguyên bộ phận.
-\subsection*{Tối ưu nguyên hoàn toàn (Pure integer linear program)}
-    Ta xét bài toán sau:
-    \begin{equation} \label{H}
-        \begin{split}
-        (H) \quad & z_h=c^Tx \quad \longrightarrow Max \\
-                  & \left\{\begin{split}
-                    &Ax \leq  b, \\
-                    &x \geq 0, \text{ nguyên} \\
-                    \end{split}\right.    
-        \end{split}
-        \end{equation}            
-
-    Trong đó $H$ tương ứng với hoàn toàn, $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
-        b_1 \\
-        b_2 \\
-        \vdots \\
-        b_m
-        \end{pmatrix}$, với $x\in Z^n$. Bài toán $(H)$ gọi là bài toán \textbf{Tối ưu nguyên hoàn toàn} và tập $S_h:=\{x\in Z^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên hoàn toàn.
-
-
-%model_1: hoan toan
- \subsubsection*{Minh hoạ bài toán}
-    \begin{equation}
-        \begin{split}
-        \quad & 2x_1 + 2x_2 \quad \longrightarrow Max \\
-                    & \left\{\begin{split}
-                    & x_1 + 3x_2 \leq 24 \\
-                    & \frac{13}{3}x_1 + 2x_2 \leq 32.5 \\
-                    &x_1 \geq 0, \text{ nguyên}. \\
-                    &x_2 \geq 0, \text{ nguyên}. \\
-                    \end{split}\right.    
-        \end{split}
-        \end{equation}            
-Xem hình 2.3.
-\begin{figure}
-\center
-\begin{tikzpicture}
-\begin{axis}
-    [
-    xmin=0,xmax=10,
-    ymin=0,ymax=10,
-    grid=both,
-    grid style={line width=.1pt, draw=darkgray!50},
-    major grid style={line width=.2pt,draw=darkgray!50},
-    axis lines=middle,
-    minor tick num=1,
-    enlargelimits={abs=0},
-    samples=100,
-    domain = -20:20,
-    ]
-    \filldraw[green, pattern=north west lines, pattern color=green, line width=2pt] (0, 0) -- (0, 8) -- (4.5, 6.5) -- (7.5, 0) -- cycle;
-\end{axis}
-\end{tikzpicture}  
-\caption{Tập nghiệm của bài toán Tối ưu nguyên hoàn toàn}
-\end{figure}
-
-\subsection*{Tối ưu nguyên bộ phận (Mixed integer linear program)}
-Ta xét bài toán sau:
-\begin{equation}\label{B}
-\begin{split}
-(B) \quad & z_b=c^Tx+h^Ty \quad \longrightarrow Max \\
-          & \left\{\begin{split}
-            &Ax+Gy \leq  b, \\
-            &x \geq 0, \text{ nguyên} \\
-            &y \geq 0.
-            \end{split}\right.    
-\end{split}
-\end{equation}    
-Trong đó $B$ tương ứng với bộ phận, $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $h^T=(h_1 \: h_2 \: \ldots \: h_p)$, $A$ là ma trận $m\times n$, $G$ là ma trận $m\times p$, $b=\begin{pmatrix}
-    b_1 \\
-    b_2 \\
-    \vdots \\
-    b_m
-    \end{pmatrix}$, với $x\in Z^n$ và $y\in R^p$.
-Bài toán $(B)$ gọi là bài toán \\ \textbf{Tối ưu nguyên bộ phận} và tập $S_b:=\{(x,y)\in Z^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên bộ phận.
-
-\subsubsection*{Minh hoạ bài toán}
-   \begin{equation}
-        \begin{split}
-        \quad & x_1 + 2x_2 \quad \longrightarrow Max \\
-                    & \left\{\begin{split}
-                    & 5x_1 + \frac{15}{7}x_2 \leq 20 \\
-                    & -2.4x_1 + \frac{30}{7}x_2 \leq 15 \\
-                    &x_1 \geq 0, \text{ nguyên}. \\
-                    &x_2 \geq 0. \\
-                    \end{split}\right.    
-        \end{split}
-        \end{equation}            
-Xem hình 2.4.
-
-\begin{figure} \label{bophan}
-\center	
-\begin{tikzpicture}
-\begin{axis}
-    [
-    xmin=0,xmax=5,
-    ymin=0,ymax=5,
-    grid style={line width=.1pt, draw=darkgray!50},
-    major grid style={line width=.2pt,draw=darkgray!50},
-    axis lines=middle,
-    minor tick num=1,
-    enlargelimits={abs=0},
-    samples=100,
-    domain = -20:20,
-    xmajorgrids=true,
-    ]
-    \filldraw[green, pattern=north west lines, pattern color=green, line width=2pt] (0, 0) -- (0, 2.5) -- (2.5, 3.5) -- (4, 0) -- cycle;
-\end{axis}
-\end{tikzpicture}  
-\caption{Tập nghiệm của bài toán Tối ưu nguyên bộ phận}
-\end{figure}
-
-    
 \subsection{Ý nghĩa của phương pháp và thuật toán Land-doig (Nhánh cận)}
 
 Ta quan tâm bài toán sau:

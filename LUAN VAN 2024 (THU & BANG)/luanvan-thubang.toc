@@ -22,17 +22,16 @@
 \contentsline {subsubsection}{\numberline {1.3.3.2}Phương pháp đơn hình đối ngẫu:}{22}{subsubsection.1.3.3.2}%
 \contentsline {chapter}{\numberline {2}Bài toán tối ưu tuyến tính có nghiệm nguyên}{27}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Giới thiệu bài toán tối ưu nguyên}{27}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Phương pháp Gomory}{29}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1} Giới thiệu về phương pháp Gomory}{29}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2} Ý tưởng về phương pháp cắt}{30}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3} Thuật toán Gomory cho bài toán tối ưu nguyên hoàn toàn}{34}{subsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.3.1}Cơ sở lý thuyết}{35}{subsubsection.2.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.2.3.2} Thuật toán}{37}{subsubsection.2.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.2.3.3}Tính hữu hạn của thuật toán:}{38}{subsubsection.2.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.2.3.4}Ví dụ}{38}{subsubsection.2.2.3.4}%
-\contentsline {subsection}{\numberline {2.2.4}Thuật toán Gomory cho bài toán tối ưu nguyên bộ phận}{40}{subsection.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.4.1}Ví dụ}{41}{subsubsection.2.2.4.1}%
-\contentsline {section}{\numberline {2.3}Phương pháp Land-Doig (Nhánh cận)}{44}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Giới thiệu bài toán}{44}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Ý nghĩa của phương pháp và thuật toán Land-doig (Nhánh cận)}{47}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.2}Phương pháp Gomory}{32}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1} Giới thiệu về phương pháp Gomory}{32}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2} Ý tưởng về phương pháp cắt}{32}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3} Thuật toán Gomory cho bài toán tối ưu nguyên hoàn toàn}{37}{subsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.1}Cơ sở lý thuyết}{37}{subsubsection.2.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.3.2} Thuật toán}{39}{subsubsection.2.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.2.3.3}Tính hữu hạn của thuật toán:}{40}{subsubsection.2.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.4}Ví dụ}{40}{subsubsection.2.2.3.4}%
+\contentsline {subsection}{\numberline {2.2.4}Thuật toán Gomory cho bài toán tối ưu nguyên bộ phận}{43}{subsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.4.1}Ví dụ}{44}{subsubsection.2.2.4.1}%
+\contentsline {section}{\numberline {2.3}Phương pháp Land-Doig (Nhánh cận)}{47}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Ý nghĩa của phương pháp và thuật toán Land-doig (Nhánh cận)}{47}{subsection.2.3.1}%
 \contentsline {chapter}{{\bf Kết luận}\rm }{59}{chapter*.19}%
