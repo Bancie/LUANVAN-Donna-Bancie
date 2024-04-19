@@ -461,7 +461,7 @@ A =
 \end{bmatrix}
 \end{equation*}
 
- Ta có thể viết định thức của ma trận $A$ dưới dạng
+ Ta có thể ký hiệu định thức của ma trận $A$ như sau:
 \begin{equation*}
 \det A =
 \begin{vmatrix}
@@ -471,11 +471,13 @@ A =
 	a_{n1} & a_{n2} & \cdots & a_{nn} 
 \end{vmatrix}.
 \end{equation*}
- Áp dụng vào ma trận vuông cấp 1, ta có:
+
+Định thức của ma trận vuông cấp 1:
 \begin{equation}
 \det[a]=a.
 \end{equation}
-Áp dụng vào ma trận vuông cấp 2, ta có:
+
+Định thức của ma trận vuông cấp 2:
 \begin{equation}
 \det \begin{bmatrix}
 a_{11} & a_{12} \\
@@ -486,11 +488,13 @@ a_{21} & a_{22}
 \end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}.
 \end{equation}
 
-Ma trận vuông $B$ được gọi là ma trận đảo của $A$ nếu $AB=BA=I$.
+Ta có $A = (a_{ij})$ là ma trận vuông cấp $n$, $k$ là một số cố định với $1 \leq k \leq n$, chọn $k$ hàng $1 \leq i_1 < i_2 < \ldots < i_k \leq n$ từ ma trận $A$ và $k$ cột $1 \leq j_1 < j_2 < \ldots < j_k \leq n$ từ ma trận $A$. Các phần từ nằm trên giao của $k$ hàng và $k$ cột đã chọn tạo nên ma trận vuông cấp $k$ và ta ký hiệu định thức của nó là $D_{i_1,i_2,\ldots,i_k}^{j_1,j_2,\ldots,j_k}$ và được gọi là định thức con cấp $k$ của ma trận $A$.
 
-Ta có $A = (a_{ij})$ là ma trận vuông cấp $n$ với $k$ là một số cố định với $1 \leq k \leq n$, chọn $k$ hàng $1 \leq i_1 < i_2 < \ldots < i_k \leq n$ từ ma trận $A$ và $k$ cột $1 \leq j_1 < j_2 < \ldots < j_k \leq n$ từ ma trận $A$. Các phần từ nằm trên giao của 
+Ma trận bù của $D_{i_1,i_2,\ldots,i_k}^{j_1,j_2,\ldots,j_k}$ là ma trận vuông cấp $n-k$ nhận được khi ta xoá $k$ hàng và $k$ cột đã chọn từ ma trận $A$. Ta ký hiệu định thức của ma trận bù là $\overline{D}_{i_1,i_2,\ldots,i_k}^{j_1,j_2,\ldots,j_k}$.
 
-\begin{dl}{(Khai triển Laplace).}
+Phần bù đại số của $D_{i_1,i_2,\ldots,i_k}^{j_1,j_2,\ldots,j_k}$ là số $(-1)^{(i_1+i_2+\ldots+i_k) + (j_1+j_2+\ldots+j_k)} \overline{D}_{i_1,i_2,\ldots,i_k}^{j_1,j_2,\ldots,j_k}$
+
+\begin{dl}{(Khai triển Laplace).} \label{ktrienlaplace}
 Cho $A= (a_{ij})$ là ma trận vuông cấp $n$, giả sử ta chọn ra $k$ cột (hoặc $k$ hàng) với $1 \leq k \leq n$ của ma trận $A$. Khi đó $\det A$ bằng tổng các tích của các định thức con cấp $k$ lấy ra từ $k$ cột (hoặc $k$ hàng) đã chọn với các phần bù đại số của chúng. Nói cách khác ta có:
 \begin{itemize}
 \item Khai triển theo $k$ hàng, trong đó $1 \leq i_1 < i_2 < \ldots < i_k \leq n$,
@@ -512,6 +516,73 @@ và
 \begin{equation}
 \det A = \sum_{i=1}^n (-1)^{i+j}a_{ij} . \overline{D}_i^j
 \end{equation}
+
+Áp dụng định lý \eqref{ktrienlaplace} giúp ta tính được định thức cấp $n$ từ việc tính các định thức cấp nhỏ hơn.
+
+\subsubsection*{Ví dụ}
+Tính định thức ma trận $A$ sau:
+\begin{equation*}
+A =
+\begin{pmatrix}
+    1 & -2 & -3 & -1 \\
+    -4 & -1 & 3 & 1 \\
+    2 & 4 & -1 & 3 \\
+    5 & -2 & 4 & 2 \\
+\end{pmatrix}.
+\end{equation*}
+Dùng các phép biến đổi trên ma trận ta được
+\begin{equation*}
+A =
+\begin{pmatrix}
+    1 & -2 & 3 & -1 \\
+    0 & -9 & 15 & -3 \\
+    0 & 8 & -7 & 5 \\
+    0 & 8 & -11 & 7 \\
+\end{pmatrix},
+\end{equation*}
+ta có
+\begin{equation*}
+\det A =
+\begin{vmatrix}
+    1 & -2 & 3 & -1 \\
+    0 & -9 & 15 & -3 \\
+    0 & 8 & -7 & 5 \\
+    0 & 8 & -11 & 7 \\
+\end{vmatrix}.
+\end{equation*}
+Khai triển theo cột 1, ta được
+\begin{equation*}
+    \det A = (-1)^{1+1}1
+    \begin{vmatrix}
+    -9 & 15 & -3 \\
+    8 & -7 & 5 \\
+    8 & -11 & 7 \\
+    \end{vmatrix}
+    =
+    \begin{vmatrix}
+    -9 & 15 & -3 \\
+    8 & -7 & 5 \\
+    8 & -11 & 7 \\
+    \end{vmatrix}.
+\end{equation*}
+Dùng các phép biến đổi trên ma trận ta được
+\begin{equation*}
+    \det A =
+    \begin{vmatrix}
+        0 & 0 & -3 \\
+        -7 & 18 & 5 \\
+        -13 & 24 & 7 \\
+    \end{vmatrix}.
+\end{equation*}
+Khai triển theo hàng 1, ta được
+\begin{equation*}
+    \det A = (-1)^{1+3}(-3)
+    \begin{vmatrix}
+        -7 & 18 \\
+        -13 & 24 \\
+    \end{vmatrix}
+    = -198
+\end{equation*}
 
 
 \section{Một số kiến thức cơ bản}
