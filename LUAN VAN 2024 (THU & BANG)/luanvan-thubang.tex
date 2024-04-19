@@ -461,13 +461,9 @@ A =
 \end{bmatrix}
 \end{equation*}
 
- Định thức của ma trận $A$ được tính theo công thức:
-\begin{equation}
-\text{det}(A) = \sum _{\sigma \in S_n} \text{sgn} (\sigma) \prod _{i=1}^n a_{i,\sigma (i)}.
-\end{equation}
  Ta có thể viết định thức của ma trận $A$ dưới dạng
 \begin{equation*}
-\text{det} A =
+\det A =
 \begin{vmatrix}
 	a_{11} & a_{12} & \cdots & a_{1n} \\
 	a_{21} & a_{22} & \cdots & a_{2n} \\
@@ -477,11 +473,11 @@ A =
 \end{equation*}
  Áp dụng vào ma trận vuông cấp 1, ta có:
 \begin{equation}
-\text{det}[a]=a.
+\det[a]=a.
 \end{equation}
 Áp dụng vào ma trận vuông cấp 2, ta có:
 \begin{equation}
-\text{det} \begin{bmatrix}
+\det \begin{bmatrix}
 a_{11} & a_{12} \\
 a_{21} & a_{22}
 \end{bmatrix} = \begin{vmatrix}
@@ -491,6 +487,32 @@ a_{21} & a_{22}
 \end{equation}
 
 Ma trận vuông $B$ được gọi là ma trận đảo của $A$ nếu $AB=BA=I$.
+
+Ta có $A = (a_{ij})$ là ma trận vuông cấp $n$ với $k$ là một số cố định với $1 \leq k \leq n$, chọn $k$ hàng $1 \leq i_1 < i_2 < \ldots < i_k \leq n$ từ ma trận $A$ và $k$ cột $1 \leq j_1 < j_2 < \ldots < j_k \leq n$ từ ma trận $A$. Các phần từ nằm trên giao của 
+
+\begin{dl}{(Khai triển Laplace).}
+Cho $A= (a_{ij})$ là ma trận vuông cấp $n$, giả sử ta chọn ra $k$ cột (hoặc $k$ hàng) với $1 \leq k \leq n$ của ma trận $A$. Khi đó $\det A$ bằng tổng các tích của các định thức con cấp $k$ lấy ra từ $k$ cột (hoặc $k$ hàng) đã chọn với các phần bù đại số của chúng. Nói cách khác ta có:
+\begin{itemize}
+\item Khai triển theo $k$ hàng, trong đó $1 \leq i_1 < i_2 < \ldots < i_k \leq n$,
+\begin{equation*}
+    \det A = \sum _{1 \leq j_1 < j_2 < \cdots < j_k \leq n} (-1)^{(i_1+i_2+\ldots+i_k) + (j_1+j_2+\ldots+j_k)} . D_{i_1,i_2,\ldots,i_k}^{j_1,j_2,\ldots,j_k} . \overline{D}_{i_1,i_2,\ldots,i_k}^{j_1,j_2,\ldots,j_k}
+\end{equation*}
+\item Khai triển theo $k$ cột, trong đó $1 \leq j_1 < j_2 < \ldots < j_k \leq n$,
+\begin{equation*}
+    \det A = \sum _{1 \leq i_1 < i_2 < \cdots < i_k \leq n} (-1)^{(i_1+i_2+\ldots+i_k) + (j_1+j_2+\ldots+j_k)} . D_{i_1,i_2,\ldots,i_k}^{j_1,j_2,\ldots,j_k} . \overline{D}_{i_1,i_2,\ldots,i_k}^{j_1,j_2,\ldots,j_k}
+\end{equation*}
+\end{itemize}
+\end{dl}
+
+Từ định lý trên ta có công thức khai triển theo một hàng và theo một cột lần lượt là
+\begin{equation}
+\det A = \sum_{j=1}^n (-1)^{i+j}a_{ij} . \overline{D}_i^j
+\end{equation}
+và
+\begin{equation}
+\det A = \sum_{i=1}^n (-1)^{i+j}a_{ij} . \overline{D}_i^j
+\end{equation}
+
 
 \section{Một số kiến thức cơ bản}
 
