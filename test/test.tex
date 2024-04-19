@@ -1,138 +1,103 @@
-\documentclass[12pt,a4paper]{report}
-\usepackage[utf8]{vietnam}\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
-\usepackage[top=3.5cm, bottom=3.0cm, left=3cm, right=3.0cm]{geometry} 
-\usepackage{color, fancyhdr, graphicx, wrapfig}
-\usepackage[unicode]{hyperref}
-\usepackage[vietnamese]{babel}
-\usepackage{titling}
-\usepackage{amsmath, amsthm, amssymb,latexsym,amscd,amsfonts,enumerate}
-\usepackage{subfigure}
-\usepackage{secdot}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{amsthm}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{graphicx} 
-\usepackage{titling}
-\usepackage{secdot}
-\usepackage{enumitem}
-\usepackage{tikz}
-\usepackage{array}
-\usetikzlibrary{calc}
-\usepackage{longtable}
-\usepackage{indentfirst}
-\usepackage{fancyhdr}
-\usepackage{exscale,relsize,makeidx}
-\usepackage{color, fancyhdr, graphicx, wrapfig}
-\usepackage{amsmath}
-\usepackage{textpos}
-\usepackage{pgfplots}
-\usepackage{tikz}
-\usepackage{hyperref}
-\usepackage{caption}
-\usetikzlibrary{shapes.geometric, arrows}
-\usetikzlibrary{datavisualization} 
-\pgfplotsset{compat=1.18, width = 7cm}
-\usetikzlibrary{patterns}
-\usepackage{enumitem}
-\usepackage{array}
-\usepackage[tikz]{ocgx2}
-\usepackage{xcolor}
-\usepackage{blindtext}
-\usepackage{multicol}
-\usepackage{tikz}
-\usepackage{subcaption}
-\usepackage{changepage}
-\usepackage{float}
-\usepackage{pgfplotstable}
-\usepackage{pgfplots}
-\usepackage{blindtext}
-\usepackage{titlesec}
-\usepackage{mathtools}
-\usepackage{tabularx}
-\usepackage{nccmath}
-\usetikzlibrary{calc}
-\usepackage{longtable}
-\usepackage{indentfirst}
-\usepackage{fancyhdr}
-\usepackage{exscale,relsize,makeidx}
-%\usepackage{refcheck}
-\setcounter{tocdepth}{4}
-\setcounter{secnumdepth}{4}
-\newtheorem{dn}{Định nghĩa}
-\newtheorem{tc}{Tính chất}
-\newtheorem{dl}{Định lý}
-\newtheorem{md}{Mệnh đề}
-\newtheorem{bd}{Bổ đề}
-\newtheorem{hq}{Hệ quả}
-\newtheorem{nx}{Nhận xét}
-\newtheorem{vd}{Ví dụ}
-\newtheorem{cm}{Chứng minh}
-\newtheorem{cy}{Chú ý}
-\newtheorem{ttoan}{Thuật toán}
-\pagenumbering{roman}\pagestyle{plain}
-%\pagestyle{fancy}
-%\lhead{\it \changefontsizes{11pt}Luận văn thạc sĩ:}
-%\rhead{\it Một số phương pháp vô hướng hóa cơ bản trong tối ưu đa mục tiêu}
-%\lfoot{\it Nguyễn Văn Vân } 			         
-%\rfoot{\it K19.2 trường ĐHSG}
-\renewcommand{\headrulewidth}{1,2pt} 			
-\renewcommand{\footrulewidth}{1,2pt}
-\newcommand{\dstc}[2]
-{
-	\newdimen\stringwidth\setbox0=\hbox{#1}
-	\stringwidth=\wd0
-	\hspace*{-\parindent}\hspace*{.5\textwidth}\hspace*{-.5\wd0}#1\hfill #2\bigskip
-	
-}  
-\usepackage{scrextend}
-\fancyhf{}
-\lhead{}
-\chead{\thepage}
-\rhead{}
-\cfoot{}
-\rfoot{}
-\lfoot{}
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{1pt}
-\begin{document} 
-\begin{figure}
-\center
-\begin{tikzpicture}[scale=0.33, every node/.style={scale=0.8}, node distance=3cm]
-% Define styles
-\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=red!30]
-\tikzstyle{process} = [rectangle, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=orange!30]
-\tikzstyle{decision} = [diamond, aspect=2, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=green!30]
-\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=1cm, align=center, draw=black, fill=blue!30]
-\tikzstyle{arrow} = [thick,->,>=stealth,line width=0.2pt]
-% Place nodes
-\node (start) [startstop, xshift=13cm] {(start) Bắt đầu};
-\node (b0) [io, below of=start] {(b0) $\mathcal{L}:=\{N_0 \}$ \\ $z^*=z_p$ \\ $(x^*,y^*)=(x,y)$};
-\node (b1) [decision, below of=b0] {(b1) $\mathcal{L} = \emptyset$?};
-\node (b2) [process, below of=b1] {(b2) Chọn $N_i$ từ $\mathcal{L}$ \\ và xoá khỏi $\mathcal{L}$};
-\node (b3) [process, below of=b2] {(b3) Giải $(P_i)$};
-\node (b4) [decision, below of=b3] {(b4) Vô nghiệm?};
-\node (b5) [decision, below of=b4] {(b5) $\exists x^i \notin Z^n_+$?};
-\node (b6) [io, right of=b5, node distance = 5cm] {(b6) $z_i = z^*$, \\ $(x^i,y^i) = (x,y)$};
-\node (b7) [io, below of=b5] {(b7) Thêm \\ $N_{i1}, \ldots , N_{ik}$ \\ vào $\mathcal{L}$};
-\node (stop) [startstop, below of=b7] {(stop) Kết thúc};
-% Draw arrows
-\draw [arrow] (start) -- (b0);
-\draw [arrow] (b0) -- (b1);
-\draw [arrow] (b1) -- node[anchor=west] {no} (b2);
-\draw [arrow] (b2) -- (b3);
-\draw [arrow] (b3) -- (b4);
-\draw [arrow] (b4) -- node[anchor=west] {no} (b5);
-\draw [arrow] (b5) -- node[anchor=south] {no} (b6);
-\draw [arrow] (b5) -- node[anchor=west] {yes} (b7);
-\draw [arrow] (b4) --node[anchor=south] {yes} (40,-36.32) |- (b1);
-\draw [arrow] (b6) |- (b1);
-\draw [arrow] (b7) -- (50,-51) |- (b1);
-\draw [arrow] (b7) -- (stop);
-\draw [arrow] (b1) -- node[anchor=south] {yes} (20,-14.51) |- (stop);
-\end{tikzpicture}
-\caption{Minh hoạ lưu đồ giải thuật của thuật toán nhánh cận.}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+
+		\draw[line width = 1.5pt] ($(current page.north west) + (1in,-0.8in)$) rectangle ($(current page.south east) + (-0.6in,0.8in)$);
+		
+	\end{tikzpicture}
+	\centering
+	\textbf{ỦY BAN NHÂN DÂN THÀNH PHỐ HỒ CHÍ MINH\smallskip\\
+		TRƯỜNG ĐẠI HỌC SÀI GÒN}\par
+	\rule{5cm}{0.5pt}\par
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5cm]{hinhanh/logodhsg.png}
+
 \end{figure}
-\end{document}
+
+	\vspace{1cm}
+	{\Large\textbf{BÁO CÁO TỔNG KẾT \\ \hspace{0.5cm} ĐỀ TÀI NGHIÊN CỨU KHOA HỌC SINH VIÊN}\par}
+	\vspace{3cm}
+		{\Large\textbf{TỐI ƯU TUYẾN TÍNH CÓ CHỨA THAM SỐ\\ Mã số đề tài: SV2023-157}\par}
+	\vspace{3cm}
+	\large\textbf{ Thuộc nhóm ngành khoa học: Toán-Ứng dụng\\ Chủ nhiệm đề tài: Nguyễn Thành Nam\\ Thành viên tham gia : 1 }\par		
+	\vspace{2cm}
+	\large{\textbf{Giảng viên hướng dẫn: PGS.TS Tạ Quang Sơn}}
+	\vfill
+	\textbf{Thành phố Hồ Chí Minh, tháng 5 năm 2024}
+\end{titlepage}
+
+\begin{titlingpage} %BÌA PHỤ I
+	\begin{tikzpicture}[remember picture, overlay]
+		\draw[line width = 1.5pt] ($(current page.north west) + (1in,-0.8in)$) rectangle ($(current page.south east) + (-0.6in,0.8in)$);
+		
+	\end{tikzpicture}
+	\centering
+	\textbf{ỦY BAN NHÂN DÂN THÀNH PHỐ HỒ CHÍ MINH\smallskip\\
+		TRƯỜNG ĐẠI HỌC SÀI GÒN}\par
+	\rule{5cm}{0.5pt}\par
+\vspace{5cm}
+
+
+	\vspace{1cm}
+	{\Large\textbf{BÁO CÁO TỔNG KẾT \\ \hspace{0.5cm} ĐỀ TÀI NGHIÊN CỨU KHOA HỌC SINH VIÊN}\par}
+		\vspace{2cm}
+	   {\Large\textbf{TỐI ƯU TUYẾN TÍNH CÓ CHỨA THAM SỐ\\ Mã số đề tài: SV2023-157}\par}
+	\vspace{3cm}
+
+	\large\textbf{ }\par		
+	
+	\large{}
+	\vspace{1.5cm}
+	
+	\large $\begin{array}{ccc}
+	   \quad \text{\textbf{Xác nhận của Khoa}} & \text{\textbf{Giảng viên hướng dẫn}} & \text{\textbf{Chủ nhiệm đề tài}} \\
+	   \text{(\textit{ký, họ tên})}  & \text{(\textit{ký, họ tên})} & \text{(\textit{ký, họ tên})}\\
+	\end{array}$  \par
+	\vspace{0.8cm}
+	
+
+	
+	%	\includegraphics[height=2cm]{chukynew}
+	\vfill
+	\textbf{Thành phố Hồ Chí Minh, tháng 5 năm 2024}
+\end{titlingpage}
+
+	 \begin{titlingpage} %BÌA PHỤ II
+	\begin{tikzpicture}[remember picture, overlay]
+		\draw[line width = 1.5pt] ($(current page.north west) + (1in,-0.8in)$) rectangle ($(current page.south east) + (-0.6in,0.8in)$);
+		
+	\end{tikzpicture}
+	\centering
+	\textbf{ỦY BAN NHÂN DÂN THÀNH PHỐ HỒ CHÍ MINH\smallskip\\
+		TRƯỜNG ĐẠI HỌC SÀI GÒN}\par
+	\rule{5cm}{0.5pt}\par
+\vspace{5cm}
+
+
+	\vspace{1cm}
+	{\Large\textbf{BÁO CÁO TỔNG KẾT \\ \hspace{0.5cm} ĐỀ TÀI NGHIÊN CỨU KHOA HỌC SINH VIÊN}\par}
+		\vspace{2cm}
+	   {\Large\textbf{TỐI ƯU TUYẾN TÍNH CÓ CHỨA THAM SỐ\\ Mã số đề tài: SV2023-157}\par}
+	\vspace{3cm}
+
+	\large\textbf{ }\par		
+	
+	\large{}
+	\vspace{1.5cm}
+	
+	\large $\begin{array}{cc}
+	 \quad \text{\textbf{Xác nhận của }} & \\
+	\text{\textbf{Chủ tịch hội đồng nghiệm thu}} & \text{\textbf{Chủ nhiệm đề tài}} \\
+	\text{(\textit{ký, họ tên})} &\text{(\textit{ký, họ tên})} \\
+	\end{array}$  \par
+	\vspace{0.8cm}
+	
+
+	
+	%	\includegraphics[height=2cm]{chukynew}
+	\vfill
+	\textbf{Thành phố Hồ Chí Minh, tháng 5 năm 2024}
+\end{titlingpage}

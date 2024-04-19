@@ -4,48 +4,49 @@ The top-level auxiliary file: luanvan-thubang.aux
 The style file: plain.bst
 Database file #1: mybib.bib
 Warning--empty publisher in inbook
+Warning--empty title in taquangson
 Warning--empty title in buithetam
 Warning--empty title in huudien
 Warning--empty year in huudien
-You've used 11 entries,
+You've used 12 entries,
             2118 wiz_defined-function locations,
-            554 strings with 5434 characters,
-and the built_in function-call counts, 3019 in all, are:
-= -- 274
-> -- 148
+            559 strings with 5523 characters,
+and the built_in function-call counts, 3222 in all, are:
+= -- 293
+> -- 155
 < -- 1
-+ -- 60
-- -- 48
-* -- 177
-:= -- 535
-add.period$ -- 34
-call.type$ -- 11
-change.case$ -- 47
++ -- 63
+- -- 50
+* -- 189
+:= -- 573
+add.period$ -- 36
+call.type$ -- 12
+change.case$ -- 50
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 135
-empty$ -- 247
-format.name$ -- 48
-if$ -- 629
+cite$ -- 17
+duplicate$ -- 145
+empty$ -- 264
+format.name$ -- 50
+if$ -- 669
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 19
-newline$ -- 56
-num.names$ -- 22
-pop$ -- 84
+int.to.str$ -- 12
+missing$ -- 20
+newline$ -- 60
+num.names$ -- 24
+pop$ -- 88
 preamble$ -- 1
-purify$ -- 46
+purify$ -- 49
 quote$ -- 0
-skip$ -- 80
+skip$ -- 87
 stack$ -- 0
-substring$ -- 88
-swap$ -- 18
+substring$ -- 93
+swap$ -- 19
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 28
-warning$ -- 4
-while$ -- 25
-width$ -- 13
-write$ -- 114
-(There were 4 warnings)
+type$ -- 32
+warning$ -- 5
+while$ -- 27
+width$ -- 14
+write$ -- 123
+(There were 5 warnings)
