@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex luanvan-thubang"] 1713550778 "luanvan-thubang.aux" "luanvan-thubang.bbl" "luanvan-thubang" 1713550782 0
+["bibtex luanvan-thubang"] 1713552168 "luanvan-thubang.aux" "luanvan-thubang.bbl" "luanvan-thubang" 1713552191 0
   "./mybib.bib" 1711747092 2799 621e00e815c63c09d7d66d2a5bb66f19 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "luanvan-thubang.aux" 1713550781 17403 53fddb2cb321e883778ee24bfbbdd3aa "pdflatex"
+  "luanvan-thubang.aux" 1713552191 17479 cf77bf1f42c8569cc8c46b110d9778c4 "pdflatex"
   (generated)
   "luanvan-thubang.bbl"
   "luanvan-thubang.blg"
   (rewritten before read)
-["pdflatex"] 1713550778 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/LUAN VAN 2024 (THU & BANG)/luanvan-thubang.tex" "luanvan-thubang.pdf" "luanvan-thubang" 1713550782 0
-  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/LUAN VAN 2024 (THU & BANG)/luanvan-thubang.tex" 1713550771 130564 ed07beda8ed5c8a83b99d31a67bbf21a ""
+["pdflatex"] 1713552188 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/LUAN VAN 2024 (THU & BANG)/luanvan-thubang.tex" "luanvan-thubang.pdf" "luanvan-thubang" 1713552191 0
+  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/LUAN VAN 2024 (THU & BANG)/luanvan-thubang.tex" 1713552187 130936 30196096a3dba6c6062ff7c120d59e11 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -328,11 +328,11 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "anh2.pdf" 1711747092 36539 78911f59ec45462b25b3434c0ab5a936 ""
   "anh3.pdf" 1711747092 12691 f54f258af93055925c5122562b710974 ""
-  "luanvan-thubang.aux" 1713550781 17403 53fddb2cb321e883778ee24bfbbdd3aa "pdflatex"
-  "luanvan-thubang.bbl" 1713550778 1607 da59c6308bbd805f11c8f8ca81e14412 "bibtex luanvan-thubang"
-  "luanvan-thubang.out" 1713550781 8727 446a577bba604b97291a5d513c5eb6e6 "pdflatex"
-  "luanvan-thubang.tex" 1713550771 130564 ed07beda8ed5c8a83b99d31a67bbf21a ""
-  "luanvan-thubang.toc" 1713550781 3929 ebc82944884cac70ed603b847b5f010c "pdflatex"
+  "luanvan-thubang.aux" 1713552191 17479 cf77bf1f42c8569cc8c46b110d9778c4 "pdflatex"
+  "luanvan-thubang.bbl" 1713552168 1607 da59c6308bbd805f11c8f8ca81e14412 "bibtex luanvan-thubang"
+  "luanvan-thubang.out" 1713552191 8727 446a577bba604b97291a5d513c5eb6e6 "pdflatex"
+  "luanvan-thubang.tex" 1713552187 130936 30196096a3dba6c6062ff7c120d59e11 ""
+  "luanvan-thubang.toc" 1713552191 3929 3c30bf398ffa7a17c060876134efd9de "pdflatex"
   "plot.pdf" 1711747092 57432 dae4018a12a3e22e01dfbfbcdb0f62c2 ""
   "ảnh 1.pdf" 1711747092 57952 c4826b5717d445627938344b97000e5b ""
   (generated)

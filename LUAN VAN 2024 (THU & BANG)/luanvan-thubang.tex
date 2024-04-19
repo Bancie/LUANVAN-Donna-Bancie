@@ -606,7 +606,7 @@ Khai triển theo hàng 1, ta được
 
     Thì ta gọi bài toán trên có dạng chính tắc và có thể viết lại dưới dạng:
 
-    \begin{equation} \small \label{chinhtac}
+    \begin{equation} \small \label{3217}
         \begin{split}
         (P) \quad \text{Min } & f(x) = c^Tx \\
             & \left\{
@@ -695,7 +695,7 @@ Khai triển theo hàng 1, ta được
     \end{equation*}
     
 
-Kể từ đây, ta chỉ quan tâm bài toán \eqref{chinhtac}.
+Kể từ đây, ta chỉ quan tâm bài toán chính tắc \eqref{3217}.
 
 
 \section{Một số phương pháp giải bài toán tối ưu tuyến tính}
@@ -703,9 +703,9 @@ Kể từ đây, ta chỉ quan tâm bài toán \eqref{chinhtac}.
 \subsection{Phương pháp hình học}
 Ta xét bài toán trong không gian $\mathbb{R}^2$ sau,
 
-\begin{equation} \small \label{chinhtac}
+\begin{equation} \small \label{chinhtachinhhoc}
 	\begin{split}
-	(P) \quad \text{Min } & f(x) = c^Tx \\
+	(P) \quad \text{Max } & f(x) = c^Tx \\
 		& \left\{
 		\begin{split}
 		& Ax=b, \\
@@ -748,19 +748,30 @@ tương ứng với mặt phẳng bên trái đường thẳng $EG$. Tập chấ
 
  \textbf{Phương án tối ưu của bài toán}
 
- Để tìm phương án tối ưu của bài toán ta thiết lập phương thay đổi của hàm mục tiêu
-\begin{equation*}
-f(x)=c_1x_1+c_2x_2,
-\end{equation*}
-trong đó phương trình mô tả họ đường thẳng phụ thuộc theo tham số $f(x)$ với pháp vectơ $v=(c_1,c_2)$, giá trị $f(x)$ tăng hoặc giảm theo một hướng của vectơ $\vec{v}$.
- Từ phương trình hàm mục tiêu ta thiết lập các đường mức.
- Tịnh tiến song song các đường mức theo chiều tăng nếu Max hoặc giảm nếu Min để tìm phương án tối ưu của bài toán. (Hình 1.2)
-
 \begin{ttoan}[Đơn hình]
+\setlength{\parindent}{4em}
+Ta xét bài toán sau:
+\begin{equation} \small
+	\begin{split}
+	(P) \quad \text{Max } & f(x) = c_1x_1 + c_2x_2 \\
+		& \left\{
+		\begin{split}
+        & a_{11}x_1 +a_{12}x_2 \leq b_1, \\
+        & a_{21}x_1 +a_{22}x_2 \leq b_2, \\
+        & \quad \quad \quad \vdots \\
+        & a_{m1}x_1 +a_{m2}x_2 \leq b_m, \\
+		& x_j \geq 0, \:\: j=1,2.
+		\end{split}
+		\right.    
+	\end{split}
+\end{equation}
 
-\noindent \textbf{Bước 1. Thiết lập miền các phương án.}
-Thiết lập miền giới hạn bởi các nửa mặt phẳng mô tả bởi các ràng buộc (các bất đẳng thức).
-
+\noindent \textbf{Bước 1. Thiết lập miền các phương án.} \\
+Thiết lập miền giới hạn bởi các nửa mặt phẳng mô tả bởi các ràng buộc (các bất đẳng thức). \\
+\noindent \textbf{Bước 2. Thiết lập phương thay đổi.} \\
+Thiết lập đường mức cho bởi hàm mục tiêu $f(x)=c_1x_1+c_2x_2$, sau đó từ phương trình hàm mục tiêu ta xác định pháp vectơ của các đường mức $v=(c_1, c_2)$. \\
+\noindent \textbf{Bước 3. Tìm phương án tối ưu.} \\
+Di chuyển đường mức theo hướng tăng của giá trị $f(x)$ trong vùng tập các phương án chấp nhận được và tìm điểm cuối cùng, hay còn gọi là cực điểm. (Hình minh hoạ 1.2)
 \end{ttoan}
 
 \begin{figure}[!htb]\label{hinh2}
