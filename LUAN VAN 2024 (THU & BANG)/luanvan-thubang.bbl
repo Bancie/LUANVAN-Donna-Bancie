@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{phanhoangchon}
+Phan~Hoàng Chơn.
+\newblock {\em Giáo trình Đại số tuyến tính}, Đại học Sài Gòn, 2022.
+
 \bibitem{conforti2014integer}
 M.~Conforti, G.~Cornuejols, and G.~Zambelli.
 \newblock {\em Integer Programming}.
@@ -34,6 +38,11 @@ M.~J{\"u}nger, T.M. Liebling, D.~Naddef, G.L. Nemhauser, W.R. Pulleyblank, G.~Re
 Ailsa~H. Land and Alison~G. Doig.
 \newblock An automatic method of solving discrete programming problems.
 \newblock {\em Econometrica}, 28:497, 1960.
+
+\bibitem{lay2003linear}
+D.C. Lay.
+\newblock {\em Linear Algebra and Its Applications}.
+\newblock Pearson Education, 2003.
 
 \bibitem{nguyễn1996tối}
 {\DJ}.N. Nguyễn.

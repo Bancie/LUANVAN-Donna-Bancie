@@ -358,9 +358,9 @@ Do lần đầu tham gia tập dượt nghiên cứu khoa học. Các tri thức
 \renewcommand{\baselinestretch}{1.2}
  
 \chapter{Một số kiến thức cơ bản về bài toán quy hoạch tuyến tính}
-Trước khi bắt đầu tìm hiểu các kỹ thuật và phương pháp giải quyết bài toán tối ưu tuyến tính để cho ra các nghiệm nguyên, ta cần điểm qua những kiến thức cơ bản cần thiết để làm nền móng cho sau này. Trong danh sách sơ lược quan trọng này, không thể không nhắc đến kiến thức về đại số tuyến tính, là nền tảng vững chắc cho việc giải quyết các vấn đề tối ưu.
+Chương này dùng để nhắc lại một số kiến thức về đại số tuyến tính và các phương pháp cơ bản giải bài toán quy hoạch tuyến tính.
 
-Bên cạnh đó, ta cũng nên tóm tắt lại các phương pháp căn bản thường được sử dụng để giải quyết bài toán tối ưu tuyến tính, bao gồm cả phương pháp hình học và phương pháp đơn hình. Không chỉ dừng lại ở đó, phương pháp đơn hình đối ngẫu cũng nên được nhắc đến, bởi nó cung cấp một cách tiếp cận mạnh mẽ để xử lý các vấn đề tối ưu thông qua kĩ thuật đối ngẫu đặc biệt.
+Nội dung của chương được tham khảo từ tài liệu \cite{phanhoangchon}, \cite{lay2003linear}.
 
 \section{ Véc tơ, ma trận và các tính chất}
 
@@ -1041,7 +1041,7 @@ Trường hợp bài toán có đường mức được tạo ra từ phương t
 
 \subsubsection*{Trường hợp bài toán nhận giá trị tối ưu vô hạn}
 
-Trường hợp miền chấp nhận được của bài toán là một tập mở thì bài toán có giá trị tối ưu đạt tại vô hạn.
+Trường hợp miền chấp nhận được của bài toán là một tập không bị chặn thì bài toán có thể kết luận giá trị tối ưu tại vô hạn.
 \begin{equation} \label{thvohannghiem}
 	\begin{split}
 	(P) \quad & f(x) = 2x_1 + 4x_2 \longrightarrow Max \\
@@ -1473,7 +1473,7 @@ Bài toán đối ngẫu
 
 
 \chapter{Bài toán tối ưu tuyến tính có nghiệm nguyên}
-Thực tế hiện nay cho thấy rằng việc tìm kết quả của các bài toán tối ưu tuyến tính với các biến ràng buộc là số thực là chưa đủ. Nhiều bài toán Quy hoạch tuyến tính đòi hỏi phải tìm được nghiệm là các biến nguyên, được gọi là mô hình tối ưu tuyến tính nguyên hay Bài toán tối ưu tuyến tính nguyên. Ở chương này chúng tôi sẽ giới thiệu về bài toán và phương pháp giải bài toán tối ưu tuyến tính nguyên với  thuật toán lát cắt Gomory và thuật toán nhánh cận Land-Doig.
+Thực tế hiện nay cho thấy rằng việc tìm kết quả của các bài toán tối ưu tuyến tính với các biến ràng buộc là số thực là chưa đủ. Nhiều bài toán Quy hoạch tuyến tính đòi hỏi phải tìm được nghiệm là các biến nguyên, được gọi là mô hình tối ưu tuyến tính nguyên hay Bài toán tối ưu tuyến tính nguyên. Ở chương này sẽ tìm hiểu lại về bài toán và phương pháp giải bài toán tối ưu tuyến tính nguyên với  thuật toán lát cắt Gomory và thuật toán nhánh cận Land-Doig.
 
 \section{Giới thiệu bài toán tối ưu nguyên}
 Bài toán Tối ưu nguyên có dạng chuẩn tắc:\\
@@ -1671,30 +1671,47 @@ Xem hình 2.3.
 
 
 \section{Phương pháp Gomory}
+
+
 \subsection{ Giới thiệu về phương pháp Gomory}
-Ta xét bài toán tối ưu nguyên dạng chính tắc:\\
-\begin{equation}\label{BTNchinhtac}
+Trước hết, ta xét bài toán tối ưu dạng chính tắc như sau:
+\begin{equation}
      \begin{split}
-          & {\rm{Min}}  \quad\langle c,x \rangle\\
-          \rm{s.t} &\left\{\begin{split}
+         {(P)} & \quad {\rm Min}  \quad\langle c,x \rangle\\
+          \rm{s.t} &\quad \left\{\begin{split}
             & Ax= b,\\
            & x_j \ge 0, j=1,2,...,n.\\
-            & x_j \text{nguyên}, j=1,2..,n_1 (n_1\le n).\\
            \end{split}\right.
        \end{split}
    \end{equation}
-   Ta gọi:\\
-   $P^N$ là bài toán tối ưu nguyên.\\
-$F^N$ là miền xác định của bài toán.\\
 
-   Ta có thể xem các bài toán tối ưu nguyên thành các trường hợp sau:\\
+  Ta ký hiệu tập $ F \subset \mathbb R^n$ là miền xác định của bài toán ${\rm (P)}.$
+
+Từ bài toán $(P)$ nói trên, ta sẽ xét bài toán tối ưu nguyên dạng chính tắc:
+\begin{equation}\label{BTNchinhtac}
+     \begin{split}
+         {(P^N)} & \quad {\rm Min}  \quad\langle c,x \rangle\\
+          \rm{s.t} &\quad \left\{\begin{split}
+            & Ax= b,\\
+           & x_j \ge 0, j=1,2,...,n.\\
+            & x_j \hspace{0.1cm} \text{nguyên}, j=1,2..,n_1\hspace{0.1cm}(n_1\le n).\\
+           \end{split}\right.
+       \end{split}
+   \end{equation}
+   
+   Ta gọi:
+   
+   $P^N$ là bài toán tối ưu nguyên.
+   
+$F^N$ là miền xác định của bài toán.
+
+   Ta có thể xem các bài toán tối ưu nguyên với các trường hợp sau:\\
    1) Bài toán tối ưu nguyên hoàn toàn và giá trị hàm mục tiêu nguyên.\\
    2) Bài toán tối ưu nguyên hoàn toàn và giá trị mục tiêu không nguyên.\\
    3) Bài toán tối ưu nguyên bộ phận và giá trị hàm mục tiêu nguyên.\\
    4) Bài toán tối ưu nguyên bộ phận và giá trị hàm mục tiêu không nguyên\\
    Do trường hợp thứ nhất có thể được phát triển từ trường hợp thứ hai, trường hợp thứ ba có thể phát triển được từ trường hợp thứ tư. Do đó, ở đây chúng tôi chỉ khảo sát trên bài toán ở dạng thứ hai và thứ tư.\\
 \subsection{ Ý tưởng về phương pháp cắt}
-Do không thể tìm nghiệm nguyên bằng cách làm tròn nghiệm từ một bài toán tối ưu thông thường. Vậy còn cách nào tìm nghiệm nguyên mà có thể liên hệ với bài toán tối ưu thông thường hay không? Có vài ý tưởng như sau:
 
 \begin{dn}
     Đa diện được gọi là đa diện lồi nếu khi nối hai điểm bất kì của đa diện ta được đoạn thẳng nằm bên trong đa diện đó.
@@ -1702,19 +1719,22 @@ Do không thể tìm nghiệm nguyên bằng cách làm tròn nghiệm từ mộ
 \begin{dn}
     Đa diện nguyên là đa diện lồi có các đỉnh là các điểm nguyên
 \end{dn}
+\begin{dn}
+	Cho trước $k$ điểm ${x_1},{x_2},...,{x_k}$. Ta gọi một tổ hợp lồi của $k$ điểm đã cho là tổng
+	$${\lambda _1}{x_1} + {\lambda _2}{x_2} + ... + {\lambda _k}{x_k},$$
+ trong đó ${\lambda _i} \ge 0$ với $i=1,...,k$ và ${\lambda _1} + {\lambda _2} + ... + {\lambda _k} = 1.$
+\end{dn}
+
+\begin{dn}
+    Cho $\text{F}  \subset \mathbb R^n$. Tập hợp gồm tất cả các tổ hợp lồi của các điểm thuộc \text{F} gọi là bao lồi của \text{F}, kí hiệu là co(\text{F}). 
+\end{dn}
 \begin{dl}
-   Giả sử $F$ là một đa diện lồi,$F^N$ là tập các điểm nguyên của nó, 
-$R\equiv V(F^N)$ là bao lồi tuyến tính của tập các điểm nguyên, khi đó:
-
-    1) $R\equiv V(F^N)$ là một đa diện nguyên.
-
-    2) $R^N=F^N$.
-
+   Giả sử $F$ là một đa diện lồi,\hspace{0.1cm} $F^N$ là tập các điểm nguyên của nó, 
+$R \hspace{0.1cm} \text{là bao lồi tuyến tính của } F^N$, khi đó:\\
+    1) $R:= co(F^N)$ là một đa diện nguyên.\\
+    2) $R^N=F^N$.\\
     3) Tập $R^\ast$ các phương án chấp nhận được của đa diện $R$ chứa trong $R^N$:
-
-    \begin{equation*}
-    R^{\ast} \subseteq R^N.
-    \end{equation*}
+    $$R^{\ast} \subseteq R^N$$.
 \end{dl}
 
 \begin{hq}
@@ -1722,10 +1742,19 @@ $R\equiv V(F^N)$ là bao lồi tuyến tính của tập các điểm nguyên, k
 \end{hq}
 \begin{dl}
  Giả sử $L$ là một đa diện lồi, $U$ là một đa diện lồi nguyên và $U^N= F^N$, khi đó :
- \begin{equation*}
- U = R = V(F^N).
- \end{equation*}
-    \end{dl}
+ $$U = R = co(F^N)$$
+\end{dl}
+
+
+
+
+
+
+
+
+
+
+
     \textbf{Minh họa}
 
     \begin{equation}
