@@ -26,10 +26,10 @@
 \contentsline {subsection}{\numberline {2.2.1} Giới thiệu về phương pháp Gomory}{31}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2} Ý tưởng về phương pháp cắt}{32}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3} Thuật toán Gomory cho bài toán tối ưu nguyên hoàn toàn}{36}{subsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.3.1}Cơ sở lý thuyết}{37}{subsubsection.2.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.2.3.2} Thuật toán}{39}{subsubsection.2.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.2.3.3}Tính hữu hạn của thuật toán:}{40}{subsubsection.2.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.2.3.4}Ví dụ}{40}{subsubsection.2.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.2.3.1}Cơ sở lý thuyết}{36}{subsubsection.2.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.3.2} Thuật toán}{38}{subsubsection.2.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.2.3.3}Tính hữu hạn của thuật toán:}{39}{subsubsection.2.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.4}Ví dụ}{39}{subsubsection.2.2.3.4}%
 \contentsline {subsection}{\numberline {2.2.4}Thuật toán Gomory cho bài toán tối ưu nguyên bộ phận}{42}{subsection.2.2.4}%
 \contentsline {subsubsection}{\numberline {2.2.4.1}Ví dụ}{43}{subsubsection.2.2.4.1}%
 \contentsline {section}{\numberline {2.3}Phương pháp Land-Doig (Nhánh cận)}{46}{section.2.3}%
