@@ -1239,11 +1239,11 @@ a_{\text{mới}} = a_{\text{cũ}} - \frac{a_{iv}\times a_{rj}}{a_{rv}}.
 \end{equation}
 \end{minipage}
 \begin{dn}
-    Cho bài toán QHTT dạng chuẩn \eqref{baitoangoc} và bài toán \eqref{baitoandoingau} được gọi là các \textbf{bài toán đối ngẫu } (hay còn gọi là \textbf{cặp đối ngẫu}).\\
+    Cho bài toán QHTT dạng chuẩn tắc \eqref{baitoangoc} và bài toán \eqref{baitoandoingau} được gọi là các \textbf{bài toán đối ngẫu } (hay còn gọi là \textbf{cặp đối ngẫu}).\\
 \end{dn}
 Bài toán \eqref{baitoangoc} gọi là \textit{bài toán gốc}, bài toán \eqref{baitoandoingau} gọi là bài toán đối ngẫu.\\
 Trong phần này ta luôn xét bài toán Min cho bài toán gốc và bài toán Max cho bài toán đối ngẫu.\\
-  \item \textbf{Bài toán gốc và bài toán đối ngẫu dạng chỉnh tắc:}\\
+  \item \textbf{Bài toán gốc và bài toán đối ngẫu dạng chính tắc:}\\
       \begin{minipage}[t]{0.48\linewidth}
     Bài toán gốc
    \begin{equation}
@@ -1274,7 +1274,7 @@ Bài toán đối ngẫu
     \end{dl}
    
     \begin{dl}
-        Nếu $x^*$ là phương án bất kì của bài toán gốc \eqref{baitoangoc} và $y^*$ là phương án bất kì của bài toán đối ngẫu (\eqref{baitoandoingau} và có $f(x^*)=g(y^*)$ thì $x^*$ là phương án tối ưu của bài toán gốc \eqref{baitoangoc} và $y^*$ là phương án tối ưu của bài toán đối ngẫu \eqref{baitoandoingau}.\\
+        Nếu $x^*$ là phương án bất kì của bài toán gốc \eqref{baitoangoc} và $y^*$ là phương án bất kì của bài toán đối ngẫu \eqref{baitoandoingau} và có $f(x^*)=g(y^*)$ thì $x^*$ là phương án tối ưu của bài toán gốc \eqref{baitoangoc} và $y^*$ là phương án tối ưu của bài toán đối ngẫu \eqref{baitoandoingau}.\\
     \end{dl}
 
 \begin{dl}
@@ -1287,7 +1287,7 @@ Bài toán đối ngẫu
 \begin{hq}
         Đối với mỗi cặp bài toán quy hoạch đối ngẫu chỉ có thể xảy ra một trong ba khả năng loại trừ nhau sau đây:\\
         a) Bài toán gốc và bài toán đối ngẫu đều không có phương án.\\
-        b) Bài toán gốc và bài toán đối ngẫu đều có phương. Khi đó cả hai bài toán đều có phương án tối ưu và giá trị tối ưu hàm mục tiêu của hai bài toán là bằng nhau.\\
+        b) Bài toán gốc và bài toán đối ngẫu đều có phương án. Khi đó cả hai bài toán đều có phương án tối ưu và giá trị tối ưu hàm mục tiêu của hai bài toán là bằng nhau.\\
         c) Một bài toán có phương án và bài toán còn lại không có phương án. Khi đó, bài toán có phương án sẽ không có phương án tối ưu và hàm mục tiêu của bài toán đó không bị chặn trong miền ràng buộc.
     \end{hq}
     \begin{hq}
@@ -1307,11 +1307,11 @@ Bài toán đối ngẫu
         - Nếu $x_j \ge 0$ thì $\sum_{i=1}^m a_{mj}y_m=c_j.$\\
         - Nếu $\sum_{i=1}^m a_{mj}y_m<c_j$ thì $x_j=0$.\\
     \end{itemize}
-    \textit{Nhắc lại} Ràng buộc chặt là ràng buộc xảy ra dấu =. Ràng buộc lỏng là ràng buộc xảy ra dấu bất đẳng thức thực.\\
+    \textit{Nhắc lại:} Ràng buộc chặt là ràng buộc xảy ra dấu =. Ràng buộc lỏng là ràng buộc xảy ra dấu bất đẳng thức thực.\\
     Định lý độ lệch bù yếu còn có thể phát biểu lại như sau:\\
     $x^*,y^*$ là phương án tối ưu của bài toán gốc và bài toán đối ngẫu khi và chỉ khi $x^*,y^*$ là phương án của bài toán tương ứng và thỏa mãn điều kiện nếu một ràng buộc là lỏng (tức là bị lệch) thì ràng buộc đối ngẫu tương ứng với nó phải chặt (tức là bù lại ).\\
     \begin{bd}
-        Đối với một cặp bài toán đối ngẫu, nếu một ràng buộc là lỏng đối với đối với một phương án tối ưu của bài toán này thì ràng buộc đối ngẫu của nó phải chặt đối với phương án tối ưu của bài toán kia.\\
+        Đối với một cặp bài toán đối ngẫu, nếu một ràng buộc là lỏng đối với một phương án tối ưu của bài toán này thì ràng buộc đối ngẫu của nó phải chặt đối với phương án tối ưu của bài toán kia.\\
     \end{bd}
      \begin{dl}
         (Độ lệch bù mạnh) Nếu cặp bài toán đối ngẫu có phương án tối ưu thì tồn tại một cặp phương án tối ưu thỏa mãn điều kiện nếu một ràng buộc là chặt thì ràng buộc đối ngẫu của nó phải là lỏng.\\
@@ -1329,7 +1329,7 @@ Bài toán đối ngẫu
            \end{split}\right.
        \end{split}
    \end{equation}
-    Giả thiết rank $A=m$. Giả sử, $\{A_j|j\in J\} $ là hệ $m$ vecto độc lập tuyến tính của A, gọi là hệ vecto cơ sở. J là tập chỉ số cơ sở. Ký hiệu $A_j$ lập nên từ các véc  cơ sở, gọi là ma trận cơ sở.\\
+    Giả thiết rank $A=m$. Giả sử, $\{A_j|j\in J\} $ là hệ $m$ véc-tơ độc lập tuyến tính của A, gọi là hệ véc-tơ cơ sở. J là tập chỉ số cơ sở. Ký hiệu $A_j$ lập nên từ các véc-tơ  cơ sở, gọi là ma trận cơ sở.\\
     Ký hiệu $H=\{1,2,...,n\} \setminus J $. Phương án cơ sở $(x_J,x_H)$ của bài toán \eqref{chapnhan} tương ứng với cơ sở $J$.
     \begin{dn}
         a) Ta gọi cơ sở $J$ là\textit{ chấp nhận được gốc} nếu phương án cơ sở tương ứng với nó là phương án chấp nhận được.\\
@@ -1346,7 +1346,7 @@ Bài toán đối ngẫu
     \end{split}
 \end{equation}
 \begin{dn}
-        a) Ta gọi phương án \textit{ cơ sở đối ngẫu} tương ứng với cơ sở J là vecto $y$ thu được bằng cách giải hệ phương trình tuyến tính $A^T_J y=c_J$ (nghĩa là $y=(A^T_J)^{-1}c_J$).\\
+        a) Ta gọi phương án \textit{cơ sở đối ngẫu} tương ứng với cơ sở J là véc-tơ $y$ thu được bằng cách giải hệ phương trình tuyến tính $A^T_J y=c_J$ (nghĩa là $y=(A^T_J)^{-1}c_J$).\\
         b) Cơ sở J được gọi là \textit{cơ sở chấp nhận được đối ngẫu} nếu phương án cơ sở đối ngẫu ứng với nó là phương án chấp nhận được của bài toán đối ngẫu.
     \end{dn}
     Nếu $J$ là cơ sở chấp nhận được đối ngẫu thì phương án cơ sở đối ngẫu tương ứng $y=(A^T_J)^{-1}c_J$ phải thỏa mãn ràng buộc $A^Ty\le c$, nghĩa là $$A^T(A^T_J)^{-1}c_J-c \le 0$$.\\
