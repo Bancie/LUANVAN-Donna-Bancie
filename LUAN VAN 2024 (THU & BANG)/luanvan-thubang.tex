@@ -220,7 +220,7 @@
 	\indent
 	
 	Chúng tôi tên là Đỗ Ngọc Minh Thư và Nguyễn Chí Bằng, là các  sinh viên lớp DTU1221, khoa Toán - Ứng dụng , khóa 2022-2026,  thuộc trường Đại học Sài Gòn. 
-	Xin cam đoan rằng: Toàn bộ nội dung được trình bày trong đề tài  này này đều do chúng tôi thực hiện dưới sự hướng dẫn đầy nhiệt huyết của PGS.TS. Tạ Quang Sơn.
+	Xin cam đoan rằng: Toàn bộ nội dung được trình bày trong đề tài  này này đều do chúng tôi thực hiện dưới sự hướng dẫn đầy nhiệt huyết và tận tâm của PGS.TS. Tạ Quang Sơn.
 	Những kết quả nghiên cứu của tác giả khác được sử dụng trong đề tài  đều có trích dẫn đầy đủ. 
 	Chúng tôi xin chịu trách nhiệm nếu có các nội dung sao chép không hợp lệ hoặc vi phạm quy chế đào tạo. 
 	\\
@@ -1181,7 +1181,7 @@ Nếu $\Delta _j > 0$ và $x_{ij}\leq 0$ với $i=\overline{1,\: m}, \: j=\overl
 Chọn biến cơ sở mới $x_v$ sao cho $\Delta _v = \max \{\Delta _j >0 \}$ đưa vào và biến cơ sở cũ $x_r$ đưa ra sao cho $\min _{a_{iv}>0} \frac{x_i^0}{a_{iv}}$ và chuyển sang bước 4.
 
 \noindent \textbf{Bước 4. Xoay trục.}
-Chọn dòng thứ $r$ và cột thứ $r$ lần lượt là dòng và cột xoay, $a_{rv}$ là phần tử trục sau đó biến đổi bảng đơn hình để nhận phương án mới bằng cách thay biến cơ sở cũ $x_r$ thành $x_v$, $c_r$ thành $c_v$.
+Chọn dòng thứ $r$ và cột thứ $v$ lần lượt là dòng và cột xoay, $a_{rv}$ là phần tử trục sau đó biến đổi bảng đơn hình để nhận phương án mới bằng cách thay biến cơ sở cũ $x_r$ thành $x_v$, $c_r$ thành $c_v$.
 
 Ta thay thế dòng xoay cũ thành dòng mới bằng cách chia tất cả cho phân tử trục $a_{rv}$ và biến đổi phần tử khác bằng quy tắc hình chữ nhật
 \begin{equation}
@@ -1295,8 +1295,8 @@ Bài toán đối ngẫu
     \end{hq}
     \begin{dl}
         (Độ lệch bù yếu) Giả sử $x \in R^n$ là phương án của bài toán gốc \eqref{baitoangoc}, $y\in R^m$ là phương án tối ưu của bài toán đối ngẫu \eqref{baitoandoingau}. Khi đó, điều kiện cần và đủ để $x$ và $y$ là phương án tối ưu của các bài toán tương ứng là :\\
-        i) $(a_{i1}x_ +a_{in}x_n -b_i)y_i=0 (\forall {i=1,..m}) $ \\
-        ii) $(c_j-(a_{1j} y_1+...a_{mj}y_m))x_j=0 (\forall{j=1,..n}) $ \\   
+        i) $(a_{i1}x_1 +a_{in}x_n -b_i)y_i=0 \: (\forall {i=1,\ldots,m}) $ \\
+        ii) $(c_j-(a_{1j} y_1+...+a_{mj}y_m))x_j=0 \: (\forall{j=1,\ldots ,n}) $ \\   
     \end{dl}
     Nếu biết phương án tối ưu của bài toán gốc, vận dụng lý thuyết đối ngẫu ta có thể suy ra phương án tối ưu của bài toán đối ngẫu tương ứng mà không cần giải nó.\\
     \textbf{\textit{Chú ý:}} \\
@@ -1377,14 +1377,14 @@ Bài toán đối ngẫu
     Giả sử bài toán luôn có cơ sở đối ngẫu chấp nhận được, ta có các bước thuật toán.\\
     \textbf{\textit{THUẬT TOÁN:}}\\
     \textbf{Bước 1} Tìm giải phương án $J,A_J, A_J^{-1}$, giả phương án án $x_J^0,Z_J.$\\
-    \textbf{Bước 2} (Kiếm tra tiêu chuẩn tối ưu)\\
+    \textbf{Bước 2} (Kiểm tra tiêu chuẩn tối ưu)\\
     Cơ sở đang xét sẽ là tối ưu nếu mọi thành phần $x_j$ của cột giả phương án đều $x_J \ge 0$.Vì khi đó nó là cơ sở chấp nhận được gốc vì thế tối ưu.\\
     a) Nếu $x_j\ge 0, \forall j \in J$ thì giả phương án ($x_J,x_H$) là phương án tối ưu, thuật toán dừng.\\
     b) Nếu tồn tại $j \in J$ mà $x_j <0 $ thì ta chọn chỉ số r ứng với \textbf{$x_r=min \{x_j, j \in J\}$}.\\ 
     \textbf{Bước 3} Kiểm tra điều kiện để tập phương án khác rỗng.\\
     a) Nếu có dòng ứng với $x_j <0 (j \in J)$ mà $z_{jk}\ge 0 $ với mọi $k=1,2..,n$.\\
-    b)Nếu trên mỗi dòng ứng với $x_j <0$ đều tìm được ít nhất một phần tử $z_{jk} <0$.Khi đó ta tiến hành một bước lặp đơn hình.\\
-    Tìm cột xoay thỏa mãn $\dfrac{\Delta_s}{z_{rs}}=min \{\dfrac{\Delta_j}{z_{rj}}; z_{rj} <0\}$.\\
+    b) Nếu trên mỗi dòng ứng với $x_j <0$ đều tìm được ít nhất một phần tử $z_{jk} <0$. Khi đó ta tiến hành một bước lặp đơn hình.\\
+    Tìm cột xoay thỏa mãn $\dfrac{\Delta_s}{z_{rs}}=min \biggl\{ \dfrac{\Delta_j}{z_{rj}}; z_{rj} <0 \biggl\}$.\\
     \textbf{Bước 4} Thực hiện xoay hàng và cột để thiết lập bảng đơn hình mới. Cách làm giống như cách làm phương pháp đơn hình.\\
     Lặp lại bước 2.
     \textbf{Ví dụ }
