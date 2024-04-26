@@ -1178,7 +1178,7 @@ Nếu $\Delta _j\leq 0$ với $j=\overline{m+1, \: n}$ thì $x^0$ là phương �
 Nếu $\Delta _j > 0$ và $x_{ij}\leq 0$ với $i=\overline{1,\: m}, \: j=\overline{m+1, \: n}$ ta kết luận bài toán không giải được và thuật toán kết thúc. Nếu $\exists x_{ij} > 0$ thì $x^0$ chưa tối ưu và ta chuyển sang bước 3.
 
 \noindent \textbf{Bước 3. Xác định biến vào ra.}
-Chọn biến cơ sở mới $x_v$ sak cho $\Delta _v = \max \{\Delta _j >0 \}$ đưa vào và biến cơ sở cũ $x_r$ đưa ra sao cho $\min _{a_{iv}>0} \frac{x_i^0}{a_{iv}}$ và chuyển sang bước 4.
+Chọn biến cơ sở mới $x_v$ sao cho $\Delta _v = \max \{\Delta _j >0 \}$ đưa vào và biến cơ sở cũ $x_r$ đưa ra sao cho $\min _{a_{iv}>0} \frac{x_i^0}{a_{iv}}$ và chuyển sang bước 4.
 
 \noindent \textbf{Bước 4. Xoay trục.}
 Chọn dòng thứ $r$ và cột thứ $r$ lần lượt là dòng và cột xoay, $a_{rv}$ là phần tử trục sau đó biến đổi bảng đơn hình để nhận phương án mới bằng cách thay biến cơ sở cũ $x_r$ thành $x_v$, $c_r$ thành $c_v$.
@@ -2446,7 +2446,7 @@ Giải bài toán $(P_i)$, nếu bài toán vô nghiệm hoặc $z_i \leq z^*$, 
 
 \noindent \textbf{Bước 5. Gọt nghiệm} 
 Nếu tồn tại $x^{(i)} \notin Z^n_+$, ta thêm nút $N_{i+1}, \ldots , N_{k}$ vào $\mathcal{L}$ và quay  về bước 2. 
-Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_+$, ta đặt $z_i = z^*$,  $(x^{(i)},y^i) = (x^*,y^*)$ và quay lại bước 2.
+Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_+$, ta đặt $z_i = z^*$,  $(x^{(i)},y^{(i)}) = (x^*,y^*)$ và quay lại bước 2.
 \end{ttoan}
 
 \begin{figure}
@@ -2497,7 +2497,7 @@ Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_
      -x_1 &+ x_2 &+ x_3 &\leq& 2 \\
      8x_1 &+ 2x_2 &+ x_3&\leq& 17 \\
      9x_1 &+ x_2 &+ 6x_3 &\leq& 20 \\
-    &&x_i &\geq& 0 , \: \overline{\rm 1, \ldots ,3} \\
+    &&x_i &\geq& 0 , i = \: \overline{\rm 1, \ldots ,3} \\
     \end{array}\right. \\
     \end{split}
     \end{equation*}
