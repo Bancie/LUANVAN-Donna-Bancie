@@ -1,0 +1,18 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {section}{\bf \hspace {-18pt}Lời cam đoan}{i}{section*.1}%
+\contentsline {section}{\bf \hspace {-18pt}Lời cảm ơn}{ii}{section*.2}%
+\contentsline {section}{{{\bf \hspace {-18pt}Mục lục}}}{iii}{section*.2}%
+\contentsline {section}{\bf \hspace {-18pt}Danh mục các ký hiệu}{1}{chapter*.3}%
+\contentsline {section}{\bf \hspace {-18pt}MỞ ĐẦU}{2}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}Đa thức một biến và một số đánh giá về nghiệm của chúng }{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Một số kiến thức chuẩn bị}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Một số đánh giá đối với nghiệm của đa thức theo hệ số của nó}{7}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Khảo sát một số bất đẳng thức đối với đa thức phức và đạo hàm của chúng}{12}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Giới thiệu một số bất đẳng thức cổ điển đối với đa thức phức}{12}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Đạo hàm cực của đa thức phức}{14}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Một số kết quả bổ trợ}{16}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Một số bất đẳng thức mở rộng}{18}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Một số ứng dụng trong khảo sát tính bất khả quy của đa thức hệ số nguyên}{24}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Một số tiêu chuẩn về đa thức bất khả quy}{24}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Về một dấu hiệu của đa thức bất khả quy}{27}{section.3.2}%
+\contentsline {chapter}{\hskip 1em\relax \ \bf Kết luận}{31}{chapter*.5}%
