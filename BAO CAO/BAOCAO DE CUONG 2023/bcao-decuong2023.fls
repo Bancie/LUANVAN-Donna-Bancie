@@ -1,8 +1,8 @@
-PWD /Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/BAOCAO DE CUONG 2023
+PWD /Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/BAO CAO/BAOCAO DE CUONG 2023
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/BAOCAO DE CUONG 2023/bcao-decuong2023.tex
+INPUT /Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/BAO CAO/BAOCAO DE CUONG 2023/bcao-decuong2023.tex
 OUTPUT bcao-decuong2023.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamer.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamer.cls
