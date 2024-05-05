@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  5 MAY 2024 20:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  5 MAY 2024 21:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -875,168 +875,24 @@ Dictionary: translator-numbers-dictionary, Language: English
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./baocao-thubang2024.nav)
-Overfull \hbox (36.56398pt too wide) detected at line 41
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 47.
 
 
-Overfull \hbox (36.56398pt too wide) detected at line 63
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-
 Overfull \vbox (40.6212pt too high) detected at line 63
- []
-
-
-Overfull \hbox (36.56398pt too wide) has occurred while \output is active
-  [] [][][][] [][] [][] [][] [][] [][][]  
  []
 
 [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-]
-Overfull \hbox (36.56398pt too wide) detected at line 67
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-(./baocao-thubang2024.toc)
-Overfull \hbox (36.56398pt too wide) has occurred while \output is active
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-[2
+] (./baocao-thubang2024.toc) [2
 
 ]
-Overfull \hbox (36.56398pt too wide) detected at line 85
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-
-LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <10> not available
-(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 85.
-
-
-Overfull \hbox (36.56398pt too wide) has occurred while \output is active
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-[3
-
-]
-Overfull \hbox (36.56398pt too wide) detected at line 99
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 99.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 99.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (36.56398pt too wide) has occurred while \output is active
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-[4
-
-]
-Overfull \hbox (36.56398pt too wide) detected at line 116
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-
-Overfull \hbox (36.56398pt too wide) has occurred while \output is active
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-[5
-
-]
-Overfull \hbox (36.56398pt too wide) detected at line 139
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-
-Overfull \hbox (36.56398pt too wide) has occurred while \output is active
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-[6
-
-]
-Overfull \hbox (36.56398pt too wide) detected at line 149
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-
-Overfull \hbox (36.56398pt too wide) has occurred while \output is active
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-[7
-
-]
-Overfull \hbox (36.56398pt too wide) detected at line 177
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-
-Overfull \hbox (36.56398pt too wide) has occurred while \output is active
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-[8
-
-]
-Overfull \hbox (36.56398pt too wide) detected at line 186
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-
-Overfull \hbox (36.56398pt too wide) has occurred while \output is active
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-[9
-
-]
-Overfull \hbox (36.56398pt too wide) detected at line 200
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-
-LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <8> not available
-(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 200.
-
-
-Overfull \hbox (36.56398pt too wide) has occurred while \output is active
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-[10
-
-]
-Overfull \hbox (36.56398pt too wide) detected at line 208
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
 
 LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <20.74> not available
-(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 208.
+(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 81.
 
-
-Overfull \hbox (36.56398pt too wide) has occurred while \output is active
-  [] [][][][] [][] [][] [][] [][] [][][]  
- []
-
-[11
+[3
 
 ]
 \tf@nav=\write7
@@ -1054,21 +910,21 @@ LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
 Package rerunfilecheck Info: File `baocao-thubang2024.out' has not changed.
-(rerunfilecheck)             Checksum: 04341117DAD3C53DD797B00EEB69B0CE;1044.
+(rerunfilecheck)             Checksum: CCD124C6A0BE8B7870603C215C40DEA4;162.
  ) 
 Here is how much of TeX's memory you used:
- 23283 strings out of 474273
- 449776 string characters out of 5747713
- 1946555 words of memory out of 5000000
- 44938 multiletter control sequences out of 15000+600000
- 575617 words of font info for 62 fonts, out of 8000000 for 9000
+ 23036 strings out of 474273
+ 444288 string characters out of 5747713
+ 1940555 words of memory out of 5000000
+ 44734 multiletter control sequences out of 15000+600000
+ 570981 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,526b,797s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnssi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnssi17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnssi8.pfb>
-Output written on baocao-thubang2024.pdf (11 pages, 201319 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/vntex/vnr/vnssi17.pfb>
+Output written on baocao-thubang2024.pdf (3 pages, 75268 bytes).
 PDF statistics:
- 797 PDF objects out of 1000 (max. 8388607)
- 544 compressed objects within 6 object streams
- 36 named destinations out of 1000 (max. 500000)
- 223 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 180 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
+ 8 named destinations out of 1000 (max. 500000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 
