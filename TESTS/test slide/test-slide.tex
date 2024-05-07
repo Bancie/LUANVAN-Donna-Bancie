@@ -1,69 +1,30 @@
 \documentclass{beamer}
+\useinnertheme[shadow=true]{rounded}
+\useoutertheme{infolines}
+\usecolortheme{wolverine}
+\setbeamerfont{block title}{size={}}
+\setbeamercolor{titlelike}{parent=structure,bg=green}
 
-% Theme choice
-\usetheme{Frankfurt}
-
-% Custom colors
-\definecolor{MyGreen}{RGB}{0, 102, 51}
-\definecolor{LightBlue}{RGB}{224, 255, 255}
-
-\setbeamercolor{structure}{fg=MyGreen}
-\setbeamercolor{frametitle}{bg=MyGreen, fg=white}
-\setbeamercolor{title}{fg=MyGreen}
-\setbeamercolor{author}{fg=blue}
-\setbeamercolor{date}{fg=MyGreen}
-
-
-
-% Footer Customization
-\makeatletter
-\def\ps@navigation@bottomline{%
-  \hbox{%
-    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1.125ex,center]{title in head/foot}%
-      \usebeamerfont{title in head/foot}Nguyen Dong Yen
-    \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1.125ex,center]{title in head/foot}%
-      \usebeamerfont{title in head/foot}Minimax Programs and Vector Optimization Problems
-    \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1.125ex,right]{title in head/foot}%
-      \usebeamerfont{title in head/foot}\insertframenumber{} / \inserttotalframenumber
-    \end{beamercolorbox}}%
-}
-\makeatother
-
-% Information about the presentation
-\title[Optimality Conditions]{Optimality Conditions for Nondifferentiable Minimax Programs and Vector Optimization Problems}
-\author[Nguyen Dong Yen]{Nguyen Dong Yen}
-\institute{Institute of Mathematics, Vietnam Academy of Science and Technology}
-\date[July 17th, 2023]{International Workshop on Optimization Theory and Applications, Saigon University \\ July 17-18, 2023}
-
-% Begin document
 \begin{document}
 
-% Title Slide
 \begin{frame}
-  \titlepage
+    \title{Example Presentation}
+    \author{Your Name}
+    \institute{Your Institution}
+    \date{\today}
+    \maketitle
 \end{frame}
 
-% First Slide Example
-\begin{frame}{Introduction}
-  \frametitle{Nondifferentiable Optimization}
-  This talk discusses the conditions for optimality in nondifferentiable minimax programs and vector optimization problems.
-  
-  \begin{block}{Joint Paper}
-    This talk is based on a joint paper by Dr. Duong Thi Kim Huyen, Prof. Do Sang Kim, and Nguyen Dong Yen.
-  \end{block}
+\begin{frame}
+    \frametitle{Sample Frame}
+    This is a sample frame content.
 \end{frame}
 
-% Another Example Slide
-\begin{frame}{Further Information}
-  \frametitle{Vector Optimization Problems}
-  Exploring new conditions in vector optimization and minimizing nondifferentiable problems.
-
-  \begin{itemize}
-    \item Theory of minimax programs
-    \item Applications in data science
-  \end{itemize}
+\begin{frame}
+    \frametitle{Another Frame}
+    \begin{block}{Block Title}
+        This is a sample block content.
+    \end{block}
 \end{frame}
 
 \end{document}

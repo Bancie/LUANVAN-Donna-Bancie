@@ -1,5 +1,5 @@
 \beamer@sectionintoc {1}{Giới thiệu}{3}{0}{1}
-\beamer@sectionintoc {2}{Phương pháp lát cắt Gomory}{6}{0}{2}
-\beamer@sectionintoc {3}{Phương pháp Land-Doig (Nhánh cận)}{6}{0}{3}
-\beamer@sectionintoc {4}{Kết luận và Hướng phát triển}{6}{0}{4}
-\beamer@sectionintoc {5}{Tài liệu tham khảo}{6}{0}{5}
+\beamer@sectionintoc {2}{Phương pháp lát cắt Gomory}{7}{0}{2}
+\beamer@sectionintoc {3}{Phương pháp Land-Doig (Nhánh cận)}{8}{0}{3}
+\beamer@sectionintoc {4}{Kết luận và Hướng phát triển}{9}{0}{4}
+\beamer@sectionintoc {5}{Tài liệu tham khảo}{9}{0}{5}

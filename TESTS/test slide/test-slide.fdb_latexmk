@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1715091152 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/TESTS/test slide/test-slide.tex" "test-slide.pdf" "test-slide" 1715091153 0
-  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/TESTS/test slide/test-slide.tex" 1715091152 2265 e20322c622626b4f3f6ea9d7a851aae3 ""
+["pdflatex"] 1715092337 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/TESTS/test slide/test-slide.tex" "test-slide.pdf" "test-slide" 1715092338 0
+  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/TESTS/test slide/test-slide.tex" 1715092336 624 8f849b51ec9e229440f92d270de31e89 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1136768653 1316 b636689f1933f24d1294acdf6041daaa ""
@@ -110,8 +110,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty" 1684185199 1843 380270b46b44460ad75be867a9c7e92d ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty" 1684185199 4016 c25a9e117ac7f79cd712d692979a9ed5 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty" 1684185199 7197 dcad03a13e9a779eac60ce8060c9ddeb ""
-  "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty" 1684185199 825 00d1909bb78322ff02c6a717d43a1eca ""
-  "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty" 1684185199 1003 64c64faa8cc4168b6b274c7b9adbbf8b ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemewolverine.sty" 1684185199 1220 6e503189233ffddf27a7718a72ac831c ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty" 1684185199 4226 4a3a91ecbea18e5e04836d585ff0e257 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamericonarticle.20.pdf" 1513642141 2958 4e0c4a6e994e5c4d9da11c477e927f0f ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamericonarticle.pdf" 1513642141 2936 6cc3ef0682cbb62be8aa1b19f0a84ed6 ""
@@ -122,8 +121,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty" 1684185199 13709 4f26b352db7b1b043afa94abcb4ed777 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty" 1684185199 1002 063bf9e9a79365fd3185a6b9a8e96af9 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty" 1684185199 6951 ae119ff98033a98bc82623a402c5be13 ""
-  "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemesmoothbars.sty" 1684185199 4436 00215af0122277ad63071ccb142cf349 ""
-  "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerthemeFrankfurt.sty" 1684185199 415 67fbafb2a96f06345806d04b040cb56b ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty" 1684185199 2318 f27a7920e83521e64f595e4e5bd51cc2 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerthemedefault.sty" 1684185199 345 b9f1afd5eccd808064d49a802f119443 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
@@ -173,10 +171,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1700549885 4694867 edce96ea9fbf5196f445dab10e2fe5bf ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1700550044 8213569 7a9a2c5e7e932edbf43ec7dad46550bc ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "test-slide.aux" 1715091153 843 f222debdc7996e53ac7d03c95a054626 "pdflatex"
-  "test-slide.nav" 1715091153 483 2eb1cf7e247973bd2380314bee32ad57 "pdflatex"
-  "test-slide.out" 1715091153 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "test-slide.tex" 1715091152 2265 e20322c622626b4f3f6ea9d7a851aae3 ""
+  "test-slide.aux" 1715092338 843 f222debdc7996e53ac7d03c95a054626 "pdflatex"
+  "test-slide.nav" 1715092338 483 2eb1cf7e247973bd2380314bee32ad57 "pdflatex"
+  "test-slide.out" 1715092337 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "test-slide.tex" 1715092336 624 8f849b51ec9e229440f92d270de31e89 ""
   (generated)
   "test-slide.aux"
   "test-slide.log"

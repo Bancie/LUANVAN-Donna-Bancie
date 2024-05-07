@@ -16,7 +16,8 @@
 \pgfplotsset{compat=1.18, width = 7cm}
 \usetikzlibrary{patterns}
 \setbeamertemplate{bibliography item}[text]
-\usetheme{AnnArbor} % AnnArbor, Ilmenau, Darmstadt, Dresden, CambridgeUS, Frankfurt, Singapore
+%\usepackage{customTheme} % Include the custom theme
+\usetheme{Ilmenau} % AnnArbor, Ilmenau, Darmstadt, Dresden, CambridgeUS, Frankfurt, Singapore
 \newtheorem{dn}{Định nghĩa}[section]
 \newtheorem{dl}{Định lý}[section]
 \newtheorem{tc}{Tính chất}[section]
@@ -87,15 +88,85 @@ NGÀNH: TOÁN ỨNG DỤNG}}
    \huge Giới thiệu
 \end{frame}
 
+
 \begin{frame}{\bf Mục đích nghiên cứu}
+\textbf{Tối ưu tuyến tính} là một nội dung quan trọng trong chương trình đào tạo Cử nhân Toán ứng dụng. Lý thuyết về việc giải bài toán tối ưu tuyến tính đã được cung cấp cho sinh viên. Tuy vậy, có nhiều bài toán tối ưu cần được giải với nghiệm nguyên. Chẳng hạn như:
+\begin{itemize}
+\item Bài toán tối ưu nhân lực.
+\item Bài toán tối ưu vận chuyển hàng hóa.
+\item Bài toán tối ưu áp dụng trong tin học.
+\end{itemize}
+
+\bigskip
+Có một lý thuyết riêng cho việc xử lý các bài toán Tối ưu tuyến tính và \textcolor{red}{tìm nghiệm nguyên.}
+\bigskip
+
+{\it Mục đích của đề tài này là tìm hiểu một số phương pháp giải bài toán Tối ưu tuyến tính và tìm nghiệm nguyên cho bài toán.}  
 \end{frame}
 
-\begin{frame}{\bf Bài toán Tối ưu tuyến tính}
+\begin{frame}{\bf Tại sao cần có một lý thuyết riêng cho bài toán Tối ưu tuyến tính nguyên}
+
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+        \begin{equation*}
+        \begin{array}{lll}            
+        {\rm Max}&f(x)=2x_1+2x_2\\
+        & \begin{cases}
+        2x_1+x_2 \leq  8 \\
+        x_1+3x_2 \leq 10 \\
+        x_i\geq 0,\forall i=1,2.
+        \end{cases} 
+        \end{array}
+        \end{equation*}
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+        \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{Nhom1_hinh.pdf}
+        \caption{Hình minh hoạ bài toán}
+        \end{figure}
+    \end{column}
+\end{columns}
 \end{frame}
 
+
+\begin{frame}{\bf Nhận xét}
+
+$\bullet$  Nếu giải bài toán trên bằng phương pháp thông thường, ta nhận được nghiệm $x_1=2.8$, $x_2=2.4$.
+\medskip
+      
+      $\bullet$ Nếu làm tròn nghiệm $x_1 \to 3$ và $x_2 \to 3$ thì điểm $(x_1,x_2)$ không còn thuộc miền chấp nhận được.
+      
+ \medskip
+      
+      $\bullet$ Nếu làm tròn nghiệm $x_1 \to 2$ và $x_2 \to 2$ thì điểm $(x_1,x_2)$ chưa biết có phải nghiệm tối ưu hay không?
+      
+\bigskip
+ \textcolor{red}{\bf Nếu giải bài toán QHTT rồi sau đó làm tròn số thì có thể  cho kết không như mong đợi.}
+   
+\end{frame}
 
 \section{Phương pháp lát cắt Gomory}
+\begin{frame}
+   \center 
+   \huge Phương pháp lát cắt Gomory
+\end{frame}
+
+
+
+
+
 \section{Phương pháp Land-Doig (Nhánh cận)}
+\begin{frame}
+    \center 
+    \huge Phương pháp Land-Doig (Nhánh cận)
+ \end{frame}
+
+
+
+
+
 \section{Kết luận và Hướng phát triển}
 \section{Tài liệu tham khảo}
 

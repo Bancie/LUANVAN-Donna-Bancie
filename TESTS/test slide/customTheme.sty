@@ -1,0 +1,67 @@
+\ProvidesPackage{customTheme}
+\RequirePackage{tikz}
+\usetikzlibrary{calc}
+
+% Colors
+\definecolor{titlecolor}{RGB}{61,61,107} % Custom color for title text
+\definecolor{subtitlebg}{RGB}{221,238,221} % Light green for subtitle background
+\definecolor{sectionbg}{RGB}{102,178,255} % Light blue for section headers
+\definecolor{frametitlebg}{RGB}{204,255,229} % Light cyan for frame titles
+
+% General Theme Setup
+\mode<presentation>{
+  \setbeamercolor{title}{fg=titlecolor}
+  \setbeamercolor{frametitle}{bg=frametitlebg, fg=titlecolor}
+  \setbeamercolor{block title}{bg=sectionbg, fg=titlecolor}
+  \setbeamercolor{block body}{bg=white, fg=black}
+  \setbeamercolor{subtitle}{bg=subtitlebg, fg=titlecolor}
+  \setbeamerfont{title}{size=\huge, series=\bfseries}
+  \setbeamerfont{frametitle}{size=\large, series=\bfseries}
+  \setbeamerfont{subtitle}{size=\large}
+}
+
+% Frame Title Customization
+\setbeamertemplate{frametitle}{
+  \vspace{0.2cm}
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.3cm,rightskip=0.3cm,sep=1ex]{frametitle}
+    \usebeamerfont{frametitle}\insertframetitle
+  \end{beamercolorbox}
+  \vspace{-0.3cm}
+}
+
+% Title Page
+\defbeamertemplate*{title page}{custom}[1][]
+{
+  \vbox{}
+  \vfill
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle
+    \end{beamercolorbox}
+    \vspace{0.3cm}
+    \begin{beamercolorbox}[wd=0.8\textwidth,sep=4pt,center]{subtitle}
+      \usebeamerfont{subtitle}\insertsubtitle
+    \end{beamercolorbox}
+    \vspace{0.5cm}
+    \begin{beamercolorbox}[sep=6pt,center]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=4pt,center]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \vspace{0.3cm}
+    \begin{beamercolorbox}[sep=6pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vspace{0.5cm}
+  \end{centering}
+  \vfill
+}
+
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.5ex,left]{title}
+    \hspace{0.1cm}\insertshorttitle
+    \hfill
+    \insertframenumber/\inserttotalframenumber\hspace{0.3cm}
+  \end{beamercolorbox}
+}
