@@ -1,10 +1,22 @@
 \documentclass{beamer}
+\mode<presentation>
 \setbeamertemplate{bibliography item}{}
 \usepackage[utf8]{vietnam}
+\usepackage{beamerthemesplit}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{textpos}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{caption}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary {datavisualization} 
+\pgfplotsset{compat=1.18, width = 7cm}
+\usetikzlibrary{patterns}
 \setbeamertemplate{bibliography item}[text]
-\usetheme{Warsaw}
+\usetheme{AnnArbor} % AnnArbor, Ilmenau, Darmstadt, Dresden, CambridgeUS, Frankfurt, Singapore
 \newtheorem{dn}{Định nghĩa}[section]
 \newtheorem{dl}{Định lý}[section]
 \newtheorem{tc}{Tính chất}[section]
@@ -23,21 +35,17 @@
 \usepackage{color}
 \usepackage{algorithmic}
 \usepackage{footmisc}
-%\usepackage{enumitem}
 \usepackage{indentfirst} 
 \usepackage{comment}
+\AtBeginEnvironment{proof}{%
+  \setbeamercolor{block title}{use=example text,fg=white,bg=example text.fg!75!black}
+  \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+}
 \renewcommand{\thefootnote}{\arabic{footnote}}
 \usefonttheme{professionalfonts}
 \setbeamercolor{normal text}{bg=white,fg=black}
 \renewcommand{\thefootnote}{\arabic{footnote}}
-%kt
-\mode<presentation>
-{
- \usetheme{Darmstadt}
-%\usetheme{Rochester}
-}
 \beamertemplatetransparentcoveredhigh
-
 \begin{document}
 \title[]{\fontsize{13pt}{10pt}\selectfont {\bf \LARGE   Phương pháp giải bài toán \\Tối ưu tuyến tính nguyên}\\
 ------------------------------------------
@@ -67,10 +75,33 @@ NGÀNH: TOÁN ỨNG DỤNG}}
 \end{frame}
 
 % Tai sao quan tam de tai?
-\section{Mục đích nghiên cứu}
 % Lam duoc gi?
 % Hoc duoc gi ?
 % Du dinh tiep theo ?
+% - - -
+% Cơ sở lý thuyết và Mục tiêu
+\section{Giới thiệu}
+
+\begin{frame}
+   \center 
+   \huge Giới thiệu
+\end{frame}
+
+\begin{frame}{\bf Mục đích nghiên cứu}
+\end{frame}
+
+\begin{frame}{\bf Bài toán Tối ưu tuyến tính}
+\end{frame}
+
+
+\section{Phương pháp lát cắt Gomory}
+\section{Phương pháp Land-Doig (Nhánh cận)}
+\section{Kết luận và Hướng phát triển}
+\section{Tài liệu tham khảo}
+
+%sample
+\begin{frame}
+\end{frame}
 
 \begin{frame}
     \begin{block}{}

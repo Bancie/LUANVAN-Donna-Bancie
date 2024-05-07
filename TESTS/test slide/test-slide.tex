@@ -1,91 +1,69 @@
 \documentclass{beamer}
-\mode<presentation>
-\setbeamertemplate{bibliography item}{}
-\usepackage[utf8]{vietnam}
-\usepackage{beamerthemesplit}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{amsmath}
-\usepackage{textpos}
-\usepackage{pgfplots}
-\usepackage{tikz}
-\usepackage{hyperref}
-\usepackage{caption}
-\usetikzlibrary{shapes.geometric, arrows}
-\usetikzlibrary {datavisualization} 
-\pgfplotsset{compat=1.18, width = 7cm}
-\usetikzlibrary{patterns}
-\setbeamertemplate{bibliography item}[text]
-\usetheme{Ilmenau} % AnnArbor, Ilmenau, Darmstadt, Dresden, CambridgeUS, Frankfurt, Singapore
-\newtheorem{dn}{Định nghĩa}[section]
-\newtheorem{dl}{Định lý}[section]
-\newtheorem{tc}{Tính chất}[section]
-\newtheorem{hq}{Hệ quả}[section]
-\newtheorem{bd}{Bổ đề}[section]
-\newtheorem{md}{Mệnh đề}[section]
-\newtheorem{vd}{Ví dụ}[section]
-\newtheorem{nx}{Nhận xét}[section]
-\newcommand{\dom}{\text{{\rm dom}}}
-\newcommand{\epi}{\text{{\rm epi}}}
-\newcommand{\Min}{\text{{\rm Min}}}
-\setbeamertemplate{theorems}[numbered]
-\setbeamertemplate{definitions}[numbered]
-\setbeamertemplate{footline}[frame number]
-\usepackage{algorithm}
-\usepackage{color}
-\usepackage{algorithmic}
-\usepackage{footmisc}
-\usepackage{indentfirst} 
-\usepackage{comment}
-\AtBeginEnvironment{proof}{%
-  \setbeamercolor{block title}{use=example text,fg=white,bg=example text.fg!75!black}
-  \setbeamercolor{block body}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
-}
-\renewcommand{\thefootnote}{\arabic{footnote}}
-\usefonttheme{professionalfonts}
-\setbeamercolor{normal text}{bg=white,fg=black}
-\renewcommand{\thefootnote}{\arabic{footnote}}
-\beamertemplatetransparentcoveredhigh
-\title[]{\fontsize{13pt}{10pt}\selectfont {\bf \LARGE Phương pháp nhánh cận}\\}
-\author[]{\bf Nguyễn Chí Bằng \\}
-\small{\date{\today}}
 
+% Theme choice
+\usetheme{Frankfurt}
+
+% Custom colors
+\definecolor{MyGreen}{RGB}{0, 102, 51}
+\definecolor{LightBlue}{RGB}{224, 255, 255}
+
+\setbeamercolor{structure}{fg=MyGreen}
+\setbeamercolor{frametitle}{bg=MyGreen, fg=white}
+\setbeamercolor{title}{fg=MyGreen}
+\setbeamercolor{author}{fg=blue}
+\setbeamercolor{date}{fg=MyGreen}
+
+
+
+% Footer Customization
+\makeatletter
+\def\ps@navigation@bottomline{%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1.125ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}Nguyen Dong Yen
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1.125ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}Minimax Programs and Vector Optimization Problems
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1.125ex,right]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertframenumber{} / \inserttotalframenumber
+    \end{beamercolorbox}}%
+}
+\makeatother
+
+% Information about the presentation
+\title[Optimality Conditions]{Optimality Conditions for Nondifferentiable Minimax Programs and Vector Optimization Problems}
+\author[Nguyen Dong Yen]{Nguyen Dong Yen}
+\institute{Institute of Mathematics, Vietnam Academy of Science and Technology}
+\date[July 17th, 2023]{International Workshop on Optimization Theory and Applications, Saigon University \\ July 17-18, 2023}
+
+% Begin document
 \begin{document}
 
+% Title Slide
 \begin{frame}
-
-\titlepage
+  \titlepage
 \end{frame}
 
-\begin{frame}{TÓM TẮT}
-\begin{itemize}
-\item Giới thiệu 2 mô hình chính trong phương pháp giải bài toán tối ưu tuyến tính nguyên:
-\begin{itemize}
-\item Tối ưu nguyên hoàn toàn
-\item Tối ưu nguyên bộ phận.
-\end{itemize}
-\item Tập trung vào phương pháp giải bài toán tối ưu nguyên bộ phận thông qua thuật toán nhánh cận.
-\begin{itemize}
-\item Cơ sở lý thuyết.
-\item Sơ đồ thuật toán.
-\end{itemize}
-\item Độ phức tạp của thuật toán.
-\end{itemize}
+% First Slide Example
+\begin{frame}{Introduction}
+  \frametitle{Nondifferentiable Optimization}
+  This talk discusses the conditions for optimality in nondifferentiable minimax programs and vector optimization problems.
+  
+  \begin{block}{Joint Paper}
+    This talk is based on a joint paper by Dr. Duong Thi Kim Huyen, Prof. Do Sang Kim, and Nguyen Dong Yen.
+  \end{block}
 \end{frame}
 
-\begin{frame}
-    \frametitle{NỘI DUNG}
-    \tableofcontents
-\end{frame}
+% Another Example Slide
+\begin{frame}{Further Information}
+  \frametitle{Vector Optimization Problems}
+  Exploring new conditions in vector optimization and minimizing nondifferentiable problems.
 
-\section{Giới thiệu}
-
-\begin{frame}
-   \center 
-   \huge Giới thiệu bài toán 
-\end{frame}
-
-\begin{frame}
+  \begin{itemize}
+    \item Theory of minimax programs
+    \item Applications in data science
+  \end{itemize}
 \end{frame}
 
 \end{document}
