@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1715094604 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/BAO CAO/SLIDE BAO CAO 2024 (THU & BANG)/baocao-thubang2024.tex" "baocao-thubang2024.pdf" "baocao-thubang2024" 1715094607 0
-  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/BAO CAO/SLIDE BAO CAO 2024 (THU & BANG)/baocao-thubang2024.tex" 1715094604 5770 df11f2f5bd655fb8109787e915308f97 ""
+["pdflatex"] 1715236911 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/BAO CAO/SLIDE BAO CAO 2024 (THU & BANG)/baocao-thubang2024.tex" "baocao-thubang2024.pdf" "baocao-thubang2024" 1715236914 0
+  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/BAO CAO/SLIDE BAO CAO 2024 (THU & BANG)/baocao-thubang2024.tex" 1715236908 5907 89534c168ff95e7c76f60c34b55cea04 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -287,11 +287,11 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1700550044 8213569 7a9a2c5e7e932edbf43ec7dad46550bc ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "Nhom1_hinh.pdf" 1715094164 40601 0659c954cab5046f4d0d84699dee17b9 ""
-  "baocao-thubang2024.aux" 1715094607 3362 5219c0732aa8d6d0f59a7dfde51039da "pdflatex"
-  "baocao-thubang2024.nav" 1715094607 2062 5323de5192a477536c1677f44adf3189 "pdflatex"
-  "baocao-thubang2024.out" 1715094607 913 1b8b8bb8435c27a48580577fe1a8dfb4 "pdflatex"
-  "baocao-thubang2024.tex" 1715094604 5770 df11f2f5bd655fb8109787e915308f97 ""
-  "baocao-thubang2024.toc" 1715094607 327 a817607106dbae225607b2d9bfc4e20a "pdflatex"
+  "baocao-thubang2024.aux" 1715236914 3624 95b46aa1489d868920ff71e312050053 "pdflatex"
+  "baocao-thubang2024.nav" 1715236914 2251 38fd1c4c013cbec4e335fdd7d6330333 "pdflatex"
+  "baocao-thubang2024.out" 1715236914 913 1b8b8bb8435c27a48580577fe1a8dfb4 "pdflatex"
+  "baocao-thubang2024.tex" 1715236908 5907 89534c168ff95e7c76f60c34b55cea04 ""
+  "baocao-thubang2024.toc" 1715236914 328 b70ecd3c98ee859893e4d3f800d9624d "pdflatex"
   (generated)
   "baocao-thubang2024.aux"
   "baocao-thubang2024.log"
