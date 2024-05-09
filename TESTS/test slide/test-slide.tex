@@ -1,30 +1,177 @@
-\documentclass{beamer}
-\useinnertheme[shadow=true]{rounded}
-\useoutertheme{infolines}
-\usecolortheme{wolverine}
-\setbeamerfont{block title}{size={}}
-\setbeamercolor{titlelike}{parent=structure,bg=green}
+\documentclass[10pt]{beamer}
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage[utf8]{vietnam}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+\definecolor{mSybilaRed}{HTML}{990000}
+
+\setbeamercolor{title separator}{
+  fg=mSybilaRed
+}
+
+\setbeamercolor{progress bar}{%
+  fg=mSybilaRed,
+  bg=mSybilaRed!90!black!30
+}
+
+\setbeamercolor{progress bar in section page}{
+  use=progress bar,
+  parent=progress bar
+}
+
+\setbeamercolor{alerted text}{%
+  fg=mSybilaRed
+}
+
+% Additional title information
+\title{Phương pháp giải bài toán Tối ưu tuyến tính nguyên}
+\subtitle{Một Tiêu Đề Khác} % Secondary title added above the main title
+
+\titlegraphic{\hfill\includegraphics[height=1cm]{logodhsg.png}}
+%\titlegraphic{\hfill\includegraphics[height=0.6cm]{sybila-logo/new.png}}
+%\titlegraphic{\hfill\includegraphics[height=0.6cm]{sybila-logo/old.png}}
+%\titlegraphic{\hfill\includegraphics[height=0.6cm]{sybila-logo/old-flat.png}}
+
+\date{\today}
+\author{Thực hiện : Đỗ Ngọc Minh Thư, Nguyễn Chí Bằng}
+\institute{Sinh viên lớp: DTU1221, Khóa: 22 @ Đại học Sài Gòn}
+
+%\title{Metropolis}
+\subtitle{Hướng dẫn: PGS.TS. Tạ Quang Sơn}
+% \date{\today}
+%\date{}
+%\author{Matthias Vogelgesang}
+%\institute{Center for modern beamer themes}
+%\titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode
+  \hbox{
+  \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=.7\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}
+    \usebeamerfont{author in head/foot}\insertshorttitle
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}
+    \insertframenumber{} / \inserttotalframenumber
+  \end{beamercolorbox}
+  }
+}
 
 \begin{document}
 
-\begin{frame}
-    \title{Example Presentation}
-    \author{Your Name}
-    \institute{Your Institution}
-    \date{\today}
-    \maketitle
+\begin{frame}[plain]
+    \centering
+    \subtitle{Một Tiêu Đề Khác} % New subtitle shown above the main title
+    \vspace{1em}
+
+    \titlepage
 \end{frame}
 
 \begin{frame}
-    \frametitle{Sample Frame}
-    This is a sample frame content.
+    \frametitle{NỘI DUNG BÁO CÁO}
+    \tableofcontents
+\end{frame}
+
+% Tai sao quan tam de tai?
+% Lam duoc gi?
+% Hoc duoc gi ?
+% Du dinh tiep theo ?
+% - - -
+% Cơ sở lý thuyết và Mục tiêu
+\section{Giới thiệu}
+
+\begin{frame}{\bf Mục đích nghiên cứu}
+\textbf{Tối ưu tuyến tính} là một nội dung quan trọng trong chương trình đào tạo Cử nhân Toán ứng dụng. Lý thuyết về việc giải bài toán tối ưu tuyến tính đã được cung cấp cho sinh viên. Tuy vậy, có nhiều bài toán tối ưu cần được giải với nghiệm nguyên. Chẳng hạn như:
+\begin{itemize}
+\item Bài toán tối ưu nhân lực.
+\item Bài toán tối ưu vận chuyển hàng hóa.
+\item Bài toán tối ưu áp dụng trong tin học.
+\end{itemize}
+
+\bigskip
+Có một lý thuyết riêng cho việc xử lý các bài toán Tối ưu tuyến tính và \textcolor{red}{tìm nghiệm nguyên.}
+\bigskip
+
+{\it Mục đích của đề tài này là tìm hiểu một số phương pháp giải bài toán Tối ưu tuyến tính và tìm nghiệm nguyên cho bài toán.}  
+\end{frame}
+
+\begin{frame}{\bf Tại sao cần có một lý thuyết riêng cho bài toán Tối ưu tuyến tính nguyên}
+
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+        \begin{equation*}
+        \begin{array}{lll}            
+        {\rm Max}&f(x)=2x_1+2x_2\\
+        & \begin{cases}
+        2x_1+x_2 \leq  8 \\
+        x_1+3x_2 \leq 10 \\
+        x_i\geq 0,\forall i=1,2.
+        \end{cases} 
+        \end{array}
+        \end{equation*}
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+        \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{Nhom1_hinh.pdf}
+        \caption{Hình minh hoạ bài toán}
+        \end{figure}
+    \end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{\bf Nhận xét}
+
+$\bullet$  Nếu giải bài toán trên bằng phương pháp thông thường, ta nhận được nghiệm $x_1=2.8$, $x_2=2.4$.
+\medskip
+      
+      $\bullet$ Nếu làm tròn nghiệm $x_1 \to 3$ và $x_2 \to 3$ thì điểm $(x_1,x_2)$ không còn thuộc miền chấp nhận được.
+      
+ \medskip
+      
+      $\bullet$ Nếu làm tròn nghiệm $x_1 \to 2$ và $x_2 \to 2$ thì điểm $(x_1,x_2)$ chưa biết có phải nghiệm tối ưu hay không?
+      
+\bigskip
+ \textcolor{red}{\bf Nếu giải bài toán QHTT rồi sau đó làm tròn số thì có thể  cho kết không như mong đợi.}
+   
+\end{frame}
+
+\section{Phương pháp lát cắt Gomory}
+
+
+\section{Phương pháp Land-Doig (Nhánh cận)}
+
+
+
+\section{Kết luận và Hướng phát triển}
+
+\section{Tài liệu tham khảo}
+
+%sample
+\begin{frame}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Another Frame}
-    \begin{block}{Block Title}
-        This is a sample block content.
-    \end{block}
-\end{frame}
-
+    \begin{block}{}
+    \medskip
+    \center{\huge \it \textcolor[rgb]{0.50,0.30,1.0}{Cảm ơn quý thầy cô và các anh chị đã quan tâm theo dõi!}}
+    \medskip
+    \end{block}	
+\end{frame}    
 \end{document}

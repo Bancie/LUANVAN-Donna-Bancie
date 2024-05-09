@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  9 MAY 2024 13:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.21)  9 MAY 2024 21:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -937,30 +937,30 @@ File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
 ) (./baocao-thubang2024.aux)
 \openout1 = `baocao-thubang2024.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 50.
-LaTeX Font Info:    Trying to load font information for T5+cmr on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 51.
+LaTeX Font Info:    Trying to load font information for T5+cmr on input line 51.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/vntex/t5cmr.fd
 File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    ... okay on input line 51.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1015,7 +1015,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 50.
+Package hyperref Info: Link coloring OFF on input line 51.
  (./baocao-thubang2024.out) (./baocao-thubang2024.out)
 \@outlinefile=\write6
 \openout6 = `baocao-thubang2024.out'.
@@ -1039,21 +1039,21 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 (./baocao-thubang2024.nav)
-Overfull \hbox (18.5538pt too wide) detected at line 50
+Overfull \hbox (18.5538pt too wide) detected at line 51
   [] [][][][][] [][] [][] [][][] [][][]  
  []
 
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 56.
+(hyperref)                setting the option has no effect on input line 57.
 
 
-Overfull \hbox (18.5538pt too wide) detected at line 72
+Overfull \hbox (18.5538pt too wide) detected at line 73
   [] [][][][][] [][] [][] [][][] [][][]  
  []
 
 
-Overfull \vbox (40.441pt too high) detected at line 72
+Overfull \vbox (40.441pt too high) detected at line 73
  []
 
 
@@ -1064,7 +1064,7 @@ Overfull \hbox (18.5538pt too wide) has occurred while \output is active
 [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Overfull \hbox (18.5538pt too wide) detected at line 76
+Overfull \hbox (18.5538pt too wide) detected at line 77
   [] [][][][][] [][] [][] [][][] [][][]  
  []
 
@@ -1076,7 +1076,7 @@ Overfull \hbox (18.5538pt too wide) has occurred while \output is active
 [2
 
 ]
-Overfull \hbox (18.5538pt too wide) detected at line 89
+Overfull \hbox (18.5538pt too wide) detected at line 90
   [] [][][][][] [][] [][] [][][] [][][]  
  []
 
@@ -1088,13 +1088,13 @@ Overfull \hbox (18.5538pt too wide) has occurred while \output is active
 [3
 
 ]
-Overfull \hbox (18.5538pt too wide) detected at line 105
+Overfull \hbox (18.5538pt too wide) detected at line 106
   [] [][][][][] [][] [][] [][][] [][][]  
  []
 
 
 LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <10> not available
-(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 105.
+(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 106.
 
 
 Overfull \hbox (18.5538pt too wide) has occurred while \output is active
@@ -1104,22 +1104,22 @@ Overfull \hbox (18.5538pt too wide) has occurred while \output is active
 [4
 
 ]
-Overfull \hbox (18.5538pt too wide) detected at line 131
+Overfull \hbox (18.5538pt too wide) detected at line 132
   [] [][][][][] [][] [][] [][][] [][][]  
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 131.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 132.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 131.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 132.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <Nhom1_hinh.pdf, id=307, 273.62225pt x 193.32225pt>
 File: Nhom1_hinh.pdf Graphic file (type pdf)
 <use Nhom1_hinh.pdf>
-Package pdftex.def Info: Nhom1_hinh.pdf  used on input line 131.
+Package pdftex.def Info: Nhom1_hinh.pdf  used on input line 132.
 (pdftex.def)             Requested size: 153.64493pt x 108.55765pt.
 
 Overfull \hbox (18.5538pt too wide) has occurred while \output is active
@@ -1129,7 +1129,7 @@ Overfull \hbox (18.5538pt too wide) has occurred while \output is active
 [5
 
  <./Nhom1_hinh.pdf>]
-Overfull \hbox (18.5538pt too wide) detected at line 148
+Overfull \hbox (18.5538pt too wide) detected at line 149
   [] [][][][][] [][] [][] [][][] [][][]  
  []
 
@@ -1141,7 +1141,7 @@ Overfull \hbox (18.5538pt too wide) has occurred while \output is active
 [6
 
 ]
-Overfull \hbox (18.5538pt too wide) detected at line 154
+Overfull \hbox (18.5538pt too wide) detected at line 155
   [] [][][][][] [][] [][] [][][] [][][]  
  []
 
@@ -1153,7 +1153,7 @@ Overfull \hbox (18.5538pt too wide) has occurred while \output is active
 [7
 
 ]
-Overfull \hbox (18.5538pt too wide) detected at line 164
+Overfull \hbox (18.5538pt too wide) detected at line 165
   [] [][][][][] [][] [][] [][][] [][][]  
  []
 
@@ -1165,7 +1165,7 @@ Overfull \hbox (18.5538pt too wide) has occurred while \output is active
 [8
 
 ]
-Overfull \hbox (18.5538pt too wide) detected at line 174
+Overfull \hbox (18.5538pt too wide) detected at line 175
   [] [][][][][] [][] [][] [][][] [][][]  
  []
 
@@ -1177,7 +1177,7 @@ Overfull \hbox (18.5538pt too wide) has occurred while \output is active
 [9
 
 ]
-Overfull \hbox (18.5538pt too wide) detected at line 179
+Overfull \hbox (18.5538pt too wide) detected at line 180
   [] [][][][][] [][] [][] [][][] [][][]  
  []
 
@@ -1189,7 +1189,7 @@ Overfull \hbox (18.5538pt too wide) has occurred while \output is active
 [10
 
 ]
-Overfull \hbox (18.5538pt too wide) detected at line 184
+Overfull \hbox (18.5538pt too wide) detected at line 185
   [] [][][][][] [][] [][] [][][] [][][]  
  []
 
@@ -1201,13 +1201,13 @@ Overfull \hbox (18.5538pt too wide) has occurred while \output is active
 [11
 
 ]
-Overfull \hbox (18.5538pt too wide) detected at line 192
+Overfull \hbox (18.5538pt too wide) detected at line 193
   [] [][][][][] [][] [][] [][][] [][][]  
  []
 
 
 LaTeX Font Warning: Font shape `T5/cmss/m/it' in size <20.74> not available
-(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 192.
+(Font)              Font shape `T5/cmss/m/sl' tried instead on input line 193.
 
 
 Overfull \hbox (18.5538pt too wide) has occurred while \output is active
