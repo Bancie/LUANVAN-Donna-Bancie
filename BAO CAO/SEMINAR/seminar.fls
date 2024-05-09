@@ -537,8 +537,8 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnssbx10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnssi10.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnss12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnssi10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/vntex/vnr/vnss12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm

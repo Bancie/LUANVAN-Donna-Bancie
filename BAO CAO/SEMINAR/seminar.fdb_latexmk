@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1714916968 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/BAO CAO/SEMINAR/seminar.tex" "seminar.pdf" "seminar" 1714916980 0
-  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/BAO CAO/SEMINAR/seminar.tex" 1714916959 28835 87bd8c593f94cb4da2a02304af256675 ""
+["pdflatex"] 1715282499 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/BAO CAO/SEMINAR/seminar.tex" "seminar.pdf" "seminar" 1715282510 0
+  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/BAO CAO/SEMINAR/seminar.tex" 1715282488 27469 be4e0dd32a6f1e629825637c285f5a6b ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -303,11 +303,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1700549885 4694867 edce96ea9fbf5196f445dab10e2fe5bf ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1700550044 8213569 7a9a2c5e7e932edbf43ec7dad46550bc ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "seminar.aux" 1714916979 7459 dc2adbc1c327f2c42e8b0fec4eec986d "pdflatex"
-  "seminar.nav" 1714916979 4750 aef90b1ffbbd4d3f6e0d6895ce839437 "pdflatex"
-  "seminar.out" 1714916979 474 84b0cf9d213afdb0bc56727d843d49c2 "pdflatex"
-  "seminar.tex" 1714916959 28835 87bd8c593f94cb4da2a02304af256675 ""
-  "seminar.toc" 1714916979 216 e10df4fea0b597906b5ed94c3317379f "pdflatex"
+  "seminar.aux" 1715282510 7442 1c6e6a4cd616606998b7d32739ad667c "pdflatex"
+  "seminar.nav" 1715282510 4564 89d310856354a767a88ffd030f181231 "pdflatex"
+  "seminar.out" 1715282510 474 84b0cf9d213afdb0bc56727d843d49c2 "pdflatex"
+  "seminar.tex" 1715282488 27469 be4e0dd32a6f1e629825637c285f5a6b ""
+  "seminar.toc" 1715282510 216 d0326c37b191167362fb86e49589bff5 "pdflatex"
   (generated)
   "seminar.aux"
   "seminar.log"

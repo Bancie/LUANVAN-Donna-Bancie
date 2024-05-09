@@ -147,7 +147,7 @@
 \end{frame}
 
 \begin{frame}{Tối ưu nguyên bộ phận (Mixed integer linear program)}
-\begin{equation}\label{B}
+\begin{equation}\label{2.4}
 \begin{split}
 (B) \quad & z_b=c^Tx+h^Ty \quad \longrightarrow Max \\
           & \left\{\begin{split}
@@ -232,47 +232,35 @@
 \end{frame}
 
 \begin{frame}{Mục tiêu} %aka Lí do chọn bài toán
-Giả sử ta nhận được tập phương án tối ưu của bài toán \eqref{B} sau hữu hạn lần giải, ký hiệu $(x_b, y_b)$ và giá trị tối ưu là $z_b$ thì ta có nhận xét sau:
+Giả sử ta nhận được tập phương án tối ưu của bài toán \eqref{2.4} sau hữu hạn lần giải, ký hiệu $(x_b, y_b)$ và giá trị tối ưu là $z_b$ thì ta có nhận xét sau:
 \begin{nx} \label{nx}
 \begin{itemize}
-\item Nếu $S_b \subset S_p$ thì ta luôn nhận được $z_b \leq z_p$ và phương án có thể cải thiện.
+\item Nếu $S_b \subseteq S_p$ thì ta luôn nhận được $z_b \leq z_p$ và phương án có thể cải thiện.
 \item Nếu $S_b = S_p$ thì ta nhận được $z_b = z_p$ và bài toán được giải.
 \end{itemize}    
 \end{nx}
-Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằng cách cải thiện phương án thu được từ bài toán $(P)$ sao cho thoả điều kiện của bài toán $(B)$.
+Vì thế, ta chọn xử lý bài toán $(B)$ (hoặc $(H)$) thông qua bài toán $(P)$ bằng cách cải thiện phương án thu được từ bài toán $(P)$ sao cho thoả điều kiện của bài toán $(B)$ (hoặc $(H)$).
 \end{frame}
 
 \begin{frame}{Ví dụ}
-    \begin{columns}
-    \begin{column}{0.1\textwidth}
-    \end{column}
-    \begin{column}{0.4\textwidth}
-        \begin{equation*}
+        \begin{equation*} \label{baitoannguyenloi}
         \begin{split}
-            (P) \quad & 5.5x_1 + 2.1x_2 \quad \longrightarrow Max \\
-            & \left\{\begin{split}
-            & -1x_1 + x_2 \leq 2 \\
-            & 8x_1 + 2x_2 \leq 17 \\
-            &x_1 \geq 0, \\
-            &x_2 \geq 0. \\
-            \end{split}\right. \\
+            (H) \quad & 5.5x_1 + 2.1x_2 \quad \longrightarrow Max \\
+            & \left\{\begin{array} {cccc}
+            -1x_1 &+ x_2 &\leq& 2 \\
+            8x_1 &+ 2x_2 &\leq& 17 \\
+            x_1 &&\geq & 0, \text{ nguyên} \\
+            &x_2 &\geq& 0, \text{ nguyên}. \\
+            \end{array}\right.
+            \Longrightarrow
+            \left\{\begin{array} {ccc}
+            \color{red}x_1 & \color{red}=& \color{red} 1.3 \\
+            \color{red} x_2 &\color{red}=& \color{red}3.3 \\
+            z &=&14.08
+        \end{array}\right.
         \end{split}
         \end{equation*}
-    \end{column}
-    \begin{column}{0.4\textwidth}
-        \begin{equation*}
-            \Longrightarrow
-            \left\{\begin{split}
-            \color{red} x_1 &\color{red} = 1.3 \\
-            \color{red} x_2 &\color{red} = 3.3 \\
-            z&=14.08
-        \end{split}\right.
-        \end{equation*}
-    \end{column}
-    \begin{column}{0.1\textwidth}
-    \end{column}
-    \end{columns}
-    \vspace{1cm}
+    \vspace{0.5cm}
     \center
     \Large
     Phương án có thể cải thiện.
@@ -280,36 +268,24 @@ Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằn
 
 
 \begin{frame}{Ví dụ}
-    \begin{columns}
-    \begin{column}{0.1\textwidth}
-    \end{column}
-    \begin{column}{0.4\textwidth}
-        \begin{equation*}
-        \begin{split}
-            (P) \quad & 3x_1 + 4x_2 \quad \longrightarrow Max \\
-            & \left\{\begin{split}
-            & 2.5x_1 + \frac{15}{4}x_2 \leq 20 \\
-            & x_1 + \frac{5}{3}x_2 \leq \frac{50}{3} \\
-            &x_1 \geq 0, \\
-            &x_2 \geq 0. \\
-            \end{split}\right. \\
-        \end{split}
-        \end{equation*}
-    \end{column}
-    \begin{column}{0.4\textwidth}
-        \begin{equation*}
-            \Longrightarrow
-            \left\{\begin{split}
-            \color{blue} x_1 &\color{blue} = 5 \\
-            \color{blue} x_2 &\color{blue} = 7 \\
-            z& =43
-        \end{split}\right.
-        \end{equation*}
-    \end{column}
-    \begin{column}{0.1\textwidth}
-    \end{column}
-    \end{columns}
-    \vspace{1cm}
+    \begin{equation} \label{baitoannguyenhet}
+    \begin{split}
+        (H) \quad & 3x_1 + 4x_2 \quad \longrightarrow Max \\
+        & \left\{\begin{array} {cccc}
+        2.5x_1 &+ \frac{15}{4}x_2 &\leq& 20 \\
+        x_1 &+ \frac{5}{3}x_2 &\leq& \frac{50}{3} \\
+        x_1 &&\geq &0, \\
+        &x_2 &\geq& 0. \\
+        \end{array}\right.
+        \Longrightarrow
+        \left\{\begin{array}{ccc}
+        \color{blue} x_1 &\color{blue} = &\color{blue} 5 \\
+        \color{blue} x_2 &\color{blue} = & \color{blue} 7 \\
+        z& =&43
+    \end{array}\right.
+    \end{split}
+    \end{equation}
+    \vspace{0.5cm}
     \center
     \Large
     Bài toán được giải.
@@ -319,16 +295,6 @@ Vì thế, ta chọn xử lý bài toán $(B)$ thông qua bài toán $(P)$ bằn
 \begin{frame}
    \center
    \huge Thuật toán nhánh cận \\ (Branch-and-Bound)
-\end{frame}
-
-\begin{frame}{Nội dung chính}
-\large
-Ở mục này, chúng ta sẽ làm rõ những ý tưởng sau:
-\begin{itemize}
-\item Định nghĩa cận và xác định cận của bài toán.
-\item Phương pháp xử lý bài toán nhỏ kèm ví dụ minh hoạ.
-\item Sơ đồ thuật giải và các ví dụ minh hoạ cho bài toán lớn.
-\end{itemize}
 \end{frame}
 
 \begin{frame}{Phương pháp xác định cận}
@@ -342,19 +308,6 @@ Ta gọi $x_j$ với $1 \leq j \leq n$ là nghiệm thu được từ bài toán
 \end{itemize}
 \end{itemize}
 \end{dl}
-\end{frame}
-
-\begin{frame}
-\begin{proof}
-\begin{itemize}
-\item $\forall x_j \geq 0$, ta có:
-\begin{itemize}
-\item $x_j \in \mathbb{Z} \Rightarrow \lfloor x_j \rfloor =x_j$. (đpcm)
-\item $x_j \notin \mathbb{Z}$, ta đặt $S=\{ m \in \mathbb{N} \: \vert \: m > x_j \}$ \\ Theo tiên đề Peano, luôn tồn tại một min$S$, vì thế ta dễ dàng nhận thấy min$S -1=k=\lfloor x_j \rfloor$ với $k \in \mathbb{Z}$ và thoả $k \leq x_j < k+1$ hay $\lfloor x_j \rfloor \leq x_j <\lceil x_j \rceil$. 
-\end{itemize}
-\end{itemize}
-\end{proof}
-
 \begin{vd}
 Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\lfloor x_1 \rfloor = 3$ và phần nguyên lớn nhất là $\lceil x_1 \rceil =4$.
 \end{vd}
