@@ -155,7 +155,7 @@
 Có một lý thuyết riêng cho việc xử lý các bài toán Tối ưu tuyến tính và \textcolor{red}{tìm nghiệm nguyên.}
 \bigskip
 
-{\it Mục đích của đề tài này là tìm hiểu một số phương pháp giải bài toán Tối ưu tuyến tính và tìm nghiệm nguyên cho bài toán.}  
+{\it Mục đích của đề tài này là tìm hiểu một số phương pháp giải bài toán Tối ưu tuyến tính và tìm nghiệm nguyên cho bài toán.}
 \end{frame}
 
 \begin{frame}{\bf Tại sao cần có một lý thuyết riêng cho bài toán Tối ưu tuyến tính nguyên}
@@ -186,18 +186,19 @@ Có một lý thuyết riêng cho việc xử lý các bài toán Tối ưu tuy�
 
 
 \begin{frame}{\bf Nhận xét}
-
-$\bullet$  Nếu giải bài toán trên bằng phương pháp thông thường, ta nhận được nghiệm $x_1=2.8$, $x_2=2.4$.
+\begin{itemize}
+\item<1-> Nếu giải bài toán trên bằng phương pháp thông thường, ta nhận được nghiệm $x_1=2.8$, $x_2=2.4$.
 \medskip
       
-      $\bullet$ Nếu làm tròn nghiệm $x_1 \to 3$ và $x_2 \to 3$ thì điểm $(x_1,x_2)$ không còn thuộc miền chấp nhận được.
+      \item<2-> Nếu làm tròn nghiệm $x_1 \to 3$ và $x_2 \to 3$ thì điểm $(x_1,x_2)$ không còn thuộc miền chấp nhận được.
       
  \medskip
       
-      $\bullet$ Nếu làm tròn nghiệm $x_1 \to 2$ và $x_2 \to 2$ thì điểm $(x_1,x_2)$ chưa biết có phải nghiệm tối ưu hay không?
+      \item<3-> Nếu làm tròn nghiệm $x_1 \to 2$ và $x_2 \to 2$ thì điểm $(x_1,x_2)$ chưa biết có phải nghiệm tối ưu hay không?
+\end{itemize}
       
 \bigskip
- \textcolor{red}{\bf Nếu giải bài toán QHTT rồi sau đó làm tròn số thì có thể  cho kết không như mong đợi.}
+ \onslide<4->{\textcolor{red}{\bf Nếu giải bài toán QHTT rồi sau đó làm tròn số thì có thể  cho kết không như mong đợi.}}
    
 \end{frame}
 
@@ -210,22 +211,22 @@ $\bullet$  Nếu giải bài toán trên bằng phương pháp thông thường,
 \begin{frame}{Tối ưu nguyên hoàn toàn (Pure integer linear program)}
     \begin{equation} \label{H}
         \begin{split}
-        (H) \quad & z_h=c^Tx \quad \longrightarrow Max \\
+        \onslide<1->{(H) \quad & z_h=c^Tx \quad \longrightarrow Max \\
                   & \left\{\begin{split}
                     &Ax \leq  b, \\
                     &x \geq 0, \text{ nguyên} \\
-                    \end{split}\right.    
+                    \end{split}\right.}    
         \end{split}
         \end{equation}            
     \begin{itemize} \small
-    \item Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
+    \item<2-> Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
         b_1 \\
         b_2 \\
         \vdots \\
         b_m
         \end{pmatrix}$, với $x\in Z^n$.
-    \item Bài toán $(H)$ gọi là bài toán \textbf{Tối ưu nguyên hoàn toàn.}
-    \item Tập $S_h:=\{x\in Z^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên hoàn toàn.
+    \item<3-> Bài toán $(H)$ gọi là bài toán \textbf{Tối ưu nguyên hoàn toàn.}
+    \item<4-> Tập $S_h:=\{x\in Z^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên hoàn toàn.
     \end{itemize}
 \end{frame}
 
@@ -255,23 +256,23 @@ $\bullet$  Nếu giải bài toán trên bằng phương pháp thông thường,
 \begin{frame}{Tối ưu nguyên bộ phận (Mixed integer linear program)}
 \begin{equation}\label{2.4}
 \begin{split}
-(B) \quad & z_b=c^Tx+h^Ty \quad \longrightarrow Max \\
+\onslide<1->{(B) \quad & z_b=c^Tx+h^Ty \quad \longrightarrow Max \\
           & \left\{\begin{split}
             &Ax+Gy \leq  b, \\
             &x \geq 0, \text{ nguyên} \\
             &y \geq 0.
-            \end{split}\right.    
+            \end{split}\right.}
 \end{split}
 \end{equation}    
 \begin{itemize} \small
-\item Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $h^T=(h_1 \: h_2 \: \ldots \: h_p)$, $A$ là ma trận $m\times n$, $G$ là ma trận $m\times p$, $b=\begin{pmatrix}
+\item<2-> Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $h^T=(h_1 \: h_2 \: \ldots \: h_p)$, $A$ là ma trận $m\times n$, $G$ là ma trận $m\times p$, $b=\begin{pmatrix}
     b_1 \\
     b_2 \\
     \vdots \\
     b_m
     \end{pmatrix}$, với $x\in Z^n$ và $y\in R^p$.
-\item Bài toán $(B)$ gọi là bài toán \textbf{Tối ưu nguyên bộ phận.}
-\item Tập $S_b:=\{(x,y)\in Z^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên bộ phận.
+\item<3-> Bài toán $(B)$ gọi là bài toán \textbf{Tối ưu nguyên bộ phận.}
+\item<4-> Tập $S_b:=\{(x,y)\in Z^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên bộ phận.
 \end{itemize}
 \end{frame}
 %cho bài toán ví dụ rõ số liệu
@@ -382,7 +383,7 @@ $R \hspace{0.1cm} \text{là bao lồi của} F^N$( tức là $R= co(F^N)$) khi �
     1) $R$ là một đa diện nguyên.\\
     2) $R^N=F^N$.\\
     3) Tập $R^\ast$ các phương án chấp nhận được của đa diện $R$ chứa trong $R^N$:
-    $$R^{\ast} \subseteq R^N$$.
+    $$R^{\ast} \subseteq R^N.$$
 \end{dl}
 \end{frame}
 
@@ -392,7 +393,7 @@ $R \hspace{0.1cm} \text{là bao lồi của} F^N$( tức là $R= co(F^N)$) khi �
 \end{hq}
 \begin{dl}
  Giả sử $L$ là một đa diện lồi, $U$ là một đa diện lồi nguyên và $U^N= F^N$, khi đó :
- $$U = R = co(F^N)$$
+ $$U = R = co(F^N).$$
     \end{dl}
 \end{frame}
 
@@ -572,29 +573,29 @@ ii) Bài toán $P^N_0$ có ít nhất một phương án $X'$.\\
 \begin{frame}{Bài toán quan tâm}
 \begin{equation}\label{P}
 \begin{split}
-(P) \quad & z_p=c^Tx+h^Ty \quad \longrightarrow Max \\
+\onslide<1->{(P) \quad & z_p=c^Tx+h^Ty \quad \longrightarrow Max \\
             & \left\{\begin{split}
                 &Ax+Gy \leq  b, \\
                 &x,y \geq 0.
-            \end{split}\right.    
+            \end{split}\right.}    
 \end{split}
 \end{equation}
 \begin{itemize}
-\item Trong đó $(P)$ là bài toán $(B)$ (hoặc $(H)$) với nghiệm thuộc tập số thực.
-\item Bài toán $(P)$ là một bài toán \textbf{Tối ưu tuyến tính thông thường} hay gọi đơn giản là bài toán Tối ưu tuyến tính (Natural linear programming relaxation).
-\item Tập $S_p:=\{(x,y)\in R^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu tuyến tính.
+\item<2-> Trong đó $(P)$ là bài toán $(B)$ (hoặc $(H)$) với nghiệm thuộc tập số thực.
+\item<3-> Bài toán $(P)$ là một bài toán \textbf{Tối ưu tuyến tính thông thường} hay gọi đơn giản là bài toán Tối ưu tuyến tính (Natural linear programming relaxation).
+\item<4-> Tập $S_p:=\{(x,y)\in R^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu tuyến tính.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Mục tiêu} %aka Lí do chọn bài toán
-Giả sử ta nhận được tập phương án tối ưu của bài toán \eqref{2.4} sau hữu hạn lần giải, ký hiệu $(x_b, y_b)$ và giá trị tối ưu là $z_b$ thì ta có nhận xét sau:
-\begin{nx} \label{nx}
+\onslide<1->{Giả sử ta nhận được tập phương án tối ưu của bài toán \eqref{2.4} sau hữu hạn lần giải, ký hiệu $(x_b, y_b)$ và giá trị tối ưu là $z_b$ thì ta có nhận xét sau:}
+\onslide<2->{\begin{nx} \label{nx}
 \begin{itemize}
 \item Nếu $S_b \subseteq S_p$ thì ta luôn nhận được $z_b \leq z_p$ và phương án có thể cải thiện.
 \item Nếu $S_b = S_p$ thì ta nhận được $z_b = z_p$ và bài toán được giải.
 \end{itemize}    
-\end{nx}
-Vì thế, ta chọn xử lý bài toán $(B)$ (hoặc $(H)$) thông qua bài toán $(P)$ bằng cách cải thiện phương án thu được từ bài toán $(P)$ sao cho thoả điều kiện của bài toán $(B)$ (hoặc $(H)$).
+\end{nx}}
+\onslide<3->{Vì thế, ta chọn xử lý bài toán $(B)$ (hoặc $(H)$) thông qua bài toán $(P)$ bằng cách cải thiện phương án thu được từ bài toán $(P)$ sao cho thoả điều kiện của bài toán $(B)$ (hoặc $(H)$).}
 \end{frame}
 
 \begin{frame}{Ví dụ}
@@ -668,8 +669,8 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 \begin{frame}{Phương pháp xử lý bài toán}
 \large
 \begin{itemize}
-\item Từ bài toán minh hoạ \eqref{baitoannguyenloi} và \eqref{baitoannguyenhet}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, thì ta có thể tiếp tục cải thiện phương án cho đến khi $\forall x_j \in \mathbb{Z}$. 
-\item Nếu nghiệm thu được là $x_j \notin \mathbb{Z}$ ta thiết lập được 2 bài toán con từ bài toán $(P)$ ban đầu, ký hiệu $(P_1)$ và $(P_2)$.
+\item<1-> Từ bài toán minh hoạ \eqref{baitoannguyenloi} và \eqref{baitoannguyenhet}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, thì ta có thể tiếp tục cải thiện phương án cho đến khi $\forall x_j \in \mathbb{Z}$. 
+\item<2-> Nếu nghiệm thu được là $x_j \notin \mathbb{Z}$ ta thiết lập được 2 bài toán con từ bài toán $(P)$ ban đầu, ký hiệu $(P_1)$ và $(P_2)$.
 \end{itemize}
 \end{frame}
 
@@ -707,20 +708,17 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 
 \begin{frame}{Điều kiện nghiệm}
 \begin{itemize}
-\item Nếu tồn tại $(P_i)$ với $i=1,2$ không giải được $(S_i = \emptyset )$, ta gọi bài toán \textbf{vô nghiệm}.
-\item Giả sử $x^{(i)}$ là nghiệm tối ưu của bài toán $(P_i)$ và giá trị tối ưu là $z_i$ với $i = 1,2$.
+\item<1-> Nếu tồn tại $(P_i)$ với $i=1,2$ không giải được $(S_i = \emptyset )$, ta gọi bài toán \textbf{vô nghiệm}.
+\item<2-> Giả sử $x^{(i)}$ là nghiệm tối ưu của bài toán $(P_i)$ và giá trị tối ưu là $z_i$ với $i = 1,2$.
 \begin{itemize}
-\item Nếu $\forall x^{(i)} \in Z^n_+$, ta nói $S_i$ là tập nghiệm thoả mãn bài toán tối ưu nguyên bộ phận, $z^*_i$ là giá trị tối ưu và bài toán con $(P_i)$ được giải \textbf{(gọt bởi nghiệm nguyên)}.
-\item Nếu $\exists x^{(i)} \notin Z^n_+$ đồng thời $z_i \leq z^*_i$, ta dừng phân nhánh và bỏ qua bài toán \textbf{(gọt bởi cận)}.
-\item Nếu $\exists x^{(i)} \notin Z^n_+$ đồng thời $z_i > z^*_i$, bài toán chưa tối ưu và có thể tiếp tục cải thiện.
-\iffalse
-Với $x^{(i)}_{j^'}$ là nghiệm không nguyên và phân thành 2 bài toán con $P_3$ với tập nghiệm $S_l := S_i \cap \{ (x,y): x_{j^{'}} \leq \lfloor x_{j^{'}} \rfloor \}$, $P_l$ với $S_l := S_i \cap \{ (x,y): x_{j^{'}} \geq \lceil x_{j^{'}} \rceil \}$ trong đó $l=3,4$ và lặp lại quá trình.
-\fi
+\item<3-> Nếu $\forall x^{(i)} \in Z^n_+$, ta nói $S_i$ là tập nghiệm thoả mãn bài toán tối ưu nguyên bộ phận, $z^*_i$ là giá trị tối ưu và bài toán con $(P_i)$ được giải \textbf{(gọt bởi nghiệm nguyên)}.
+\item<4-> Nếu $\exists x^{(i)} \notin Z^n_+$ đồng thời $z_i \leq z^*_i$, ta dừng phân nhánh và bỏ qua bài toán \textbf{(gọt bởi cận)}.
+\item<5-> Nếu $\exists x^{(i)} \notin Z^n_+$ đồng thời $z_i > z^*_i$, bài toán chưa tối ưu và có thể tiếp tục cải thiện.
 \end{itemize}
 \end{itemize}
-\begin{cy}
+\onslide<6->{\begin{cy}
 Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
-\end{cy}
+\end{cy}}
 \end{frame}
 
 \begin{frame}{Ví dụ minh hoạ}
@@ -749,9 +747,9 @@ Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
 
 %template to copy-paste
 \begin{frame}
-Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán con sau:
+\onslide<1->{Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán con sau:}
 \begin{columns}
-\begin{column}{0.5\textwidth}
+\begin{column}{0.5\textwidth}<2->
     \small
     \begin{equation*}
         \begin{split}
@@ -766,7 +764,7 @@ Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán 
         \end{split}
     \end{equation*}
 \end{column}
-\begin{column}{0.5\textwidth}
+\begin{column}{0.5\textwidth}<2->
    \small
    \begin{equation*}
         \begin{split}
@@ -810,9 +808,12 @@ Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán 
 \end{frame}
 
 \begin{frame}
-    Tương tự bài toán $(P_2)$ ta được $x^{(2)}_1 = 2, x^{(2)}_2 = 0.5$ và $z_2=12.05$. Ta chọn $x^{(2)}_2 = 0.5$ để cải thiện phương án. Ta được 2 bài toán con $(P_3)$ và $(P_4)$:
+    \begin{itemize}
+    \item <1-> Tương tự bài toán $(P_2)$ ta được $x^{(2)}_1 = 2, x^{(2)}_2 = 0.5$ và $z_2=12.05$.
+    \item <2-> Chọn $x^{(2)}_2 = 0.5$ để cải thiện phương án. Ta được 2 bài toán con $(P_3)$ và $(P_4)$:
+    \end{itemize}
     \begin{columns}
-\begin{column}{0.5\textwidth}
+\begin{column}{0.5\textwidth}<2->
     \small
     \begin{equation*}
         \begin{split}
@@ -828,7 +829,7 @@ Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán 
         \end{split}
     \end{equation*}
 \end{column}
-\begin{column}{0.5\textwidth}
+\begin{column}{0.5\textwidth}<2->
    \small
    \begin{equation*}
         \begin{split}
@@ -849,34 +850,34 @@ Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán 
 
 \begin{frame}
     \begin{itemize} 
-    \item Giải bài toán $(P_3)$ ta được $x^{(3)}_1=2.125, x^{(3)}_2=0$ và $z_3=11.6875 \Rightarrow $ không khả thi do $z_3 < z_1$ \textbf{(gọt bởi cận)}. 
-    \item Bài toán $(P_4)$ \textbf{vô nghiệm}.
-    \item Vậy phương án tối ưu của bài toán là $x^{(1)}_1=1, x^{(1)}_2=3$ và $z=11.8$.
+    \item<1-> Giải bài toán $(P_3)$ ta được $x^{(3)}_1=2.125, x^{(3)}_2=0$ và $z_3=11.6875 \Rightarrow $ không khả thi do $z_3 < z_1$ \textbf{(gọt bởi cận)}. 
+    \item<1-> Bài toán $(P_4)$ \textbf{vô nghiệm}.
+    \item<2-> Vậy phương án tối ưu của bài toán là $x^{(1)}_1=1, x^{(1)}_2=3$ và $z=11.8$.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Sơ đồ thuật toán}
 \begin{itemize}
-\item Ta gọi bài toán $(P)$ có nút ban đầu là $N_0$, tương ứng mỗi bài toán tối ưu tuyến tính thông thường $(P_i)$ ứng với mỗi nút $N_i$ trên sơ đồ nhánh và $\mathcal{L}$ là danh sách chứa các nút được lập thông qua lý thuyết xác định cận và lý thuyết nghiệm.
-\item Ta đánh dấu giá trị tối ưu tốt nhất và nghiệm tối ưu tốt nhất của bài toán lần lượt là $z^*$ và $(x^*,y^*)$.
+\item<1-> Ta gọi bài toán $(P)$ có nút ban đầu là $N_0$, tương ứng mỗi bài toán tối ưu tuyến tính thông thường $(P_i)$ ứng với mỗi nút $N_i$ trên sơ đồ nhánh và $\mathcal{L}$ là danh sách chứa các nút được lập thông qua lý thuyết xác định cận và lý thuyết nghiệm.
+\item<2-> Ta đánh dấu giá trị tối ưu tốt nhất và nghiệm tối ưu tốt nhất của bài toán lần lượt là $z^*$ và $(x^*,y^*)$.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Sơ đồ thuật toán}
 \small
 \setlength{\parindent}{4em}
-\noindent \textbf{Bước 1. Thiết lập} \\
-Đặt $\mathcal{L}:=\{N_0 \}$, $z^*=z_p$ và $(x^*,y^*)=(x,y)$. \\
-\noindent \textbf{Bước 2. Kiểm tra} \\
+\onslide<1->{\noindent \textbf{Bước 1. Thiết lập} \\
+Đặt $\mathcal{L}:=\{N_0 \}$, $z^*=z_p$ và $(x^*,y^*)=(x,y)$. \\}
+\onslide<2->{\noindent \textbf{Bước 2. Kiểm tra} \\
 Nếu $\mathcal{L} = \emptyset$ thì nghiệm tối ưu của bài toán là $(x^*,y^*)$, giá trị \\ tối ưu là $z^*$ và bài toán được giải. \\
-Nếu $\mathcal{L} \neq \emptyset$, chuyển sang bước 3. \\ 
-\noindent \textbf{Bước 3. Chọn nút} \\
-Chọn nút $N_i$ từ danh sách $\mathcal{L}$ và xoá khỏi $\mathcal{L}$ sau đó chuyển sang \\ bước 4. \\ 
-\noindent \textbf{Bước 4. Xác định cận} \\ 
-Giải bài toán $(P_i)$, nếu bài toán vô nghiệm hoặc $z_i \leq z^*$, quay \\ lại bước 2, nếu không, chuyển sang bước 5. \\ 
-\noindent \textbf{Bước 5. Gọt nghiệm} \\
+Nếu $\mathcal{L} \neq \emptyset$, chuyển sang bước 3. \\}
+\onslide<3->{\noindent \textbf{Bước 3. Chọn nút} \\
+Chọn nút $N_i$ từ danh sách $\mathcal{L}$ và xoá khỏi $\mathcal{L}$ sau đó chuyển sang \\ bước 4. \\}
+\onslide<4->{\noindent \textbf{Bước 4. Xác định cận} \\ 
+Giải bài toán $(P_i)$, nếu bài toán vô nghiệm hoặc $z_i \leq z^*$, quay \\ lại bước 2, nếu không, chuyển sang bước 5. \\}
+\onslide<5->{\noindent \textbf{Bước 5. Gọt nghiệm} \\
 Nếu tồn tại $x^{(i)} \notin Z^n_+$, ta thêm nút $N_{i+1}, \ldots , N_{k}$ vào $\mathcal{L}$ và quay \\ về bước 2. \\
-Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_+$, ta đặt $z_i = z^*$, \\ $(x^{(i)},y^{(i)}) = (x^*,y^*)$ và quay lại bước 2.
+Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_+$, ta đặt $z_i = z^*$, \\ $(x^{(i)},y^{(i)}) = (x^*,y^*)$ và quay lại bước 2.}
 \end{frame}    
 
 \begin{frame}{Sơ đồ thuật toán}
