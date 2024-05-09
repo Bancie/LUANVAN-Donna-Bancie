@@ -25,6 +25,7 @@
 \newtheorem{md}{Mệnh đề}[section]
 \newtheorem{vd}{Ví dụ}[section]
 \newtheorem{nx}{Nhận xét}[section]
+\newtheorem{cy}{Chú ý}[section]
 \newcommand{\dom}{\text{{\rm dom}}}
 \newcommand{\epi}{\text{{\rm epi}}}
 \newcommand{\Min}{\text{{\rm Min}}}
@@ -80,6 +81,29 @@
 
 \section{Giới thiệu}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{frame}
    \center 
    \huge Giới thiệu bài toán 
@@ -115,10 +139,11 @@
                     & \left\{\begin{split}
                     & x_1 + 3x_2 \leq 24 \\
                     & \frac{13}{3}x_1 + 2x_2 \leq 32.5 \\
-                    &x_1, x_2 \geq 0. \\
+                    &x_1 \geq 0, \text{ nguyên}. \\
+                    &x_2 \geq 0, \text{ nguyên}. \\
                     \end{split}\right.    
         \end{split}
-        \end{equation}            
+    \end{equation}            
 \end{frame}
 %cho bài toán ví dụ rõ số liệu
 \begin{frame}
@@ -176,10 +201,11 @@
                     & \left\{\begin{split}
                     & 5x_1 + \frac{15}{7}x_2 \leq 20 \\
                     & -2.4x_1 + \frac{30}{7}x_2 \leq 15 \\
-                    &x_1, x_2 \geq 0. \\
+                    &x_1 \geq 0, \text{ nguyên}. \\
+                    &x_2 \geq 0. \\
                     \end{split}\right.    
         \end{split}
-        \end{equation}            
+    \end{equation}            
 \end{frame}
 
 \begin{frame}
@@ -243,7 +269,8 @@ Vì thế, ta chọn xử lý bài toán $(B)$ (hoặc $(H)$) thông qua bài to
 \end{frame}
 
 \begin{frame}{Ví dụ}
-        \begin{equation*} \label{baitoannguyenloi}
+        \small
+        \begin{equation} \label{baitoannguyenloi}
         \begin{split}
             (H) \quad & 5.5x_1 + 2.1x_2 \quad \longrightarrow Max \\
             & \left\{\begin{array} {cccc}
@@ -259,7 +286,7 @@ Vì thế, ta chọn xử lý bài toán $(B)$ (hoặc $(H)$) thông qua bài to
             z &=&14.08
         \end{array}\right.
         \end{split}
-        \end{equation*}
+        \end{equation}
     \vspace{0.5cm}
     \center
     \Large
@@ -316,7 +343,7 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 \begin{frame}{Phương pháp xử lý bài toán}
 \large
 \begin{itemize}
-\item Từ \eqref{nx} và \eqref{cmnguyen}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, thì ta có thể tiếp tục cải thiện phương án cho đến khi $\forall x_j \in \mathbb{Z}$. 
+\item Từ \eqref{baitoannguyenloi} và \eqref{baitoannguyenhet}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, thì ta có thể tiếp tục cải thiện phương án cho đến khi $\forall x_j \in \mathbb{Z}$. 
 \item Nếu nghiệm thu được là $x_j \notin \mathbb{Z}$ ta thiết lập được 2 bài toán con từ bài toán $(P)$ ban đầu, ký hiệu $(P_1)$ và $(P_2)$.
 \end{itemize}
 \end{frame}
@@ -356,28 +383,31 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 \begin{frame}{Điều kiện nghiệm}
 \begin{itemize}
 \item Nếu tồn tại $(P_i)$ với $i=1,2$ không giải được $(S_i = \emptyset )$, ta gọi bài toán \textbf{vô nghiệm}.
-\item Giả sử $x^i$ là nghiệm tối ưu của bài toán $(P_i)$ và giá trị tối ưu là $z_i$ với $i = 1,2$.
+\item Giả sử $x^{(i)}$ là nghiệm tối ưu của bài toán $(P_i)$ và giá trị tối ưu là $z_i$ với $i = 1,2$.
 \begin{itemize}
-\item Nếu $\forall x^i \in Z^n_+$, ta nói $S_i$ là tập nghiệm thoả mãn bài toán tối ưu nguyên bộ phận, $z^*_i$ là giá trị tối ưu và bài toán con $(P_i)$ được giải \textbf{(gọt bởi nghiệm nguyên)}.
-\item Nếu $\exists x^i \notin Z^n_+$ đồng thời $z_i \leq z^*_i$, ta dừng phân nhánh và bỏ qua bài toán \textbf{(gọt bởi cận)}.
-\item Nếu $\exists x^i \notin Z^n_+$ đồng thời $z_i > z^*_i$, bài toán chưa tối ưu và có thể tiếp tục cải thiện.
+\item Nếu $\forall x^{(i)} \in Z^n_+$, ta nói $S_i$ là tập nghiệm thoả mãn bài toán tối ưu nguyên bộ phận, $z^*_i$ là giá trị tối ưu và bài toán con $(P_i)$ được giải \textbf{(gọt bởi nghiệm nguyên)}.
+\item Nếu $\exists x^{(i)} \notin Z^n_+$ đồng thời $z_i \leq z^*_i$, ta dừng phân nhánh và bỏ qua bài toán \textbf{(gọt bởi cận)}.
+\item Nếu $\exists x^{(i)} \notin Z^n_+$ đồng thời $z_i > z^*_i$, bài toán chưa tối ưu và có thể tiếp tục cải thiện.
 \iffalse
-Với $x^i_{j^'}$ là nghiệm không nguyên và phân thành 2 bài toán con $P_3$ với tập nghiệm $S_l := S_i \cap \{ (x,y): x_{j^{'}} \leq \lfloor x_{j^{'}} \rfloor \}$, $P_l$ với $S_l := S_i \cap \{ (x,y): x_{j^{'}} \geq \lceil x_{j^{'}} \rceil \}$ trong đó $l=3,4$ và lặp lại quá trình.
+Với $x^{(i)}_{j^'}$ là nghiệm không nguyên và phân thành 2 bài toán con $P_3$ với tập nghiệm $S_l := S_i \cap \{ (x,y): x_{j^{'}} \leq \lfloor x_{j^{'}} \rfloor \}$, $P_l$ với $S_l := S_i \cap \{ (x,y): x_{j^{'}} \geq \lceil x_{j^{'}} \rceil \}$ trong đó $l=3,4$ và lặp lại quá trình.
 \fi
 \end{itemize}
 \end{itemize}
+\begin{cy}
+Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
+\end{cy}
 \end{frame}
 
 \begin{frame}{Ví dụ minh hoạ}
     \begin{equation*}
         \begin{split}
             (P) \quad z_p= & 5.5x_1 + 2.1x_2 \quad \longrightarrow Max \\
-            & \left\{\begin{split}
-            & -x_1 + x_2 \leq 2 \\
-            & 8x_1 + 2x_2 \leq 17 \\
-            &x_1 \geq 0, \\
-            &x_2 \geq 0. \\
-            \end{split}\right. \\
+            & \left\{\begin{array}{cccc}
+            -x_1 &+ x_2 &\leq& 2 \\
+            8x_1 &+ 2x_2 &\leq& 17 \\
+            x_1 &&\geq& 0, \\
+            &x_2 &\geq& 0. \\
+            \end{array}\right. \\
         \end{split}
     \end{equation*}
 \end{frame}
@@ -412,30 +442,32 @@ Với $x^i_{j^'}$ là nghiệm không nguyên và phân thành 2 bài toán con 
 Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán con sau:
 \begin{columns}
 \begin{column}{0.5\textwidth}
+    \small
     \begin{equation*}
         \begin{split}
-            (P_1) \quad z_1= & 5.5x^1_1 + 2.1x^1_2 \\
-            & \left\{\begin{split}
-            & -x^1_1 + x^1_2 \leq 2 \\
-            & 8x^1_1 + 2x^1_2 \leq 17 \\
-            & \color{blue} x^1_1 \leq 1 \\
-            &x^1_1 \geq 0 \\
-            &x^1_2 \geq 0. \\
-            \end{split}\right. \\
+            (P_1) \quad &z_1= 5.5x^{(1)}_1 + 2.1x^{(1)}_2 \\
+            & \left\{\begin{array} {cccc}
+            -x^{(1)}_1 &+ x^{(1)}_2 &\leq& 2 \\
+            8x^{(1)}_1 &+ 2x^{(1)}_2 &\leq& 17 \\
+            \color{blue} x^{(1)}_1 && \color{blue} \leq &\color{blue} 1 \\
+            x^{(1)}_1 &&\geq& 0 \\
+            &x^{(1)}_2 &\geq& 0. \\
+            \end{array}\right. \\
         \end{split}
     \end{equation*}
 \end{column}
 \begin{column}{0.5\textwidth}
+   \small
    \begin{equation*}
         \begin{split}
-            (P_2) \quad z_2= & 5.5x^2_1 + 2.1x^2_2  \\
-            & \left\{\begin{split}
-            & -x^2_1 + x^2_2 \leq 2 \\
-            & 8x^2_1 + 2x^2_2 \leq 17 \\
-            & \color{blue} x^2_1 \geq 2 \\
-            &x^2_1 \geq 0 \\
-            &x^2_2 \geq 0. \\
-            \end{split}\right. \\
+            (P_2) \quad &z_2= \hspace{0.1cm} 5.5x^{(2)}_1 + 2.1x^{(2)}_2  \\
+            & \left\{\begin{array} {cccc}
+            -x^{(2)}_1 &+ x^{(2)}_2 &\leq &2 \\
+            8x^{(2)}_1 &+ 2x^{(2)}_2 &\leq &17 \\
+            \color{blue} x^{(2)}_1 &&\color{blue}\geq&\color{blue} 2 \\
+            x^{(2)}_1 &&\geq& 0 \\
+            &x^{(2)}_2 &\geq& 0. \\
+            \end{array}\right. \\
         \end{split}
     \end{equation*}
 \end{column}
@@ -443,22 +475,22 @@ Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán 
 \end{frame}
 
 \begin{frame}
-        \begin{equation*}
+    \begin{equation*}
         \begin{split}
-            (P_1) \quad z_1= & 5.5x^1_1 + 2.1x^1_2 \quad \longrightarrow Max \\
-            & \left\{\begin{split}
-            & -x^1_1 + x^1_2 \leq 2 \\
-            & 8x^1_1 + 2x^1_2 \leq 17 \\
-            & \color{blue} x^1_1 \leq 1 \\
-            &x^1_1 \geq 0 \\
-            &x^1_2 \geq 0. \\
-            \end{split}\right. \\
+            (P_1) \quad &z_1= 5.5x^{(1)}_1 + 2.1x^{(1)}_2 \\
+            & \left\{\begin{array} {cccc}
+            -x^{(1)}_1 &+ x^{(1)}_2 &\leq& 2 \\
+            8x^{(1)}_1 &+ 2x^{(1)}_2 &\leq& 17 \\
+            \color{blue} x^{(1)}_1 && \color{blue} \leq &\color{blue} 1 \\
+            x^{(1)}_1 &&\geq& 0 \\
+            &x^{(1)}_2 &\geq& 0. \\
+            \end{array}\right. \\
         \end{split}
     \end{equation*}
 \end{frame}
 
 \begin{frame}
-    Giải bài toán ta được $x^1_1=1, x^1_2=3$ và $z_1=11.8$. Bài toán được giải \textbf{(gọt bởi nghiệm nguyên)}.
+    Giải bài toán ta được $x^{(1)}_1=1, x^{(1)}_2=3$ và $z_1=11.8$. Bài toán được giải \textbf{(gọt bởi nghiệm nguyên)}.
     \vspace{1cm}
     \begin{figure}
     \begin{tikzpicture}[scale=.9]
@@ -483,35 +515,37 @@ Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán 
 \end{frame}
 
 \begin{frame}
-    Tương tự bài toán $(P_2)$ ta được $x^2_1 = 2, x^2_2 = 0.5$ và $z_2=12.05$. Ta chọn $x^2_2 = 0.5$ để cải thiện phương án. Ta được 2 bài toán con $(P_3)$ và $(P_4)$:
+    Tương tự bài toán $(P_2)$ ta được $x^{(2)}_1 = 2, x^{(2)}_2 = 0.5$ và $z_2=12.05$. Ta chọn $x^{(2)}_2 = 0.5$ để cải thiện phương án. Ta được 2 bài toán con $(P_3)$ và $(P_4)$:
     \begin{columns}
 \begin{column}{0.5\textwidth}
+    \small
     \begin{equation*}
         \begin{split}
-            (P_3) \quad z_3= & 5.5x^3_1 + 2.1x^3_2 \\
-            & \left\{\begin{split}
-            & -x^3_1 + x^3_2 \leq 2 \\
-            & 8x^3_1 + 2x^3_2 \leq 17 \\
-            & \color{blue} x^3_1 \geq 2 \\
-            & \color{blue} x^3_2 \leq 0 \\
-            &x^3_1 \geq 0 \\
-            &x^3_2 \geq 0. \\
-            \end{split}\right. \\
+            (P_3) \quad &z_3= 5.5x^{(3)}_1 + 2.1x^{(3)}_2 \\
+            & \left\{\begin{array} {cccc}
+             -x^{(3)}_1 &+ x^{(3)}_2 &\leq& 2 \\
+             8x^{(3)}_1 &+ 2x^{(3)}_2 &\leq& 17 \\
+             \color{blue} x^{(3)}_1&& \color{blue}\geq &\color{blue}2 \\
+             &\color{blue} x^{(3)}_2& \color{blue}\leq& \color{blue}0 \\
+            x^{(3)}_1 &&\geq &0 \\
+            &x^{(3)}_2 &\geq &0. \\
+            \end{array}\right. \\
         \end{split}
     \end{equation*}
 \end{column}
 \begin{column}{0.5\textwidth}
+   \small
    \begin{equation*}
         \begin{split}
-            (P_4) \quad z_4= & 5.5x^4_1 + 2.1x^4_2  \\
-            & \left\{\begin{split}
-            & -x^4_1 + x^4_2 \leq 2 \\
-            & 8x^4_1 + 2x^4_2 \leq 17 \\
-            & \color{blue} x^4_1 \geq 2 \\
-            & \color{blue} x^4_2 \geq 1 \\
-            &x^4_1 \geq 0 \\
-            &x^4_2 \geq 0. \\
-            \end{split}\right. \\
+            (P_4) \quad &z_4= 5.5x^{(4)}_1 + 2.1x^{(4)}_2  \\
+            & \left\{\begin{array} {cccc}
+             -x^{(4)}_1 &+ x^{(4)}_2 &\leq& 2 \\
+             8x^{(4)}_1 &+ 2x^{(4)}_2 &\leq& 17 \\
+             \color{blue} x^{(4)}_1 &&\color{blue}\geq& \color{blue}2 \\
+             &\color{blue} x^{(4)}_2 &\color{blue}\geq&\color{blue} 1 \\
+            x^{(4)}_1 &&\geq& 0 \\
+            &x^{(4)}_2 &\geq& 0. \\
+            \end{array}\right. \\
         \end{split}
     \end{equation*}
 \end{column}
@@ -520,9 +554,9 @@ Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán 
 
 \begin{frame}
     \begin{itemize} 
-    \item Giải bài toán $(P_3)$ ta được $x^3_1=2.125, x^3_2=0$ và $z_3=11.6875 \Rightarrow $ không khả thi do $z_3 < z_1$ \textbf{(gọt bởi cận)}. 
+    \item Giải bài toán $(P_3)$ ta được $x^{(3)}_1=2.125, x^{(3)}_2=0$ và $z_3=11.6875 \Rightarrow $ không khả thi do $z_3 < z_1$ \textbf{(gọt bởi cận)}. 
     \item Bài toán $(P_4)$ \textbf{vô nghiệm}.
-    \item Vậy phương án tối ưu của bài toán là $x^1_1=1, x^1_2=3$ và $z=11.8$.
+    \item Vậy phương án tối ưu của bài toán là $x^{(1)}_1=1, x^{(1)}_2=3$ và $z=11.8$.
 \end{itemize}
 \end{frame}
 
@@ -546,8 +580,8 @@ Chọn nút $N_i$ từ danh sách $\mathcal{L}$ và xoá khỏi $\mathcal{L}$ sa
 \noindent \textbf{Bước 4. Xác định cận} \\ 
 Giải bài toán $(P_i)$, nếu bài toán vô nghiệm hoặc $z_i \leq z^*$, quay \\ lại bước 2, nếu không, chuyển sang bước 5. \\ 
 \noindent \textbf{Bước 5. Gọt nghiệm} \\
-Nếu tồn tại $x^i \notin Z^n_+$, ta thêm nút $N_{i+1}, \ldots , N_{k}$ vào $\mathcal{L}$ và quay \\ về bước 2. \\
-Nếu không tồn tại $x^i \notin Z^n_+$, tức $\forall x^i \in Z^n_+$, ta đặt $z_i = z^*$, \\ $(x^i,y^i) = (x^*,y^*)$ và quay lại bước 2.
+Nếu tồn tại $x^{(i)} \notin Z^n_+$, ta thêm nút $N_{i+1}, \ldots , N_{k}$ vào $\mathcal{L}$ và quay \\ về bước 2. \\
+Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_+$, ta đặt $z_i = z^*$, \\ $(x^{(i)},y^{(i)}) = (x^*,y^*)$ và quay lại bước 2.
 \end{frame}    
 
 \begin{frame}{Sơ đồ thuật toán}
@@ -567,10 +601,9 @@ Nếu không tồn tại $x^i \notin Z^n_+$, tức $\forall x^i \in Z^n_+$, ta �
 \node (b2) [process, right of=b1] {Chọn $N_i$ từ $\mathcal{L}$ \\ và xoá khỏi $\mathcal{L}$};
 \node (b3) [process, right of=b2] {Giải $(P_i)$};
 \node (b4) [decision, right of=b3] {Vô nghiệm?};
-\node (b5) [decision, right of=b4] {$\exists x^i \notin Z^n_+$?};
-\node (b6) [io, above of=b5] {$z_i = z^*$, $(x^i,y^i) = (x,y)$};
+\node (b5) [decision, right of=b4] {$\exists x^{(i)} \notin Z^n_+$?};
+\node (b6) [io, above of=b5] {$z_i = z^*$, $(x^{(i)},y^{(i)}) = (x,y)$};
 \node (b7) [io, right of=b5] {Thêm \\ $N_{i1}, \ldots , N_{ik}$ \\ vào $\mathcal{L}$};
-\node (kl) [process, below of=b1] {bài toán \\ được giải};
 \node (stop) [startstop, right of=b7] {Kết thúc};
 % Draw arrows
 \draw [arrow] (start) -- (b0);
@@ -585,12 +618,66 @@ Nếu không tồn tại $x^i \notin Z^n_+$, tức $\forall x^i \in Z^n_+$, ta �
 \draw [arrow] (b6) -| (b1);
 \draw [arrow] (b7) -- (23,6) -- (3,6) -- (b1);
 \draw [arrow] (b7) -- (stop);
-\draw [arrow] (b1) -- node[anchor=west] {yes} (kl);
-\draw [arrow] (kl) -| (stop);
+\draw [arrow] (b1) -- node[anchor=west] {yes} (3,-3) -| (stop);
 \end{tikzpicture}
 \caption{Lưu đồ giải thuật của thuật toán nhánh cận.}
 \end{figure}
 \end{frame}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{frame}{Ví dụ minh hoạ}
     \begin{equation*}
@@ -609,117 +696,117 @@ Nếu không tồn tại $x^i \notin Z^n_+$, tức $\forall x^i \in Z^n_+$, ta �
     \end{frame}
     
     \begin{frame}
-    Với $x^1_1 \leq 1$ \\ 
+    Với $x^{(1)}_1 \leq 1$ \\ 
     \begin{equation*}
     \begin{split}
-      (P_1) \quad z_p= & 5.5x^1_1 + 2.1x^1_2 + 3x^1_3 \quad \longrightarrow Max \\
+      (P_1) \quad z_p= & 5.5x^{(1)}_1 + 2.1x^{(1)}_2 + 3x^{(1)}_3 \quad \longrightarrow Max \\
       & \left\{\begin{split}
-      & -x^1_1 + x^1_2 + x^1_3 \leq 2 \\
-      & 8x^1_1 + 2x^1_2 + x^1_3\leq 17 \\
-      & 9x^1_1 + x^1_2 + 6x^1_3 \leq 20 \\
-      & x^1_1 \leq 1 \\
-      &x^1_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+      & -x^{(1)}_1 + x^{(1)}_2 + x^{(1)}_3 \leq 2 \\
+      & 8x^{(1)}_1 + 2x^{(1)}_2 + x^{(1)}_3\leq 17 \\
+      & 9x^{(1)}_1 + x^{(1)}_2 + 6x^{(1)}_3 \leq 20 \\
+      & x^{(1)}_1 \leq 1 \\
+      &x^{(1)}_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
       \end{split}\right. \\
     \end{split}
     \end{equation*}
-    $\rightarrow z_1=13.24, x^1_1=1, x^1_2=1.4, x^1_3=1.6$
+    $\rightarrow z_1=13.24, x^{(1)}_1=1, x^{(1)}_2=1.4, x^{(1)}_3=1.6$
     \end{frame}
     
     \begin{frame}
-    Với $x^2_1 \geq 2$ \\
+    Với $x^{(2)}_1 \geq 2$ \\
     \begin{equation*}
       \begin{split}
-        (P_2) \quad z_p= & 5.5x^2_1 + 2.1x^2_2 + 3x^2_3 \quad \longrightarrow Max \\
+        (P_2) \quad z_p= & 5.5x^{(2)}_1 + 2.1x^{(2)}_2 + 3x^{(2)}_3 \quad \longrightarrow Max \\
         & \left\{\begin{split}
-        & -x^2_1 + x^2_2 + x^2_3 \leq 2 \\
-        & 8x^2_1 + 2x^2_2 + x^2_3\leq 17 \\
-        & 9x^2_1 + x^2_2 + 6x^2_3 \leq 20 \\
-        & x^2_1 \geq 2 \\
-        &x^2_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+        & -x^{(2)}_1 + x^{(2)}_2 + x^{(2)}_3 \leq 2 \\
+        & 8x^{(2)}_1 + 2x^{(2)}_2 + x^{(2)}_3\leq 17 \\
+        & 9x^{(2)}_1 + x^{(2)}_2 + 6x^{(2)}_3 \leq 20 \\
+        & x^{(2)}_1 \geq 2 \\
+        &x^{(2)}_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
         \end{split}\right. \\
     \end{split}
     \end{equation*}
-    $\rightarrow z_2=12.58, x^2_1=2, x^2_2=0.36, x^2_3=0.27$
+    $\rightarrow z_2=12.58, x^{(2)}_1=2, x^{(2)}_2=0.36, x^{(2)}_3=0.27$
     \end{frame}
     
     \begin{frame}
-      Ta tiếp tục chọn $x^1_2=1.4$ từ $(P_1)$. Với $x^3_2 \leq 1$
+      Ta tiếp tục chọn $x^{(1)}_2=1.4$ từ $(P_1)$. Với $x^{(3)}_2 \leq 1$
     \begin{equation*}
       \begin{split}
-          (P_3) \quad z_p= & 5.5x^3_1 + 2.1x^3_2 + 3x^3_3 \quad \longrightarrow Max \\
+          (P_3) \quad z_p= & 5.5x^{(3)}_1 + 2.1x^{(3)}_2 + 3x^{(3)}_3 \quad \longrightarrow Max \\
           & \left\{\begin{split}
-          & -x^3_1 + x^3_2 + x^3_3 \leq 2 \\
-          & 8x^3_1 + 2x^3_2 + x^3_3\leq 17 \\
-          & 9x^3_1 + x^3_2 + 6x^3_3 \leq 20 \\
-          & x^3_1 \leq 1 \\
-          & x^3_2 \leq 1 \\
-          &x^3_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+          & -x^{(3)}_1 + x^{(3)}_2 + x^{(3)}_3 \leq 2 \\
+          & 8x^{(3)}_1 + 2x^{(3)}_2 + x^{(3)}_3\leq 17 \\
+          & 9x^{(3)}_1 + x^{(3)}_2 + 6x^{(3)}_3 \leq 20 \\
+          & x^{(3)}_1 \leq 1 \\
+          & x^{(3)}_2 \leq 1 \\
+          &x^{(3)}_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
           \end{split}\right. \\
       \end{split}
     \end{equation*}
-    $\rightarrow z_3=12.6, x^3_1=1, x^3_2=1, x^3_3=1.66$
+    $\rightarrow z_3=12.6, x^{(3)}_1=1, x^{(3)}_2=1, x^{(3)}_3=1.66$
     \end{frame}
     
     \begin{frame}
-     Với $x^4_2 \geq 2$
+     Với $x^{(4)}_2 \geq 2$
     \begin{equation*}
       \begin{split}
-          (P_4) \quad z_p= & 5.5x^4_1 + 2.1x^4_2 + 3x^4_3 \quad \longrightarrow Max \\
+          (P_4) \quad z_p= & 5.5x^{(4)}_1 + 2.1x^{(4)}_2 + 3x^{(4)}_3 \quad \longrightarrow Max \\
           & \left\{\begin{split}
-          & -x^4_1 + x^4_2 + x^4_3 \leq 2 \\
-          & 8x^4_1 + 2x^4_2 + x^4_3\leq 17 \\
-          & 9x^4_1 + x^4_2 + 6x^4_3 \leq 20 \\
-          & x^4_1 \leq 1 \\
-          & x^4_2 \geq 2 \\
-          &x^4_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+          & -x^{(4)}_1 + x^{(4)}_2 + x^{(4)}_3 \leq 2 \\
+          & 8x^{(4)}_1 + 2x^{(4)}_2 + x^{(4)}_3\leq 17 \\
+          & 9x^{(4)}_1 + x^{(4)}_2 + 6x^{(4)}_3 \leq 20 \\
+          & x^{(4)}_1 \leq 1 \\
+          & x^{(4)}_2 \geq 2 \\
+          &x^{(4)}_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
           \end{split}\right. \\
       \end{split}
     \end{equation*}
-    $\rightarrow z_4=12.7, x^4_1=1, x^4_2=2, x^4_3=1 \rightarrow$ \textbf{gọt bởi nghiệm nguyên}.
+    $\rightarrow z_4=12.7, x^{(4)}_1=1, x^{(4)}_2=2, x^{(4)}_3=1 \rightarrow$ \textbf{gọt bởi nghiệm nguyên}.
     \end{frame}
     
     \begin{frame}
-    Ta chọn $x^3_3=1.66$ từ $(P_3)$. Với $x^5_3 \leq 1$.
+    Ta chọn $x^{(3)}_3=1.66$ từ $(P_3)$. Với $x^{(5)}_3 \leq 1$.
     \begin{equation*}
       \begin{split}
-          (P_5) \quad z_p= & 5.5x^5_1 + 2.1x^5_2 + 3x^5_3 \quad \longrightarrow Max \\
+          (P_5) \quad z_p= & 5.5x^{(5)}_1 + 2.1x^{(5)}_2 + 3x^{(5)}_3 \quad \longrightarrow Max \\
           & \left\{\begin{split}
-          & -x^5_1 + x^5_2 + x^5_3 \leq 2 \\
-          & 8x^5_1 + 2x^5_2 + x^5_3\leq 17 \\
-          & 9x^5_1 + x^5_2 + 6x^5_3 \leq 20 \\
-          & x^5_1 \leq 1 \\
-          & x^5_2 \leq 1 \\
-          & x^5_3 \leq 1 \\
-          &x^5_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+          & -x^{(5)}_1 + x^{(5)}_2 + x^{(5)}_3 \leq 2 \\
+          & 8x^{(5)}_1 + 2x^{(5)}_2 + x^{(5)}_3\leq 17 \\
+          & 9x^{(5)}_1 + x^{(5)}_2 + 6x^{(5)}_3 \leq 20 \\
+          & x^{(5)}_1 \leq 1 \\
+          & x^{(5)}_2 \leq 1 \\
+          & x^{(5)}_3 \leq 1 \\
+          &x^{(5)}_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
           \end{split}\right. \\
       \end{split}
     \end{equation*}
-    $\rightarrow z_5=10.6, x^5_1=1, x^5_2=1, x^5_3=1 \rightarrow$ gọt bởi nghiệm nguyên nhưng $z_5<z_4 \rightarrow$ loại.
+    $\rightarrow z_5=10.6, x^{(5)}_1=1, x^{(5)}_2=1, x^{(5)}_3=1 \rightarrow$ gọt bởi nghiệm nguyên nhưng $z_5<z_4 \rightarrow$ loại.
     \end{frame}
     
     \begin{frame}
-    Với $x^6_3 \geq 2$.
+    Với $x^{(6)}_3 \geq 2$.
     \begin{equation*}
       \begin{split}
-          (P_6) \quad z_p= & 5.5x^6_1 + 2.1x^6_2 + 3x^6_3 \quad \longrightarrow Max \\
+          (P_6) \quad z_p= & 5.5x^{(6)}_1 + 2.1x^{(6)}_2 + 3x^{(6)}_3 \quad \longrightarrow Max \\
           & \left\{\begin{split}
-          & -x^6_1 + x^6_2 + x^6_3 \leq 2 \\
-          & 8x^6_1 + 2x^6_2 + x^6_3\leq 17 \\
-          & 9x^6_1 + x^6_2 + 6x^6_3 \leq 20 \\
-          & x^6_1 \leq 1 \\
-          & x^6_2 \leq 1 \\
-          & x^6_3 \geq 2 \\
-          &x^6_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
+          & -x^{(6)}_1 + x^{(6)}_2 + x^{(6)}_3 \leq 2 \\
+          & 8x^{(6)}_1 + 2x^{(6)}_2 + x^{(6)}_3\leq 17 \\
+          & 9x^{(6)}_1 + x^{(6)}_2 + 6x^{(6)}_3 \leq 20 \\
+          & x^{(6)}_1 \leq 1 \\
+          & x^{(6)}_2 \leq 1 \\
+          & x^{(6)}_3 \geq 2 \\
+          &x^{(6)}_i \geq 0 , \: i=\overline{\rm 1, \ldots ,3} \\
           \end{split}\right. \\
       \end{split}
     \end{equation*}
-    $\rightarrow z_6=12.08, x^6_1=0.8, x^6_2=0.8, x^6_3=2 \rightarrow$ \textbf{gọt bởi cận}.
+    $\rightarrow z_6=12.08, x^{(6)}_1=0.8, x^{(6)}_2=0.8, x^{(6)}_3=2 \rightarrow$ \textbf{gọt bởi cận}.
     \end{frame}
     
     \begin{frame}
-      Ta chọn $x^2_2=0.36$ từ $(P_2)$
+      Ta chọn $x^{(2)}_2=0.36$ từ $(P_2)$
       \begin{itemize}
-        \item $(P_7)$ cho $z_7=12.1, x^7_1=2.1, x^7_2=0, x^7_3=0.17$, do $z_7<z_4 \rightarrow$ loại.
+        \item $(P_7)$ cho $z_7=12.1, x^{(7)}_1=2.1, x^{(7)}_2=0, x^{(7)}_3=0.17$, do $z_7<z_4 \rightarrow$ loại.
         \item $(P_8)$ cho kết quả \textbf{vô nghiệm}.
       \end{itemize} 
     Vậy nghiệm tối ưu của bài toán là $x_1=1, x_2=2, x_3=1$ và giá trị tối ưu $z=12.7$.
