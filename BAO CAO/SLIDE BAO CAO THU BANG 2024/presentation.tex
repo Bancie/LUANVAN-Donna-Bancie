@@ -14,6 +14,7 @@
 \usetikzlibrary {datavisualization} 
 \pgfplotsset{compat=1.18, width = 7cm}
 \usetikzlibrary{patterns}
+\usetheme{Ilmenau} % AnnArbor, Ilmenau, Darmstadt, Dresden, CambridgeUS, Frankfurt, Singapore
 \setbeamertemplate{bibliography item}[text]
 \newtheorem{dn}{Định nghĩa}[section]
 \newtheorem{dl}{Định lý}[section]
@@ -140,7 +141,7 @@
 % Du dinh tiep theo ?
 % - - -
 % Cơ sở lý thuyết và Mục tiêu
-\section{Giới thiệu}
+\section{Giới thiệu và Đặt vấn đề}
 
 \begin{frame}{\bf Mục đích nghiên cứu}
 \textbf{Tối ưu tuyến tính} là một nội dung quan trọng trong chương trình đào tạo Cử nhân Toán ứng dụng. Lý thuyết về việc giải bài toán tối ưu tuyến tính đã được cung cấp cho sinh viên. Tuy vậy, có nhiều bài toán tối ưu cần được giải với nghiệm nguyên. Chẳng hạn như:
@@ -199,6 +200,103 @@ $\bullet$  Nếu giải bài toán trên bằng phương pháp thông thường,
  \textcolor{red}{\bf Nếu giải bài toán QHTT rồi sau đó làm tròn số thì có thể  cho kết không như mong đợi.}
    
 \end{frame}
+
+
+
+
+
+
+
+\begin{frame}{Tối ưu nguyên hoàn toàn (Pure integer linear program)}
+    \begin{equation} \label{H}
+        \begin{split}
+        (H) \quad & z_h=c^Tx \quad \longrightarrow Max \\
+                  & \left\{\begin{split}
+                    &Ax \leq  b, \\
+                    &x \geq 0, \text{ nguyên} \\
+                    \end{split}\right.    
+        \end{split}
+        \end{equation}            
+    \begin{itemize} \small
+    \item Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
+        b_1 \\
+        b_2 \\
+        \vdots \\
+        b_m
+        \end{pmatrix}$, với $x\in Z^n$.
+    \item Bài toán $(H)$ gọi là bài toán \textbf{Tối ưu nguyên hoàn toàn.}
+    \item Tập $S_h:=\{x\in Z^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên hoàn toàn.
+    \end{itemize}
+\end{frame}
+
+%model_1: hoan toan
+\begin{frame} {Minh hoạ bài toán}
+    \begin{equation}
+        \begin{split}
+        \quad & 2x_1 + 2x_2 \quad \longrightarrow Max \\
+                    & \left\{\begin{split}
+                    & x_1 + 3x_2 \leq 24 \\
+                    & \frac{13}{3}x_1 + 2x_2 \leq 32.5 \\
+                    &x_1 \geq 0, \text{ nguyên}. \\
+                    &x_2 \geq 0, \text{ nguyên}. \\
+                    \end{split}\right.    
+        \end{split}
+    \end{equation}            
+\end{frame}
+%cho bài toán ví dụ rõ số liệu
+\begin{frame}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{nguyenhoantoan.pdf}
+    \caption{Tập nghiệm của bài toán Tối ưu nguyên hoàn toàn}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Tối ưu nguyên bộ phận (Mixed integer linear program)}
+\begin{equation}\label{2.4}
+\begin{split}
+(B) \quad & z_b=c^Tx+h^Ty \quad \longrightarrow Max \\
+          & \left\{\begin{split}
+            &Ax+Gy \leq  b, \\
+            &x \geq 0, \text{ nguyên} \\
+            &y \geq 0.
+            \end{split}\right.    
+\end{split}
+\end{equation}    
+\begin{itemize} \small
+\item Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $h^T=(h_1 \: h_2 \: \ldots \: h_p)$, $A$ là ma trận $m\times n$, $G$ là ma trận $m\times p$, $b=\begin{pmatrix}
+    b_1 \\
+    b_2 \\
+    \vdots \\
+    b_m
+    \end{pmatrix}$, với $x\in Z^n$ và $y\in R^p$.
+\item Bài toán $(B)$ gọi là bài toán \textbf{Tối ưu nguyên bộ phận.}
+\item Tập $S_b:=\{(x,y)\in Z^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên bộ phận.
+\end{itemize}
+\end{frame}
+%cho bài toán ví dụ rõ số liệu
+\begin{frame}{Minh hoạ bài toán}
+   \begin{equation}
+        \begin{split}
+        \quad & x_1 + 2x_2 \quad \longrightarrow Max \\
+                    & \left\{\begin{split}
+                    & 5x_1 + \frac{15}{7}x_2 \leq 20 \\
+                    & -2.4x_1 + \frac{30}{7}x_2 \leq 15 \\
+                    &x_1 \geq 0, \text{ nguyên}. \\
+                    &x_2 \geq 0. \\
+                    \end{split}\right.    
+        \end{split}
+    \end{equation}            
+\end{frame}
+
+\begin{frame}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{nguyenbophan.pdf}
+    \caption{Tập nghiệm của bài toán Tối ưu nguyên bộ phận}
+\end{figure}
+\end{frame}
+    
 
 
 
@@ -367,7 +465,7 @@ phương án của bài toán $P_{r+1}$, tức là $X_r^*\notin F_{r+1}$.\\Chuy�
  $P_{r+1}$ khi $X^*_r$ không nguyên được thực hiện nhờ một lát cắt đúng $a_rx \le \beta_r$.\\
 Việc bổ sung lát cắt này vào ràng buộc của bài toán $P_r$ sẽ chuyển đa diện lồi $F_r$ thành $F_{r+1}$.\\
     \end{frame}
-\section*{Thuật toán Gomory cho bài toán nguyên hoàn toàn}
+\section*{Thuật toán Gomory}
     \begin{frame}{Cơ sở lý thuyết}
         Ta xét bài toán tối ưu nguyên hoàn toàn:\\
 \begin{equation}\label{Gomory1}
@@ -471,143 +569,6 @@ ii) Bài toán $P^N_0$ có ít nhất một phương án $X'$.\\
 
 \section{Phương pháp Land-Doig}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{frame}{Tối ưu nguyên hoàn toàn (Pure integer linear program)}
-    \begin{equation} \label{H}
-        \begin{split}
-        (H) \quad & z_h=c^Tx \quad \longrightarrow Max \\
-                  & \left\{\begin{split}
-                    &Ax \leq  b, \\
-                    &x \geq 0, \text{ nguyên} \\
-                    \end{split}\right.    
-        \end{split}
-        \end{equation}            
-    \begin{itemize} \small
-    \item Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
-        b_1 \\
-        b_2 \\
-        \vdots \\
-        b_m
-        \end{pmatrix}$, với $x\in Z^n$.
-    \item Bài toán $(H)$ gọi là bài toán \textbf{Tối ưu nguyên hoàn toàn.}
-    \item Tập $S_h:=\{x\in Z^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên hoàn toàn.
-    \end{itemize}
-\end{frame}
-
-%model_1: hoan toan
-\begin{frame} {Minh hoạ bài toán}
-    \begin{equation}
-        \begin{split}
-        \quad & 2x_1 + 2x_2 \quad \longrightarrow Max \\
-                    & \left\{\begin{split}
-                    & x_1 + 3x_2 \leq 24 \\
-                    & \frac{13}{3}x_1 + 2x_2 \leq 32.5 \\
-                    &x_1 \geq 0, \text{ nguyên}. \\
-                    &x_2 \geq 0, \text{ nguyên}. \\
-                    \end{split}\right.    
-        \end{split}
-    \end{equation}            
-\end{frame}
-%cho bài toán ví dụ rõ số liệu
-\begin{frame}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=1\linewidth]{nguyenhoantoan.pdf}
-    \caption{Tập nghiệm của bài toán Tối ưu nguyên hoàn toàn}
-\end{figure}
-\end{frame}
-
-\begin{frame}{Tối ưu nguyên bộ phận (Mixed integer linear program)}
-\begin{equation}\label{2.4}
-\begin{split}
-(B) \quad & z_b=c^Tx+h^Ty \quad \longrightarrow Max \\
-          & \left\{\begin{split}
-            &Ax+Gy \leq  b, \\
-            &x \geq 0, \text{ nguyên} \\
-            &y \geq 0.
-            \end{split}\right.    
-\end{split}
-\end{equation}    
-\begin{itemize} \small
-\item Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $h^T=(h_1 \: h_2 \: \ldots \: h_p)$, $A$ là ma trận $m\times n$, $G$ là ma trận $m\times p$, $b=\begin{pmatrix}
-    b_1 \\
-    b_2 \\
-    \vdots \\
-    b_m
-    \end{pmatrix}$, với $x\in Z^n$ và $y\in R^p$.
-\item Bài toán $(B)$ gọi là bài toán \textbf{Tối ưu nguyên bộ phận.}
-\item Tập $S_b:=\{(x,y)\in Z^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên bộ phận.
-\end{itemize}
-\end{frame}
-%cho bài toán ví dụ rõ số liệu
-\begin{frame}{Minh hoạ bài toán}
-   \begin{equation}
-        \begin{split}
-        \quad & x_1 + 2x_2 \quad \longrightarrow Max \\
-                    & \left\{\begin{split}
-                    & 5x_1 + \frac{15}{7}x_2 \leq 20 \\
-                    & -2.4x_1 + \frac{30}{7}x_2 \leq 15 \\
-                    &x_1 \geq 0, \text{ nguyên}. \\
-                    &x_2 \geq 0. \\
-                    \end{split}\right.    
-        \end{split}
-    \end{equation}            
-\end{frame}
-
-\begin{frame}
-\begin{center}
-\begin{figure}
-\begin{tikzpicture}
-\begin{axis}
-    [
-    xmin=0,xmax=5,
-    ymin=0,ymax=5,
-    grid style={line width=.1pt, draw=darkgray!50},
-    major grid style={line width=.2pt,draw=darkgray!50},
-    axis lines=middle,
-    minor tick num=1,
-    enlargelimits={abs=0},
-    samples=100,
-    domain = -20:20,
-    xmajorgrids=true,
-    ]
-    \filldraw[green, pattern=north west lines, pattern color=green, line width=2pt] (0, 0) -- (0, 2.5) -- (2.5, 3.5) -- (4, 0) -- cycle;
-\end{axis}
-\end{tikzpicture}  
-\caption{Tập nghiệm của bài toán Tối ưu nguyên bộ phận}
-\end{figure}
-\end{center}      
-\end{frame}
-    
-\section{Mục tiêu}
-
-\begin{frame}
-   \center
-   \huge Mục tiêu phương pháp
-\end{frame}
-
 \begin{frame}{Bài toán quan tâm}
 \begin{equation}\label{P}
 \begin{split}
@@ -619,7 +580,7 @@ ii) Bài toán $P^N_0$ có ít nhất một phương án $X'$.\\
 \end{split}
 \end{equation}
 \begin{itemize}
-\item Trong đó $(P)$ là bài toán $(B)$ với nghiệm thuộc tập số thực.
+\item Trong đó $(P)$ là bài toán $(B)$ (hoặc $(H)$) với nghiệm thuộc tập số thực.
 \item Bài toán $(P)$ là một bài toán \textbf{Tối ưu tuyến tính thông thường} hay gọi đơn giản là bài toán Tối ưu tuyến tính (Natural linear programming relaxation).
 \item Tập $S_p:=\{(x,y)\in R^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu tuyến tính.
 \end{itemize}
@@ -686,11 +647,7 @@ Vì thế, ta chọn xử lý bài toán $(B)$ (hoặc $(H)$) thông qua bài to
     Bài toán được giải.
 \end{frame}
 
-\section{Thuật toán nhánh cận}
-\begin{frame}
-   \center
-   \huge Thuật toán nhánh cận \\ (Branch-and-Bound)
-\end{frame}
+\section*{Thuật toán Land-Doig}
 
 \begin{frame}{Phương pháp xác định cận}
 Ta gọi $x_j$ với $1 \leq j \leq n$ là nghiệm thu được từ bài toán $(P)$.
@@ -711,7 +668,7 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 \begin{frame}{Phương pháp xử lý bài toán}
 \large
 \begin{itemize}
-\item Từ \eqref{baitoannguyenloi} và \eqref{baitoannguyenhet}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, thì ta có thể tiếp tục cải thiện phương án cho đến khi $\forall x_j \in \mathbb{Z}$. 
+\item Từ bài toán minh hoạ \eqref{baitoannguyenloi} và \eqref{baitoannguyenhet}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, thì ta có thể tiếp tục cải thiện phương án cho đến khi $\forall x_j \in \mathbb{Z}$. 
 \item Nếu nghiệm thu được là $x_j \notin \mathbb{Z}$ ta thiết lập được 2 bài toán con từ bài toán $(P)$ ban đầu, ký hiệu $(P_1)$ và $(P_2)$.
 \end{itemize}
 \end{frame}
@@ -782,27 +739,12 @@ Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
 
 \begin{frame}
     Giải bài toán bằng phương pháp đơn hình thông thường ta được nghiệm $x_1 =1.3$, $x_2 = 3.3$ và $z_p=14.08$.
-    \vspace{1cm}
-    \begin{figure}
-    \begin{tikzpicture}[scale=.9]
-    \begin{axis}
-        [
-        xmin=0,xmax=3,
-        ymin=0,ymax=5,
-        grid style={line width=.1pt, draw=darkgray!50},
-        major grid style={line width=.2pt,draw=darkgray!50},
-        axis lines=middle,
-        minor tick num=1,
-        enlargelimits={abs=0},
-        samples=100,
-        domain = -20:20,
-        xmajorgrids=true,
-        ]
-        \filldraw[blue, pattern=north west lines, pattern color=blue, line width=2pt] (0, 0) -- (0, 2) -- (1.3, 3.3) -- (2.125, 0) -- cycle;
-    \end{axis}
-    \end{tikzpicture}  
+    \vspace{0.5cm}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\linewidth]{hinh1.pdf}
     \caption{Tập nghiệm của bài toán}
-    \end{figure}
+\end{figure}
 \end{frame}
 
 %template to copy-paste
@@ -859,26 +801,11 @@ Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán 
 
 \begin{frame}
     Giải bài toán ta được $x^{(1)}_1=1, x^{(1)}_2=3$ và $z_1=11.8$. Bài toán được giải \textbf{(gọt bởi nghiệm nguyên)}.
-    \vspace{1cm}
-    \begin{figure}
-    \begin{tikzpicture}[scale=.9]
-    \begin{axis}
-        [
-        xmin=0,xmax=3,
-        ymin=0,ymax=5,
-        grid style={line width=.1pt, draw=darkgray!50},
-        major grid style={line width=.2pt,draw=darkgray!50},
-        axis lines=middle,
-        minor tick num=1,
-        enlargelimits={abs=0},
-        samples=100,
-        domain = -20:20,
-        xmajorgrids=true,
-        ]
-        \filldraw[blue, pattern=north west lines, pattern color=blue, line width=2pt] (0, 0) -- (0, 2) -- (1, 3) -- (1, 0) -- cycle;
-    \end{axis}
-    \end{tikzpicture}  
-    \caption{Tập nghiệm của bài toán $(P_1)$}
+    \vspace{0.5cm}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.4\linewidth]{hinh2.pdf}
+        \caption{Tập nghiệm của bài toán $(P_1)$}
     \end{figure}
 \end{frame}
 
