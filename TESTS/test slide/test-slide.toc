@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{Ý tưởng về phương pháp cắt}{5}{0}{1}
+\beamer@sectionintoc {2}{ Thuật toán Gomory cho bài toán nguyên hoàn toàn}{13}{0}{2}
