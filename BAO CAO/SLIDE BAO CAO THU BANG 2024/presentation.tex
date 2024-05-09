@@ -107,7 +107,7 @@
 %\titlegraphic{\hfill\includegraphics[height=0.6cm]{sybila-logo/old-flat.png}}
 
 \date{\today}
-\author{Thực hiện: Đỗ Ngọc Minh Thư, Nguyễn Chí Bằng}
+\author{Thực hiện: Đỗ Ngọc Minh Thư \& Nguyễn Chí Bằng}
 \institute{Sinh viên lớp: DTU1221, Khóa: 22 @ Đại học Sài Gòn}
 
 %\title{Metropolis}
@@ -570,6 +570,20 @@ ii) Bài toán $P^N_0$ có ít nhất một phương án $X'$.\\
 
 \section{Phương pháp Land-Doig}
 
+\begin{frame}{Ý tưởng phương pháp Land-Doig}
+    \begin{itemize}
+    \item \textbf{Phương pháp Land-Doig (Nhánh cận)}: Chia bài toán gốc thành các bài toán nhỏ và xử lý đến khi tìm ra kết quả tối ưu.
+    \medskip
+    \item \textbf{Cách hoạt động}: Thuật toán Land-Doig là một khung thuật toán chia bài toán thành \textcolor{red}{\textbf{các bài toán con}} và duyệt qua từng bài toán. Từ giải pháp ban đầu, thuật toán mở rộng các nhánh (tập hợp con các bài toán) và duyệt có hệ thống như một mê cung.
+    \medskip
+    \item \textbf{Ý tưởng cốt lõi}:
+    \begin{itemize} 
+        \item \textcolor{red}{\textbf{Phân nhánh}}: Mỗi nhánh đại diện cho một tập con các bài toán.
+        \item \textcolor{red}{\textbf{Gọt}}: Loại bỏ nhánh không thỏa điều kiện nghiệm, giúp tìm giải pháp tối ưu hiệu quả.
+    \end{itemize}
+    \end{itemize}
+\end{frame}
+
 \begin{frame}{Bài toán quan tâm}
 \begin{equation}\label{P}
 \begin{split}
@@ -595,6 +609,7 @@ ii) Bài toán $P^N_0$ có ít nhất một phương án $X'$.\\
 \item Nếu $S_b = S_p$ thì ta nhận được $z_b = z_p$ và bài toán được giải.
 \end{itemize}    
 \end{nx}}
+\bigskip
 \onslide<3->{Vì thế, ta chọn xử lý bài toán $(B)$ (hoặc $(H)$) thông qua bài toán $(P)$ bằng cách cải thiện phương án thu được từ bài toán $(P)$ sao cho thoả điều kiện của bài toán $(B)$ (hoặc $(H)$).}
 \end{frame}
 
@@ -661,6 +676,7 @@ Ta gọi $x_j$ với $1 \leq j \leq n$ là nghiệm thu được từ bài toán
 \end{itemize}
 \end{itemize}
 \end{dl}
+\bigskip
 \begin{vd}
 Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\lfloor x_1 \rfloor = 3$ và phần nguyên lớn nhất là $\lceil x_1 \rceil =4$.
 \end{vd}
@@ -670,6 +686,7 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 \large
 \begin{itemize}
 \item<1-> Từ bài toán minh hoạ \eqref{baitoannguyenloi} và \eqref{baitoannguyenhet}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, thì ta có thể tiếp tục cải thiện phương án cho đến khi $\forall x_j \in \mathbb{Z}$. 
+\bigskip
 \item<2-> Nếu nghiệm thu được là $x_j \notin \mathbb{Z}$ ta thiết lập được 2 bài toán con từ bài toán $(P)$ ban đầu, ký hiệu $(P_1)$ và $(P_2)$.
 \end{itemize}
 \end{frame}
@@ -709,6 +726,7 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 \begin{frame}{Điều kiện nghiệm}
 \begin{itemize}
 \item<1-> Nếu tồn tại $(P_i)$ với $i=1,2$ không giải được $(S_i = \emptyset )$, ta gọi bài toán \textbf{vô nghiệm}.
+\medskip
 \item<2-> Giả sử $x^{(i)}$ là nghiệm tối ưu của bài toán $(P_i)$ và giá trị tối ưu là $z_i$ với $i = 1,2$.
 \begin{itemize}
 \item<3-> Nếu $\forall x^{(i)} \in Z^n_+$, ta nói $S_i$ là tập nghiệm thoả mãn bài toán tối ưu nguyên bộ phận, $z^*_i$ là giá trị tối ưu và bài toán con $(P_i)$ được giải \textbf{(gọt bởi nghiệm nguyên)}.
@@ -716,6 +734,7 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 \item<5-> Nếu $\exists x^{(i)} \notin Z^n_+$ đồng thời $z_i > z^*_i$, bài toán chưa tối ưu và có thể tiếp tục cải thiện.
 \end{itemize}
 \end{itemize}
+\medskip
 \onslide<6->{\begin{cy}
 Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
 \end{cy}}
@@ -748,6 +767,7 @@ Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
 %template to copy-paste
 \begin{frame}
 \onslide<1->{Chọn $x_1=1.3$ để cải thiện phương án, ta thu được 2 bài toán con sau:}
+\bigskip
 \begin{columns}
 \begin{column}{0.5\textwidth}<2->
     \small
@@ -810,8 +830,10 @@ Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
 \begin{frame}
     \begin{itemize}
     \item <1-> Tương tự bài toán $(P_2)$ ta được $x^{(2)}_1 = 2, x^{(2)}_2 = 0.5$ và $z_2=12.05$.
+    \bigskip
     \item <2-> Chọn $x^{(2)}_2 = 0.5$ để cải thiện phương án. Ta được 2 bài toán con $(P_3)$ và $(P_4)$:
     \end{itemize}
+    \bigskip
     \begin{columns}
 \begin{column}{0.5\textwidth}<2->
     \small
@@ -851,7 +873,9 @@ Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
 \begin{frame}
     \begin{itemize} 
     \item<1-> Giải bài toán $(P_3)$ ta được $x^{(3)}_1=2.125, x^{(3)}_2=0$ và $z_3=11.6875 \Rightarrow $ không khả thi do $z_3 < z_1$ \textbf{(gọt bởi cận)}. 
+    \medskip
     \item<1-> Bài toán $(P_4)$ \textbf{vô nghiệm}.
+    \bigskip
     \item<2-> Vậy phương án tối ưu của bài toán là $x^{(1)}_1=1, x^{(1)}_2=3$ và $z=11.8$.
 \end{itemize}
 \end{frame}
@@ -859,6 +883,7 @@ Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
 \begin{frame}{Sơ đồ thuật toán}
 \begin{itemize}
 \item<1-> Ta gọi bài toán $(P)$ có nút ban đầu là $N_0$, tương ứng mỗi bài toán tối ưu tuyến tính thông thường $(P_i)$ ứng với mỗi nút $N_i$ trên sơ đồ nhánh và $\mathcal{L}$ là danh sách chứa các nút được lập thông qua lý thuyết xác định cận và lý thuyết nghiệm.
+\bigskip
 \item<2-> Ta đánh dấu giá trị tối ưu tốt nhất và nghiệm tối ưu tốt nhất của bài toán lần lượt là $z^*$ và $(x^*,y^*)$.
 \end{itemize}
 \end{frame}
@@ -925,6 +950,18 @@ Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_
 
 
 \section{Kết luận và Hướng phát triển}
+\begin{frame}{Tóm tắt kết quả thu được}
+\onslide<1->{Đề tài nghiên cứu này đạt được các vấn đề sau đây:}
+\bigskip
+\begin{itemize}
+    \item<2-> Giới thiệu một cách rõ ràng về bài toán \textbf{tối ưu tuyến tính cho ra nghiệm nguyên}.
+    \medskip
+    \item<3-> Trình bày về ý tưởng \textbf{lát cắt và thuật toán Gomory} để giải bài toán tối ưu nguyên.
+    \medskip
+	\item<4-> Tìm hiểu về \textbf{phương pháp Land-Doig} hay còn gọi là \textbf{phương pháp nhánh cận}, một phương pháp giúp giải bài toán tối ưu tuyến tính nguyên khả thi trên máy tính và mang tính ứng dụng cao.
+\end{itemize}
+\end{frame}
+\section*{Vấn đề}
 
 \begin{frame}{Tài liệu tham khảo}
 \end{frame}
