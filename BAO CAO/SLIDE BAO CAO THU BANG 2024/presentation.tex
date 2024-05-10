@@ -973,6 +973,7 @@ Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_
 \end{frame}
 
 \section*{Hướng phát triển trong tương lai}
+\section*{Học Máy (Machine learning)}
 
 \begin{frame}{Tối ưu hóa Thuật toán Land-Doig bằng phương pháp Học Máy}
     \onslide<1->{Trong quá trình giải quyết bài toán tối ưu tuyến tính nguyên, đặc biệt với các bài toán có \textcolor{red}{\textbf{kích thước lớn}}, việc quyết định lựa chọn phân nhánh nào cho một nút nhất định vẫn là một vấn đề nan giải và chưa có giải pháp hiệu quả.}
@@ -982,15 +983,120 @@ Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_
     \onslide<2->{\textbf{Phương pháp Học máy (Machine learning)} giúp mang đến một hướng tiếp cận tiềm năng bằng cách cải thiện quy trình chọn nhánh bằng cách sử dụng dữ liệu để xác định các nhánh triển vọng, qua đó tăng tốc quá trình giải các bài toán tối ưu tuyến tính nguyên.}
 \end{frame}
 
-\begin{frame}{}
+\section*{Tối ưu phân thức tuyến tính cho nghiệm nguyên}
+
+\begin{frame}{Tối ưu phân tuyến tính (Linear-Fractional Programming)}
+    \begin{equation} \small \label{F}
+        \begin{split}
+        \onslide<1->{(F) \quad Q(x) & = \frac{P(x)}{D(x)} \quad \longrightarrow Max \\
+            & \left\{
+            \begin{split}
+            &Ax \leq  b, \\
+            &x \geq 0. \\
+            \end{split}
+            \right.}
+        \end{split}
+    \end{equation}            
+    \begin{itemize} \small
+    \item<2-> Bài toán $(F)$ gọi là bài toán \textbf{Tối ưu phân tuyến tính.}
+    \item<3-> Trong đó $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
+        b_1 \\
+        b_2 \\
+        \vdots \\
+        b_m
+        \end{pmatrix}$, với $x\in \mathbb{R}^n_+$. Tập $S_F:=\{x\in \mathbb{R}^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu phân tuyến tính. 
+    \item<4-> $P(x)=p^Tx+p_0$, với $p^T = (p_1 \: p_2 \: \ldots \: p_n)$ và $D(x)=d^Tx+d_0$, với $d^T = (d_1 \: d_2 \: \ldots \: d_n)$ ($D(x)>0, \forall x \in S_F$).
+    \end{itemize}
 \end{frame}
+
+
+
+
+
+
+
+\begin{frame}{Tối ưu phân tuyến tính nguyên hoàn toàn}
+\begin{equation} \small
+    \begin{split}
+    (H) \quad Q(x) & = \frac{P(x)}{D(x)} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax \leq  b, \\
+        &x \geq 0, \text{nguyên} \\
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}            
+\begin{itemize} \small
+\item Bài toán $(H)$ gọi là bài toán \textbf{Tối ưu phân tuyến tính nguyên hoàn toàn.}
+\item Trong đó $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
+    b_1 \\
+    b_2 \\
+    \vdots \\
+    b_m
+    \end{pmatrix}$, với $x\in \mathbb{Z}^n_+$. Tập $S_h:=\{x\in \mathbb{Z}^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu phân tuyến tính nguyên hoàn toàn. 
+\item $P(x)=p^Tx+p_0$, với $p^T = (p_1 \: p_2 \: \ldots \: p_n)$ và $D(x)=d^Tx+d_0$, với $d^T = (d_1 \: d_2 \: \ldots \: d_n)$ ($D(x)>0, \forall x \in S_h$).
+\end{itemize}
+\end{frame}
+\begin{frame}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.65\linewidth]{iflphoantoan.pdf}
+        \caption{Tập nghiệm minh hoạ của bài toán (H)}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{Tối ưu phân tuyến tính nguyên bộ phận}
+\vspace{-1cm}
+\large
+\begin{equation}
+    \begin{split}
+    (B) \quad Q(x,y) & = \frac{P(x,y)}{D(x,y)} \quad \longrightarrow Max \\
+        & \left\{
+        \begin{split}
+        &Ax + Gy \leq  b, \\
+        &x \geq 0, \text{nguyên} \\
+        &y \geq 0.
+        \end{split}
+        \right.    
+    \end{split}
+\end{equation}            
+\end{frame}
+\begin{frame}
+\begin{itemize}
+\item Bài toán $(B)$ gọi là bài toán \textbf{Tối ưu phân tuyến tính nguyên bộ phận.}
+\medskip
+\item Trong đó $A$ là ma trận $m\times n$, $G$ là ma trận $m\times t$, $b=\begin{pmatrix}
+    b_1 \\
+    b_2 \\
+    \vdots \\
+    b_m
+    \end{pmatrix}$, với $x\in \mathbb{Z}^n_+$ và $y \in \mathbb{R}^t_+$. Tập $S_b:=\{(x,y)\in \mathbb{Z}^n_+ \times \mathbb{R}^t_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu phân tuyến tính nguyên bộ phận. 
+\medskip
+\item $P(x,y)=p^T_1x+p^T_2y+p_0$, với $p^T_1 = (p_1 \: p_2 \: \ldots \: p_n)$ và $p^T_2 = (p_1 \: p_2 \: \ldots \: p_t)$.
+\medskip
+\item $D(x,y)=d^T_1x+d^T_2y+d_0$, với $d^T_1 = (d_1 \: d_2 \: \ldots \: d_n)$ và $d^T_2 = (d_1 \: d_2 \: \ldots \: d_t)$ ($D(x,y)>0, \forall x \in S_b$).
+\end{itemize}
+\end{frame}
+\begin{frame}
+    \onslide<1->{\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.4\linewidth]{iflpbophan.pdf}
+        \caption{Tập nghiệm minh hoạ của bài toán (B)}
+    \end{figure}}
+
+    \bigskip
+    \onslide<2->{Có một lý thuyết riêng cho việc xử lý các bài toán Tối ưu phân thức tuyến tính và \textcolor{red}{tìm nghiệm nguyên.}}
+\end{frame}
+
+
+
+
 
 \begin{frame}{Tài liệu tham khảo}
 \end{frame}
 
-%sample
-\begin{frame}
-\end{frame}
 
 \begin{frame}
     \begin{block}{}
