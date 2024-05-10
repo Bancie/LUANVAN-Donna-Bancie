@@ -1,0 +1,36 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+
+\usetheme{Ilmenau} % AnnArbor, Ilmenau, Darmstadt, Dresden, CambridgeUS, Frankfurt, Singapore
+
+
+% import citation package
+\usepackage[backend=biber, style=authoryear]{biblatex}
+\addbibresource{main.bib}
+\AtBeginBibliography{\small}
+
+% footnote without number
+
+% % footnote and page number on same line
+% \setbeamertemplate{footline}{}
+
+% \setbeamertemplate{logo}{
+% \usebeamercolor[fg]{footline}
+% \usebeamerfont{page number in head/foot}
+% \usebeamertemplate*{frame numbering}
+% }
+
+% title page
+
+\begin{document}
+
+\begin{frame}{}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks, noframenumbering]
+\nocite{*}
+\printbibliography
+\end{frame}
+
+\end{document}

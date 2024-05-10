@@ -1,6 +1,5 @@
 \documentclass[10pt]{beamer}
 \mode<presentation>
-\setbeamertemplate{bibliography item}{}
 \usepackage{beamerthemesplit}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -10,12 +9,17 @@
 \usepackage{tikz}
 \usepackage{hyperref}
 \usepackage{caption}
+
+% import citation package
+\usepackage{biblatex}
+\addbibresource{presentation.bib}
+\AtBeginBibliography{\small}
+
 \usetikzlibrary{shapes.geometric, arrows}
 \usetikzlibrary {datavisualization} 
 \pgfplotsset{compat=1.18, width = 7cm}
 \usetikzlibrary{patterns}
 \usetheme{Ilmenau} % AnnArbor, Ilmenau, Darmstadt, Dresden, CambridgeUS, Frankfurt, Singapore
-\setbeamertemplate{bibliography item}[text]
 \newtheorem{dn}{Định nghĩa}[section]
 \newtheorem{dl}{Định lý}[section]
 \newtheorem{tc}{Tính chất}[section]
@@ -980,7 +984,7 @@ Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_
     
     \bigskip
 
-    \onslide<2->{\textbf{Phương pháp Học máy (Machine learning)} giúp mang đến một hướng tiếp cận tiềm năng bằng cách cải thiện quy trình chọn nhánh bằng cách sử dụng dữ liệu để xác định các nhánh triển vọng, qua đó tăng tốc quá trình giải các bài toán tối ưu tuyến tính nguyên.}
+    \onslide<2->{\textbf{Phương pháp Học máy (Machine learning)} giúp mang đến một hướng tiếp cận tiềm năng bằng cách cải thiện quy trình chọn nhánh bằng cách sử dụng dữ liệu để xác định các nhánh triển vọng, qua đó tăng tốc quá trình giải các bài toán tối ưu tuyến tính nguyên.\footfullcite{Deza_2023}}
 \end{frame}
 
 \section*{Tối ưu phân thức tuyến tính cho nghiệm nguyên}
@@ -1087,14 +1091,16 @@ Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_
     \end{figure}}
 
     \bigskip
-    \onslide<2->{Có một lý thuyết riêng cho việc xử lý các bài toán Tối ưu phân thức tuyến tính và \textcolor{red}{tìm nghiệm nguyên.}}
+    \onslide<2->{Có một lý thuyết riêng cho việc xử lý các bài toán Tối ưu phân thức tuyến tính và \textcolor{red}{tìm nghiệm nguyên.}\footfullcite{bajalinov2013linear}}
 \end{frame}
 
 
 
 
 
-\begin{frame}{Tài liệu tham khảo}
+\begin{frame}[allowframebreaks, noframenumbering]
+    \nocite{*}
+    \printbibliography
 \end{frame}
 
 
