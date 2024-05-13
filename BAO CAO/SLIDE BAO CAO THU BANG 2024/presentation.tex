@@ -101,8 +101,7 @@
   }
 }
 
-
-\title{Phương pháp giải bài toán Tối ưu tuyến tính nguyên}
+\title{Phương pháp giải bài toán \\ Tối ưu tuyến tính nguyên}
 
 
 \titlegraphic{\hfill \includegraphics[height=1cm]{logodhsg.png}}
@@ -111,11 +110,11 @@
 %\titlegraphic{\hfill\includegraphics[height=0.6cm]{sybila-logo/old-flat.png}}
 
 \date{\today}
-\author{Thực hiện: Đỗ Ngọc Minh Thư \& Nguyễn Chí Bằng}
+\author{Hướng dẫn: PGS.TS. Tạ Quang Sơn}
 \institute{Sinh viên lớp: DTU1221, Khóa: 22 @ Đại học Sài Gòn}
 
 %\title{Metropolis}
-\subtitle{Hướng dẫn: PGS.TS. Tạ Quang Sơn}
+\subtitle{Thực hiện: Đỗ Ngọc Minh Thư \& Nguyễn Chí Bằng}
 % \date{\today}
 %\date{}
 %\author{Matthias Vogelgesang}
@@ -730,7 +729,7 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 
 \begin{frame}{Điều kiện nghiệm}
 \begin{itemize}
-\item<1-> Nếu tồn tại $(P_i)$ với $i=1,2$ không giải được $(S_i = \emptyset )$, ta gọi bài toán \textbf{vô nghiệm}.
+\item<1-> Nếu tồn tại $(P_i)$ với $i=1,2$ không giải được $(S_i = \emptyset )$ thì bài toán \textbf{vô nghiệm}.
 \medskip
 \item<2-> Giả sử $x^{(i)}$ là nghiệm tối ưu của bài toán $(P_i)$ và giá trị tối ưu là $z_i$ với $i = 1,2$.
 \begin{itemize}
@@ -901,7 +900,7 @@ Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
 
 \begin{frame}{Sơ đồ thuật toán}
 \begin{itemize}
-\item Ta gọi bài toán $(P)$ có nút ban đầu là $N_0$, tương ứng mỗi bài toán tối ưu tuyến tính thông thường $(P_i)$ ứng với mỗi nút $N_i$ trên sơ đồ nhánh và $\mathcal{L}$ là danh sách chứa các nút được lập thông qua lý thuyết xác định cận và lý thuyết nghiệm.
+\item Ta gọi bài toán $(P)$ có nút ban đầu là $N_0$, tương ứng mỗi bài toán tối ưu tuyến tính thông thường $(P_i)$ ứng với mỗi nút $N_i$ trên sơ đồ nhánh và $\mathcal{L}$ là \textbf{danh sách chứa các nút} được lập thông qua phương pháp xác định cận và điều kiện nghiệm đã được nói trước đó.
 \bigskip
 \item Ta đánh dấu giá trị tối ưu tốt nhất và nghiệm tối ưu tốt nhất của bài toán lần lượt là $z^*$ và $(x^*,y^*)$.
 \end{itemize}
@@ -910,16 +909,16 @@ Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
 \begin{frame}{Sơ đồ thuật toán}
 \small
 \setlength{\parindent}{4em}
-\onslide<1->{\noindent \textbf{Bước 1. Thiết lập} \\
+\onslide{\noindent \textbf{Bước 1. Thiết lập} \\
 Đặt $\mathcal{L}:=\{N_0 \}$, $z^*=z_p$ và $(x^*,y^*)=(x,y)$. \\}
-\onslide<2->{\noindent \textbf{Bước 2. Kiểm tra} \\
+\onslide{\noindent \textbf{Bước 2. Kiểm tra} \\
 Nếu $\mathcal{L} = \emptyset$ thì nghiệm tối ưu của bài toán là $(x^*,y^*)$, giá trị \\ tối ưu là $z^*$ và bài toán được giải. \\
 Nếu $\mathcal{L} \neq \emptyset$, chuyển sang bước 3. \\}
-\onslide<3->{\noindent \textbf{Bước 3. Chọn nút} \\
+\onslide{\noindent \textbf{Bước 3. Chọn nút} \\
 Chọn nút $N_i$ từ danh sách $\mathcal{L}$ và xoá khỏi $\mathcal{L}$ sau đó chuyển sang \\ bước 4. \\}
-\onslide<4->{\noindent \textbf{Bước 4. Xác định cận} \\ 
+\onslide{\noindent \textbf{Bước 4. Xác định cận} \\ 
 Giải bài toán $(P_i)$, nếu bài toán vô nghiệm hoặc $z_i \leq z^*$, quay \\ lại bước 2, nếu không, chuyển sang bước 5. \\}
-\onslide<5->{\noindent \textbf{Bước 5. Gọt nghiệm} \\
+\onslide{\noindent \textbf{Bước 5. Gọt nghiệm} \\
 Nếu tồn tại $x^{(i)} \notin Z^n_+$, ta thêm nút $N_{i+1}, \ldots , N_{k}$ vào $\mathcal{L}$ và quay \\ về bước 2. \\
 Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_+$, ta đặt $z_i = z^*$, \\ $(x^{(i)},y^{(i)}) = (x^*,y^*)$ và quay lại bước 2.}
 \end{frame}    
@@ -973,11 +972,11 @@ Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_
 \onslide<1->{Đề tài nghiên cứu này đạt được các vấn đề sau đây:}
 \bigskip
 \begin{itemize}
-    \item<2-> Giới thiệu một cách rõ ràng về bài toán \textbf{tối ưu tuyến tính cho ra nghiệm nguyên}.
+    \item<2-> Giới thiệu về bài toán \textbf{Tối ưu tuyến tính cho ra nghiệm nguyên}.
     \medskip
-    \item<3-> Trình bày về ý tưởng \textbf{lát cắt và thuật toán Gomory} để giải bài toán tối ưu nguyên.
+    \item<3-> Trình bày về ý tưởng \textbf{Lát cắt và Thuật toán Gomory} để giải bài toán tối ưu nguyên.
     \medskip
-	\item<4-> Tìm hiểu về \textbf{phương pháp Land-Doig} hay còn gọi là \textbf{phương pháp nhánh cận}, một phương pháp giúp giải bài toán tối ưu tuyến tính nguyên khả thi trên máy tính và mang tính ứng dụng cao.
+	\item<4-> Tìm hiểu về \textbf{Phương pháp Land-Doig} hay còn gọi là \textbf{Phương pháp Nhánh cận}.
 \end{itemize}
 \end{frame}
 \section*{Vấn đề và thách thức}
@@ -986,7 +985,7 @@ Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_
     \item<1-> \textbf{Thời gian tính toán lớn}: Việc phân nhánh tạo ra nhiều bài toán con, dẫn đến tăng chi phí tính toán.
     \item<2-> \textbf{Bộ nhớ tiêu tốn lớn}: Quá trình phân nhánh và lưu trữ các nhánh mở rộng tiêu tốn nhiều bộ nhớ, đặc biệt là với những bài toán có kích thước lớn.
     \item<3-> \textbf{Phụ thuộc vào chiến lược phân nhánh}: Hiệu quả của thuật toán phụ thuộc vào cách chọn nhánh để phân chia (cách chọn biến, cận).
-    \item<4-> \textbf{Khó khăn trong đánh giá ràng buộc cận}: Việc đánh giá cận không luôn chính xác, dẫn đến khó xác định nhánh nào cần loại bỏ sớm.
+    \item<4-> \textbf{Khó khăn trong đánh giá ràng buộc cận}: Việc xác định cận nào là tốt nhất còn hạn chế, dẫn đến khó xác định nhánh nào cần loại bỏ sớm.
     \item<5-> \textbf{Hiệu quả giảm dần với bài toán có nhiều ràng buộc}: Số lượng nhánh cần mở rộng có xu hướng tăng mạnh khi có nhiều ràng buộc, gây giảm hiệu quả.
 \end{itemize}
 \end{frame}
@@ -1004,37 +1003,13 @@ Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_
 
 \section*{Tối ưu phân thức tuyến tính cho nghiệm nguyên}
 
-\begin{frame}{Tối ưu phân tuyến tính (Linear-Fractional Programming)}
-    \begin{equation} \small \label{F}
-        \begin{split}
-        \onslide<1->{(F) \quad Q(x) & = \frac{P(x)}{D(x)} \quad \longrightarrow Max \\
-            & \left\{
-            \begin{split}
-            &Ax \leq  b, \\
-            &x \geq 0. \\
-            \end{split}
-            \right.}
-        \end{split}
-    \end{equation}            
-    \begin{itemize} \small
-    \item<2-> Bài toán $(F)$ gọi là bài toán \textbf{Tối ưu phân tuyến tính.}
-    \item<3-> Trong đó $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
-        b_1 \\
-        b_2 \\
-        \vdots \\
-        b_m
-        \end{pmatrix}$, với $x\in \mathbb{R}^n_+$. Tập $S_F:=\{x\in \mathbb{R}^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu phân tuyến tính. 
-    \item<4-> $P(x)=p^Tx+p_0$, với $p^T = (p_1 \: p_2 \: \ldots \: p_n)$ và $D(x)=d^Tx+d_0$, với $d^T = (d_1 \: d_2 \: \ldots \: d_n)$ ($D(x)>0, \forall x \in S_F$).
-    \end{itemize}
-\end{frame}
 
 
 
 
 
 
-
-\begin{frame}{Tối ưu phân tuyến tính nguyên hoàn toàn}
+\begin{frame}{Tối ưu phân thức tuyến tính nguyên hoàn toàn}
 \begin{equation} \small
     \begin{split}
     (H) \quad Q(x) & = \frac{P(x)}{D(x)} \quad \longrightarrow Max \\
@@ -1057,16 +1032,8 @@ Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_
 \item $P(x)=p^Tx+p_0$, với $p^T = (p_1 \: p_2 \: \ldots \: p_n)$ và $D(x)=d^Tx+d_0$, với $d^T = (d_1 \: d_2 \: \ldots \: d_n)$ ($D(x)>0, \forall x \in S_h$).
 \end{itemize}
 \end{frame}
-\begin{frame}
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.65\linewidth]{iflphoantoan.pdf}
-        \caption{Minh hoạ tập chấp nhận được của bài toán $(H)$.}
-    \end{figure}
-\end{frame}
 
-
-\begin{frame}{Tối ưu phân tuyến tính nguyên bộ phận}
+\begin{frame}{Tối ưu phân thức tuyến tính nguyên bộ phận}
 \vspace{-1cm}
 \large
 \begin{equation}
@@ -1099,14 +1066,8 @@ Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_
 \end{itemize}
 \end{frame}
 \begin{frame}
-    \onslide<1->{\begin{figure}[h]
-        \centering
-        \includegraphics[width=0.4\linewidth]{iflpbophan.pdf}
-        \caption{Minh hoạ tập chấp nhận được của bài toán $(B)$.}
-    \end{figure}}
-
-    \bigskip
-    \onslide<2->{Có một lý thuyết riêng cho việc xử lý các bài toán Tối ưu phân thức tuyến tính và \textcolor{red}{tìm nghiệm nguyên.}\footfullcite{bajalinov2013linear}}
+    \large
+    Có một lý thuyết riêng cho việc xử lý các bài toán Tối ưu phân thức tuyến tính và \textcolor{red}{tìm nghiệm nguyên.}\footfullcite{bajalinov2013linear}
 \end{frame}
 
 
