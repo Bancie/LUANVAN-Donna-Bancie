@@ -59,6 +59,31 @@
     \tableofcontents
 \end{frame}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{frame}{Giới thiệu}
 Ta xét:\\
     \begin{equation}
@@ -94,69 +119,20 @@ $F^N$ là miền xác định của bài toán.
 \end{frame}
 
 \section{Ý tưởng về phương pháp cắt}
-\begin{frame}{Sử dụng bao lồi của đa diện lồi}
-Ta kí hiệu  $co(F)$ là bao lồi của đa diện lồi $F$
-    \begin{dl}
-   Giả sử $F$ là một đa diện lồi,\hspace{0.1cm} $F^N$ là tập các điểm nguyên của nó, 
-$R \hspace{0.1cm} \text{là bao lồi của} F^N$( tức là $R= co(F^N)$) khi đó:\\
-    1) $R$ là một đa diện nguyên.\\
-    2) $R^N=F^N$.\\
-    3) Tập $R^\ast$ các phương án chấp nhận được của đa diện $R$ chứa trong $R^N$:
-    $$R^{\ast} \subseteq R^N$$.
-\end{dl}
-\end{frame}
 
-\begin{frame}{Sử dụng bao lồi của đa diện lồi}
-    \begin{hq}
-     Giả sử $X$  là phương án tựa tối ưu của bài toán $Q$ (bài toán tối ưu tuyến tính có miền xác định là đa diện $R$, khi đó $X$ cũng là phương án tối ưu của bài toán  $P^N$. Vì vậy để giải bài toán quy hoạch tuyến tính nguyên $P^N$ ta đi giải bài toán $Q$.\\
-\end{hq}
-\begin{dl}
- Giả sử $L$ là một đa diện lồi, $U$ là một đa diện lồi nguyên và $U^N= F^N$, khi đó :
- $$U = R = co(F^N)$$
-    \end{dl}
-\end{frame}
-
-\begin{frame}{Sử dụng bao lồi của đa diện lồi}
-    Ví dụ minh họa:\\
-    \begin{tabular}{|c|c|c|}
-    \hline
-     BÀI TOÁN $(P^N)$  & BÀI TOÁN $(P)$& BÀI TOÁN $(Q)$  \\
-     \hline
-       $Max (x_1+x_2)$  & $Max (x_1+x_2) $ &$Max (x_1+x_2)$ \\
-$2x_1+11x_2\le 38$ \quad (a) & $2x_1+11x_2 \le 38$  \quad (a) & $x_2\le 3$\\
-$x_1+x_2\le 7$\quad (b) &$x_1+x_2\le 7$\quad (b) & $x_1+x_2\le 5$\\
-$4x_1-5x_2\le 5$ \quad c & $4x_1-5x_2\le 5$\quad (c) & $x_1-x_2\le 1$\\
-$x_j\ge 0$ & $x_j\ge 0$ & $x_j\ge 0$\\
-$x_j$ nguyên & &\\
-\hline 
-$Max= 5$& $Max=7$ &$Max=5$\\
-Tối ưu là 2 điểm & Tối ưu là một đoạn & Tối ưu là đoạn\\
-$(2;3);(3;2)$&$[(\frac{13}{3},\frac{8}{3}); (\frac{40}{9};\frac{23}{9})]$&$[(2;3);(3;2)]$\\
-\hline
-    \end{tabular}
-\end{frame}
-
-\begin{frame}{Sử dụng bao lồi của đa diện lồi}
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.9\linewidth]{ảnh 1.pdf}
-        \caption{Ảnh minh họa }
-        \label{fig:enter-label}
-    \end{figure}
-\end{frame}
 
 \begin{frame}{Khái niệm lát cắt đúng}
-     Giả sử bài toán $P^N$là bài toán quy hoạch nguyên nào đó và phương án tựa tối ưu của bài toán quy hoạch tuyến tính tương ứng $X$ không thoả mãn điều kiện 
-nguyên, tức là $X \notin  F^N$.\\
+     Giả sử bài toán $P^N$là bài toán quy hoạch nguyên nào đó và phương án tối ưu của bài toán quy hoạch tuyến tính tương ứng $x$ không thoả mãn điều kiện 
+nguyên, tức là $x \notin  F^N$.\\
 Khi đó, bất đẳng thức:
     $$\sum _j a_jx_j \le \beta$$\label{latcat}
     được gọi là lát cắt đúng nếu thỏa mãn hai điều kiện.\\
     
        \textbf{ 1) Điều kiện cắt:} \\
-        $X$ không thỏa mãn điều kiện \eqref{latcat}, tức là $Ax > \beta$.\\
+       Phương án $x$ không thỏa mãn điều kiện \eqref{latcat}, tức là $Ax > \beta$.\\
     \textbf{2) Điều kiện đúng:}\\
-       Nếu $X$ là phương án của bài toán tối ưu nguyên thì $X$ thỏa mãn điều kiện \eqref{latcat}, tức là 
- $F^N \subset \{X\mid aX\le \beta\}$.\\
+       Nếu $x$ là phương án của bài toán tối ưu nguyên thì $x$ thỏa mãn điều kiện \eqref{latcat}, tức là 
+ $F^N \subset \{x\mid ax\le \beta\}$.\\
     \end{frame}
 
     \begin{frame}{Khái niệm lát cắt đúng}
@@ -176,16 +152,16 @@ a) Ở bước thứ $r$,  giải bài toán bài toán quy hoạch tuyến tín
 … \text{với}   F_0=F $\\
 b) Tập các điểm  nguyên của tất cả các đa diện lồi là như nhau:
 $$F_0^N=F_1^N=F_2^N=...=F_r^N=.......$$\\
-Do đó, nếu phương án tối ưu $X^*_r$ của bài toán $P_r$ thoả mãn điều kiện nguyên thì nó cũng là phương án tối ưu $X_0$ của bài toán xuất phát $P^N_0$ và quá trình kết thúc.\\
+Do đó, nếu phương án tối ưu $x^*_r$ của bài toán $P_r$ thoả mãn điều kiện nguyên thì nó cũng là phương án tối ưu $x_0$ của bài toán xuất phát $P^N_0$ và quá trình kết thúc.\\
 \end{frame}
 
     \begin{frame}{ Ý tưởng phương pháp cắt của Danzig}
-c)  Nếu $X^*_r$ không thoả mãn điều kiện nguyên thì $X^*_r$ không phải là 
-phương án của bài toán $P_{r+1}$, tức là $X_r^*\notin F_{r+1}$.\\Chuyển từ bước $r$ sang bước $r+1$, tức là chuyển từ bài toán $P_r$ sang 
- $P_{r+1}$ khi $X^*_r$ không nguyên được thực hiện nhờ một lát cắt đúng $a_rx \le \beta_r$.\\
+c)  Nếu $x^*_r$ không thoả mãn điều kiện nguyên thì $x^*_r$ không phải là 
+phương án của bài toán $P_{r+1}$, tức là $x_r^*\notin F_{r+1}$.\\Chuyển từ bước $r$ sang bước $r+1$, tức là chuyển từ bài toán $P_r$ sang 
+ $P_{r+1}$ khi $x^*_r$ không nguyên được thực hiện nhờ một lát cắt đúng $a_rx \le \beta_r$.\\
 Việc bổ sung lát cắt này vào ràng buộc của bài toán $P_r$ sẽ chuyển đa diện lồi $F_r$ thành $F_{r+1}$.\\
     \end{frame}
-\section{ Thuật toán Gomory cho bài toán nguyên hoàn toàn}
+\section{ Thuật toán Gomory cho bài toán nguyên}
     \begin{frame}{Cơ sở lý thuyết}
         Ta xét bài toán tối ưu nguyên hoàn toàn:\\
 \begin{equation}\label{Gomory1}
@@ -204,7 +180,7 @@ Việc bổ sung lát cắt này vào ràng buộc của bài toán $P_r$ sẽ c
     \end{frame}
 
     \begin{frame}{Cơ sở lý thuyết}
-         Giả sử $X$ là phương án  tối ưu của bài toán $P^N$, từ đó ta có thể biểu diễn các biến cơ sở qua Các biến phi cơ sở:\\
+         Giả sử $x$ là phương án  tối ưu của bài toán $P^N$, từ đó ta có thể biểu diễn các biến cơ sở qua các biến phi cơ sở:\\
    \begin{equation}\label{2.4}
        x_{i}=x_{i0} + \sum_{j \in N} x_{ij}(-x_j), i=\overline{0,m}.
    \end{equation}
@@ -212,9 +188,9 @@ Việc bổ sung lát cắt này vào ràng buộc của bài toán $P_r$ sẽ c
 
     \begin{frame}{Cơ sở lý thuyết}
         \begin{dl}
-        Giả sử $X$ có $x_{i0}$ không nguyên với $1\le i\le n$ và:\\
+        Giả sử $x$ có $x_{i0}$ không nguyên với $1\le i\le n$ và:\\
         1)\begin{equation}\label{2.5}
-            z_i\equiv z_i(X)= -\{x_{i0}\} + \sum_{j \in \mathbb {N} }(-\{x_{ij}\})(-x_{j}), i=\overline{1,n}.
+            z_i(x)= -\{x_{i0}\} + \sum_{j \in \mathbb {N} }(-\{x_{ij}\})(-x_{j}), i=\overline{1,n}.
         \end{equation} \\
         2) $x$ là phương án của bài toán $P^N$.\\
         Khi đó:\\
@@ -225,23 +201,22 @@ Việc bổ sung lát cắt này vào ràng buộc của bài toán $P_r$ sẽ c
 
     \begin{frame}{Cơ sở lý thuyết}
         \begin{hq}
-        Giả sử $X(L,C)$ không thoả mãn điều kiện nguyên, như vậy đối 
-với $i$ nào đó $(1\le i \le 0) \hspace{0.1cm} x_{i0}$ không nguyên . Khi đó các hệ thức \eqref{2.5}  và $z_i \ge 0$ xác định một lát cắt đúng.
+        Giả sử $x$ không thoả mãn điều kiện nguyên, như vậy tồn tại  $x_{i0}$ ($1\le i\le n$)  không nguyên . Khi đó các hệ thức \eqref{2.5}  và $z_i \ge 0$ xác định một lát cắt đúng.
     \end{hq} 
     \end{frame}
 
     \begin{frame}{Dấu hiệu bài toán không có lời giải}
         \begin{figure}[h]
 \centering
-\includegraphics[width=0.3\linewidth]{anh3.pdf}
+\includegraphics[width=0.5\linewidth]{anh3.pdf}
 \caption{$\overline{P}$ không có lời giải}
 \end{figure}
     \end{frame}
 
     \begin{frame}{Dấu hiệu bài toán không có lời giải}
         Về sau ta sẽ giả thiết:\\
-1) Hàm mục tiêu $x_0\equiv CX$ bị chặn trên $F$.\\
-2) Nếu tập hợp các phương án tối ưu của $P$ khác trống thì nó phải bị chặn, tức là nếu bài toán $P$ giải được thì bài toán $\overline{P}$ cũng giải 
+1) Hàm mục tiêu $x_0\equiv cx$ bị chặn trên $F$.\\
+2) Nếu tập hợp các phương án tối ưu của $P$ khác rỗng thì nó phải bị chặn, tức là nếu bài toán $P$ giải được thì bài toán $\overline{P}$ cũng giải 
 được.\\
     \end{frame}
 
@@ -271,12 +246,23 @@ Sau khi tính toán với lát cắt nếu được phương án tối ưu thỏ
      \begin{frame}{Tính hữu hạn của thuật toán}
          \begin{dl}
 Giả sử có các điều kiện sau:\\
-1) Tính nguyên của hàm mục tiêu $x_0\equiv CX$ được đảm bảo và $x_0$ được xét khi chọn dòng xây dựng lát cắt đúng.\\
+1) Tính nguyên của hàm mục tiêu $x_0= cx$ được đảm bảo và $x_0$ được xét khi chọn dòng xây dựng lát cắt đúng.\\
 2) Một trong các khẳng định sau là đúng:\\
 i) Hàm mục tiêu $x_0$ bị chặn dưới trên $F_0$.\\ 
-ii) Bài toán $P^N_0$ có ít nhất một phương án $X'$.\\
+ii) Bài toán $P^N_0$ có ít nhất một phương án $x'$.\\
  Khi đó thuật toán Gomory thứ nhất kết thúc sau một số hữu hạn bước lặp lớn.
  \end{dl}
      \end{frame}
 
+
+
+
+
+
+
+
+
+
+
+    
 \end{document}

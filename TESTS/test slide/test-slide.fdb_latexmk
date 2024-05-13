@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1715272384 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/TESTS/test slide/test-slide.tex" "test-slide.pdf" "test-slide" 1715272390 0
-  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/TESTS/test slide/test-slide.tex" 1715272384 12263 e0733ccae3b7fb97cf3ed60b154d51c9 ""
+["pdflatex"] 1715606478 "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/TESTS/test slide/test-slide.tex" "test-slide.pdf" "test-slide" 1715606482 0
+  "/Users/chibangnguyen/Documents/LUANVAN-Donna-Bancie/TESTS/test slide/test-slide.tex" 1715606477 10061 4116f8f063dd6975a46fc84d12d93d51 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -301,12 +301,11 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "anh2.pdf" 1715272380 35430 e166a6cb17ff5a7df9688ac2945e2b0b ""
   "anh3.pdf" 1715272380 12691 f54f258af93055925c5122562b710974 ""
-  "test-slide.aux" 1715272389 4734 49398dadafb2465f3fd97887c34af391 "pdflatex"
-  "test-slide.nav" 1715272389 2575 f6160369ade1fe924e9b177f2b6b1495 "pdflatex"
-  "test-slide.out" 1715272389 543 35cab96bb1f8df98d96a0e98ae62a8cc "pdflatex"
-  "test-slide.tex" 1715272384 12263 e0733ccae3b7fb97cf3ed60b154d51c9 ""
-  "test-slide.toc" 1715272389 166 5bd23237f44cf399c28ba2e1d34a6809 "pdflatex"
-  "ảnh 1.pdf" 1715272380 57952 c4826b5717d445627938344b97000e5b ""
+  "test-slide.aux" 1715606482 4023 d753c9cc1656086ae41d5eae82e59d74 "pdflatex"
+  "test-slide.nav" 1715606482 2178 e6fa0e74bc674def8c3d96e81718a7d9 "pdflatex"
+  "test-slide.out" 1715606482 481 beadc137a8b9f3977db119000fc598b7 "pdflatex"
+  "test-slide.tex" 1715606477 10061 4116f8f063dd6975a46fc84d12d93d51 ""
+  "test-slide.toc" 1715606482 153 504d05b0f897b3536f5ed03b626c81a1 "pdflatex"
   (generated)
   "test-slide.aux"
   "test-slide.log"
