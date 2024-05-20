@@ -213,22 +213,22 @@ Có một lý thuyết riêng cho việc xử lý các bài toán Tối ưu tuy�
 \begin{frame}{Tối ưu nguyên hoàn toàn (Pure integer linear program)}
     \begin{equation} \label{H}
         \begin{split}
-        \onslide<1->{(H) \quad & z_h=c^Tx \quad \longrightarrow Max \\
+        (H) \quad & z_h=c^Tx \quad \longrightarrow Max \\
                   & \left\{\begin{split}
                     &Ax \leq  b, \\
                     &x \geq 0, \text{ nguyên} \\
-                    \end{split}\right.}    
+                    \end{split}\right.
         \end{split}
         \end{equation}            
     \begin{itemize} \small
-    \item<2-> Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
+    \item Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $A$ là ma trận $m\times n$, $b=\begin{pmatrix}
         b_1 \\
         b_2 \\
         \vdots \\
         b_m
         \end{pmatrix}$, với $x\in Z^n$.
-    \item<3-> Bài toán $(H)$ gọi là bài toán \textbf{Tối ưu nguyên hoàn toàn.}
-    \item<4-> Tập $S_h:=\{x\in Z^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên hoàn toàn.
+    \item Bài toán $(H)$ gọi là bài toán \textbf{Tối ưu nguyên hoàn toàn.}
+    \item Tập $S_h:=\{x\in Z^n_+: Ax\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên hoàn toàn.
     \end{itemize}
 \end{frame}
 
@@ -258,23 +258,23 @@ Có một lý thuyết riêng cho việc xử lý các bài toán Tối ưu tuy�
 \begin{frame}{Tối ưu nguyên bộ phận (Mixed integer linear program)}
 \begin{equation}\label{2.4}
 \begin{split}
-\onslide<1->{(B) \quad & z_b=c^Tx+h^Ty \quad \longrightarrow Max \\
+(B) \quad & z_b=c^Tx+h^Ty \quad \longrightarrow Max \\
           & \left\{\begin{split}
             &Ax+Gy \leq  b, \\
             &x \geq 0, \text{ nguyên} \\
             &y \geq 0.
-            \end{split}\right.}
+            \end{split}\right.
 \end{split}
 \end{equation}    
 \begin{itemize} \small
-\item<2-> Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $h^T=(h_1 \: h_2 \: \ldots \: h_p)$, $A$ là ma trận $m\times n$, $G$ là ma trận $m\times p$, $b=\begin{pmatrix}
+\item Trong đó $c^T=(c_1 \: c_2 \: \ldots \: c_n)$, $h^T=(h_1 \: h_2 \: \ldots \: h_p)$, $A$ là ma trận $m\times n$, $G$ là ma trận $m\times p$, $b=\begin{pmatrix}
     b_1 \\
     b_2 \\
     \vdots \\
     b_m
     \end{pmatrix}$, với $x\in Z^n$ và $y\in R^p$.
-\item<3-> Bài toán $(B)$ gọi là bài toán \textbf{Tối ưu nguyên bộ phận.}
-\item<4-> Tập $S_b:=\{(x,y)\in Z^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên bộ phận.
+\item Bài toán $(B)$ gọi là bài toán \textbf{Tối ưu nguyên bộ phận.}
+\item Tập $S_b:=\{(x,y)\in Z^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu nguyên bộ phận.
 \end{itemize}
 \end{frame}
 %cho bài toán ví dụ rõ số liệu
@@ -559,30 +559,30 @@ ii) Bài toán $P^N_0$ có ít nhất một phương án $x'$.\\
 \begin{frame}{Bài toán quan tâm}
 \begin{equation}\label{P}
 \begin{split}
-\onslide<1->{(P) \quad & z_p=c^Tx+h^Ty \quad \longrightarrow Max \\
+(P) \quad & z_p=c^Tx+h^Ty \quad \longrightarrow Max \\
             & \left\{\begin{split}
                 &Ax+Gy \leq  b, \\
                 &x,y \geq 0.
-            \end{split}\right.}    
+            \end{split}\right.
 \end{split}
 \end{equation}
 \begin{itemize}
-\item<2-> Trong đó $(P)$ là bài toán $(B)$ (hoặc $(H)$) với nghiệm thuộc tập số thực.
-\item<3-> Bài toán $(P)$ là một bài toán \textbf{Tối ưu tuyến tính thông thường} hay gọi đơn giản là bài toán Tối ưu tuyến tính (Natural linear programming relaxation).
-\item<4-> Tập $S_p:=\{(x,y)\in R^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu tuyến tính.
+\item Trong đó $(P)$ là bài toán $(B)$ (hoặc $(H)$) với nghiệm thuộc tập số thực.
+\item Bài toán $(P)$ là một bài toán \textbf{Tối ưu tuyến tính thông thường} hay gọi đơn giản là bài toán Tối ưu tuyến tính (Natural linear programming relaxation).
+\item Tập $S_p:=\{(x,y)\in R^n_+\times R^p_+: Ax+Gy\leq b\}$ là tập nghiệm của bài toán Tối ưu tuyến tính.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Mục tiêu} %aka Lí do chọn bài toán
-\onslide<1->{Giả sử ta nhận được tập phương án tối ưu của bài toán $(B)$ sau hữu hạn lần giải, ký hiệu $(x_b, y_b)$ và giá trị tối ưu là $z_b$ thì ta có nhận xét sau:}
-\onslide<2->{\begin{nx} \label{nx}
+\onslide<1->{Giả sử ta nhận được tập phương án tối ưu của bài toán $(B)$ sau hữu hạn lần giải, ký hiệu $(x_b, y_b)$ và giá trị tối ưu là $z_b$ thì ta có nhận xét sau:
+\begin{nx} \label{nx}
 \begin{itemize}
 \item Nếu $S_b \subseteq S_p$ thì ta luôn nhận được $z_b \leq z_p$ và phương án có thể cải thiện.
 \item Nếu $S_b = S_p$ thì ta nhận được $z_b = z_p$ và bài toán được giải.
 \end{itemize}    
 \end{nx}}
 \bigskip
-\onslide<3->{Vì thế, ta chọn xử lý bài toán $(B)$ (hoặc $(H)$) thông qua bài toán $(P)$ bằng cách cải thiện phương án thu được từ bài toán $(P)$ sao cho thoả điều kiện của bài toán $(B)$ (hoặc $(H)$).}
+\onslide<2->{Vì thế, ta chọn xử lý bài toán $(B)$ (hoặc $(H)$) thông qua bài toán $(P)$ bằng cách cải thiện phương án thu được từ bài toán $(P)$ sao cho thoả điều kiện của bài toán $(B)$ (hoặc $(H)$).}
 \end{frame}
 
 \begin{frame}{Ví dụ}
@@ -658,9 +658,9 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 \begin{frame}{Phương pháp xử lý bài toán}
 \large
 \begin{itemize}
-\item<1-> Từ bài toán minh hoạ \eqref{baitoannguyenloi} và \eqref{baitoannguyenhet}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, thì ta có thể tiếp tục \textbf{cải thiện phương án} cho đến khi $\forall x_j \in \mathbb{Z}$. 
+\item Từ bài toán minh hoạ \eqref{baitoannguyenloi} và \eqref{baitoannguyenhet}, ta thấy rằng nếu $\exists x_j \notin \mathbb{Z}$, thì ta có thể tiếp tục \textbf{cải thiện phương án} cho đến khi $\forall x_j \in \mathbb{Z}$. 
 \bigskip
-\item<2-> Ta cải thiện như sau, nếu nghiệm thu được là $x_j \notin \mathbb{Z}$ ta thiết lập được 2 \textbf{bài toán con} từ bài toán $(P)$ ban đầu, ký hiệu $(P_1)$ và $(P_2)$.
+\item Ta cải thiện như sau, nếu nghiệm thu được là $x_j \notin \mathbb{Z}$ ta thiết lập được 2 \textbf{bài toán con} từ bài toán $(P)$ ban đầu, ký hiệu $(P_1)$ và $(P_2)$.
 \end{itemize}
 \end{frame}
 
@@ -698,19 +698,19 @@ Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\l
 
 \begin{frame}{Điều kiện nghiệm}
 \begin{itemize}
-\item<1-> Nếu tồn tại $(P_i)$ với $i=1,2$ không giải được $(S_i = \emptyset )$ thì bài toán \textbf{vô nghiệm}.
+\item Nếu tồn tại $(P_i)$ với $i=1,2$ không giải được $(S_i = \emptyset )$ thì bài toán \textbf{vô nghiệm}.
 \medskip
-\item<2-> Giả sử $x^{(i)}$ là nghiệm tối ưu của bài toán $(P_i)$ và giá trị tối ưu là $z_i$ với $i = 1,2$.
+\item Giả sử $x^{(i)}$ là nghiệm tối ưu của bài toán $(P_i)$ và giá trị tối ưu là $z_i$ với $i = 1,2$.
 \begin{itemize}
-\item<3-> Nếu $\forall x^{(i)} \in Z^n_+$, ta nói $S_i$ là tập nghiệm thoả mãn bài toán tối ưu nguyên bộ phận, $z^*_i$ là giá trị tối ưu và bài toán con $(P_i)$ được giải \textbf{(gọt bởi nghiệm nguyên)}.
-\item<4-> Nếu $\exists x^{(i)} \notin Z^n_+$ đồng thời $z_i \leq z^*_i$, ta dừng phân nhánh và bỏ qua bài toán \textbf{(gọt bởi cận)}.
-\item<5-> Nếu $\exists x^{(i)} \notin Z^n_+$ đồng thời $z_i > z^*_i$, bài toán chưa tối ưu và có thể tiếp tục cải thiện.
+\item Nếu $\forall x^{(i)} \in Z^n_+$, ta nói $S_i$ là tập nghiệm thoả mãn bài toán tối ưu nguyên bộ phận, $z^*_i$ là giá trị tối ưu và bài toán con $(P_i)$ được giải \textbf{(gọt bởi nghiệm nguyên)}.
+\item Nếu $\exists x^{(i)} \notin Z^n_+$ đồng thời $z_i \leq z^*_i$, ta dừng phân nhánh và bỏ qua bài toán \textbf{(gọt bởi cận)}.
+\item Nếu $\exists x^{(i)} \notin Z^n_+$ đồng thời $z_i > z^*_i$, bài toán chưa tối ưu và có thể tiếp tục cải thiện.
 \end{itemize}
 \end{itemize}
 \medskip
-\onslide<6->{\begin{cy}
+\begin{cy}
 Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
-\end{cy}}
+\end{cy}
 \end{frame}
 
 \begin{frame}{Ví dụ minh hoạ}
@@ -938,14 +938,14 @@ Nếu không tồn tại $x^{(i)} \notin Z^n_+$, tức $\forall x^{(i)} \in Z^n_
 
 \section{Kết luận và Hướng phát triển}
 \begin{frame}{Tóm tắt kết quả thu được}
-\onslide<1->{Đề tài nghiên cứu này đạt được các vấn đề sau đây:}
+Đề tài nghiên cứu này đạt được các vấn đề sau đây:
 \bigskip
 \begin{itemize}
-    \item<2-> Giới thiệu về bài toán \textbf{Tối ưu tuyến tính cho ra nghiệm nguyên}.
+    \item Giới thiệu về bài toán \textbf{Tối ưu tuyến tính cho ra nghiệm nguyên}.
     \medskip
-    \item<3-> Trình bày về ý tưởng \textbf{Lát cắt và Thuật toán Gomory} để giải bài toán tối ưu nguyên.
+    \item Trình bày về ý tưởng \textbf{Lát cắt và Thuật toán Gomory} để giải bài toán tối ưu nguyên.
     \medskip
-	\item<4-> Tìm hiểu về \textbf{Phương pháp Land-Doig} hay còn gọi là \textbf{Phương pháp Nhánh cận}.
+	\item Tìm hiểu về \textbf{Phương pháp Land-Doig} hay còn gọi là \textbf{Phương pháp Nhánh cận}.
 \end{itemize}
 \end{frame}
 \section*{Vấn đề và thách thức}

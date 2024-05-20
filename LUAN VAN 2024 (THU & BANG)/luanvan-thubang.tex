@@ -2255,15 +2255,19 @@ Cho bài toán:
     Bài toán được giải.
 
 \subsection*{Phương pháp xác định cận}
-Ta gọi $x_j$ với $1 \leq j \leq n$ là nghiệm thu được từ bài toán $(P)$.
+Ta gọi $x_j$ với $1 \leq j \leq n$ là thành phần thứ $j$ trong nghiệm thu được từ bài toán $(P)$.
+
 \begin{dl}\label{cmnguyen}
-	\phantom{}
 Với mỗi $x_j \in \mathbb{R}$, tồn tại duy nhất số nguyên $k \in \mathbb{Z}$ sao cho $k \leq x_j < k+1$.
+\end{dl}
+
+\begin{dn}
+\phantom{}
 \begin{itemize}
 \item Giá trị $k$ khi đó ta gọi là phần nguyên nhỏ nhất của $x_j$, ký hiệu là $\lfloor x_j \rfloor$.
 \item Giá trị $k+1$ gọi là phần nguyên lớn nhất của $x_j$, ký hiệu là $\lceil x_j \rceil$.
 \end{itemize}
-\end{dl}
+\end{dn}
 
 \begin{vd}
 Ta có $x_1=3.3$, vậy khi đó phần nguyên nhỏ nhất của $x_1$ là $\lfloor x_1 \rfloor = 3$ và phần nguyên lớn nhất là $\lceil x_1 \rceil =4$.
@@ -2348,7 +2352,7 @@ Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
         \filldraw[blue, pattern=north west lines, pattern color=blue, line width=2pt] (0, 0) -- (0, 2) -- (1.3, 3.3) -- (2.125, 0) -- cycle;
     \end{axis}
     \end{tikzpicture}  
-    \caption{Tập nghiệm của bài toán}
+    \caption{Tập chấp nhận được của bài toán}
     \end{figure}
 
     \begin{equation*}
@@ -2396,7 +2400,7 @@ Ta gọi $x_j^{(i)}$ là biến thứ $j$ của bài toán thứ $i$.
         \filldraw[blue, pattern=north west lines, pattern color=blue, line width=2pt] (0, 0) -- (0, 2) -- (1, 3) -- (1, 0) -- cycle;
     \end{axis}
     \end{tikzpicture}  
-    \caption{Tập nghiệm của bài toán $(P_1)$}
+    \caption{Tập chấp nhận được của bài toán $(P_1)$}
     \end{figure}
 
     Tương tự giải bài toán $(P_2)$ ta được $x^{(2)}_1 = 2, x^{(2)}_2 = 0.5$ và $z_2=12.05$. Tiếp tục chọn $x^{(2)}_2 = 0.5$ để cải thiện phương án. Ta thu được 2 bài toán con $(P_3)$ và $(P_4)$ sau:
