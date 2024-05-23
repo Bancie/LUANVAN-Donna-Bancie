@@ -44,6 +44,11 @@ D.C. Lay.
 \newblock {\em Linear Algebra and Its Applications}.
 \newblock Pearson Education, 2003.
 
+\bibitem{nguyễn1996tối}
+{\DJ}.N. Nguyễn.
+\newblock {\em Tối ưu ho{\'a}: Quy hoạch tuyến t{\'\i}nh v{\`a} rời rạc}.
+\newblock Gi{\'a}o dục, 1996.
+
 \bibitem{rao2009engineering}
 S.S. Rao.
 \newblock {\em Engineering Optimization: Theory and Practice}.
@@ -60,10 +65,5 @@ Bùi~Thế Tâm.
 \bibitem{huudien}
 Nguyễn~Hữu Điển.
 \newblock {\em Giáo trình Tối ưu tuyến tính và Ứng dụng}, NXB ĐHQG Hà Nội.
-
-\bibitem{nguyễn1996tối}
-Nguyễn Đức Nghĩa.
-\newblock {\em Tối ưu ho{\'a}: Quy hoạch tuyến t{\'\i}nh v{\`a} rời rạc}.
-\newblock Gi{\'a}o dục, 1996.
 
 \end{thebibliography}
