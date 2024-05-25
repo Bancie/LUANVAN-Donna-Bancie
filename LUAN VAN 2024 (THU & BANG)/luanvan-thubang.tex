@@ -26,6 +26,10 @@
 \usepackage{fancyhdr}
 \usepackage{exscale,relsize,makeidx}
 \usepackage{color, fancyhdr, graphicx, wrapfig}
+\graphicspath{ {figures/} }
+
+\renewcommand{\listfigurename}{List of plots}
+\renewcommand{\listtablename}{List of Tables}
 \usepackage{amsmath}
 \usepackage{textpos}
 \usepackage{pgfplots}
@@ -272,6 +276,8 @@
 	\addcontentsline{toc}{chapter}{Mục lục}
 	\tableofcontents
 	%\thispagestyle{plain}
+ \listoffigures
+
 	\chapter*{Danh mục các kí hiệu}
 	\thispagestyle{fancy}
 	\addcontentsline{toc}{chapter}{Danh mục các kí hiệu}
